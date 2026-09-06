@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+.env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Local source data and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+outputs/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store

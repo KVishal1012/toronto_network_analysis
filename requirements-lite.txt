@@ -1,0 +1,16 @@
+# Phase 1 street-network foundation
+numpy>=1.26,<3.0
+pandas>=2.2,<3.0
+polars>=1.10,<2.0
+geopandas>=1.0,<2.0
+shapely>=2.0,<3.0
+pyproj>=3.6,<4.0
+fiona>=1.9,<2.0
+networkx>=3.3,<4.0
+
+# Reproducible notebooks
+jupyter>=1.1,<2.0
+nbconvert>=7.16,<8.0
+
+# Existing experimental app; remove when it moves to a separate repository
+streamlit>=1.42,<2.0
