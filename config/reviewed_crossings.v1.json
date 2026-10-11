@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "register_version": "1.0.0",
+  "review_status": "reviewed_prototype",
+  "scope": "Six manually reviewed crossings; not citywide routing validation.",
+  "provenance": {
+    "assignment_source": "notebooks/02_network_graph.ipynb",
+    "street_source": "data/raw/Centreline/toronto_centerline.shp",
+    "intersection_audit": {
+      "source_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/2c83f641-7808-49ba-b80f-7011851d4e27/resource/eb42b978-02ad-4528-a033-8bebb9360c57/download/centreline-intersection-4326.csv",
+      "retrieved_at": "2026-09-29T13:03:03.896914+00:00",
+      "sha256": "4d581a074ebad0e04552a6e83f3b630ff08718c5d4f7d4dcf420d92224a752bf"
+    }
+  },
+  "crossings": [
+    {
+      "intersection_id": 13462475,
+      "road_groups": {
+        "viaduct": [1141001, 1141008],
+        "dvp": [60024037, 60024103]
+      },
+      "rationale": "Separate this DVP carriageway from the viaduct."
+    },
+    {
+      "intersection_id": 13462471,
+      "road_groups": {
+        "viaduct": [1141001, 30096652],
+        "dvp": [1141437, 60024132]
+      },
+      "rationale": "Separate this DVP carriageway from the viaduct."
+    },
+    {
+      "intersection_id": 13462592,
+      "road_groups": {
+        "viaduct": [1141214, 30003678],
+        "bayview": [1141139, 30057486]
+      },
+      "rationale": "Separate Bayview Avenue from the viaduct."
+    },
+    {
+      "intersection_id": 13463022,
+      "road_groups": {
+        "bloor": [8540612, 30071300],
+        "rosedale_valley": [14025085, 14661598]
+      },
+      "rationale": "Separate Bloor Street East from Rosedale Valley Road."
+    },
+    {
+      "intersection_id": 13452658,
+      "road_groups": {
+        "bathurst": [443003, 443029],
+        "highway_401": [443002, 60020746]
+      },
+      "rationale": "Keep Bathurst and Highway 401 continuations separate."
+    },
+    {
+      "intersection_id": 13454514,
+      "road_groups": {
+        "allen_northbound": [444459, 444460, 444951],
+        "ranee": [12353405, 30132525]
+      },
+      "rationale": "Keep northbound Allen and the Yorkdale exit ramp together; separate Ranee Avenue."
+    }
+  ]
+}
