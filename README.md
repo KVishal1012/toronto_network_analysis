@@ -8,7 +8,13 @@ The current Phase 1 foundation answers a narrow technical question:
 
 This phase does not claim to measure walkability or pedestrian accessibility. Those require separate feature definitions and additional evidence.
 
-## Current Status
+## Product direction
+
+The product direction is the **Toronto Network Resilience Atlas**: explore connections with few alternatives, run reviewed disruption experiments and inspect the evidence behind the results. The Viaduct is the first validation case, not the entire product. See the [updated scope](docs/PRODUCT_SCOPE.md), [Atlas evidence workflow](docs/atlas.md) and [scoped Viaduct review](docs/scenarios/viaduct_don_crossing.md). On 2026-10-08 the project owner approved the hypothetical selected corridor, including selected approaches and access-road uncertainty. Exact physical/operational limits and citywide routing remain unvalidated. A public Atlas interface and cross-corridor ranking are not yet delivered.
+
+## Foundation status
+
+Scenario preparation and the approval-gated runner are documented in [scenario engine notes](docs/scenario_engine.md). The first local four-condition experiment completed on 2026-10-09 using all 8,190 frozen pairs. Its [Atlas evidence entry and preliminary results](docs/atlas.md#first-local-experiment--2026-10-09) retain source/approval/population provenance and per-pair outcomes. This is not route validation, a citywide ranking or public-release approval.
 
 Implemented:
 
@@ -98,10 +104,10 @@ Trails, walkways, rivers, railways, shorelines, hydro lines, ferry routes, buswa
 ## Next Milestones
 
 1. Add an official Toronto Open Data acquisition script, resource identifier, access date, checksum, and licence attribution.
-2. Spatially inspect the 48 smaller graph components, 92 self-loops, and the one intersection ID with endpoint spread over one metre.
-3. Export versioned graph-ready GeoParquet tables and a machine-readable QA report.
-4. Add neighbourhood boundaries and compute carefully defined connectivity metrics.
-5. Build public maps and an accessible explorer from precomputed outputs.
+2. Keep the approved hypothetical corridor distinct from unverified physical closure limits and unresolved access-road connections.
+3. Run the implemented approval-gated, fixed-population baseline/reviewed and open/closed comparisons after source and population verification.
+4. Export versioned results and provenance, retaining unresolved topology and disconnected-population warnings.
+5. Deliver one accessible guided scenario with inspectable evidence, then obtain user feedback. See the product scope for release gates.
 
 ## Experimental Code
 
