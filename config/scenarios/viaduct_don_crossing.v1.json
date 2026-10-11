@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "scenario_id": "viaduct_don_crossing_v1",
+  "title": "Proposed Prince Edward Viaduct Don-crossing corridor closure",
+  "status": "approved",
+  "enabled": true,
+  "boundary_approval": {
+    "reviewer": "Koushik Annamalai (project owner, via chat)",
+    "reviewed_at": "2026-10-08",
+    "scope": "hypothetical_selected_centreline_corridor_only",
+    "boundary_description": "Hypothetical removal of the ten selected Centreline segments between west node 13462661 and east node 13462430, including selected approach portions, in both modelled directions. All nonselected segments remain unchanged. This approves a local model experiment only, not exact physical bridge-deck limits, an operational closure plan, legal driving connectivity or City authorization.",
+    "evidence": [
+      {
+        "reference": "Project chat, 2026-10-08: user message 'i agree on that narrower scenario'",
+        "finding": "The project owner accepted a hypothetical closure of the selected Centreline corridor with the southern access-road uncertainty documented, rather than requiring exact physical or operational closure boundaries."
+      },
+      {
+        "reference": "docs/scenarios/viaduct_don_crossing.md#scoped-model-approval-2026-10-08",
+        "finding": "Records the unchanged ten-segment selection, retained roads, QGIS review observations, unresolved southern access road and limits on interpretation."
+      }
+    ],
+    "limitations": [
+      "The southern curved access road's connection, elevation and representation remain unresolved; no connection is inferred or added.",
+      "Selected approach portions are included as model boundaries, not certified physical bridge-deck boundaries.",
+      "Six reviewed crossings are prototype corrections, not citywide turn or elevation validation.",
+      "Source acquisition date and vintage remain unknown; checksums establish snapshot consistency, not freshness.",
+      "Outputs concern modelled shortest distance and reachability for a fixed structural OD sample, not observed trips, traffic, travel time, congestion or population-weighted access."
+    ],
+    "definition_sha256": "7c6dcb8317d14e33fcb40af2e842d894973a13eb7d0b75dabadc857e3eb7792c"
+  },
+  "prepared_date": "2026-10-03",
+  "geometry_crs": "EPSG:26917",
+  "operation": "remove_all_directed_arcs_matching_explicit_source_centerline_ids",
+  "source_centerline_ids": [
+    1141214,
+    30003678,
+    30003679,
+    1141117,
+    30003617,
+    30003618,
+    1141008,
+    1141001,
+    30096652,
+    30096653
+  ],
+  "west_boundary_intersection_id": 13462661,
+  "east_boundary_intersection_id": 13462430,
+  "reviewed_deck_group_by_intersection": {
+    "13462592": "viaduct",
+    "13462475": "viaduct",
+    "13462471": "viaduct"
+  },
+  "protected_source_centerline_ids": [
+    3841911,
+    1141139,
+    30096668,
+    1141437,
+    30057486,
+    11462316,
+    60024037,
+    60024103,
+    60024132
+  ],
+  "reviewed_crossings_path": "config/reviewed_crossings.v1.json",
+  "source_acquisition_date": null,
+  "source_vintage": null,
+  "boundary_warning": "Model corridor; exact physical deck and operational closure limits are not independently approved.",
+  "population_rule": "Freeze shared OD nodes before all four cases; exclude corridor-internal vertices and replaced crossing IDs consistently; retain all graph nodes after removal.",
+  "audit": {
+    "chain_node_ids_west_to_east": [
+      13462661,
+      13462592,
+      30003677,
+      13462572,
+      13462540,
+      30003616,
+      13462482,
+      13462475,
+      13462471,
+      30096651,
+      13462430
+    ],
+    "selected_source_segments": 10,
+    "selected_directed_arcs": 20,
+    "total_length_m": 525.2488942688327,
+    "max_adjacent_endpoint_gap_m": 0.0,
+    "bbox_epsg4326": [
+      -79.3667358881175,
+      43.67466945686901,
+      -79.3604480348198,
+      43.6759039647644
+    ],
+    "internal_deck_nodes_isolated_after_full_corridor_removal": 9,
+    "all_nonselected_directed_edges_unchanged": true,
+    "reviewed_internal_deck_nodes_have_two_unique_neighbours": true,
+    "source_sha256": {
+      "data/raw/Centreline/toronto_centerline.cpg": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+      "data/raw/Centreline/toronto_centerline.dbf": "644c0e82cba97bff70081d54975c0b401e550cf52b63d948a454ab2ec0d47063",
+      "data/raw/Centreline/toronto_centerline.prj": "b5be241f5d5602047a7dd5b59895f47065bc20859229c8cd586a2ab41f48e6c6",
+      "data/raw/Centreline/toronto_centerline.shp": "de91693aa4b61895e7908202a17a76deb443d7f987191da8be119b60a9078319",
+      "data/raw/Centreline/toronto_centerline.shx": "f22a4755b4f309e6d8f53e8157394a82912262ac46c7183d0044af9f5204d1ad"
+    },
+    "register_sha256": "9ad2550167ca3a474f7805cd2ef6729e7339a27c63bad711eeff2690fa6204e3",
+    "segments": [
+      {
+        "centerline_id": 1141214,
+        "from_intersection_id": 13462661,
+        "to_intersection_id": 13462592,
+        "length_m": 166.9220135581429,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631659.7390599751,
+          4837036.172687597
+        ],
+        "end_xy_m": [
+          631819.7900628659,
+          4837083.5713698985
+        ]
+      },
+      {
+        "centerline_id": 30003678,
+        "from_intersection_id": 13462592,
+        "to_intersection_id": 30003677,
+        "length_m": 23.717639340465652,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631819.7900628659,
+          4837083.5713698985
+        ],
+        "end_xy_m": [
+          631842.5885537618,
+          4837090.110118154
+        ]
+      },
+      {
+        "centerline_id": 30003679,
+        "from_intersection_id": 30003677,
+        "to_intersection_id": 13462572,
+        "length_m": 16.939193586074442,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631842.5885537618,
+          4837090.110118154
+        ],
+        "end_xy_m": [
+          631858.8713472176,
+          4837094.779905495
+        ]
+      },
+      {
+        "centerline_id": 1141117,
+        "from_intersection_id": 13462572,
+        "to_intersection_id": 13462540,
+        "length_m": 71.72537549457698,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631858.8713472176,
+          4837094.779905495
+        ],
+        "end_xy_m": [
+          631927.9644559372,
+          4837114.032744696
+        ]
+      },
+      {
+        "centerline_id": 30003617,
+        "from_intersection_id": 13462540,
+        "to_intersection_id": 30003616,
+        "length_m": 57.296883708496225,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631927.9644559372,
+          4837114.032744696
+        ],
+        "end_xy_m": [
+          631982.7555817154,
+          4837130.791784605
+        ]
+      },
+      {
+        "centerline_id": 30003618,
+        "from_intersection_id": 30003616,
+        "to_intersection_id": 13462482,
+        "length_m": 73.89258449004429,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          631982.7555817154,
+          4837130.791784605
+        ],
+        "end_xy_m": [
+          632053.7408878439,
+          4837151.314950941
+        ]
+      },
+      {
+        "centerline_id": 1141008,
+        "from_intersection_id": 13462482,
+        "to_intersection_id": 13462475,
+        "length_m": 16.11038689943765,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          632053.7408878439,
+          4837151.314950941
+        ],
+        "end_xy_m": [
+          632069.3926542038,
+          4837155.09926565
+        ]
+      },
+      {
+        "centerline_id": 1141001,
+        "from_intersection_id": 13462475,
+        "to_intersection_id": 13462471,
+        "length_m": 11.342920267334856,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          632069.3926542038,
+          4837155.09926565
+        ],
+        "end_xy_m": [
+          632080.4096842953,
+          4837157.798689321
+        ]
+      },
+      {
+        "centerline_id": 30096652,
+        "from_intersection_id": 13462471,
+        "to_intersection_id": 30096651,
+        "length_m": 41.50544375341275,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          632080.4096842953,
+          4837157.798689321
+        ],
+        "end_xy_m": [
+          632120.0960448445,
+          4837169.947255226
+        ]
+      },
+      {
+        "centerline_id": 30096653,
+        "from_intersection_id": 30096651,
+        "to_intersection_id": 13462430,
+        "length_m": 45.79645317084701,
+        "oneway_desc": "Not One-Way",
+        "start_xy_m": [
+          632120.0960448445,
+          4837169.947255226
+        ],
+        "end_xy_m": [
+          632163.9082857072,
+          4837183.28152212
+        ]
+      }
+    ],
+    "retained_incident_segments": [
+      {
+        "centerline_id": 3841911,
+        "street_label": "Danforth Ave",
+        "from_intersection_id": 13462430,
+        "to_intersection_id": 13462393
+      },
+      {
+        "centerline_id": 1141139,
+        "street_label": "Bayview Ave",
+        "from_intersection_id": 13462592,
+        "to_intersection_id": 13462245
+      },
+      {
+        "centerline_id": 30096668,
+        "street_label": "Cambridge Ave",
+        "from_intersection_id": 13462430,
+        "to_intersection_id": 30096667
+      },
+      {
+        "centerline_id": 1141437,
+        "street_label": "DVP",
+        "from_intersection_id": 13462862,
+        "to_intersection_id": 13462471
+      },
+      {
+        "centerline_id": 30057486,
+        "street_label": "Bayview Ave",
+        "from_intersection_id": 30057484,
+        "to_intersection_id": 13462592
+      },
+      {
+        "centerline_id": 11462316,
+        "street_label": "Bloor St E",
+        "from_intersection_id": 13462709,
+        "to_intersection_id": 13462661
+      },
+      {
+        "centerline_id": 60024037,
+        "street_label": "DVP",
+        "from_intersection_id": 30003563,
+        "to_intersection_id": 13462475
+      },
+      {
+        "centerline_id": 60024103,
+        "street_label": "DVP",
+        "from_intersection_id": 13462475,
+        "to_intersection_id": 13461517
+      },
+      {
+        "centerline_id": 60024132,
+        "street_label": "DVP",
+        "from_intersection_id": 13462471,
+        "to_intersection_id": 13461194
+      }
+    ]
+  }
+}
