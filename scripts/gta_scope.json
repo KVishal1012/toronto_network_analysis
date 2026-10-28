@@ -1,0 +1,499 @@
+{
+  "version": "gta-scope-1",
+  "decision_date": "2026-10-23",
+  "purpose": "Scope and source inventory; not an application coverage manifest",
+  "regions": [
+    "Toronto",
+    "Durham",
+    "Halton",
+    "Peel",
+    "York"
+  ],
+  "municipality_count": 25,
+  "inventory_receipt": {
+    "retrieved_at": "2026-10-24T02:17:59.497148+00:00",
+    "url": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/14/query?f=json&where=UPPER_TIER_MUNICIPALITY+IN+%28%27REGIONAL+MUNICIPALITY+OF+DURHAM%27%2C%27REGIONAL+MUNICIPALITY+OF+HALTON%27%2C%27REGIONAL+MUNICIPALITY+OF+PEEL%27%2C%27REGIONAL+MUNICIPALITY+OF+YORK%27%29+OR+MUNICIPAL_NAME_SHORTFORM+%3D+%27TORONTO%27&outFields=OBJECTID%2COGF_ID%2CMUNID%2CMUNICIPAL_NAME%2CMUNICIPAL_NAME_SHORTFORM%2CUPPER_TIER_MUNICIPALITY%2CMUNICIPAL_AREA_EXTENT_TYPE%2CEFFECTIVE_DATETIME&returnGeometry=false&orderByFields=OBJECTID",
+    "count_url": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/14/query?f=json&where=UPPER_TIER_MUNICIPALITY+IN+%28%27REGIONAL+MUNICIPALITY+OF+DURHAM%27%2C%27REGIONAL+MUNICIPALITY+OF+HALTON%27%2C%27REGIONAL+MUNICIPALITY+OF+PEEL%27%2C%27REGIONAL+MUNICIPALITY+OF+YORK%27%29+OR+MUNICIPAL_NAME_SHORTFORM+%3D+%27TORONTO%27&returnCountOnly=true",
+    "sha256": "982e7aaa966b6a76f114bc08340d6539f78d24e0326d29a43fb2d86611fb8b33",
+    "source_rows": 39,
+    "geometry_requested": false,
+    "purpose": "Municipality inventory qualification only; not imported planning coverage."
+  },
+  "boundary_source": {
+    "item_id": "64fb702e16204c3e88b528d9759f1174",
+    "publisher": "Land Information Ontario",
+    "page": "https://geohub.lio.gov.on.ca/datasets/municipal-boundary-lower-and-single-tier",
+    "source_crs": "EPSG:4269",
+    "licence": "Open Government Licence – Ontario",
+    "geometry_acquired": false
+  },
+  "municipalities": [
+    {
+      "id": "ontario:18001",
+      "name": "Pickering",
+      "region": "Durham",
+      "source_name": "CITY OF PICKERING",
+      "source_object_ids": [
+        2897,
+        5585
+      ],
+      "source_ogf_ids": [
+        319585796,
+        319585727
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18005",
+      "name": "Ajax",
+      "region": "Durham",
+      "source_name": "TOWN OF AJAX",
+      "source_object_ids": [
+        4369,
+        5153
+      ],
+      "source_ogf_ids": [
+        319585830,
+        319586076
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18009",
+      "name": "Whitby",
+      "region": "Durham",
+      "source_name": "TOWN OF WHITBY",
+      "source_object_ids": [
+        1953,
+        9169
+      ],
+      "source_ogf_ids": [
+        319585824,
+        319585780
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18013",
+      "name": "Oshawa",
+      "region": "Durham",
+      "source_name": "CITY OF OSHAWA",
+      "source_object_ids": [
+        4033,
+        7953
+      ],
+      "source_ogf_ids": [
+        319586060,
+        319586298
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18017",
+      "name": "Clarington",
+      "region": "Durham",
+      "source_name": "MUNICIPALITY OF CLARINGTON",
+      "source_object_ids": [
+        4481,
+        4721
+      ],
+      "source_ogf_ids": [
+        319586192,
+        319585905
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18020",
+      "name": "Scugog",
+      "region": "Durham",
+      "source_name": "TOWNSHIP OF SCUGOG",
+      "source_object_ids": [
+        10897
+      ],
+      "source_ogf_ids": [
+        319585676
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18029",
+      "name": "Uxbridge",
+      "region": "Durham",
+      "source_name": "TOWNSHIP OF UXBRIDGE",
+      "source_object_ids": [
+        5393
+      ],
+      "source_ogf_ids": [
+        319585768
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:18039",
+      "name": "Brock",
+      "region": "Durham",
+      "source_name": "TOWNSHIP OF BROCK",
+      "source_object_ids": [
+        11649,
+        11665,
+        11681
+      ],
+      "source_ogf_ids": [
+        319585697,
+        319586266,
+        319586233
+      ],
+      "extent_types": [
+        "Islands",
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19028",
+      "name": "Vaughan",
+      "region": "York",
+      "source_name": "CITY OF VAUGHAN",
+      "source_object_ids": [
+        3473
+      ],
+      "source_ogf_ids": [
+        319585644
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19036",
+      "name": "Markham",
+      "region": "York",
+      "source_name": "CITY OF MARKHAM",
+      "source_object_ids": [
+        5217
+      ],
+      "source_ogf_ids": [
+        319585845
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19038",
+      "name": "Richmond Hill",
+      "region": "York",
+      "source_name": "CITY OF RICHMOND HILL",
+      "source_object_ids": [
+        6897
+      ],
+      "source_ogf_ids": [
+        319585895
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19044",
+      "name": "Whitchurch-Stouffville",
+      "region": "York",
+      "source_name": "TOWN OF WHITCHURCH-STOUFFVILLE",
+      "source_object_ids": [
+        1105
+      ],
+      "source_ogf_ids": [
+        319586046
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19046",
+      "name": "Aurora",
+      "region": "York",
+      "source_name": "TOWN OF AURORA",
+      "source_object_ids": [
+        5089
+      ],
+      "source_ogf_ids": [
+        319585945
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19048",
+      "name": "Newmarket",
+      "region": "York",
+      "source_name": "TOWN OF NEWMARKET",
+      "source_object_ids": [
+        4465
+      ],
+      "source_ogf_ids": [
+        319586224
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19049",
+      "name": "King",
+      "region": "York",
+      "source_name": "TOWNSHIP OF KING",
+      "source_object_ids": [
+        9105
+      ],
+      "source_ogf_ids": [
+        319585668
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19054",
+      "name": "East Gwillimbury",
+      "region": "York",
+      "source_name": "TOWN OF EAST GWILLIMBURY",
+      "source_object_ids": [
+        9153
+      ],
+      "source_ogf_ids": [
+        319585884
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:19070",
+      "name": "Georgina",
+      "region": "York",
+      "source_name": "TOWN OF GEORGINA",
+      "source_object_ids": [
+        11569,
+        11585,
+        11601
+      ],
+      "source_ogf_ids": [
+        319585746,
+        319586247,
+        319585682
+      ],
+      "extent_types": [
+        "Islands",
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:20002",
+      "name": "Toronto",
+      "region": "Toronto",
+      "source_name": "CITY OF TORONTO",
+      "source_object_ids": [
+        5809,
+        8833,
+        9121
+      ],
+      "source_ogf_ids": [
+        319585617,
+        319585802,
+        319585748
+      ],
+      "extent_types": [
+        "Islands",
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "existing_toronto_pipeline",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:21005",
+      "name": "Mississauga",
+      "region": "Peel",
+      "source_name": "CITY OF MISSISSAUGA",
+      "source_object_ids": [
+        6753,
+        10769
+      ],
+      "source_ogf_ids": [
+        319586021,
+        319585784
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:21010",
+      "name": "Brampton",
+      "region": "Peel",
+      "source_name": "CITY OF BRAMPTON",
+      "source_object_ids": [
+        8545
+      ],
+      "source_ogf_ids": [
+        319585811
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:21024",
+      "name": "Caledon",
+      "region": "Peel",
+      "source_name": "TOWN OF CALEDON",
+      "source_object_ids": [
+        9857
+      ],
+      "source_ogf_ids": [
+        319586032
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:24001",
+      "name": "Oakville",
+      "region": "Halton",
+      "source_name": "TOWN OF OAKVILLE",
+      "source_object_ids": [
+        577,
+        4513
+      ],
+      "source_ogf_ids": [
+        319586034,
+        319586132
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:24002",
+      "name": "Burlington",
+      "region": "Halton",
+      "source_name": "CITY OF BURLINGTON",
+      "source_object_ids": [
+        2625,
+        8193
+      ],
+      "source_ogf_ids": [
+        319585848,
+        319586218
+      ],
+      "extent_types": [
+        "Mainland",
+        "Water"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:24009",
+      "name": "Milton",
+      "region": "Halton",
+      "source_name": "TOWN OF MILTON",
+      "source_object_ids": [
+        4529
+      ],
+      "source_ogf_ids": [
+        319585898
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    },
+    {
+      "id": "ontario:24015",
+      "name": "Halton Hills",
+      "region": "Halton",
+      "source_name": "TOWN OF HALTON HILLS",
+      "source_object_ids": [
+        1585
+      ],
+      "source_ogf_ids": [
+        319586049
+      ],
+      "extent_types": [
+        "Mainland"
+      ],
+      "planning_integration": "not_integrated",
+      "geometry_qualified": false
+    }
+  ]
+}

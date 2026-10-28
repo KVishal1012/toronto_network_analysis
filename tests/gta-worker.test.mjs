@@ -1,0 +1,71 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync,readdirSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {gunzipSync} from 'node:zlib';
+
+test('real regional snapshot: bounded reads, municipal scope, evidence and legacy links',async()=>{
+ const root='public/planning/';
+ const health=JSON.parse(readFileSync(root+'latest.json'));
+ const manifest=JSON.parse(readFileSync(root+health.id+'/manifest.json'));
+ assert.equal(manifest.regional,true);
+ const read=name=>JSON.parse(gunzipSync(readFileSync(root+'objects/'+manifest.assets[name]+'.json.gz')));
+ const municipalities=read('municipalities.json');assert.equal(municipalities.length,25);
+ const brampton=municipalities.find(m=>m.name==='Brampton'),mississauga=municipalities.find(m=>m.name==='Mississauga');
+ const originalFetch=globalThis.fetch;const requests=[];let response;
+ globalThis.self={postMessage:value=>response=value};
+ globalThis.fetch=async url=>{const key=new URL(url).pathname.replace('/planning/','');requests.push(key);assert.ok(!key.includes('/api/'));
+  try{return new Response(readFileSync(root+key));}catch{return new Response('missing',{status:404});}};
+ try{
+  const worker=readdirSync('dist-public/assets').find(f=>/^worker-.*\.js$/.test(f));
+  await import(pathToFileURL(process.cwd()+'/dist-public/assets/'+worker));
+  const call=async(type,args)=>{await self.onmessage({data:{id:1,type,args}});assert.equal(response.error,undefined,response.error);return response.result;};
+  const init=await call('init',{base:'https://example.test/planning/',id:manifest.id});assert.equal(init.municipalities.length,25);
+  const row=Object.values(read('details/brampton-opa-0.json'))[0];
+  let xy=row.geometry.coordinates;while(Array.isArray(xy[0]))xy=xy[0];
+  const q={lon:xy[0],lat:xy[1],radius:800,kind:'applications',stage:'',jurisdiction_id:brampton.id};
+  const result=await call('query',q);
+  assert.ok(result.rows.some(r=>r.id===row.id));assert.equal(result.rows.find(r=>r.id===row.id).status,'Unknown');
+  assert.ok(result.coverage_notes.some(n=>n.includes('OPA')));
+  assert.ok(!requests.includes('objects/'+manifest.assets['applications.json']+'.json.gz'),'Regional query must not load the citywide application index');
+  const evidence=await call('inspect',result.rows.find(r=>r.id===row.id));assert.equal(evidence.attributes.POLY_ID,row.attributes.POLY_ID);assert.equal(evidence.source_key,'brampton-opa');
+  const projects=await call('query',{...q,kind:'projects'});assert.equal(projects.coverage,false);assert.equal(projects.rows.length,0);
+  const missing=await call('query',{...q,lon:mississauga.lon,lat:mississauga.lat});assert.equal(missing.coverage,false);
+  const route=manifest.address_search[brampton.id];assert.ok(route);
+  const index=read(route.index),sample=read(index.search_label[0].path)[0];
+  const before=requests.length;
+  const addresses=await call('search',{query:sample.search_label,jurisdiction_id:brampton.id});
+  assert.ok(addresses.length>0);assert.ok(addresses.every(a=>a.jurisdiction_id===brampton.id));
+  assert.ok(requests.length-before<=4,'Search should fetch bounded shards');
+  const addressEvidence=await call('inspect',addresses[0]);assert.ok(addressEvidence.attributes);assert.ok(addressEvidence.source_snapshot_id);
+  const regional=await call('query',{...q,kind:'regional_reviews'});assert.equal(regional.coverage,false);assert.equal(regional.rows.length,0);
+  await self.onmessage({data:{id:2,type:'search',args:{query:'100 QUEEN',jurisdiction_id:mississauga.id}}});assert.match(response.error,/not integrated/);
+  const torontoArea=municipalities.find(m=>m.name==='Toronto');
+  const torontoRoute=manifest.address_search[torontoArea.id];
+  assert.equal(torontoRoute.format,'legacy-address-matches');
+  const searchStart=requests.length;
+  const queen=await call('search',{query:'  100   queen ',jurisdiction_id:torontoArea.id});
+  const brute=Object.keys(manifest.assets).filter(k=>k.startsWith('addresses/')).flatMap(read).filter(r=>r.label.toUpperCase().startsWith('100 QUEEN')||r.street.startsWith('100 QUEEN'));
+  assert.deepEqual(queen.map(r=>r.id).sort(),brute.map(r=>r.id).sort());
+  assert.ok(queen.length>0);
+  const resolved=await call('inspect',queen[0]);const original=brute.find(r=>r.id===resolved.id);
+  assert.equal(resolved.lon,original.lon);assert.equal(resolved.lat,original.lat);assert.deepEqual(resolved.xy,original.xy);
+  assert.ok(requests.length-searchStart<=4,'Toronto exact prefix must not fan out over all Queen streets');
+  assert.ok(queen.every(r=>r.source_snapshot_id===manifest.source_snapshots.toronto));
+  const street=await call('search',{query:'QUEEN',jurisdiction_id:torontoArea.id});
+  assert.ok(street.length>0&&street.length<=30);assert.ok(street.every(r=>r.street.startsWith('QUEEN')));
+  assert.deepEqual(await call('search',{query:'ZZZNOTASTREET',jurisdiction_id:torontoArea.id}),[]);
+  for(const [municipalityId,routing] of Object.entries(manifest.address_search)){
+   if(routing.format)continue;
+   const idx=read(routing.index),example=read(idx.search_label[0].path)[0];
+   const found=await call('search',{query:example.search_label,jurisdiction_id:municipalityId});
+   assert.ok(found.length>0,municipalityId);assert.ok(found.every(a=>a.jurisdiction_id===municipalityId));
+  }
+  const milton=municipalities.find(m=>m.name==='Milton');
+  assert.deepEqual(milton.layers.applications,['milton-applications']);
+  const miltonUnlocated=await call('query',{...q,kind:'applications',unlocated:true,jurisdiction_id:milton.id,source_key:'milton-applications'});
+  assert.equal(miltonUnlocated.rows.length,3);assert.ok(miltonUnlocated.rows.every(r=>r.geometry_origin==='unlocated'));
+  const legacy=await call('init',{base:'https://example.test/planning/',id:manifest.source_snapshots.toronto});assert.equal(legacy.snapshot.id,manifest.source_snapshots.toronto);
+  const toronto=await call('query',{lon:-79.3832,lat:43.6532,radius:800,kind:'projects',stage:''});assert.ok(toronto.rows.length>0);
+ }finally{globalThis.fetch=originalFetch;delete globalThis.self;}
+});

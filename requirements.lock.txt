@@ -1,0 +1,6 @@
+certifi==2026.7.22
+duckdb==1.4.4
+numpy==2.5.3
+pyproj==3.7.2
+pyshp==2.3.1
+shapely==2.1.2

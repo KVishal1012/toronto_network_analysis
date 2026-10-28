@@ -1,0 +1,1382 @@
+{
+  "checked_at": "2026-10-25",
+  "qualification_note": "Layer outcomes are independent. Candidate means an audited route or resource exists, not that redistribution or complete data has passed. No suitable source found describes only the bounded discovery audit.",
+  "municipalities": [
+    {
+      "id": "ontario:18001",
+      "name": "Pickering",
+      "region": "Durham",
+      "official_url": "https://www.pickering.ca/devapp",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Active OPA, ZBA, subdivision and condominium listings; major-residential GIS layer found but scope is not all applications.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Active OPA, ZBA, subdivision and condominium listings; major-residential GIS layer found but scope is not all applications.",
+          "evidence": [
+            {
+              "url": "https://www.pickering.ca/devapp",
+              "checked_at": "2026-10-24",
+              "finding": "Active OPA, ZBA, subdivision and condominium listings; major-residential GIS layer found but scope is not all applications."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Complete 42,767-record export reconciled and read twice under item-linked City of Pickering Open Data Licence 1.0. Geometry acceptance is accounted for in the local snapshot. Address layer only.",
+          "source_key": "pickering-address",
+          "evidence": [
+            {
+              "url": "https://www.pickering.ca/business-building-development/maps-and-open-data/",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=1bffe161d9e04ee7ad0c39e31ee45c99",
+              "checked_at": "2026-10-24T17:31:45.149115+00:00",
+              "metadata_sha256": "427d7bb6563fb9c6b82321acbef47be4d927fa980d64db1349409fe8381acfef",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=1bffe161d9e04ee7ad0c39e31ee45c99",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "427d7bb6563fb9c6b82321acbef47be4d927fa980d64db1349409fe8381acfef",
+              "finding": "Metadata rechecked. Item-linked Pickering Open Data Licence 1.0 reviewed; complete export validation in progress."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18005",
+      "name": "Ajax",
+      "region": "Durham",
+      "official_url": "https://ajax.ca/build-invest/for-developers-builders/planning-development-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Planning dashboard and property/application records; bulk export, licence and full accounting not yet qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Planning dashboard and property/application records; bulk export, licence and full accounting not yet qualified.",
+          "evidence": [
+            {
+              "url": "https://ajax.ca/build-invest/for-developers-builders/planning-development-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Planning dashboard and property/application records; bulk export, licence and full accounting not yet qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "Official Ajax Address Points endpoint identified; exact redistribution terms and complete export remain unqualified.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/10",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2a8567aeb706468d90a0f22b9722c0fb",
+              "checked_at": "2026-10-24T17:31:45.356156+00:00",
+              "metadata_sha256": "cef78a7d8a5e225426646cdd54316bc2f77bd87e8765c399030d40b0c63689a5",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2a8567aeb706468d90a0f22b9722c0fb",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "b3091ac2760e0e16744002562fe7a55c06eced17631583552d812bb18a11194e",
+              "finding": "Metadata rechecked. Item licence metadata is empty; applicable redistribution terms require separate official evidence. No complete export qualified."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18009",
+      "name": "Whitby",
+      "region": "Durham",
+      "official_url": "https://portal.whitby.ca/searchPermit",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Application search portal presents a Terms of Use agreement; no agreement accepted and no bulk export qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Application search portal presents a Terms of Use agreement; no agreement accepted and no bulk export qualified.",
+          "evidence": [
+            {
+              "url": "https://portal.whitby.ca/searchPermit",
+              "checked_at": "2026-10-24",
+              "finding": "Application search portal presents a Terms of Use agreement; no agreement accepted and no bulk export qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "blocked_rights",
+          "reason": "Inspected item permits personal non-commercial use only. Reusable public address distribution is not qualified.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://portal.whitby.ca/searchPermit",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=e063b87533cf45d68565a7947a6ba116",
+              "checked_at": "2026-10-24T17:31:46.233374+00:00",
+              "metadata_sha256": "47c00c9c0ac4cfdc69e79a087b9637170dac091ee3fc8fba7bee2715f28f2202",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18013",
+      "name": "Oshawa",
+      "region": "Durham",
+      "official_url": "https://www.oshawa.ca/business-development/planning-and-development/development-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Application descriptions and public notices; separate open-data portal requires exact-resource qualification.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Application descriptions and public notices; separate open-data portal requires exact-resource qualification.",
+          "evidence": [
+            {
+              "url": "https://www.oshawa.ca/business-development/planning-and-development/development-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Application descriptions and public notices; separate open-data portal requires exact-resource qualification."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Complete 64,226-record export reconciled and read twice under item-linked Oshawa Open Government Licence 2.0. Address layer only; planning remains a candidate.",
+          "source_key": "oshawa-address",
+          "evidence": [
+            {
+              "url": "https://www.oshawa.ca/city-hall/city-records/open-data/",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=528210b2e00c4607b8c971f4ed9389ff",
+              "checked_at": "2026-10-24T17:31:45.236061+00:00",
+              "metadata_sha256": "c71a7bd099af99ab7aa73b491aced43b66c7160563af33d55d815c2ddf8aace5",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=528210b2e00c4607b8c971f4ed9389ff",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "755916f1a530ee03dfed4c6d39e4ced057ee0b2dd6d1f23c0eae4404950c2c8d",
+              "finding": "Complete 64,226-record export reconciled and read twice under item-linked Oshawa Open Government Licence 2.0. Address layer only; planning remains a candidate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18017",
+      "name": "Clarington",
+      "region": "Durham",
+      "official_url": "https://www.clarington.net/planning-and-development/development-construction-secondary-plans-and-studies/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Growing Clarington proposal map and documents; production export and redistribution terms require review.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Growing Clarington proposal map and documents; production export and redistribution terms require review.",
+          "evidence": [
+            {
+              "url": "https://www.clarington.net/planning-and-development/development-construction-secondary-plans-and-studies/",
+              "checked_at": "2026-10-24",
+              "finding": "Growing Clarington proposal map and documents; production export and redistribution terms require review."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.clarington.net/planning-and-development/development-construction-secondary-plans-and-studies/",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18020",
+      "name": "Scugog",
+      "region": "Durham",
+      "official_url": "https://www.scugog.ca/building-development/planning-and-development/planning-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Current projects route and application information; bulk record export and licence not verified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Current projects route and application information; bulk record export and licence not verified.",
+          "evidence": [
+            {
+              "url": "https://www.scugog.ca/building-development/planning-and-development/planning-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Current projects route and application information; bulk record export and licence not verified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.scugog.ca/building-development/planning-and-development/planning-applications/",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18029",
+      "name": "Uxbridge",
+      "region": "Durham",
+      "official_url": "https://www.uxbridge.ca/doing-business/development-and-planning/current-planning-applications",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Current application documents and file numbers; structured geometry export and redistribution terms not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Current application documents and file numbers; structured geometry export and redistribution terms not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.uxbridge.ca/doing-business/development-and-planning/current-planning-applications",
+              "checked_at": "2026-10-24",
+              "finding": "Current application documents and file numbers; structured geometry export and redistribution terms not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.uxbridge.ca/doing-business/development-and-planning/current-planning-applications",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:18039",
+      "name": "Brock",
+      "region": "Durham",
+      "official_url": "https://www.townshipofbrock.ca/building-and-business-development/planning-and-development/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Planning applications in progress route; no qualified structured export identified in this audit.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Planning applications in progress route; no qualified structured export identified in this audit.",
+          "evidence": [
+            {
+              "url": "https://www.townshipofbrock.ca/building-and-business-development/planning-and-development/",
+              "checked_at": "2026-10-24",
+              "finding": "Planning applications in progress route; no qualified structured export identified in this audit."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.durham.ca/doing-business/planning-and-development/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.townshipofbrock.ca/building-and-business-development/planning-and-development/",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=be909377b9e14ed7a8e6631a6d057727",
+              "checked_at": "2026-10-24T17:31:45.533284+00:00",
+              "metadata_sha256": "8008ca76774420bf5c802fce8e2f339a8fc7f34f4d0b5411deb55d3bb7e66297",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=be909377b9e14ed7a8e6631a6d057727",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "8008ca76774420bf5c802fce8e2f339a8fc7f34f4d0b5411deb55d3bb7e66297",
+              "finding": "Metadata rechecked. Item licence metadata is empty; applicable redistribution terms require separate official evidence. No complete export qualified."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19028",
+      "name": "Vaughan",
+      "region": "York",
+      "official_url": "https://www.vaughan.ca/residential/building-and-construction/vaughans-planning-process/planning-gis-and-analytics/policy-information",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Official PLANit active/closed application and municipal address maps; export contract and rights not yet qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Official PLANit active/closed application and municipal address maps; export contract and rights not yet qualified.",
+          "evidence": [
+            {
+              "url": "https://www.vaughan.ca/residential/building-and-construction/vaughans-planning-process/planning-gis-and-analytics/policy-information",
+              "checked_at": "2026-10-24",
+              "finding": "Official PLANit active/closed application and municipal address maps; export contract and rights not yet qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=b6e9771a8b114d818c875782164e240b",
+              "checked_at": "2026-10-24T17:31:46.063690+00:00",
+              "metadata_sha256": "cf48b22e1eb416d4e30f3bf834bce2bf14395735a8ec6b71cbdd327ef9b1592d",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19036",
+      "name": "Markham",
+      "region": "York",
+      "official_url": "https://www.markham.ca/about-the-city-of-markham/city-hall/interactive-maps-applications",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Official MappiT development viewer and address maps; terminology documented, export/redistribution contract not yet qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Official MappiT development viewer and address maps; terminology documented, export/redistribution contract not yet qualified.",
+          "evidence": [
+            {
+              "url": "https://www.markham.ca/about-the-city-of-markham/city-hall/interactive-maps-applications",
+              "checked_at": "2026-10-24",
+              "finding": "Official MappiT development viewer and address maps; terminology documented, export/redistribution contract not yet qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19038",
+      "name": "Richmond Hill",
+      "region": "York",
+      "official_url": "https://www.richmondhill.ca/en/learn-more/Planning-Development.aspx",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Active OPA/ZBA/subdivision/condominium/site-plan map and quarterly summaries; summaries are not a complete application feed.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Active OPA/ZBA/subdivision/condominium/site-plan map and quarterly summaries; summaries are not a complete application feed.",
+          "evidence": [
+            {
+              "url": "https://www.richmondhill.ca/en/learn-more/Planning-Development.aspx",
+              "checked_at": "2026-10-24",
+              "finding": "Active OPA/ZBA/subdivision/condominium/site-plan map and quarterly summaries; summaries are not a complete application feed."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19044",
+      "name": "Whitchurch-Stouffville",
+      "region": "York",
+      "official_url": "https://townofws.ca/work/development-and-land-use/planning-applications/current-planning-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Current application table and activity map; file numbers and dates visible, bulk geometry and redistribution terms not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Current application table and activity map; file numbers and dates visible, bulk geometry and redistribution terms not qualified.",
+          "evidence": [
+            {
+              "url": "https://townofws.ca/work/development-and-land-use/planning-applications/current-planning-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Current application table and activity map; file numbers and dates visible, bulk geometry and redistribution terms not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19046",
+      "name": "Aurora",
+      "region": "York",
+      "official_url": "https://www.aurora.ca/business-and-development/data-hub/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Official Data Hub includes planning applications; municipal production export and licence not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Official Data Hub includes planning applications; municipal production export and licence not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.aurora.ca/business-and-development/data-hub/",
+              "checked_at": "2026-10-24",
+              "finding": "Official Data Hub includes planning applications; municipal production export and licence not qualified."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=0358207d89af4b0ba7c847d48dbe4d3f",
+              "checked_at": "2026-10-24T17:31:46.147148+00:00",
+              "metadata_sha256": "3383537d7af89f36a22137e83436bb6d920a5b0dd2f78300975270983a74f484",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=0358207d89af4b0ba7c847d48dbe4d3f",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "3383537d7af89f36a22137e83436bb6d920a5b0dd2f78300975270983a74f484",
+              "finding": "Metadata rechecked. This item is a basemap, not an application inventory; general access names Town/partner users and consultants, not public redistribution. Reject this item as an application source; municipal planning route remains a candidate."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19048",
+      "name": "Newmarket",
+      "region": "York",
+      "official_url": "https://www.newmarket.ca/business-development/development-planning/development-applications/current-applications",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Current application map, supporting documents and definitions; complete production export and licence not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Current application map, supporting documents and definitions; complete production export and licence not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.newmarket.ca/business-development/development-planning/development-applications/current-applications",
+              "checked_at": "2026-10-24",
+              "finding": "Current application map, supporting documents and definitions; complete production export and licence not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=e4b1bc22b6724af591d6f4cc6af9d829",
+              "checked_at": "2026-10-24T17:31:45.652656+00:00",
+              "metadata_sha256": "1103684758399e2234b2dfb578188d3ccd4c2516a1b7b20d5d86ad77af05e597",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19049",
+      "name": "King",
+      "region": "York",
+      "official_url": "https://www.king.ca/CityView",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Official CityView portal supports planning status; no qualified municipal bulk export found in the inspected route.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Official CityView portal supports planning status; no qualified municipal bulk export found in the inspected route.",
+          "evidence": [
+            {
+              "url": "https://www.king.ca/CityView",
+              "checked_at": "2026-10-24",
+              "finding": "Official CityView portal supports planning status; no qualified municipal bulk export found in the inspected route."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19054",
+      "name": "East Gwillimbury",
+      "region": "York",
+      "official_url": "https://www.eastgwillimbury.ca/en/government/active-applications.aspx",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Official page links active-applications ArcGIS experience a34e6ac859e44879883ddc8370d1bc9b; underlying feed not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Official page links active-applications ArcGIS experience a34e6ac859e44879883ddc8370d1bc9b; underlying feed not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.eastgwillimbury.ca/en/government/active-applications.aspx",
+              "checked_at": "2026-10-24",
+              "finding": "Official page links active-applications ArcGIS experience a34e6ac859e44879883ddc8370d1bc9b; underlying feed not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:19070",
+      "name": "Georgina",
+      "region": "York",
+      "official_url": "https://www.georgina.ca/living-here/planning-and-development",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Planning news/application notices and municipal addressing route; municipal feed licence and completeness not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Planning news/application notices and municipal addressing route; municipal feed licence and completeness not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.georgina.ca/living-here/planning-and-development",
+              "checked_at": "2026-10-24",
+              "finding": "Planning news/application notices and municipal addressing route; municipal feed licence and completeness not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "blocked_technical",
+          "reason": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved.",
+          "evidence": [
+            {
+              "url": "https://www.york.ca/newsroom/campaigns-projects/track-status-development-applications",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+              "checked_at": "2026-10-25",
+              "finding": "York inventory has 5,470 IDs but only 5,469 unique ESRI_OID values (5414 repeated); status-field precedence undocumented. Licence permits reuse but feed cannot pass identity reconciliation."
+            },
+            {
+              "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+              "checked_at": "2026-10-25",
+              "finding": "5,470 inventory entries but 5,469 unique ESRI_OID values. Duplicate value and ID assignments change across requests; distinct OBJECTIDs share ESRI_OID. Complete stable acquisition and status-field precedence remain unresolved."
+            }
+          ],
+          "source_key": "york-applications"
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "york-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+              "checked_at": "2026-10-25",
+              "finding": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=40812c6f928743d78085e1ea89b3cfda",
+              "checked_at": "2026-10-24T17:31:46.146228+00:00",
+              "metadata_sha256": "2003860b5cf29fd48281276fc6d70a13ea12d76de9a04e56effa06cb1b4da599",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:20002",
+      "name": "Toronto",
+      "region": "Toronto",
+      "official_url": "https://www.toronto.ca/city-government/planning-development/application-information-centre/",
+      "link_label": "Municipal planning information",
+      "qualification": "integrated_limited_scope",
+      "reason": "Only the stated source scope is integrated.",
+      "qualification_layers": {
+        "applications": {
+          "status": "integrated",
+          "reason": "Only the stated source scope is integrated.",
+          "evidence": [
+            {
+              "url": "https://www.toronto.ca/city-government/planning-development/application-information-centre/",
+              "checked_at": "2026-10-24",
+              "finding": "Only the stated source scope is integrated."
+            }
+          ],
+          "source_key": "applications"
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.toronto.ca/city-government/planning-development/application-information-centre/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "integrated",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": "addresses",
+          "evidence": [
+            {
+              "url": "https://www.toronto.ca/city-government/planning-development/application-information-centre/",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:21005",
+      "name": "Mississauga",
+      "region": "Peel",
+      "official_url": "https://www.mississauga.ca/services-and-programs/planning-and-development/development-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "blocked_rights",
+      "reason": "Dataset metadata prohibits copying/modification without written consent.",
+      "qualification_layers": {
+        "applications": {
+          "status": "blocked_rights",
+          "reason": "Dataset metadata prohibits copying/modification without written consent.",
+          "evidence": [
+            {
+              "url": "https://www.mississauga.ca/services-and-programs/planning-and-development/development-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Dataset metadata prohibits copying/modification without written consent."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.mississauga.ca/services-and-programs/planning-and-development/development-applications/",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.mississauga.ca/services-and-programs/planning-and-development/development-applications/",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:21010",
+      "name": "Brampton",
+      "region": "Peel",
+      "official_url": "https://www.brampton.ca/EN/Business/planning-development/Pages/welcome.aspx",
+      "link_label": "Municipal planning information",
+      "qualification": "integrated_limited_scope",
+      "reason": "Only the stated source scope is integrated.",
+      "qualification_layers": {
+        "applications": {
+          "status": "qualified",
+          "reason": "OPA, ZBA and draft subdivision applications only; historical records included. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "evidence": [
+            {
+              "url": "https://www.brampton.ca/EN/Business/planning-development/Pages/welcome.aspx",
+              "checked_at": "2026-10-24",
+              "finding": "Only the stated source scope is integrated."
+            },
+            {
+              "url": "https://geohub.brampton.ca/datasets/fe228c35bac14b03bfed732ababbb06d",
+              "checked_at": "2026-10-25",
+              "finding": "OPA, ZBA and draft subdivision applications only; historical records included. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ],
+          "source_key": "brampton-opa"
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.brampton.ca/EN/Business/planning-development/Pages/welcome.aspx",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Official address points; unit variants retained. Address selection does not geocode development records. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "brampton-address",
+          "evidence": [
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=56bd6b5ac117445db5e64d14b72e061e",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=56bd6b5ac117445db5e64d14b72e061e",
+              "checked_at": "2026-10-25",
+              "finding": "Official address points; unit variants retained. Address selection does not geocode development records. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:21024",
+      "name": "Caledon",
+      "region": "Peel",
+      "official_url": "https://www.caledon.ca/en/town-services/current-applications.aspx",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Current applications and development map located; exact export, complete counts and rights not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Current applications and development map located; exact export, complete counts and rights not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.caledon.ca/en/town-services/current-applications.aspx",
+              "checked_at": "2026-10-24",
+              "finding": "Current applications and development map located; exact export, complete counts and rights not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.caledon.ca/en/town-services/current-applications.aspx",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.caledon.ca/en/town-services/current-applications.aspx",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2abfeebcade144889c3e8797733af3e3",
+              "checked_at": "2026-10-24T17:31:45.737375+00:00",
+              "metadata_sha256": "4d010bb589b3974628ada9a5fa090c52ea4cb340f12cc0cd248637265d9256b1",
+              "finding": "Candidate item metadata inspected. Full acquisition and terms qualification are separate gates."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=2abfeebcade144889c3e8797733af3e3",
+              "checked_at": "2026-10-25",
+              "metadata_sha256": "cee488e3c2b08c1bfe9af4c0c41b96d67a26735172d88030be132cd96b20e362",
+              "finding": "Metadata rechecked. Item licence metadata is empty; applicable redistribution terms require separate official evidence. No complete export qualified."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:24001",
+      "name": "Oakville",
+      "region": "Halton",
+      "official_url": "https://www.oakville.ca/business-development/planning-development/active-development-applications/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Ward listings and active development/site-plan map; production export and rights still require qualification.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Ward listings and active development/site-plan map; production export and rights still require qualification.",
+          "evidence": [
+            {
+              "url": "https://www.oakville.ca/business-development/planning-development/active-development-applications/",
+              "checked_at": "2026-10-24",
+              "finding": "Ward listings and active development/site-plan map; production export and rights still require qualification."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.halton.ca/the-region/supporting-land-use-planning/planning-applications/development-application-review",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.oakville.ca/business-development/planning-development/active-development-applications/",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:24002",
+      "name": "Burlington",
+      "region": "Halton",
+      "official_url": "https://www.burlington.ca/en/planning-and-development/development-applications.aspx",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Development application information and separate Navigate Burlington maps; exact production data contract not qualified.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Development application information and separate Navigate Burlington maps; exact production data contract not qualified.",
+          "evidence": [
+            {
+              "url": "https://www.burlington.ca/en/planning-and-development/development-applications.aspx",
+              "checked_at": "2026-10-24",
+              "finding": "Development application information and separate Navigate Burlington maps; exact production data contract not qualified."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.halton.ca/the-region/supporting-land-use-planning/planning-applications/development-application-review",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.burlington.ca/en/planning-and-development/development-applications.aspx",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:24009",
+      "name": "Milton",
+      "region": "Halton",
+      "official_url": "https://www.milton.ca/business-development/planning-and-development/development-applications/development-application-notices/",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Dated notices and ward-level records; notices are not a complete structured application inventory.",
+      "qualification_layers": {
+        "applications": {
+          "status": "qualified",
+          "reason": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "evidence": [
+            {
+              "url": "https://www.milton.ca/business-development/planning-and-development/development-applications/development-application-notices/",
+              "checked_at": "2026-10-24",
+              "finding": "Dated notices and ward-level records; notices are not a complete structured application inventory."
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=4b7c1ae792f2498e8f9b5f4c76f83060",
+              "checked_at": "2026-10-25",
+              "finding": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ],
+          "source_key": "milton-applications"
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.halton.ca/the-region/supporting-land-use-planning/planning-applications/development-application-review",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "qualified",
+          "reason": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained. Complete export passed inventory, schema and stable-read checks; composition validates locations.",
+          "source_key": "milton-address",
+          "evidence": [
+            {
+              "url": "https://www.milton.ca/business-development/planning-and-development/development-applications/development-application-notices/",
+              "checked_at": "2026-10-24"
+            },
+            {
+              "url": "https://www.arcgis.com/home/item.html?id=7b543a0d714a4930a90e771db838594b",
+              "checked_at": "2026-10-25",
+              "finding": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained. Complete export passed inventory, schema and stable-read checks; composition validates locations."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ontario:24015",
+      "name": "Halton Hills",
+      "region": "Halton",
+      "official_url": "https://www.haltonhills.ca/developmentproposalsunderreview",
+      "link_label": "Municipal planning information",
+      "qualification": "candidate",
+      "reason": "Active applications excluding minor variances, consents and NEC permits; embedded GIS feed needs export/licence qualification.",
+      "qualification_layers": {
+        "applications": {
+          "status": "candidate",
+          "reason": "Active applications excluding minor variances, consents and NEC permits; embedded GIS feed needs export/licence qualification.",
+          "evidence": [
+            {
+              "url": "https://www.haltonhills.ca/developmentproposalsunderreview",
+              "checked_at": "2026-10-24",
+              "finding": "Active applications excluding minor variances, consents and NEC permits; embedded GIS feed needs export/licence qualification."
+            }
+          ],
+          "source_key": null
+        },
+        "regional_reviews": {
+          "status": "no_suitable_source_found",
+          "reason": "No independently qualified regional-review resource found in the inspected municipal routes and catalogue search; municipal records are not relabelled as regional reviews.",
+          "evidence": [
+            {
+              "url": "https://www.halton.ca/the-region/supporting-land-use-planning/planning-applications/development-application-review",
+              "checked_at": "2026-10-24"
+            }
+          ],
+          "source_key": null
+        },
+        "addresses": {
+          "status": "candidate",
+          "reason": "No qualified municipal bulk address source; municipal maps and catalogue discovery do not establish a reusable dataset.",
+          "source_key": null,
+          "evidence": [
+            {
+              "url": "https://www.haltonhills.ca/developmentproposalsunderreview",
+              "checked_at": "2026-10-24"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1321 @@
+{
+  "boundaries": {
+    "item_id": "64fb702e16204c3e88b528d9759f1174",
+    "owner": "LandInformationOntario",
+    "item_url": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/14",
+    "url": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/14",
+    "licence_metadata": "<a href=\"https://www.ontario.ca/page/open-government-licence-ontario\">Open Government Licence \u2013 Ontario</a>",
+    "schema": {
+      "fields": {
+        "OGF_ID": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "MUNICIPAL_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_TYPE_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAH_CODE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_AREA_EXTENT_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_AREA_EXTENT_TYPE_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ASSESSMENT_CODE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME_PREFIX": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME_PREFIX_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME_SHORTFORM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPAL_NAME_SHORTFORM_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UPPER_TIER_ASSESSMENT_CODE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UPPER_TIER_MUNICIPALITY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UPPER_TIER_MUNICIPALITY_FR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "EFFECTIVE_DATETIME": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "SHAPE": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        },
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 4269,
+      "geometry": "esriGeometryPolygon"
+    },
+    "publisher": "Land Information Ontario",
+    "page": "https://geohub.lio.gov.on.ca/datasets/municipal-boundary-lower-and-single-tier",
+    "where": "MUNID IN ('18001','18005','18009','18013','18017','18020','18029','18039','19028','19036','19038','19044','19046','19048','19049','19054','19070','20002','21005','21010','21024','24001','24002','24009','24015')"
+  },
+  "brampton-opa": {
+    "item_id": "fe228c35bac14b03bfed732ababbb06d",
+    "owner": "BramptonMaps",
+    "item_url": "https://services3.arcgis.com/rl7ACuZkiFsmDA2g/ArcGIS/rest/services/Planning_Land_Use_Development/FeatureServer/9",
+    "url": "https://services3.arcgis.com/rl7ACuZkiFsmDA2g/ArcGIS/rest/services/Planning_Land_Use_Development/FeatureServer/9",
+    "licence_metadata": "CC BY",
+    "schema": {
+      "fields": {
+        "FILE_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REGIONAL_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOCATION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DATE_RECEIVED": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "APPLICATION_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPLICATION_TITLE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DESCRIPTION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STATUS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CITY_PLANNER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PROPOSAL_DESCRIPTION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "AGENT_COMPANY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPLICANT_COMPANY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WARD": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "POLY_ID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "Shape__Area": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "Shape__Length": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        }
+      },
+      "oid": "POLY_ID",
+      "crs": 3857,
+      "geometry": "esriGeometryPolygon"
+    },
+    "publisher": "City of Brampton",
+    "page": "https://geohub.brampton.ca/datasets/fe228c35bac14b03bfed732ababbb06d"
+  },
+  "york-applications": {
+    "item_id": "2ea061702aaa4d5fae39c1226525fd4e",
+    "owner": "YorkMunicipalGovt",
+    "item_url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+    "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/DevelopmentApplicationStatusAndTeams/MapServer/0",
+    "page": "https://www.arcgis.com/home/item.html?id=2ea061702aaa4d5fae39c1226525fd4e",
+    "licence_metadata": "Please refer to &quot;York Region Open Data Licence&quot;, searchable on this website",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "APPL_GISID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REG_FILE_NUM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "EXT_REF_NUM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPROVAL_NUM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPL_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DATE_RECVD": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "APPL_STAGE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPL_STEP": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPL_STATUS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPL_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "APPL_DESC": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNITS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PARENTID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SFORCEID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUN_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "OWNERSHIP": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ADDRESS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOCATION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ROLL": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "TZONE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SEWERSHED": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PDISTRICT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WSERVAREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WWSERVAREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "VULNERSCORE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CENTRE_CORR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LANDUSE_DESIG": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNBND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "EASEMENT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "URBEXPAND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "BLTUPAREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DESGRNFIELD": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "EMPAREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "GREENBELT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WHITEBELT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ARCHEO_POT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "GREENLAND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PKYBELTWEST": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SIGWETLAND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SIGWOODLAND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ORM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REGROAD": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "TRNCAPPLAN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "BUSROUTE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "HWY50": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STEELES": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WWWCAPPLAN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WMAIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WWFAC": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PDISTBND": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PDCONSTRAIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "COMSONSTRAIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WELLPROAREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "INTAKE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "AQUAORM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "AQUALSRCA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "AQUATRCA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RCHRGELSRCA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RCHRGETRCA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WHPAQ": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WSTORAGE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PUMPSTATION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WWMAIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CRE_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "CRE_BY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MOD_BY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MOD_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "GEOPRO_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "SF_ENVIRONMENT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RIN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "AREACONCERN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "FORESTTRACT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "TZONE2016": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREETSCAPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "GTAPLNSTUDY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CENTRE_CORR_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "KDA_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "GTAROUTE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MTSA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WHPA_SCORE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SHAPE": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        },
+        "GDB_GEOMATTR_DATA": {
+          "type": "esriFieldTypeBlob",
+          "domain": null
+        },
+        "APPL_SUBTYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Id": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "name": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "External_Ref__c": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Date_Received__c": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "Application_Name__c": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "application_type__C": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "application_subtype__C": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Application_Status__c": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RegionalDueDate": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "LocalDueDate": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "OutstandingFees": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Circulationdate": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "CirculationComplete": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RegionalLead": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LocalLead": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ConstructionCoordinator": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Team": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Submission_Date__c": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "Submission_Number__C": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "ESRI_OID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        }
+      },
+      "oid": "ESRI_OID",
+      "crs": 26917,
+      "geometry": "esriGeometryPolygon"
+    },
+    "batch_size": 500,
+    "verify_content_twice": true,
+    "licence_documents": [
+      {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/78cc02388af248c0b7a30eda6adfade0/data",
+        "sha256": "9f3572c2c1ad39fe133a21a6eeb73654d0eb3c2d50872a1c777bb42b845b5a13"
+      }
+    ],
+    "acquisition_enabled": false
+  },
+  "york-address": {
+    "item_id": "588a00fa0451426386ca2f6195555601",
+    "owner": "YorkMunicipalGovt",
+    "item_url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/Location/MapServer/0",
+    "url": "https://ww8.yorkmaps.ca/arcgis/rest/services/OpenData/Location/MapServer/0",
+    "page": "https://www.arcgis.com/home/item.html?id=588a00fa0451426386ca2f6195555601",
+    "licence_metadata": "Please refer to \"York Region Open Data Licence\", searchable on this website.",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "PNT_GIS_ID": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "FULL_CIVIC_ADDR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ADDRESS_NUMBER": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "ADD_NUM_SUFFIX": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PREFIX_DIRECTION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PREFIX_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SUFFIX_DIRECTION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "FULL_STREET_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SUITE_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNIT_DESIGNATOR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MUNICIPALITY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_STREET_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_STREET_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_ADDRESS_NUMBER": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "MAIL_ADDRESS_NUMBER_SUFFIX": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_SUITE_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_UNIT_DESIGNATOR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_FULL_ADDRESS_TEXT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_COMMUNITY_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_PROVINCE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_POSTAL_CODE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "MAIL_STATUS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ADDRS_PNT_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PARID": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "STREET_NAME_ID": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "LIFESTATUS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CREATE_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "MODDATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "PRO_DATE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PRO_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SHAPE": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        },
+        "COUNTRY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 26917,
+      "geometry": "esriGeometryPoint"
+    },
+    "batch_size": 500,
+    "verify_content_twice": true,
+    "licence_documents": [
+      {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/78cc02388af248c0b7a30eda6adfade0/data",
+        "sha256": "9f3572c2c1ad39fe133a21a6eeb73654d0eb3c2d50872a1c777bb42b845b5a13"
+      }
+    ]
+  },
+  "brampton-address": {
+    "item_id": "56bd6b5ac117445db5e64d14b72e061e",
+    "owner": "BramptonMaps",
+    "item_url": "https://maps1.brampton.ca/arcgis/rest/services/COB/OpenData_Address_Points/MapServer/14",
+    "url": "https://maps1.brampton.ca/arcgis/rest/services/COB/OpenData_Address_Points/MapServer/14",
+    "page": "https://www.arcgis.com/home/item.html?id=56bd6b5ac117445db5e64d14b72e061e",
+    "licence_metadata": "CC BY",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "FULL_ADDRESS": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNIT_NO": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CIVIC_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_DIRECTION": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CITY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PROVINCE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "POSTAL_CODE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PROP_CODE_DESC": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PERMIT_NO": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PERMIT_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SUB_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WORK_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "PERMIT_ISSUEDATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "OCCUPANCY_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "ADDRESS_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ADDRESS_ID": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "TOWNSHIP": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "WARD": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOT_NUM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CON_NUM": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CITY_GRID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SEC_PLAN_AREA": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REG_PLAN_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REG_PLAN_ASSUMP_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "DRAFT_PLAN_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SITE_PLAN_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CONDO_PLAN_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "C_OF_A": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CITY_FILE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "BLOCK_PLAN": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "HERITAGE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "GIS_ID": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "GEOMETRY": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 3857,
+      "geometry": "esriGeometryPoint"
+    },
+    "batch_size": 500,
+    "verify_content_twice": true
+  },
+  "milton-applications": {
+    "item_id": "4b7c1ae792f2498e8f9b5f4c76f83060",
+    "owner": "Milton_Maps",
+    "item_url": "https://api.milton.ca/arcgis/rest/services/Datasets/Development/MapServer/0",
+    "url": "https://api.milton.ca/arcgis/rest/services/Datasets/Development/MapServer/0",
+    "licence_metadata": "<a href='https://discover-milton.hub.arcgis.com/pages/disclaimer-and-terms-of-use' rel='nofollow ugc' target='_blank'>Town of Milton disclaimer and terms of use</a>",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "Shape": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        },
+        "PLANNINGNU": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "REGISTERED": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "FILENAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STATUS": {
+          "type": "esriFieldTypeString",
+          "domain": {
+            "type": "codedValue",
+            "name": "Status_SubdivisionApplication",
+            "description": "",
+            "codedValues": [
+              {
+                "name": "In Circulation",
+                "code": "In Circulation"
+              },
+              {
+                "name": "Draft Plan Approved",
+                "code": "Draft Plan Approved"
+              },
+              {
+                "name": "Registered",
+                "code": "Registered"
+              },
+              {
+                "name": "Assumed",
+                "code": "Assumed"
+              },
+              {
+                "name": "Under Appeal",
+                "code": "Under Appeal"
+              }
+            ],
+            "mergePolicy": "esriMPTDefaultValue",
+            "splitPolicy": "esriSPTDefaultValue"
+          }
+        },
+        "PH_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LINK": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "TYPE_DEV": {
+          "type": "esriFieldTypeString",
+          "domain": {
+            "type": "codedValue",
+            "name": "DEV_TYPE",
+            "description": "DEVELOPMENT TYPE",
+            "codedValues": [
+              {
+                "name": "MIXED-USE",
+                "code": "MIXED-USE"
+              },
+              {
+                "name": "COMMERCIAL",
+                "code": "COMMERCIAL"
+              },
+              {
+                "name": "INDUSTRIAL",
+                "code": "INDUSTRIAL"
+              },
+              {
+                "name": "HIGH-DENSITY RESIDENTIAL",
+                "code": "HIGH-DENSITY RES"
+              },
+              {
+                "name": "RESIDENTIAL",
+                "code": "RESIDENTIAL"
+              },
+              {
+                "name": "INSTITUTIONAL",
+                "code": "INSTITUTIONAL"
+              },
+              {
+                "name": "OTHER",
+                "code": "OTHER"
+              }
+            ],
+            "mergePolicy": "esriMPTDefaultValue",
+            "splitPolicy": "esriSPTDefaultValue"
+          }
+        },
+        "DRAFT_PLAN_APPROVAL_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "LAPSING_DATE": {
+          "type": "esriFieldTypeDate",
+          "domain": null
+        },
+        "CONTACT_INFO": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "RELATED_FILES": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Shape_Length": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "Shape_Area": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 26917,
+      "geometry": "esriGeometryPolygon"
+    },
+    "page": "https://www.arcgis.com/home/item.html?id=4b7c1ae792f2498e8f9b5f4c76f83060",
+    "licence_documents": [
+      {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/66bc793c2cfa4b03874beed76f12080d/data?f=json",
+        "sha256": "ae5dce69f1717768b776736bbdac0f3903a6af086924a38e0874d5a18bd694d2"
+      }
+    ],
+    "batch_size": 500,
+    "verify_content_twice": true
+  },
+  "milton-address": {
+    "item_id": "7b543a0d714a4930a90e771db838594b",
+    "owner": "Milton_Maps",
+    "item_url": "https://api.milton.ca/arcgis/rest/services/Datasets/Address_Pts/MapServer",
+    "url": "https://api.milton.ca/arcgis/rest/services/Datasets/Address_Pts/MapServer/0",
+    "licence_metadata": "<a href='https://discover-milton.hub.arcgis.com/pages/disclaimer-and-terms-of-use' target='_blank' rel='nofollow ugc noopener noreferrer'>Town of Milton Disclaimer &amp; Terms of Use</a>",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "Shape": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        },
+        "ADDRESS_NUM": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "GEOSTNAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREET_TYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ST_DIR_SUFFIX": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNIT_NUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "BLOCK": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOT": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DISPLAY_NAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Address_ID": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "ADU": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "ADU_UNIT_NO": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 26917,
+      "geometry": "esriGeometryPoint"
+    },
+    "page": "https://www.arcgis.com/home/item.html?id=7b543a0d714a4930a90e771db838594b",
+    "licence_documents": [
+      {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/66bc793c2cfa4b03874beed76f12080d/data?f=json",
+        "sha256": "ae5dce69f1717768b776736bbdac0f3903a6af086924a38e0874d5a18bd694d2"
+      }
+    ],
+    "batch_size": 500,
+    "verify_content_twice": true
+  },
+  "oshawa-address": {
+    "item_id": "528210b2e00c4607b8c971f4ed9389ff",
+    "owner": "City.of.Oshawa",
+    "item_url": "https://map.oshawa.ca/arcgis/rest/services/Operational/Parcels_AddPts/MapServer/0",
+    "url": "https://map.oshawa.ca/arcgis/rest/services/Operational/Parcels_AddPts/MapServer/0",
+    "page": "https://www.arcgis.com/home/item.html?id=528210b2e00c4607b8c971f4ed9389ff",
+    "licence_metadata": "<a href='https://map.oshawa.ca/OpenData/Open%20Government%20Licence%20version%202.0%20-%20Oshawa.pdf' style='color: rgb(0, 94, 149); font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 17px; background-color: rgb(255, 255, 255);' target='_blank'>Open Data Licence Agreement</a><div><br /></div><div>This data is for reference use only.\u00a0 The City assumes no responsibility for the correctness of the data as it changes frequently and should not be used as a substitute for legal, real estate, survey or City of Oshawa staff advice.<br /></div>",
+    "schema": {
+      "fields": {
+        "OBJECTID": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "FCODE": {
+          "type": "esriFieldTypeSmallInteger",
+          "domain": null
+        },
+        "ADDRESSID": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "PARCELID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SITE_CIVIC_NO": {
+          "type": "esriFieldTypeInteger",
+          "domain": null
+        },
+        "SITE_CIVIC_CHAR": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SITE_UNIT_ID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STNAME": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "SHAPE": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID",
+      "crs": 26917,
+      "geometry": "esriGeometryPoint"
+    },
+    "licence_documents": [
+      {
+        "url": "https://map.oshawa.ca/OpenData/Open%20Government%20Licence%20version%202.0%20-%20Oshawa.pdf",
+        "sha256": "3f54b8ff69ae533ef1c038ba9a344746748a2923c95a7cb3d771a1982885c0b9"
+      }
+    ],
+    "batch_size": 1000,
+    "verify_content_twice": true,
+    "publisher": "City of Oshawa"
+  },
+  "pickering-address": {
+    "item_id": "1bffe161d9e04ee7ad0c39e31ee45c99",
+    "owner": "OpenData_CityofPickering",
+    "item_url": "https://maps.pickering.ca/arcgisinter/rest/services/public/OpenData/MapServer/0",
+    "url": "https://maps.pickering.ca/arcgisinter/rest/services/public/OpenData/MapServer/0",
+    "page": "https://www.arcgis.com/home/item.html?id=1bffe161d9e04ee7ad0c39e31ee45c99",
+    "licence_metadata": "<p><a target='_blank' href='https://cityofpickering.maps.arcgis.com/sharing/rest/content/items/cdd6683108a549e9acedb966464f2731/data' rel='nofollow ugc noopener noreferrer'>License Agreement</a></p>",
+    "schema": {
+      "fields": {
+        "OBJECTID_1": {
+          "type": "esriFieldTypeOID",
+          "domain": null
+        },
+        "HOUSENUMBE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "HOUSENUM_1": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "STREET": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREETTYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "STREETDIRE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNITTYPE": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "UNITNUMBER": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "CITY": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOOKUP1": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LABEL2": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LOOKUP2": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "DATE_ADDED": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "LABEL1": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "OBJECTID": {
+          "type": "esriFieldTypeDouble",
+          "domain": null
+        },
+        "PIC_ID": {
+          "type": "esriFieldTypeString",
+          "domain": null
+        },
+        "Shape": {
+          "type": "esriFieldTypeGeometry",
+          "domain": null
+        }
+      },
+      "oid": "OBJECTID_1",
+      "crs": 26917,
+      "geometry": "esriGeometryPoint"
+    },
+    "licence_documents": [
+      {
+        "url": "https://cityofpickering.maps.arcgis.com/sharing/rest/content/items/cdd6683108a549e9acedb966464f2731/data",
+        "sha256": "5d295355a13a2056aea8b8f0529302648db07f3279ffe534e488b4ede1b03216"
+      }
+    ],
+    "batch_size": 1000,
+    "verify_content_twice": true,
+    "publisher": "City of Pickering"
+  }
+}

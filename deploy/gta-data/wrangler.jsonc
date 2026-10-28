@@ -1,0 +1,8 @@
+{
+  "name": "aster-planning-data",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-24",
+  "workers_dev": true,
+  "r2_buckets": [{"binding": "PLANNING", "bucket_name": "aster-planning-public"}],
+  "observability": {"enabled": false}
+}

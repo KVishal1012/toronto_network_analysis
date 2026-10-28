@@ -1,0 +1,205 @@
+{
+  "brampton-opa": {
+    "enabled": true,
+    "kind": "applications",
+    "scope": "municipal application",
+    "jurisdiction_ids": [
+      "ontario:21010"
+    ],
+    "name": "Brampton \u2014 OPA, ZBA and subdivision applications",
+    "publisher": "City of Brampton",
+    "licence": "CC BY (version unspecified)",
+    "attribution": "City of Brampton",
+    "refresh_rate": "Daily (publisher description)",
+    "notes": "OPA, ZBA and draft subdivision applications only; historical records included.",
+    "label_fields": [
+      "LOCATION",
+      "APPLICATION_TITLE",
+      "FILE_NUMBER"
+    ],
+    "number_field": "FILE_NUMBER",
+    "status_fields": [
+      "STATUS"
+    ],
+    "description_field": "DESCRIPTION",
+    "date_fields": [
+      "DATE_RECEIVED"
+    ]
+  },
+  "york-applications": {
+    "enabled": false,
+    "kind": "regional_reviews",
+    "scope": "regional review",
+    "jurisdiction_ids": [
+      "ontario:19028",
+      "ontario:19036",
+      "ontario:19038",
+      "ontario:19044",
+      "ontario:19046",
+      "ontario:19048",
+      "ontario:19049",
+      "ontario:19054",
+      "ontario:19070"
+    ],
+    "municipality_field": "MUN_NAME",
+    "name": "York \u2014 regional development reviews",
+    "publisher": "Regional Municipality of York",
+    "licence": "York Region Open Data Licence 1.0",
+    "attribution": "Contains public sector information made available under The Regional Municipality of York's Open Data Licence",
+    "refresh_rate": "Not documented",
+    "notes": "Regional review only; not a complete municipal application inventory. Blocked: 5,470 inventory entries contain only 5,469 unique ESRI_OID values.",
+    "label_fields": [
+      "ADDRESS",
+      "APPL_NAME",
+      "REG_FILE_NUM"
+    ],
+    "number_field": "REG_FILE_NUM",
+    "status_fields": [
+      "APPL_STATUS",
+      "Application_Status__c"
+    ],
+    "status_unresolved": true,
+    "description_field": "APPL_DESC",
+    "date_fields": [
+      "DATE_RECVD",
+      "Date_Received__c"
+    ]
+  },
+  "brampton-address": {
+    "enabled": true,
+    "kind": "addresses",
+    "scope": "municipal address",
+    "jurisdiction_ids": [
+      "ontario:21010"
+    ],
+    "name": "Brampton \u2014 address points",
+    "publisher": "City of Brampton",
+    "licence": "CC BY (version unspecified)",
+    "attribution": "City of Brampton",
+    "refresh_rate": "Not documented",
+    "notes": "Official address points; unit variants retained. Address selection does not geocode development records.",
+    "label_field": "FULL_ADDRESS",
+    "street_fields": [
+      "STREET_NAME",
+      "STREET_TYPE",
+      "STREET_DIRECTION"
+    ],
+    "unit_field": "UNIT_NO"
+  },
+  "york-address": {
+    "enabled": true,
+    "kind": "addresses",
+    "scope": "regional address",
+    "jurisdiction_ids": [
+      "ontario:19028",
+      "ontario:19036",
+      "ontario:19038",
+      "ontario:19044",
+      "ontario:19046",
+      "ontario:19048",
+      "ontario:19049",
+      "ontario:19054",
+      "ontario:19070"
+    ],
+    "municipality_field": "MUNICIPALITY",
+    "name": "York \u2014 address points",
+    "publisher": "Regional Municipality of York",
+    "licence": "York Region Open Data Licence 1.0",
+    "attribution": "Contains public sector information made available under The Regional Municipality of York's Open Data Licence",
+    "refresh_rate": "Ongoing (publisher description)",
+    "notes": "Regional address points based on municipal information; may represent properties, buildings or additional structures including bus stops.",
+    "label_field": "FULL_CIVIC_ADDR",
+    "street_fields": [
+      "FULL_STREET_NAME"
+    ],
+    "unit_field": "SUITE_NUMBER"
+  },
+  "milton-applications": {
+    "enabled": true,
+    "kind": "applications",
+    "scope": "municipal application",
+    "jurisdiction_ids": [
+      "ontario:24009"
+    ],
+    "name": "Milton \u2014 development applications",
+    "publisher": "Town of Milton",
+    "licence": "Open Government Licence \u2013 Milton 2.0",
+    "attribution": "Contains information licensed under the Open Government Licence \u2013 Milton.",
+    "refresh_rate": "Not documented",
+    "notes": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained.",
+    "label_fields": [
+      "FILENAME",
+      "PLANNINGNU"
+    ],
+    "number_field": "PLANNINGNU",
+    "status_fields": [
+      "STATUS"
+    ],
+    "date_fields": [
+      "DRAFT_PLAN_APPROVAL_DATE",
+      "LAPSING_DATE"
+    ]
+  },
+  "milton-address": {
+    "enabled": true,
+    "kind": "addresses",
+    "scope": "municipal address",
+    "jurisdiction_ids": [
+      "ontario:24009"
+    ],
+    "name": "Milton \u2014 address points",
+    "publisher": "Town of Milton",
+    "licence": "Open Government Licence \u2013 Milton 2.0",
+    "attribution": "Contains information licensed under the Open Government Licence \u2013 Milton.",
+    "refresh_rate": "Not documented",
+    "notes": "Publisher coverage and observation dates are not established for individual records. Supplied status and unit variants are retained.",
+    "label_field": "DISPLAY_NAME",
+    "street_fields": [
+      "GEOSTNAME",
+      "STREET_TYPE",
+      "ST_DIR_SUFFIX"
+    ],
+    "unit_field": "UNIT_NUMBER"
+  },
+  "oshawa-address": {
+    "enabled": true,
+    "kind": "addresses",
+    "scope": "municipal address",
+    "jurisdiction_ids": [
+      "ontario:18013"
+    ],
+    "name": "Oshawa \u2014 address points",
+    "publisher": "City of Oshawa",
+    "licence": "Open Government Licence \u2013 The Corporation of the City of Oshawa 2.0",
+    "attribution": "Contains information licensed under the Open Government Licence \u2013 The Corporation of the City of Oshawa",
+    "refresh_rate": "Not documented",
+    "notes": "Address labels combine source civic number, suffix and street; unit variants retained. Reference use only; not legal, real estate, survey or City staff advice. Address search does not provide planning coverage.",
+    "number_field": "SITE_CIVIC_NO",
+    "number_suffix_field": "SITE_CIVIC_CHAR",
+    "street_fields": [
+      "STNAME"
+    ],
+    "unit_field": "SITE_UNIT_ID"
+  },
+  "pickering-address": {
+    "enabled": true,
+    "kind": "addresses",
+    "scope": "municipal address",
+    "jurisdiction_ids": [
+      "ontario:18001"
+    ],
+    "name": "Pickering \u2014 address points",
+    "publisher": "City of Pickering",
+    "licence": "City of Pickering Open Data Licence 1.0",
+    "attribution": "Contains public sector Information made available under The City of Pickering's Open Data Licence",
+    "refresh_rate": "As needed (publisher description)",
+    "notes": "Publisher address points; original labels and unit variants retained. Reference locations are not surveyed boundaries or evidence of development.",
+    "label_field": "LABEL2",
+    "street_fields": [
+      "STREET",
+      "STREETTYPE",
+      "STREETDIRE"
+    ],
+    "unit_field": "UNITNUMBER"
+  }
+}

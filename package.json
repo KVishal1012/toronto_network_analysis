@@ -1,0 +1,43 @@
+{
+  "name": "aster-toronto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "./.venv/bin/python -m unittest discover -s tests -v",
+    "predev": "node scripts/prepare-cesium.mjs",
+    "prebuild": "node scripts/prepare-cesium.mjs",
+    "build:public": "tsc -b && vite build --mode public && .venv/bin/python scripts/package_public.py && .venv/bin/python scripts/check_public_boundary.py",
+    "test:planning": "node --experimental-strip-types --test tests/planning-spatial.test.mjs tests/planning-export.test.mjs",
+    "test:worker": "node --experimental-strip-types --test tests/planning-worker.test.mjs",
+    "test:gta": "node --experimental-strip-types --test tests/gta-gateway.test.mjs tests/gta-worker.test.mjs",
+    "dev:private": "vite --mode private --host 127.0.0.1",
+    "predev:private": "node scripts/prepare-cesium.mjs",
+    "build:private": "tsc -b && vite build --mode private",
+    "prebuild:private": "node scripts/prepare-cesium.mjs",
+    "start:private": "ASTER_AUTO_REFRESH=0 sh scripts/start.sh dev:private",
+    "preview:public": "python3 -m http.server 5175 --bind 127.0.0.1 --directory dist-public",
+    "check:public-boundary": ".venv/bin/python scripts/check_public_boundary.py",
+    "test:lab": "node --experimental-strip-types --test tests/lab-workspace.test.mjs"
+  },
+  "dependencies": {
+    "cesium": "1.145.0",
+    "lucide-react": "0.468.0",
+    "maplibre-gl": "6.9.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "7946.0.16",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "5.0.3",
+    "typescript": "5.9.2",
+    "vite": "7.3.6"
+  }
+}
