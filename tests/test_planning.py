@@ -145,3 +145,24 @@ class PlanningReleaseTests(unittest.TestCase):
             (source/'objects'/f'{digest}.json.gz').write_bytes(gzip.compress(raw))
             package(source,destination)
             self.assertEqual(gzip.decompress((destination/'planning'/identifier/'manifest.json.gz').read_bytes()),manifest)
+
+    def test_lightweight_startup_keeps_source_routing_without_geometry(self):
+        from scripts.package_public import startup_payload
+        manifest={'id':'a'*20,'regional':True,'assets':{'index':'b'*64,'bucket':'c'*64,'sorted-index':'d'*64,'shard':'e'*64},
+                  'tiles':{'projects':['big']},'address_search':{'toronto':{'index':'index','format':'legacy-address-matches'},'other':{'index':'sorted-index'}}}
+        objects={'index':{'100':'bucket'},'sorted-index':{'street':[{'min':'A','max':'Z','path':'shard'}],'search_label':[{'min':'1','max':'9','path':'shard'}]},
+                 'municipalities.json':[{'id':'toronto','geometry':{'large':True},'metric':{'large':True},'layers':{'addresses':['addresses']}}],
+                 'neighbourhoods.json':[{'id':'1','label':'One','lon':-79.4,'lat':43.6,'geometry':{'large':True}}]}
+        catalogs=[]
+        def put(value):
+            catalogs.append(value);return str(len(catalogs))*64
+        payload=startup_payload(manifest,objects.__getitem__,put)
+        self.assertEqual(payload['snapshot']['id'],manifest['id'])
+        self.assertEqual(payload['snapshot']['assets'],{})
+        self.assertEqual(payload['snapshot']['tiles'],{})
+        self.assertNotIn('geometry',payload['municipalities'][0])
+        self.assertNotIn('metric',payload['municipalities'][0])
+        self.assertNotIn('geometry',payload['neighbourhoods'][0])
+        self.assertEqual(catalogs[0]['buckets']['100'],'c'*64)
+        self.assertEqual(catalogs[1]['street'][0]['digest'],'e'*64)
+        self.assertEqual(manifest['tiles'],{'projects':['big']})

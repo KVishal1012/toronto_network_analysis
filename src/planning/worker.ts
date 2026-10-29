@@ -1,8 +1,28 @@
 import {decodeJsonResponse} from './decode';
-import type {Address,Neighbourhood,PlanningSnapshot,PlanningFeature,PlanningQuery,Municipality} from './types';
+import type {Address,Neighbourhood,PlanningSnapshot,PlanningFeature,PlanningQuery,Municipality,MunicipalityInfo} from './types';
 import {project,geometryDistance,cellKeys,validateQuery,containsDisk} from './spatial';
 let root='', baseRoot='', snapshot:PlanningSnapshot,neighbourhoods:Neighbourhood[]=[];
 let municipalities:Municipality[]=[];
+let catalogs:Record<string,string>={},municipalityInfo:MunicipalityInfo[]=[];
+let complete=false, fullTask:Promise<void>|null=null;
+async function ensureSnapshot(){
+ if(complete)return;
+ if(!fullTask)fullTask=(async()=>{const full=await read('manifest.json');if(full.id!==snapshot.id)throw new Error('Snapshot identity mismatch');snapshot=full;complete=true;})().finally(()=>{fullTask=null;});
+ await fullTask;
+}
+async function loadBoundaries(){
+ await ensureSnapshot();
+ [neighbourhoods,municipalities]=await Promise.all([read('neighbourhoods.json'),snapshot.regional?read('municipalities.json'):Promise.resolve([])]);
+ municipalityInfo=municipalities;
+ return {neighbourhoods,municipalities};
+}
+async function readObject(digest:string){
+ if(!/^[a-f0-9]{64}$/.test(digest))throw new Error('Invalid search object identity');
+ const key='object:'+digest;
+ if(!cache.has(key))cache.set(key,fetch(baseRoot+'objects/'+digest+'.json.gz').then(r=>{if(!r.ok)throw new Error('Address index unavailable in the pinned snapshot. Retry your search.');return decodeJsonResponse(r);}).catch(e=>{cache.delete(key);throw e;}));
+ if(cache.size>60)cache.delete(cache.keys().next().value!);
+ return cache.get(key);
+}
 const cache=new Map<string,Promise<any>>();
 async function read(path:string):Promise<any>{
  if(!cache.has(path)){
@@ -22,14 +42,47 @@ async function run(type:string,args:any):Promise<unknown>{
   const base=args.base as string;baseRoot=base;
   let health:any;try{const response=await fetch(base+'latest.json',{cache:'no-store'});if(!response.ok)throw new Error('No qualified planning snapshot is available.');health=await response.json();}catch(error){if(!args.id)throw error;health={status:'unavailable',checked_at:'',error:'Latest update health unavailable; displaying the requested historical snapshot.'};}
   const id=args.id||health.id;if(!/^[a-f0-9]{20}$/.test(id))throw new Error('Invalid snapshot identifier');
-  root=base+id+'/';cache.clear();snapshot=await read('manifest.json');
+  root=base+id+'/';cache.clear();complete=false;fullTask=null;catalogs={};municipalities=[];neighbourhoods=[];municipalityInfo=[];
+  if(args.lightweight){
+   const response=await fetch(root+'startup-v1.json.gz');
+   if(response.ok&&!response.headers.get('content-type')?.includes('text/html')){
+    const startup=await decodeJsonResponse(response) as any;
+    if(startup.version!==1||startup.snapshot.id!==id)throw new Error('Search startup identity mismatch');
+    snapshot=startup.snapshot;catalogs=startup.catalogs;municipalityInfo=startup.municipalities;
+    return {snapshot,neighbourhoods:startup.neighbourhoods,municipalities:municipalityInfo,health};
+   }
+   if(response.status!==404&&!response.headers.get('content-type')?.includes('text/html'))throw new Error('Search startup unavailable. Reload to retry the pinned snapshot.');
+  }
+  snapshot=await read('manifest.json');
   if(snapshot.id!==id)throw new Error('Snapshot identity mismatch');
-  [neighbourhoods,municipalities]=await Promise.all([read('neighbourhoods.json'),snapshot.regional?read('municipalities.json'):Promise.resolve([])]);
+  complete=true;await loadBoundaries();
   return {snapshot,neighbourhoods,municipalities,health};
  }
  if(!snapshot)throw new Error('Snapshot not initialized');
+ if(type==='snapshot'){await ensureSnapshot();return snapshot;}
+ if(type==='boundaries')return loadBoundaries();
  if(type==='search'){
   const query=String(typeof args==='string'?args:args.query).trim().toUpperCase().replace(/\s+/g,' ');if(query.length<3)return [];
+  const areaId=args.jurisdiction_id||snapshot.sources.addresses.jurisdiction_id;
+  if(catalogs[areaId]){
+   const area=municipalityInfo.find(m=>m.id===areaId);
+   if(!area?.layers.addresses?.length)throw new Error('Municipal address search is not integrated here.');
+   const catalog=await readObject(catalogs[areaId]);let matches:Address[]=[];
+   if(catalog.format==='matches'){
+    const digest=catalog.buckets[query.slice(0,3)];if(!digest)return [];
+    const rows=await readObject(digest);
+    matches=rows.filter((r:Address)=>r.label.toUpperCase().replace(/\s+/g,' ').startsWith(query)||r.street.toUpperCase().replace(/\s+/g,' ').startsWith(query));
+   }else{
+    const field=/^\d/.test(query)?'search_label':'street';
+    for(const shard of catalog[field].filter((d:any)=>d.max>=query&&d.min<=query+'\uffff')){
+     matches.push(...(await readObject(shard.digest)).filter((r:any)=>r.jurisdiction_id===areaId&&String(r[field]).startsWith(query)));
+     if(matches.length>=30)break;
+    }
+   }
+   return matches.slice(0,30).map(r=>({...r,jurisdiction_id:areaId,municipality:area.name,source_key:r.source_key||snapshot.address_search?.[areaId].source_key,source_snapshot_id:r.source_snapshot_id||snapshot.source_snapshots?.toronto}));
+  }
+  if(municipalityInfo.length&&!municipalityInfo.find(m=>m.id===areaId)?.layers.addresses?.length)throw new Error('Municipal address search is not integrated here. Select a map location instead.');
+  await loadBoundaries();
   if(municipalities.length){
    const area=municipalities.find(m=>m.id===(args.jurisdiction_id||snapshot.sources.addresses.jurisdiction_id));
    if(!area?.layers.addresses?.length)throw new Error('Municipal address search is not integrated here. Select a map location instead.');
@@ -72,6 +125,7 @@ async function run(type:string,args:any):Promise<unknown>{
   const rows:Address[]=(await Promise.all(keys.map(k=>read(`addresses/${k}.json`)))).flat();
   return rows.filter(r=>r.label.toUpperCase().startsWith(query)||r.street.startsWith(query)).sort((a,b)=>a.label.localeCompare(b.label)).slice(0,30);
  }
+ await ensureSnapshot();
  if(type==='inspect'&&args.address_shard){const full=(await read(args.address_shard)).find((r:Address)=>r.id===args.id);if(!full||full.label!==args.label)throw new Error('Address evidence missing from pinned snapshot');return {...args,...full};}
  if(type==='inspect'){const full=args.detail?(await read(args.detail))[args.id]:args;if(!full)throw new Error('Evidence record missing from pinned snapshot');return {...args,...full};}
  if(type==='context')return read('context.json');
@@ -81,7 +135,7 @@ async function run(type:string,args:any):Promise<unknown>{
   return {type:'FeatureCollection',features:[...new Map(rows.map(r=>[r.id,r])).values()]};
  }
  if(type==='query'){
-  const q=args as PlanningQuery;validateQuery(q);const p=project(q.lon,q.lat);
+  const q=args as PlanningQuery;validateQuery(q);await loadBoundaries();const p=project(q.lon,q.lat);
   if(snapshot.regional){
    const touched=municipalities.filter(m=>geometryDistance(p,m.metric)<=q.radius);
    const integrated=(m:Municipality)=>q.source_key?!!m.layers[q.kind]?.includes(q.source_key):!!m.layers[q.kind]?.length;
