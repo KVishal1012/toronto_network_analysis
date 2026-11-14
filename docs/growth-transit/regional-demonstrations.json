@@ -1,0 +1,125 @@
+[
+  {
+    "region": "downtown",
+    "analysis": "6ed092c988ad9326e279",
+    "title": "When the shortlist is empty",
+    "link": "#analysis=6ed092c988ad9326e279&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=",
+    "candidate_areas": 0,
+    "dates": {
+      "evening": "2026-11-13",
+      "morning": "2026-11-13",
+      "saturday": "2026-11-14"
+    },
+    "selected": [],
+    "accounting": {
+      "included": 228,
+      "no_reported_housing_units": 57,
+      "shared_location_distinct_identifiers": 13
+    },
+    "question": "Which areas warrant closer investigation of nearby scheduled transit?",
+    "interpretation": "No candidates under these settings does not demonstrate adequate service."
+  },
+  {
+    "region": "midtown",
+    "analysis": "6ed092c988ad9326e279",
+    "title": "Check whether a finding survives a different threshold",
+    "link": "#analysis=6ed092c988ad9326e279&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=midtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=1257_9683",
+    "candidate_areas": 1,
+    "dates": {
+      "evening": "2026-11-13",
+      "morning": "2026-11-13",
+      "saturday": "2026-11-14"
+    },
+    "selected": [
+      {
+        "id": "1257_9683",
+        "label": "2779 YONGE ST",
+        "sensitivity": {
+          "morning": {
+            "400": 202,
+            "800": 202,
+            "1600": 0
+          },
+          "evening": {
+            "400": 202,
+            "800": 202,
+            "1600": 0
+          },
+          "saturday": {
+            "400": 202,
+            "800": 202,
+            "1600": 0
+          }
+        },
+        "projects": [
+          {
+            "number": "25 120999 NNY 08 OZ",
+            "units": 202,
+            "stage": "Active",
+            "source_url": "http://app.toronto.ca/AIC/index.do?folderRsn=onU2rCg2EfM2qfTNMifePg%3D%3D",
+            "record_ids": [
+              "projects:2108"
+            ],
+            "service": {
+              "evening": {
+                "distance_m": 873.666,
+                "id": "5355",
+                "name": "Lawrence Ave West at Lorindale Ave East Side",
+                "services": [
+                  {
+                    "direction": "0",
+                    "hourly_departures": [
+                      11,
+                      9
+                    ],
+                    "route": "52",
+                    "route_name": "52"
+                  }
+                ]
+              },
+              "morning": {
+                "distance_m": 873.666,
+                "id": "5355",
+                "name": "Lawrence Ave West at Lorindale Ave East Side",
+                "services": [
+                  {
+                    "direction": "0",
+                    "hourly_departures": [
+                      9,
+                      10
+                    ],
+                    "route": "52",
+                    "route_name": "52"
+                  }
+                ]
+              },
+              "saturday": {
+                "distance_m": 873.666,
+                "id": "5355",
+                "name": "Lawrence Ave West at Lorindale Ave East Side",
+                "services": [
+                  {
+                    "direction": "0",
+                    "hourly_departures": [
+                      7,
+                      9
+                    ],
+                    "route": "52",
+                    "route_name": "52"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "accounting": {
+      "included": 140,
+      "no_reported_housing_units": 23,
+      "shared_location_distinct_identifiers": 3
+    },
+    "question": "Which areas warrant closer investigation of nearby scheduled transit?",
+    "interpretation": "These are investigation candidates, not proven service deficits."
+  }
+]

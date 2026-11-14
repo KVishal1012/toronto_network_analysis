@@ -17,3 +17,11 @@ dist-public/
 release/
 
 dist-private/
+
+public/transport/
+
+dist-twin-review/
+
+public/screening/
+
+dist-sandbox/

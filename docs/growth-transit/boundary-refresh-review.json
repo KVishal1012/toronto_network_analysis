@@ -1,0 +1,44 @@
+{
+  "reviewed_on": "2026-11-13",
+  "boundary_version": "16308bcf43eec2d42da30110c6a6b83f6fdffc46d6efb82d3ec2ee7758a855c0",
+  "fresh_neighbourhood_sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+  "same_complete_export": true,
+  "regions": [
+    {
+      "id": "downtown",
+      "members": [
+        "Bay-Cloverhill",
+        "Yonge-Bay Corridor",
+        "Church-Wellesley",
+        "North St.James Town",
+        "Cabbagetown-South St.James Town",
+        "Moss Park",
+        "Regent Park",
+        "St Lawrence-East Bayfront-The Islands",
+        "Harbourfront-CityPlace",
+        "Wellington Place",
+        "Kensington-Chinatown",
+        "University",
+        "Annex"
+      ]
+    },
+    {
+      "id": "midtown",
+      "members": [
+        "Yonge-Eglinton",
+        "Mount Pleasant East",
+        "South Eglinton-Davisville",
+        "North Toronto",
+        "Yonge-St.Clair",
+        "Rosedale-Moore Park",
+        "Casa Loma",
+        "Forest Hill North",
+        "Forest Hill South",
+        "Lawrence Park North",
+        "Lawrence Park South"
+      ]
+    }
+  ],
+  "overlaps_preserved": true,
+  "passed": true
+}

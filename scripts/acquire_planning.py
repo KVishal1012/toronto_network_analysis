@@ -43,11 +43,13 @@ def download(url: str, directory: Path) -> tuple[Path, str]:
     return target, value
 
 
-def acquire(directory: Path) -> dict:
+def acquire(directory: Path, keys: list[str] | None = None) -> dict:
     """Resolve named resources, archive publisher licence evidence and raw data."""
     directory.mkdir(parents=True, exist_ok=True)
     receipts, packages = {}, {}
     for key, (slug, name) in SPECS.items():
+        if keys is not None and key not in keys:
+            continue
         logging.info('Acquiring %s', key)
         if slug not in packages:
             path, metadata_hash = download(CATALOG + slug, directory)
@@ -88,7 +90,8 @@ def acquire(directory: Path) -> dict:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--keys', nargs='+', choices=list(SPECS))
     parser.add_argument('--directory', type=Path, default=ROOT / 'data/planning-source')
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO)
-    acquire(args.directory)
+    acquire(args.directory, args.keys)

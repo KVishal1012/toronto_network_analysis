@@ -118,7 +118,16 @@ class SiteHistoryTests(unittest.TestCase):
         people=[{'participant_id':'same','passed':True,'evidence_reference':'session'}]*5
         self.assertFalse(release_gate(checks,people)['ready'])
         people=[{'participant_id':str(i),'passed':True,'evidence_reference':'session'} for i in range(5)]
+        self.assertFalse(release_gate(checks,people)['ready'])
+        people=[{**p,'human_participant':True,'date':'2026-11-02','tested_build':'build-a',
+                 'task_results':[{'passed':True,'response':'Observed participant explanation'} for _ in range(5)]} for p in people]
         self.assertTrue(release_gate(checks,people)['ready'])
+        people[0]['human_participant']=False
+        self.assertFalse(release_gate(checks,people)['ready'])
+        people[0]['human_participant']=True
+        people[0]['tested_build']='build-b'
+        self.assertFalse(release_gate(checks,people)['ready'])
+        people[0]['tested_build']='build-a'
         checks['site_identity']=False
         self.assertFalse(release_gate(checks,people)['ready'])
 

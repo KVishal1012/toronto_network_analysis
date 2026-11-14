@@ -1,0 +1,184 @@
+{
+  "analysis": "6ed092c988ad9326e279",
+  "planning_snapshot": "8269765c8521a43294ae",
+  "transit_snapshot": "051a87c14d446d5ca49c",
+  "reviewer_type": "independent computational source reread; not participant testing",
+  "cases": [
+    {
+      "region": "downtown",
+      "case": "near-threshold",
+      "publisher_number": "21 178720 STE 11 OZ",
+      "record_ids": [
+        "projects:1713"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "nearest",
+      "publisher_number": "16 232828 STE 27 OZ",
+      "record_ids": [
+        "projects:1474"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "furthest",
+      "publisher_number": "16 259549 STE 27 OZ",
+      "record_ids": [
+        "projects:410"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "near-400",
+      "publisher_number": "19 115511 STE 13 OZ",
+      "record_ids": [
+        "projects:2243"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "near-1600",
+      "publisher_number": "24 113561 STE 11 OZ",
+      "record_ids": [
+        "projects:743"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "excluded-zero-units",
+      "publisher_number": "10 239490 STE 20 OZ",
+      "record_ids": [
+        "projects:201"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "near-threshold",
+      "publisher_number": "25 120999 NNY 08 OZ",
+      "record_ids": [
+        "projects:2108"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "nearest",
+      "publisher_number": "20 210394 NNY 15 OZ",
+      "record_ids": [
+        "projects:1689"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "furthest",
+      "publisher_number": "25 120011 STE 12 OZ",
+      "record_ids": [
+        "projects:1664"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "near-400",
+      "publisher_number": "25 269673 NNY 08 OZ",
+      "record_ids": [
+        "projects:1694"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "near-1600",
+      "publisher_number": "19 122537 NNY 08 OZ",
+      "record_ids": [
+        "projects:500"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "midtown",
+      "case": "excluded-zero-units",
+      "publisher_number": "13 139459 STE 22 SA",
+      "record_ids": [
+        "projects:611"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitations": "Purposeful sample, not a statistical accuracy estimate. No observed service, walking or capacity validation."
+}

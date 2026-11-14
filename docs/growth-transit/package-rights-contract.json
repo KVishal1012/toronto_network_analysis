@@ -1,0 +1,786 @@
+{
+  "reviewed_on": "2026-11-13",
+  "reviewer_type": "AI-assisted package-specific source review",
+  "scope": "Downtown/Midtown explorer with read-only geometric Toronto architectural views. Scenario editor excluded from public entry.",
+  "licence_url": "https://open.toronto.ca/open-data-licence/",
+  "permitted_use": "Copy, adapt and redistribute licensed information, subject to attribution and exemptions.",
+  "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+  "exemptions": [
+    "Personal information",
+    "Unlicensed third-party rights",
+    "Official logos and marks",
+    "Restricted information"
+  ],
+  "controls": [
+    "No raw contact or owner fields shipped",
+    "No PDFs, images or publisher documents copied; source links only",
+    "No endorsement claim",
+    "Exact byte allowlist; additions require a new review",
+    "Only reviewed planning screening versions and bounded source-height massing ship; existing source buildings are read-only.",
+    "Retain illustrative-use and legal/official verification notice in 3D UI and exports."
+  ],
+  "description_review": "No email or phone patterns in shipped refreshed proposal descriptions; raw contact/owner attributes excluded.",
+  "datasets": [
+    {
+      "dataset": "addresses",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/addresses.html",
+          "sha256": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/addresses-catalogue.json",
+          "sha256": "db93e4e93ff505e149552a591b007c118691ecfd1e113a8b504318d7de5dc0c1"
+        }
+      ],
+      "fields": "address labels and representative coordinates only"
+    },
+    {
+      "dataset": "applications",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/applications.html",
+          "sha256": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/applications-catalogue.json",
+          "sha256": "ae441a3fbd117facd31666036f58a56eae7e526deabffc1ae1393b04c9c36c85"
+        }
+      ],
+      "fields": "same-identifier reference, label and status only; no contact or owner fields"
+    },
+    {
+      "dataset": "projects",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/projects.html",
+          "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/projects-catalogue.json",
+          "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+        }
+      ],
+      "fields": "publisher identifier, address, structured units, stage, planning description, source URL and row references"
+    },
+    {
+      "dataset": "neighbourhoods",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/neighbourhoods.html",
+          "sha256": "4e9fa147ce9203f90051d85e19b5d38cdd90ad4da16a4ab79de5346275e275a6"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json",
+          "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+        }
+      ],
+      "fields": "derived study-region membership; no raw geometry download"
+    },
+    {
+      "dataset": "community-council-boundaries",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/community-council-boundaries.html",
+          "sha256": "1e6f820823f2750e895f8c40464b7b938610a36b47296e342827dd3022ec3d76"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json",
+          "sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2"
+        }
+      ],
+      "fields": "derived North York membership; no raw geometry download"
+    },
+    {
+      "dataset": "TTC merged GTFS",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include reviewed stop names, identifiers, route-direction departure counts and derived distances only",
+      "evidence": [
+        {
+          "path": "data/transport-source/20261105T133936926310Z/catalogue-final.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/catalogue.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/dataset-page.html",
+          "sha256": "1fd7f6e02c8d9509b67bfbb46642ab19eac9763b6d4e371578bf899bfcc7cb0e"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ]
+    },
+    {
+      "dataset": "projects",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+      "retrieved_at": "2026-11-13T22:59:27.790764+00:00",
+      "page": "https://open.toronto.ca/dataset/development-pipeline/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+          "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d",
+          "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+        }
+      ]
+    },
+    {
+      "dataset": "applications",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "ca1c5c556e3b9b3a19bf90ca20f2345c29fcb875f5edc871b38dba48bf72749a",
+      "retrieved_at": "2026-11-13T22:59:29.216814+00:00",
+      "page": "https://open.toronto.ca/dataset/development-applications/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85",
+          "sha256": "9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c",
+          "sha256": "89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c"
+        }
+      ]
+    },
+    {
+      "dataset": "addresses",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "8f6f4f2abcbb890e5e13c6e5daf790f7d8add814510a0f809d65a1363909f2db",
+      "retrieved_at": "2026-11-13T22:59:41.681935+00:00",
+      "page": "https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2",
+          "sha256": "caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01",
+          "sha256": "a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01"
+        }
+      ]
+    },
+    {
+      "dataset": "neighbourhoods",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+      "retrieved_at": "2026-11-13T22:59:42.405764+00:00",
+      "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16",
+          "sha256": "8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+          "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+        }
+      ]
+    },
+    {
+      "dataset": "streets",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "bea69def1245863f3dbe140d3aeb3525634cf33b8337a4cc598f9ec23a5d27ec",
+      "retrieved_at": "2026-11-13T22:59:45.067381+00:00",
+      "page": "https://open.toronto.ca/dataset/toronto-centreline-tcl/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614",
+          "sha256": "9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9",
+          "sha256": "c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9"
+        }
+      ]
+    },
+    {
+      "dataset": "TTC refreshed GTFS",
+      "decision": "Route-direction/hourly departures and stop-distance evidence",
+      "page": "https://open.toronto.ca/dataset/merged-gtfs-ttc-routes-and-schedules/",
+      "source_sha256": "a2c8d495bf7b06fe0687183d6d7e606e19555e43bf41a007d97d482e527b23a1",
+      "evidence": [
+        {
+          "path": "data/transport-source/20261113T225930149203Z/catalogue-final.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/catalogue.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/dataset-page.html",
+          "sha256": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ]
+    },
+    {
+      "dataset": "Toronto 2025 context massing",
+      "decision": "Bounded 58-feature derivative for informational/illustrative exploration and hypothetical design only",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "source_sha256": "9617089710518f1a24f70ca11b4a7c20ae45ab8e52a6fbed1bc088192efe6285",
+      "notice": "City Planning disclaims precision/fitness; user verification is required for legal or official use. No parcel ownership or MPAC data is included.",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/massing-catalogue.json",
+          "sha256": "691eab98c68c0b32f09bed2d7b4f55dca2d4ab507811f411df80b7904898e279"
+        },
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/massing-page.html",
+          "sha256": "74318c5dc14d51ced7dabb547cbb0e484ec4d3bff77738c2862fc169aea181e8"
+        },
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ],
+      "baseline": "23cfc1346cddc0233be6bb421385a71c68554df11143e0c3714c34553a244f23",
+      "derived_sha256": "1bfee96de78a05cc62a933b6d0ff112addec2c48d43558f1ede5d82b02794ea4"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses.html",
+      "sha256": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses-catalogue.json",
+      "sha256": "db93e4e93ff505e149552a591b007c118691ecfd1e113a8b504318d7de5dc0c1"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications.html",
+      "sha256": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications-catalogue.json",
+      "sha256": "ae441a3fbd117facd31666036f58a56eae7e526deabffc1ae1393b04c9c36c85"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects.html",
+      "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects-catalogue.json",
+      "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods.html",
+      "sha256": "4e9fa147ce9203f90051d85e19b5d38cdd90ad4da16a4ab79de5346275e275a6"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json",
+      "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries.html",
+      "sha256": "1e6f820823f2750e895f8c40464b7b938610a36b47296e342827dd3022ec3d76"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json",
+      "sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/catalogue-final.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/catalogue.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/dataset-page.html",
+      "sha256": "1fd7f6e02c8d9509b67bfbb46642ab19eac9763b6d4e371578bf899bfcc7cb0e"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/licence.html",
+      "sha256": "5932ada60bce2c51bfe74ee7aa97e5f0e7b1d7f7e81354665e1463b6d33c80c6"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+      "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d",
+      "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85",
+      "sha256": "9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c",
+      "sha256": "89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2",
+      "sha256": "caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01",
+      "sha256": "a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16",
+      "sha256": "8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+      "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614",
+      "sha256": "9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9",
+      "sha256": "c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/catalogue-final.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/catalogue.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/dataset-page.html",
+      "sha256": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/massing-catalogue.json",
+      "sha256": "691eab98c68c0b32f09bed2d7b4f55dca2d4ab507811f411df80b7904898e279"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/massing-page.html",
+      "sha256": "74318c5dc14d51ced7dabb547cbb0e484ec4d3bff77738c2862fc169aea181e8"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    }
+  ],
+  "versions": {
+    "c3974580fac92a5523a8": {
+      "areas/1242_9684.json.gz": "41f9659824d08676618843b9b71d9a3d640c7cf3a9b61e13f79bb4dffa0d0b4c",
+      "areas/1242_9688.json.gz": "86c3ce33dacb5a09f73b8c22bedcb36e00815a006d3903fa617fbf4885eb7734",
+      "areas/1243_9685.json.gz": "3f123166334a4f29d39adc6efcfd30ab844eaec9b1f8fd53f5377a3880d1d0dc",
+      "areas/1243_9689.json.gz": "6b51aaa430cc7e24dda7e60f787c26a8fae66a28e3f6d11cae341539dcedd517",
+      "areas/1243_9690.json.gz": "89ceda45c5a2e960cb7b2c44661be032a2232467e78558fab49908e9224ff329",
+      "areas/1243_9693.json.gz": "24bfd9aa201e011a886f63018d9ec77b2755d5631ded0f0245ccd92dec3347c1",
+      "areas/1244_9684.json.gz": "685f1ea0dcfb5942e743ebbb4b07b7f735835faae6cbf6acdacba44bba86e867",
+      "areas/1244_9685.json.gz": "5055bddf2f6791c5b6d987a861789e99dbbb02bd18370f4e8359b23a3f765519",
+      "areas/1244_9686.json.gz": "2842afc1a298b603de778c55a04552d19b67578edfe6f06dc5814bc3336406d3",
+      "areas/1244_9687.json.gz": "63ed9e53ee570271f9eed0996061bffe7b8e26bacba1779142ed7c98db0f7943",
+      "areas/1244_9689.json.gz": "b90929f6947e2aca459c66294bf1266c554656a68f88a3d4702bbe3aa5ff2f20",
+      "areas/1246_9687.json.gz": "6db75caa50c4f8b4f1e26459e6fe0b04b4849cbe3c7e186452e5311be6b0b02f",
+      "areas/1246_9695.json.gz": "daa69b1a496b26c7a549099daa31ba724de88357b4bf96a6cf6b85a3ba7d201b",
+      "areas/1246_9698.json.gz": "6a48acbc7497259665efad51cd867400c3ec36d512a369823077f62ea461e9c8",
+      "areas/1247_9677.json.gz": "4be875b081bfa91298a08bb725d289c373fcaa00ba3746a26feefffb557dd145",
+      "areas/1247_9678.json.gz": "610faf664f9a36b71ce9d85d62d9008f7ac90a730f27d89a0be9eddbcfb3d7a0",
+      "areas/1247_9690.json.gz": "a538e34135b57422964608bfc863b31f8be9ebd506a46f68c990e902e578005e",
+      "areas/1248_9678.json.gz": "7a4556a8bb481e6ca2ef4fff0b1d636f1961d5668574a098b0c60bcee72af33b",
+      "areas/1248_9682.json.gz": "01b5ffc619b4a4022e2fcb439110026d6c52c93a1671cfe863e804f2d8e8eca9",
+      "areas/1248_9683.json.gz": "867375485382644aa24b9dc4a6bf7daca705fe92ed3e83a36757adaa9764dc62",
+      "areas/1248_9684.json.gz": "3eb783786d1839153a7be6911b024d0ccdac20845d17a5624b1c74bd59b8e24b",
+      "areas/1248_9685.json.gz": "9a4bce8c050f0e01555e30b7c21d44aadc78c2d2d642fcc7661480ff2843d42e",
+      "areas/1248_9686.json.gz": "e1488197ef96e41faa12a61c8b18bce69e6f07e1e9094676e2f3e00a278087a7",
+      "areas/1248_9690.json.gz": "2f1c1582dd90bda44ba32c8a3fd9ddbe89e9a1c0f0b47c4aaa31fc53acafd641",
+      "areas/1248_9691.json.gz": "d59fc2bb0c0dfda21d60173c132fe840805c96317a8b9b492c5db4a92dc8352a",
+      "areas/1248_9693.json.gz": "3e8fa25d0f0c66fcdc622e075183e48528155d4472bbbfad4799b0e2459c4d73",
+      "areas/1249_9678.json.gz": "aa9701053c4f99cf49c0fd8dcc72ffb7483bf8e59b16bdab06fb212090d32701",
+      "areas/1249_9679.json.gz": "d611fec6be7681597a5fdca8420c53a098c02bdcfaa51f168766b55fccccb307",
+      "areas/1249_9682.json.gz": "947cd4cf69e6950d63032393d8c4f38cd643580a2b9b1b8cf5e16cd9d5ff2865",
+      "areas/1249_9685.json.gz": "b0c8f5f9500181c4ba05448cca249bcca975a5512c9ac10089b141344997f725",
+      "areas/1249_9686.json.gz": "e9788f32b5fd9a0b2508b11887c8abeabcc363700fbbcfaa0b663faa4ef8511d",
+      "areas/1249_9691.json.gz": "4b515f4b48a3d40acd817239ce4d5c941b48cfcdd0d7d61221245d8380870c15",
+      "areas/1249_9697.json.gz": "bf827f4e91ce121f75ead9b2d129f4b7f30295840b957ba61b835b27d7d115fb",
+      "areas/1249_9698.json.gz": "a5c3b86cc00bb4bf370bd5489ede46decb6efc0d2665105fac52a247879128b3",
+      "areas/1249_9699.json.gz": "e3cead3eb299bbbde94357608adbafd295e656c42ee8afc791dc566d3ef6fb6f",
+      "areas/1250_9680.json.gz": "2e82318052ffac415c2bd3c7dd03d9457dd01689446b31968eb9c20b02944fcd",
+      "areas/1250_9681.json.gz": "8dc6262131dc463c3fa705b53bb94ec367951780ec066694cae9abc032eaf0b9",
+      "areas/1250_9682.json.gz": "288fe423936309ebfb855cd1fb86060eb5e1f6e27d99ea88bfd1aa1edb0fb278",
+      "areas/1250_9684.json.gz": "0dcaa4501b8b74ef1fb34d5b37558ba8843e105b5aefb50fa98257ddfc92780e",
+      "areas/1250_9686.json.gz": "d49b90d79bc257882e42becbb745c8b93cde456067fdefbe3717e2b22f237c24",
+      "areas/1250_9687.json.gz": "cd1a26b900405321b15c04a92c61cb51ce9c5051e435b135092e3369d5bd6a78",
+      "areas/1250_9691.json.gz": "988a0242325b5c64e9e241dc71cc871b1243dc9d1cfbec46fe3797a452afad47",
+      "areas/1250_9694.json.gz": "de356f1663b274a5df3ab665bb941ceadcfbb82e0bb3eb09e854c0976e08c8b3",
+      "areas/1250_9695.json.gz": "ceeb381b6c31ffd434063ad4a024e799af18ad00057425c61b2b1cf7cda8817b",
+      "areas/1250_9697.json.gz": "238839e660be80be61b085144f3972814280bb2d62f65f9a561e2a132e10072e",
+      "areas/1250_9698.json.gz": "69a49589a19fe241010feedeab9b76a0083a90bcbbfa377651fc1e9e1870e153",
+      "areas/1250_9699.json.gz": "772dc7df39163bb4d29d12451fdeb904b91a0c3ed0ee76aa77b1d7924ddf26e3",
+      "areas/1251_9679.json.gz": "8201e57d0dd2e38214ba2462e2314893168b70b31353c2f963025c7afe82448c",
+      "areas/1251_9680.json.gz": "aae973aea59fd2b119a68e0e1aee4444fec86df601a688723c56b69974a0a213",
+      "areas/1251_9681.json.gz": "50fe9bb3e93157bde92e85638eff99e4e2681413e54b9ec34892108dc6aee342",
+      "areas/1251_9683.json.gz": "5f6f52a7a7711bf58a4974b687e54513fd1b5f404fa0e99ea89745bdab7dc815",
+      "areas/1251_9687.json.gz": "013900e42b015b4c6f4fe6607533d2068964cab85afdd3fb8d8fdc1e4cc9457a",
+      "areas/1251_9692.json.gz": "aa39d3fa25544da6f71ec74ec19335ad9e3e0f08a903858b6395586d9764ae5d",
+      "areas/1251_9696.json.gz": "554428274981da0e03589993b38cefaa146681376dea51f262e744613f36a5eb",
+      "areas/1251_9700.json.gz": "53b22887351bfb25715adbfc671a8bed62f168eb1821ef690934c4c1f3a506b5",
+      "areas/1252_9683.json.gz": "96234d829374f711e5ddb338d05ba9b2f095176b90b69c295cbdaa527e8d2cb8",
+      "areas/1252_9684.json.gz": "2ac130c7126febffe257b33a90ca1b040272c7187ed7f81ec1259fee825e0bcd",
+      "areas/1252_9686.json.gz": "69445636c228720baf6192e5b139624a50adf09f801ddd6a3139cb4da9edff8b",
+      "areas/1252_9687.json.gz": "ac1c2c2db360f3ced00912e312a6761cfeab720de0266cc3866d4b5f092968ab",
+      "areas/1253_9680.json.gz": "0070d35795ec2e66452f0367402bfb4562dc429963fe4cf10182452d73bb60fe",
+      "areas/1253_9683.json.gz": "220c10151e6df41662e6c51ba26ae5f7abdb1e455696a5390e04a979b8661129",
+      "areas/1253_9688.json.gz": "f4e984b97f57811199b89a8d2c1c4534db7fb8cf8e71bdd2d8418c497b99e719",
+      "areas/1253_9692.json.gz": "878ba4d573609f07d8bbcf8be9a7dcc037f581cbc085417619fddbeaac3a777d",
+      "areas/1253_9698.json.gz": "d8948ef981f8097d25e1f97ebe93872e76b20d98a0478e51d3479b4d39335859",
+      "areas/1253_9700.json.gz": "8be9ae920483a9d425a1c4db5653700a302d63db006d2a4dc197d0a88e6faaf0",
+      "areas/1254_9673.json.gz": "1dd020219ed0269017836694a5f95b43b97be6f6469c6ceb3a26f005a75a810c",
+      "areas/1254_9677.json.gz": "3b4c170c79f570869d879bfaa3e98c0db0e5158b9d8b9e96a0d28ecc66b9e29a",
+      "areas/1254_9678.json.gz": "c758c98d904335c2e6885128d571f7b78a63a59a404a301c4ccea218ac3531a2",
+      "areas/1254_9685.json.gz": "55de9eb527d326c5b72c3c7285c45f77f6b39d39f27e69fbcf0ceb5507874e07",
+      "areas/1254_9688.json.gz": "7042a7c2c3c5d251683a94eca590132b540279cb7c8b47159ea96c9d69013d82",
+      "areas/1254_9692.json.gz": "321b57066af7515591e69bdd9ce0138cce623443a46d00a25b213ceea0231627",
+      "areas/1254_9696.json.gz": "8e4fc3ddfb07580c6772b95a181eecf48f29896005bd9e78cc6dff2e99130fe5",
+      "areas/1254_9697.json.gz": "374c1c70a69595423aa5fef3572d607266ca4bc41eadcd74d47f159301537e60",
+      "areas/1254_9698.json.gz": "cc3a53068838432a8a0fcbad58ca989005673a133a42d1eba867bb45af27a2c7",
+      "areas/1254_9699.json.gz": "74770e99e87d0dfa6be6f8c6ffeb46586fce9e14c8f3293cdc7dba72d60f366c",
+      "areas/1254_9700.json.gz": "0aff07bf1cec67a77c09f6ed9af0c21760e0d4852fb4f747d26cd70df004e49f",
+      "areas/1254_9701.json.gz": "a7ce7db210b97142d56201392e397dd54d7a4f27459e53795e66e5d5191f87ce",
+      "areas/1255_9672.json.gz": "def463c988883f286c16c658a11e106b0f5b6331f99ebd7e5111bdc316a4d99e",
+      "areas/1255_9673.json.gz": "3236746e4cee11faef2170c869aebf63046d7544b623750658dccfdcc729226e",
+      "areas/1255_9676.json.gz": "d8713335f524c8c3b480692033eead4222d689276a2251d35d8c8d64051a17a9",
+      "areas/1255_9677.json.gz": "10b8963efd2ae2869da29568805020401b3b9dc154529a5e87d5ae94aa25947d",
+      "areas/1255_9680.json.gz": "b98b4de29169e943258258fe390c9491394e67487ae5ae8a1bc83857d26abcd9",
+      "areas/1255_9682.json.gz": "1efdf4bcdec6f39b68816c64a873a16c492da3fa2f5464f234b368aab7b0e5cf",
+      "areas/1255_9684.json.gz": "b999dbabe03331f0ebd256b72cdcd393e6915da649c418503633a9dec214ddc6",
+      "areas/1255_9691.json.gz": "563c00ca50a1541c1161e0417bf53301ccd3e40adcff9136f55eee4bf6383f2e",
+      "areas/1255_9692.json.gz": "6201de0cbb26fa39beee3c1ae9487e605a590d978a8aca673d3f680ab2869566",
+      "areas/1255_9693.json.gz": "1b0572144c1587f8c9eccd1f94f8c0d3ef24ee7b6bcabfc09c1c904141d1b11f",
+      "areas/1255_9694.json.gz": "06211f765370d248dd2dcd7405e1ad18c26c81cb4de3ff98d23572535806ab9b",
+      "areas/1255_9695.json.gz": "dfa34d9f7ac56b60c83b70b1370c3e78d97ef5f88f2c89a9d336e91df73bea9d",
+      "areas/1255_9696.json.gz": "1ef8c04a7dd3fbd1bb30e27dbbdc32ad0b312b2f27b8ec1e29fbd90f2e84863f",
+      "areas/1255_9697.json.gz": "fb000381d7b936a96b92918d3676afd666a4909abf1a2dfc782a97cf52e4fa56",
+      "areas/1256_9672.json.gz": "ca0d6c4cacaee5499a23035e68c6f3c5f7c969d9a254bb392233c8e7feec2c14",
+      "areas/1256_9673.json.gz": "a2b1b0fe64609b781477b77465da2d40a8ccabf524028d1b114e21e98ab897f9",
+      "areas/1256_9674.json.gz": "9c8793d8d12a8e27e21f09f4852943588c62eb0f5e5da7c3d85089fed3c03f11",
+      "areas/1256_9675.json.gz": "48f39188a58ce024a1934b1bace5a5880841ce27bf3d020f704213134a3b3dae",
+      "areas/1256_9676.json.gz": "0162d96790522901c14226701038a31bbe98f1cc62c7a8f509296d45a221bcf8",
+      "areas/1256_9679.json.gz": "c0fa4f101f43c366dc5ed8651740b34fdd867fab8d0aef6abbf19f0bf14aa3e0",
+      "areas/1256_9681.json.gz": "4d4138da25378e8cc5ff0f75bec5b1e9cf5e91cc9c4199a0ed8f171af0c76d9a",
+      "areas/1256_9689.json.gz": "91b515650b88455cfab6df52c410d33aa22cfd9ad9bd220359cb5bd2c7647654",
+      "areas/1256_9690.json.gz": "b1d0476b245f6d4e0e3684d13912c2fe8c8f9beb3fb851895582df9040cefe68",
+      "areas/1256_9692.json.gz": "8685ef6b6743432a047d08319472be40ad829ba8275ee43d732053404edda776",
+      "areas/1256_9693.json.gz": "9505b6e21b775eb76978b47ccba480e38f0a7cbb45294e47e67fce26b5abe729",
+      "areas/1256_9697.json.gz": "828d9c578eb8355670d6984215d5f4a0d614bb2365df2d2f6135f4a09f866dd5",
+      "areas/1256_9699.json.gz": "857722cf074706e2a16e6f24b937fb73f2380183c6ad99ab5ee3e41512b0f1ab",
+      "areas/1257_9667.json.gz": "fcb54bfd35c3810afc4a2aa429eac638e6eb71b8a261f59c6b557787aa5f6685",
+      "areas/1257_9669.json.gz": "5cf76d9a3e21334e6ac4b1a1cdf27068952915240d30b33048274c7e44d19203",
+      "areas/1257_9670.json.gz": "47e58a45a1ec080560584db960d91502453a9718b2c02b5f039d7eb1b703e34c",
+      "areas/1257_9671.json.gz": "64d7bd0f1c20b63dacf22780a6f7e80e66617de00a1ebccad1d9907eccc4d164",
+      "areas/1257_9672.json.gz": "20bef3e823be2164399ed8404fa0511bb0d099ba4c8f436f3e6c11284cf2f0de",
+      "areas/1257_9673.json.gz": "e1fa12b84d0e77a422546e1393f874474cc9e21a4cd869d818bbf3ec436a6c2c",
+      "areas/1257_9674.json.gz": "c629d76c57c31799a859ed46f431b55bb1fc8ce9d4d2c9a917de0ac8bbf13828",
+      "areas/1257_9676.json.gz": "8bebd1471a345141b514ddd0f527a7857cbbc11efef19e9501833bcd991f6a91",
+      "areas/1257_9677.json.gz": "12bcd8f8f51f7030ed207997caaab56417db3793416a2aaee3ed853a8b4c6abc",
+      "areas/1257_9681.json.gz": "4554e263a753c917585d80f03054ec1e2d574998960c016c0c006dc8993d0450",
+      "areas/1257_9682.json.gz": "9cfb065435a5e0c3b95b94bf54549abc823b5da3af973820d52c3133dc5bceba",
+      "areas/1257_9683.json.gz": "a5ddd43a297b459ef02320482a71a2d79bbb36380c3e332be681eb06709d7ac5",
+      "areas/1257_9684.json.gz": "5776e84a35fb052c517af05286f0266ef4b7caab53d95c0c38d16be25983f8c4",
+      "areas/1257_9685.json.gz": "a139ce455f729e95b486088ea85b275cb9eb5f80dc560f4acfa55b2d090cb391",
+      "areas/1257_9689.json.gz": "3c52036c428441f0aa246fbf5aa8a7f33052c7acac894f7f018ccf70c436d160",
+      "areas/1257_9697.json.gz": "4bfe198423bc06ab65c6c3cdc08c9e0e89129b888136b00217fbf5fdea189cbb",
+      "areas/1257_9698.json.gz": "7a6c7cf7ffbd30ecc7e357750b3ef7c123e9ce41518e7643544a41be753e1b6f",
+      "areas/1258_9666.json.gz": "cd6d699581ab3e2d4f2b30e5a4dab49dbad88a0b0e60884b60fba07b8eb83b31",
+      "areas/1258_9667.json.gz": "9149446968a10e1698cae660491aad8d63a57f894105e199abfd68f2c2f9f81e",
+      "areas/1258_9668.json.gz": "5a8c0edadeb3a900d6bd94ec33fd4e4222647adc9720c4c7c1e4daaaee4d0627",
+      "areas/1258_9669.json.gz": "753990058cc3041bd9d8875c506d840245cb8dd2070fec6d352d30154004dc70",
+      "areas/1258_9670.json.gz": "846dab49672f80b23d0b6111c015fb0cf470588d9cfa1884cafe2c70cb0ee5bc",
+      "areas/1258_9672.json.gz": "4dda235746be04fb93f97bdb523e4c57c8bed1edc94bd10b559b4e022d74cf52",
+      "areas/1258_9673.json.gz": "f19c271f662627377d407e12dc20cb147a3a587bb1b27d04d8634b7ec73f6a9b",
+      "areas/1258_9674.json.gz": "499558c17bd2d07a24ca5f4a76e33571ef1a5884321bc08a46b205acb6e8549e",
+      "areas/1258_9676.json.gz": "d1d5c19813c3295a821c108ddf7512f85b2877dd8ca841f0bd7b58817c237e59",
+      "areas/1258_9677.json.gz": "1a2933cb8fcd8de6376bb12f3a43d7b74ad0e52a3cbcc298feaf27bf1681b4b4",
+      "areas/1258_9678.json.gz": "d6be86f55cbeec22a25bf49078c3c97d51e62740b185c5fd8654866bec454ab4",
+      "areas/1258_9679.json.gz": "e5560a5ce41dbe06cec83aba3ea0e88fd5fe91859b933725d5d6cc9fede48403",
+      "areas/1258_9680.json.gz": "962c7782525bf98f6292c9cfec911707754eb51be4e654735158d236ed422be2",
+      "areas/1258_9681.json.gz": "cf360cbaaaf7e1c2b59edb2f5e3f9f3c25fa81b7bf8af0cac41e181f86155be4",
+      "areas/1258_9682.json.gz": "613edd47dd334bf9523b86503e30dc55097bc61b3388f023e0e7b7038034dbea",
+      "areas/1258_9696.json.gz": "37d08b679fa874defaf27b712ec2f6dd0c64fb77e66ff71a0bef7146b95027cc",
+      "areas/1258_9697.json.gz": "835d29233485411cfe2a179786f128b9e3c7f1968228a389ad756353c0c45a76",
+      "areas/1258_9699.json.gz": "80e93eb309e13bfebd329664c11424464d8ea22040a11fdf383c853e539eb841",
+      "areas/1258_9700.json.gz": "3163ab45614671470a91c4a33285e768cd3fe0f190cb940eaecd307a7a41ca42",
+      "areas/1258_9701.json.gz": "acd79459bb9685c466041792e20f16d7717d1fb2106931ceebe3f84b52f37d00",
+      "areas/1259_9665.json.gz": "8383f0ade74a90cd1fc232db82e886c2ac0d49c0f280bf4f46b12bc5058c2f53",
+      "areas/1259_9666.json.gz": "771ebdf83b074fa48eaf1d2a2aa16e2edd1cc3aab950e868c952c8e3e50d5c87",
+      "areas/1259_9667.json.gz": "a02280fb86ff3bcdcf2698b228a748edea1b5da17fd6618294fecd06872bafd0",
+      "areas/1259_9668.json.gz": "dcec7b46835cf8b8425c5a1db522bc8cbdc7c48c5a4cb3285224d14f3f169b3a",
+      "areas/1259_9669.json.gz": "1e437dfa28b3275b3588d15288fd56afcf391e7ca9dc63235aa0327187a738f8",
+      "areas/1259_9670.json.gz": "0e0cd9bbbdeb7f005d9fc9618a10646c5ca6667e8f5685741870cfcea6249c1b",
+      "areas/1259_9672.json.gz": "cf0d0e9e5d7772f15f6e6b1ed365cc648ea5d781c3b79f8e4e7358fe9ae575e2",
+      "areas/1259_9673.json.gz": "af33d8f035b2223ced05f80ab28b362de52035d36551633fd41d7d4a744ca99f",
+      "areas/1259_9674.json.gz": "a7e0875c26c499750c2a42cea4d9c39466acb480856d7969600729cc92a3319f",
+      "areas/1259_9675.json.gz": "ae4256aa130a4af4ca12895428ccd7299a4c43b7835e54466b2cb2c6a1d035cd",
+      "areas/1259_9676.json.gz": "261f902317a6df4928bb59b01d72f56f5e1c67c6d3489b808c5bfcc500713f0a",
+      "areas/1259_9679.json.gz": "f3e83d2deaa64f9d21b448bbb4fc36f992073fac8ff1b10aee59d984e6b18523",
+      "areas/1259_9680.json.gz": "864122909c0003a4407fd9ad4f8d8d7610c3ec69dd2f3b651eddc7137b46f9e7",
+      "areas/1259_9681.json.gz": "0ea82d95f4dce9ea7c634d5b19dc3b8a0f1339ab9c86ead90f7ef7b6f9601391",
+      "areas/1259_9682.json.gz": "1756804b1f160d460570dd6a4101874d08e3bc7433aa6113661eea8d18d8e30b",
+      "areas/1259_9691.json.gz": "eeab576a47a5e7c5a79da771b6683324e1d26a923291fb6c43e39dc0cbbb4daa",
+      "areas/1259_9692.json.gz": "cdc6fe9fef96552b12c405bc8a88acc10c7f39cb698d2539354e0b2075c5327a",
+      "areas/1259_9694.json.gz": "152cfd252c2d565d9149238304c9c7c747a785a69f91fe49476f29c1d5fd6464",
+      "areas/1259_9695.json.gz": "6833dd6e57380867cf54eb40bfbf6fc317c586f774fff89ec665a612f78d3ea3",
+      "areas/1259_9700.json.gz": "81f6283d12e3604ad24b76eddea1ef1ade0be648961ce8c9f089ebd9f9026c21",
+      "areas/1260_9667.json.gz": "dec360658d28a712b01b2161b21188e6a88cb8a97fd32dff4a83eabef113e963",
+      "areas/1260_9668.json.gz": "e3207d9680abd7953f2f94b7c4f3b64321898e16fbe7edd4edf316b9854000fc",
+      "areas/1260_9669.json.gz": "703d33bdd209033d6affee6261429ed481a5789720cb11b6c060a283103fb8ee",
+      "areas/1260_9670.json.gz": "63dfb2e9ce502d1fa32f17ffd30e1eddd6175b90609845899c7af23a7cca383f",
+      "areas/1260_9671.json.gz": "bda1a3d62f2e3f09f62b85d56c8a43f307f6f784d0eaf32c207c27133cfdb0fe",
+      "areas/1260_9672.json.gz": "12e54396dbc929d7cf1106cbbd3f3416525eccae5d15f1ca9c9bea17de6cc69d",
+      "areas/1260_9673.json.gz": "96bd253c21059b27779c1650d252d91ae9cbe36702ccd42c23dae180faa9a58e",
+      "areas/1260_9681.json.gz": "1409eed8f53859b6f875667f09d8bb8fe387eb17d56a340a7b37fd7badcccef7",
+      "areas/1260_9688.json.gz": "b532c2090916c01e1195caf419c307b8b8750cdc1ff652d8536ad5c3753f3a64",
+      "areas/1260_9689.json.gz": "593557ca943b64f4482b2f670a3ddc289ab3804c8d7c78104eceba4925b52579",
+      "areas/1260_9691.json.gz": "197c8cab3cc083a90ed395b4552daaef26d18f65940c25074bc139da2a84dba1",
+      "areas/1260_9694.json.gz": "d757209f4f20a4232321e27d850ae6431a8c9ad16a6be9f088a383670d34898b",
+      "areas/1260_9695.json.gz": "f5a987ab2763c756cedbe1d499e3e4f5f2d2acc293a394c37f6508bd8af2ef60",
+      "areas/1260_9699.json.gz": "59ca4534a549a77fc46d599c6962196a4123f44d25145329e62b78496cbf29ec",
+      "areas/1261_9666.json.gz": "73ebd2ee33c54bedccfd9fe2c3460252b88e5e3ad8bacdadfec1d0014e205691",
+      "areas/1261_9667.json.gz": "f9998431c30fd85eb06aad37526ee0db0ebaf0cb8ca2e56219bf9c4200b5a894",
+      "areas/1261_9668.json.gz": "4f6688e7adf938d12f96dd8ff8ff6d4d1c4213ad42f5066c2c5202a4a46ffcdd",
+      "areas/1261_9671.json.gz": "d723efff577a213f8d026cdca621b45b26a7ebd82f083487b8bf7a1cfcf959a4",
+      "areas/1261_9672.json.gz": "b387448c86c3f383f469f95d93ee8bdfa2c6645e14bd59a5d55ebf1391fbbf61",
+      "areas/1261_9673.json.gz": "19cd947186416cd155ab1a2ec6d7c1d90f540520d57a8ccceb15d46ead7e4680",
+      "areas/1261_9674.json.gz": "ff4fe3e4bb1dadaccffb0b7047df5cb7915d773c6fbe72d5925c1f5e03f8720a",
+      "areas/1261_9680.json.gz": "305bbc295312a65122473f87b29d8b3834000a83669c2e6fdf613065da3b769a",
+      "areas/1261_9681.json.gz": "b6b52d168ccadc9e2b1a088eec79b4105d1caaa4707ce9124c38c3ee3ae4503d",
+      "areas/1261_9682.json.gz": "6f2ec133e2d4e1f4d240f71c935807cf7a7b434653d956e2984a5e6f070c6b8c",
+      "areas/1261_9690.json.gz": "e6ba2509d7ae3345bcb16ff81b3da8ce00da74e0e2856ebe056d5c353a61f790",
+      "areas/1261_9694.json.gz": "bec7460e4a635c2d3ab6c55a8dfd59e62dcaa7fe9e9aa743bab76c166bfc0868",
+      "areas/1261_9695.json.gz": "c4d176d8153d4ba2ca77a5d5dbe2ab3d88c53e4c53dcd43eff7d5b62ad5bc39c",
+      "areas/1262_9667.json.gz": "abb0f28de36cd36bebe0f68272b9571921f011515e96416c4cdc756bd69f977d",
+      "areas/1262_9668.json.gz": "e3586f9dd0ab02950f4b0998613534863adfd64328b493bba0da145eb0bfc132",
+      "areas/1262_9669.json.gz": "8ad0468b0151010ab08fea7470ae4c9a13205a65080a9ed77d1b0ccd4a31e825",
+      "areas/1262_9670.json.gz": "31673bcc1de20a3fc70090093da7ee72805602362ebb6033373b376961ff8e78",
+      "areas/1262_9671.json.gz": "eee5434ee1534184c090818c8f7542429befc0e70c439a426cf639a68abdcbb3",
+      "areas/1262_9672.json.gz": "02c976117e806ad2b5e3c21bba3c7360167331c269224de29ae754b239c17b85",
+      "areas/1262_9673.json.gz": "a1b8f57f900e05fb79cd03a5e8e2f07bb5577423d3eb5e18d36bb7de1d4b48cc",
+      "areas/1262_9678.json.gz": "cdb210df1018971a6765e3ef7605e616520d5421996c551ae2c98d04771657e8",
+      "areas/1262_9679.json.gz": "423fedf4ed23778b57d120be1e59e5426cf3cb3f9c24f71ac961d28fb745fde2",
+      "areas/1262_9695.json.gz": "325f0225e93e99f33fb80c4c5366996df420d88aa91cbddf9b5d25ce6e89607d",
+      "areas/1263_9667.json.gz": "8375721db7e0ab4831b09b41989b5a609c7a8600f323c053aca45b4907df9792",
+      "areas/1263_9668.json.gz": "9463eb61405cb00db34e90a51ebde40390c36da20b17a3f040331d40ffa63060",
+      "areas/1263_9669.json.gz": "76af0b77764229c5c18cca2c13b999aea7503f344d1781c0b8acdaf0621c81f3",
+      "areas/1263_9670.json.gz": "6af0df026b0721c9aa7894241ce3da76a691262c327d3a21e5212185ac7ed482",
+      "areas/1263_9671.json.gz": "7ac88f18a7453655f18890d57d54ba0388bad89e3e20fc4e6553d8556166b2e2",
+      "areas/1263_9680.json.gz": "f621b25b6515e988bcc1db8ec6a349d262e29560f868e2cd8662164011aefc98",
+      "areas/1263_9681.json.gz": "1103fde5cdc990419dfec7c54c9f252dea52cffde3e86568cd47b227a4ec0fc7",
+      "areas/1263_9682.json.gz": "c1bc4932b7d58f1ec6458a8a879bb0cc9ecc0e821ef35bc79ea6740f0e2dc9be",
+      "areas/1263_9691.json.gz": "9358e49062f30a5b53d49110fdc1b685af191e94d6606ff1093bc4a8bfb4557f",
+      "areas/1263_9693.json.gz": "80fb737f6980d3d7a182b0e43215444a7641a9a324f0903da9e9863e9f930ac5",
+      "areas/1264_9667.json.gz": "5ded1cf502da6e3c73012f1f932f05280279c88499330f18496fb924e19219f9",
+      "areas/1264_9668.json.gz": "dec849f43025c8684189657e31e0a0c8ba2030671d3a75c2fd09c5c734c6cf05",
+      "areas/1264_9669.json.gz": "e27f0679878273f4df3eff2ef7656034262e64a84748fe59a4ae8f4428ff7bd9",
+      "areas/1264_9670.json.gz": "449e7b62abdac8ea69a3142986d0e21d46fcb33c8109a0aa9e152e84e297fd1e",
+      "areas/1264_9671.json.gz": "dc72e83320c28eb17256db18c410c636ff47a0c7a845e6cecd69d135e68e28a4",
+      "areas/1264_9680.json.gz": "7d94da69377f617333baf79eb8dfcc39378bd3eea23b4810713999ae85561da2",
+      "areas/1264_9682.json.gz": "ebfd605d824d6ca28040b42561ca374362af1b9424cec5c24707d94c787ea0b0",
+      "areas/1264_9691.json.gz": "c9a555859e38cd23357c69da752561fc0f3ee584fbfe7081b6933f87fdfdb134",
+      "areas/1265_9668.json.gz": "5d246a3081be676a7c2fa10d06958df33140d09e49bb6687e231eb1415d3b5a6",
+      "areas/1265_9669.json.gz": "5f24428c69a1e5feaf5801147e9817531b43915c91e7b85ea41a11a8a9bce11f",
+      "areas/1265_9671.json.gz": "da1a17d4b556bdfb4230485a01b6855b1d10241424f2473b7c4e63f67028eae9",
+      "areas/1265_9681.json.gz": "86e31ed78d3ecbb45ca1aa15dc4164d68a92acfccc2c4fb81f6e87f50f4d6283",
+      "areas/1265_9683.json.gz": "d63386bbe6a070e4575a95d4e7c1f7ba7a2bff59d2486b86719239c74ec4b2eb",
+      "areas/1265_9696.json.gz": "47d67cc9ef458e0d70dc80d9cb1608dd9e735c046b2ab30ce43e50f4dcfc05fe",
+      "areas/1265_9697.json.gz": "2f0a28a57bf4bbde177254b09cddd727d9d5f3a5a44bd7efaa7a9c02b7d36a71",
+      "areas/1266_9687.json.gz": "279ef8fce9125de1d335f44bc73913f0af6d8b9596ebed3fb79a701c6b13974b",
+      "areas/1266_9688.json.gz": "e9065665844b10585abbb34ca0722ef1764fe0d1ba33dac0740d1fe90ed4ac95",
+      "areas/1266_9689.json.gz": "8a059fe18bd33261d6f8f32412d2a4f2c2e45eb4dc6e9dfdc65ec21008b0cd2c",
+      "areas/1266_9693.json.gz": "721debf94bb0fdf74d7b1baa893702af825be0d14de1359a7eb6bb2392089390",
+      "areas/1266_9697.json.gz": "71e72f201c2cdd35e68dad025a37295d3c783eb4de113f47a014674d892d9270",
+      "areas/1267_9684.json.gz": "f1cad5acbf35f4d31a90c6d31eff1ddec6735584ed736c1170812beea5b1d613",
+      "areas/1267_9686.json.gz": "dc53ebab86e39e11dd9c096f4b2f371e218ea72c4c522ddf2880f9ea4c0fc244",
+      "areas/1267_9687.json.gz": "461f95fec10ae7ef08c1d73629cb1985aaa277fd4a1c4df37be3bb36de781300",
+      "areas/1267_9688.json.gz": "50bdb78c56228f8263ab2f18ce422b9fc05ddfeef7fade23b48d29afe2e9c462",
+      "areas/1268_9683.json.gz": "8a71041412bcddb5c7a10e597d6a94a46502b928e55f0946be1a622158ca8075",
+      "areas/1268_9684.json.gz": "ac7768cb3ccf07f1cd4dac76d1dda8f0b987e89a37346b8d031f69087af85ce6",
+      "areas/1268_9686.json.gz": "40aa8cc62e4dbbc99bc7bcb7c13a5b2f004b3b1213f3821fd3e9817024c63d01",
+      "areas/1268_9692.json.gz": "2da558171b25c0d44f3bf227472578aa0193c20eeaadee57621a4d4399a59723",
+      "areas/1269_9683.json.gz": "a3b239d264e006ed378d7a8374dda1e6a737c4e72c131181541dfaea1edd1057",
+      "areas/1269_9684.json.gz": "e1de35968b5fe97b806249b29d435d950d8fd7f22676857333b6b2ff3a9e1605",
+      "areas/1269_9685.json.gz": "fa58be3477262de0b5a6b79409c65bb5927dfbbf81a587723854546bf5f3f502",
+      "areas/1269_9686.json.gz": "f7be487b6a1299a191f350e6e87da157fe88ca05db95edd5db03b4a695fc9c85",
+      "areas/1269_9689.json.gz": "6b465883e02b43f89c9c625f91555e557295b3b3ca747ca4547c038dc9f926de",
+      "areas/1270_9685.json.gz": "bb00dd2ba41ee9c9558a7968fe549e248903a2ae4c159fd138b6d01f398fc4e0",
+      "areas/1270_9695.json.gz": "956212237f5bbcbbd669001ae198f4870413078d331ee9c2ecc2dce1c0b5f443",
+      "areas/1272_9684.json.gz": "85eab554a77b11c91d1cce21cd6ca4db64beff3cc5ed58269079aa213079489a",
+      "areas/1273_9684.json.gz": "76ef3c208f9700d050b6517d40e488379a3cde733051d2617aa4653b33aafc3c",
+      "manifest.json": "f3995344576223bc491903f2cfccf1ff3b8e3a997fda7cbaa47e82b6d80a21d7",
+      "outcomes.json.gz": "91d2a3556e0766e0e38e860bbdc33c7f44ce84f563c86baa3716a357e0a3a083",
+      "regions/downtown.json.gz": "3cb68a1f7e30c225930b1a4418e5ea9b7b869923871e4586ef15682d576d60ad",
+      "regions/midtown.json.gz": "f9242e231445ac32f79508fde10872212e363b065139097b5a93470f250d2193",
+      "regions/north-york.json.gz": "a0d821fe4d96801a135f93ddd18f6594708f9ccaf6e9a6e66d8a3dff0e7da605"
+    },
+    "6ed092c988ad9326e279": {
+      "areas/1251_9679.json.gz": "25b5a01d07720c4452b6f3fa75b34cb45a6f4870092e2e5834e798937e95130c",
+      "areas/1251_9680.json.gz": "75a75968f55ba0071708840adb03688c2bb2ab5a4d7f7875b0668b9dc5347571",
+      "areas/1253_9680.json.gz": "964850cde079cce54084270948a2a7fab779daa8045878de1eb7981ad2f619a0",
+      "areas/1254_9673.json.gz": "d9a6f195437fc6a962eb63fbf452fcf1591771a2c810fa52297c8eec6f44dddf",
+      "areas/1254_9677.json.gz": "2fa38d218ae97444de7a4407b1c51b90d60f51f3f5ed94706d59bfbcbb9c9780",
+      "areas/1254_9678.json.gz": "0cedfc699e636fae8303f711838dde220837ad49889ca1e8578836a61a462142",
+      "areas/1255_9672.json.gz": "7d46511a8804070ba4f60bb4b1e1fc246508d10ec60157c2f0b4e37fbeb25407",
+      "areas/1255_9673.json.gz": "60b9c3a1b8f895ea5afb0cdab48d2e59ca9c0f15164218da5bf3a206594e1081",
+      "areas/1255_9676.json.gz": "d2a68813578cd71b60d6e8afb2b5399df6f100a4a7ddf54c9e17b3d7504929cc",
+      "areas/1255_9677.json.gz": "aa08047e5f0c6e17967e122250c979cab098dc743822f01204a31d17d351e100",
+      "areas/1255_9680.json.gz": "46cd62f8aa7b603b88a3d8b9aa2912552f2bc3ad4a577f8b94963293921b9678",
+      "areas/1255_9682.json.gz": "27875f66d0bace7e3a731abe2f2b3b967b632a65a08325bc05ee0aad8aa80d57",
+      "areas/1255_9684.json.gz": "81a262792066b57421421508bf99a42c000f85b87677c0748e9a63f0d5846278",
+      "areas/1256_9672.json.gz": "30a3123de856938f3b1d768f10f089a2ba552b5f7e631c9d9212b107089a4185",
+      "areas/1256_9673.json.gz": "e57a7cc2e0a613ecab0c3feba08c7fb7742520c941bb8fcb55852b7406a45793",
+      "areas/1256_9674.json.gz": "0030786b70871999b5ebbce2ade761431a33616cefeeb48a1fc01cedd8404596",
+      "areas/1256_9675.json.gz": "9e480713bf7005d44537b8007a46cff84cc9912a30d4c8f267a5b54ce6fc9900",
+      "areas/1256_9676.json.gz": "4299720eb58b79f9891e8e4a2d79891b9351222a85cec5f73f0773fe6370ba52",
+      "areas/1256_9679.json.gz": "fd14c2f546d1df43bf29224f2344b40f32cff617751b6fe20f401dc50f305442",
+      "areas/1256_9681.json.gz": "049fc25d3a7455910a96124cc9d2edd80a2d0d03eba5f65fe9503d29dd7bb2f5",
+      "areas/1257_9667.json.gz": "e7d506d475d2ad4f35d948c33ee68a1e61a25d7aebe4b6db01abe262e6381d6e",
+      "areas/1257_9669.json.gz": "6c1aa8a06c3e410f45bd668c494244521f94cb97b14ad64d1e4962aca971cb7a",
+      "areas/1257_9670.json.gz": "b351389c280679fd287de6970cb33d9f57276d5008bbfc6cf11b1082513d6a10",
+      "areas/1257_9671.json.gz": "99a7f8a562c757fa237ce0c41641c80b707ca9c9e3c9e9b53fc85d4679bd6651",
+      "areas/1257_9672.json.gz": "fffdc6be953b69dcada97679aade9a24c64fb067dea84f91821faba941bbd618",
+      "areas/1257_9673.json.gz": "2e3dfe81415b57e346ab8589dc36721fc979718dc05f1c7fe381b488b4961bf4",
+      "areas/1257_9674.json.gz": "26652167a4f6d4d2fcb27324b2771c88fd1196eb21d70f4b6330d482b6a5e2cf",
+      "areas/1257_9676.json.gz": "0311240e391724c05d59fdcfd0e6084e810e2046c3123d7ecbc9fa58c8af7c89",
+      "areas/1257_9677.json.gz": "ffca68ce1a4bf57da8dc464150e2247ada3c878da00cb62dc94390bf86731c4a",
+      "areas/1257_9681.json.gz": "a573b751e49d6d5d17c0fe9f345e9c1ca77c0ad824a9829e98ca52013f43b640",
+      "areas/1257_9682.json.gz": "162cb6e29f7ddf98c2d64d1a68537ecb8b6520bc5c7fd85f9d4540a5523b8c4d",
+      "areas/1257_9683.json.gz": "8dc32ad8e68bc37d1052135a67e3deb700d41288a7d8fbb651bfc455c5031fab",
+      "areas/1257_9684.json.gz": "478202781628d0361b72c732544ecf6742d5cbf3da4ad1d159b8669c3157b509",
+      "areas/1257_9685.json.gz": "9a3cc110e3e88d45abd23283d63ab6bc4452bd0ccd2ce61a0ca265a7283540e2",
+      "areas/1258_9666.json.gz": "baac712edef6a0d04b66b2756d0d2310fed10c26c4a83079e84f2b92c6b792fa",
+      "areas/1258_9667.json.gz": "2d2bff0b90d64a2a190728816fa011b1edca16cbbbb007db9b8dc619f09b17dd",
+      "areas/1258_9668.json.gz": "37593c87662d41b59ea7e12f93def56f69a069d10fda19b19db80f4faa1bdaf9",
+      "areas/1258_9669.json.gz": "e048cd092df41fce076ada5328a4cf947cf2aee787b490ec5237951ffa7e32d1",
+      "areas/1258_9670.json.gz": "3ec986947102cba05aea6cb5443f3691cf435e043ee9583086eae053d6444a0b",
+      "areas/1258_9672.json.gz": "11d73a3ece525eeb0b3408023fd3027b1f0802643a986f622ac3517510b07163",
+      "areas/1258_9673.json.gz": "527927b4b4b509104b5d21edad2917916844b52ba79b9acd927c1e2abd1d2da5",
+      "areas/1258_9674.json.gz": "da9ef23ac9d7edf6b37d4d4fe97e9f5da2e69184e4b886130c3425528d21d76d",
+      "areas/1258_9676.json.gz": "b3d7211d06b946916e1b227c2eac4fbac066837d6ab99af247d36a0fe7fcc769",
+      "areas/1258_9677.json.gz": "787ad7639023268829316091d9ed9cca71df6ea0c9b4f0638010ac1c1d176792",
+      "areas/1258_9678.json.gz": "7dc053087ad9d2754bed02287243082121bd6d38fce5f5cdfe31602c71a89440",
+      "areas/1258_9679.json.gz": "a00edfb93e5a37433169a6eb3c81028ea82a0f9251908a6a5d25ed672f964f26",
+      "areas/1258_9680.json.gz": "adbece36264be27d12b3cd8b208f209090e14dab75e61ac3e923e6a121894ff9",
+      "areas/1258_9681.json.gz": "0dc5c06b1995a535f674b5cb716ac5e4c76649f403940a133ca82c7ae90fe070",
+      "areas/1258_9682.json.gz": "3e6885dbeb22bd126f4514eb51fe8e925f1144a98afb1236553f1aeb1d30715d",
+      "areas/1259_9665.json.gz": "966d45c3fc2149541202dcdce5c0fa8e58784e6fb8d635dccfaa4ac4e372d050",
+      "areas/1259_9666.json.gz": "6f2f1a8b468b18a4d8ff4439c21118569a3128019814fd4588586d45eb2bafac",
+      "areas/1259_9667.json.gz": "f82b0cad1163a71a6b623efcf71ef2d69c9e61b37cec994135f31b4303a24f87",
+      "areas/1259_9668.json.gz": "d2b695c52730b70d3a280f7ae6a18c1555f2a92d75d41d36168ab546260bd63d",
+      "areas/1259_9669.json.gz": "992a04c6a173da0261966dea64a4da2c078f595e23ba7b8503673bce2916dc5b",
+      "areas/1259_9670.json.gz": "b85d4800ff01944a69ee5bcdf99c56e475e0e9ddea6ff2483f503d447a8b80e0",
+      "areas/1259_9672.json.gz": "fe673746c8727fd9596a3c0ac35392c051ae129ead363cf40005f5a03d1624b6",
+      "areas/1259_9673.json.gz": "647a6ee9b332a0e4bd5f93cf1b22836101a456a67c72812ac3cf06ea181cb8d0",
+      "areas/1259_9674.json.gz": "01e60afac07f5b1714bd51fff7e965c4342cdb223b039ab3fa69a2eae3f788eb",
+      "areas/1259_9675.json.gz": "77ca157fbe6973b26badb0bb29cb991beb7648fcc92d4ff54ed211a0942fc162",
+      "areas/1259_9676.json.gz": "76931092fb9eaee4f3dc1ebeb4e7a034756b0afb8af0878b291de84c6aca139a",
+      "areas/1259_9679.json.gz": "22b5cbcde30698d3a01d8fe37c752e9260d72b21d2d06874717e2ad04e3ffef9",
+      "areas/1259_9680.json.gz": "e78aa9744243fb9eee56bc24a0bb5fde8b95cd972e4888cc8e166c82a2f72e78",
+      "areas/1259_9681.json.gz": "dd12a943ec27d22583a636c46184ba8cc3c8c05c7bca1d5ec715fb91a388029c",
+      "areas/1259_9682.json.gz": "041b4cae5ec707bde3bc6f89f7faffaff188d6035a2e8071c6f1f14003d91bf8",
+      "areas/1260_9667.json.gz": "af5de5380d69aa41644367a1d1cd57c0ebc4c05602cb3a4c715dd6769fc6c42e",
+      "areas/1260_9668.json.gz": "3e22d9542914f83f3b96ad40895374fbb1e6a338eee6aa00bb798a35ba8d7226",
+      "areas/1260_9669.json.gz": "4e2e6a18fd6178a56d667c0c428b92adf17ba6957b795fb943835411bde40d5f",
+      "areas/1260_9670.json.gz": "6672f5d9a4ee6652f3100f547f2745b030435216f78cca9fd55a5c70246a1409",
+      "areas/1260_9671.json.gz": "812ea4c3463336bed6299ba805daeacb15afa044761b3b90368287bc00b4e9fa",
+      "areas/1260_9672.json.gz": "9489985a45af1ea1913fec4b7e92fa101fcb649d10004d0e917164aeb0d15197",
+      "areas/1260_9673.json.gz": "18a6a9b2a12151573973966f42102e2311fd4a1f689ff9716367bcc212cbc630",
+      "areas/1260_9681.json.gz": "3c14b65d0bf8abf94657ecbe173eded25c76b2799cfd56ec4a3f7c762f5a0580",
+      "areas/1261_9666.json.gz": "bdd254999109de6ae43509223fc36c9e68a17c7c5ec63433383946c57eb1e428",
+      "areas/1261_9667.json.gz": "df573708ee3ea67501ac97793670d5fb94d7094fbaee2fb0c8f8e542651589c2",
+      "areas/1261_9668.json.gz": "08ed9e3ed0c3e6d0205016c376a8a4c6fcc19ad8ec3190fd96ca719bf961262e",
+      "areas/1261_9671.json.gz": "eeff7b6e39f7c497b3c7a5878cf275f5cc167087ee49aacec33d1260d0c7bc34",
+      "areas/1261_9672.json.gz": "c34d85fcad4e9cc15626a6e9b4263a2ef57721a11b2ef6547dbad0eab15aa07a",
+      "areas/1261_9673.json.gz": "11e21cb12991242f39ecfe1d6ff3c4f81a4360f1bdbdbb4844deddcc8bbaa55b",
+      "areas/1261_9674.json.gz": "78518923d26b97eea296d6ab768b15bf294abc77f2f64e491cbf45c4dd0d16fb",
+      "areas/1261_9680.json.gz": "c60fd50fbe840c69ad92e2369407bd7aeb3af3b4dfcd14851b94084a0ec33688",
+      "areas/1261_9681.json.gz": "fe084deb266c0db8a88da16bd2724a433fae76b25afe11adbfdb27b011d5fe0b",
+      "areas/1261_9682.json.gz": "9a175f867bfd2a51ed88d6f85c19e73d2e81aff187b5bfb2844878c655b7c895",
+      "areas/1262_9667.json.gz": "4a99ad581a97c94e707bee8e35437e80b9326227aa4336c1f88399c6aa8a2860",
+      "areas/1262_9668.json.gz": "6e3a7cde1eb1b33d8e2ff452e1630ca17a6e36177ce79fb58b1e1043a66b394e",
+      "areas/1262_9669.json.gz": "dad3c6f5c16bae7f24de3780107228da4e79275d3d9f3edfee4fb076ef8fe467",
+      "areas/1262_9670.json.gz": "9bca2ff7392082ddc41ac7347b7f7abdc62ce49360a2ba32c9695ed63c5c8b31",
+      "areas/1262_9671.json.gz": "3a821e1742105260b776657a2ae54c518b209a127763e2ce067a3103d95c13ab",
+      "areas/1262_9672.json.gz": "810faeca8ee223c10d76ccef06d2c269a244638a73f36c91f3507d427512a0a1",
+      "areas/1262_9673.json.gz": "524788b9b547a586e8d14ff1ba075f79094625b962e6a8c5a155e751f2447172",
+      "areas/1262_9679.json.gz": "351b1e464f2deb8916c3f9b73a8f2fc48259618ca02be19313ae2a95c9bc5438",
+      "areas/1263_9667.json.gz": "5b4d4f565be13c9d156dbd0811fb9c5cd0ba4a5305102e1cfbe2c4105aced982",
+      "areas/1263_9668.json.gz": "fe59f7bb0fe5c29e2376994b50fb9abc5c2f4fa17a7f41c884ce78fa6ba26cca",
+      "areas/1263_9669.json.gz": "abc64603d52a6f15ba131373664dfc10ea924b72d3d8d55bf10cb00b9d190762",
+      "areas/1263_9670.json.gz": "698047494d87119d51f81b6fdcf4e64217ef47962181f2015e7e87edcd78ef13",
+      "areas/1263_9671.json.gz": "699ed7e8ab6d99cfb9956344a5d171217ee948f9c87a9cf28cbc3a6a4b2d32df",
+      "areas/1264_9667.json.gz": "0c620a548ec69a77df4c26d52e7caf18a1cb1d7d4460b4f2796bbd5d9336fee5",
+      "areas/1264_9668.json.gz": "e8b371d7b6dfda1c1a1656141249eb633999f99014a6a39737f058ac97c6e805",
+      "areas/1264_9669.json.gz": "375098570820f53e6603e700a66f0222fbfb49b8069ff5749c53d59754d5860f",
+      "areas/1264_9670.json.gz": "e09e06cced2479660f26ef57e663671d9c83a6ff2b58242ddee90eabb48e7ee9",
+      "areas/1264_9671.json.gz": "24d99d9c7667d12974dad97dcb7342b05471a9709a17088efc98bd27b1e8f8f0",
+      "areas/1265_9668.json.gz": "514dda2dfabb24e2dd72f1c366824059658bb01564127c9fe1ea27ee8efecc19",
+      "areas/1265_9669.json.gz": "84985e52373522a0c7bc2b587c3245f70641807df6ec72176b2c1498628c6756",
+      "areas/1265_9671.json.gz": "a5247603f28c0b145419b1069b4af0260c8d15a74175bdb613fa1354ffb8950b",
+      "manifest.json": "5c2520175aa7e87e819f1b5ebe3325ac22c8ae293f6abcf4fb59e0d88c2ed4a1",
+      "outcomes.json.gz": "ab6545c7c8fb54ba060a96b062d6e94181f0b75b2aca4dd7fb0bbf7d6cd444f9",
+      "regions/downtown.json.gz": "ab3be594f9b1ce16e5ef47105697630898b51fd16a99202115d7992614f56a24",
+      "regions/midtown.json.gz": "f6aa4657f8fb20d1d1166eed80f6936daa591b3e4b6c7c4d843973fd9bde8ca2"
+    }
+  },
+  "studio": {
+    "source_path": "src/sandbox/downtown.json",
+    "sha256": "1bfee96de78a05cc62a933b6d0ff112addec2c48d43558f1ede5d82b02794ea4",
+    "baseline": "23cfc1346cddc0233be6bb421385a71c68554df11143e0c3714c34553a244f23",
+    "feature_count": 58,
+    "street_count": 12,
+    "status": "qualified_for_illustrative_use",
+    "architectural": {
+      "source_path": "src/sandbox/architectural.json",
+      "sha256": "b3250107aecc1854b8cd348cdc230654bcbfec5c400aacc1530c35cd5d471326",
+      "views": [
+        {
+          "id": "b30bb7e99f8f90a89970c0ea7f37f49c667256513325d1d205f6a0c4632272cf",
+          "region": "downtown",
+          "features": 307,
+          "extent_m": 600
+        },
+        {
+          "id": "8f65aaed8759169ce3da96ae435556b528041a8f5f0eda3986bfda8cf2d3bf47",
+          "region": "midtown",
+          "features": 516,
+          "extent_m": 600
+        }
+      ],
+      "status": "qualified_for_illustrative_use",
+      "basis": "Same reviewed massing archive and Centreline source; bounded derivatives contain source IDs, footprints, heights and methods only."
+    }
+  }
+}

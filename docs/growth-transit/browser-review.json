@@ -1,0 +1,19 @@
+{
+  "build_id": "3aea90b01edf2c1a1e253768ce67f8a2724e8356e07f09793b1792765bc79826",
+  "analysis": "6ed092c988ad9326e279",
+  "passed": false,
+  "reviewer": "AI-assisted browser review; no participant sessions",
+  "checks": {
+    "region_scope": "passed: Downtown and Midtown selectors and demonstrations only",
+    "cross_region_comparison": "passed: one Downtown and one Midtown selection persist across navigation and reload",
+    "map": "passed: on-demand area marker map opened",
+    "modelling": "passed: metric position, arbitrary rotation, height, width/depth, local save and session capture attachment",
+    "combined_brief": "passed: actual downloaded JSON contains two areas, scenario dimensions, image and baseline pin",
+    "cleanup": "test attachment and test conclusion removed from preview",
+    "print": "blocked: native print dispatch timed out; preview/PDF output unverified",
+    "full_screen_reader": "outstanding",
+    "mobile": "responsive layout inspected previously; full final physical-device test outstanding"
+  },
+  "export_sha256": "9aa0bd888f819950976edc46983c4cf611a848be59b46df2846b0f07729704e8",
+  "screenshot": "/tmp/aster-integrated-brief.png"
+}

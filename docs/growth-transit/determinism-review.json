@@ -1,0 +1,9 @@
+{
+  "build_id": "95229b5afba65e21fdb027f218e0947e1facdffdecb02f291fdd6a1fb0b1f3d9",
+  "analysis": "c3974580fac92a5523a8",
+  "source": "data/transport-source/20261105T133936926310Z",
+  "as_of": "2026-11-05",
+  "method": "Reran builder on pinned inputs and compared SHA256 of every file in the analysis directory before and after.",
+  "identical_files": 250,
+  "passed": true
+}

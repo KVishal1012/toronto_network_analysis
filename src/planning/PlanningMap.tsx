@@ -1,3 +1,4 @@
+import 'maplibre-gl/dist/maplibre-gl.css';
 import {useEffect,useRef,useState} from 'react';
 import * as maplibregl from 'maplibre-gl';
 import type {FeatureCollection,Feature,Geometry} from 'geojson';

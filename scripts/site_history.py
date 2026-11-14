@@ -86,8 +86,21 @@ def release_gate(checks: dict[str, bool], participants: list[dict]) -> dict:
     """Require every technical gate and five distinct successful human checks."""
     required = {'boundaries', 'rights', 'accounting', 'site_identity', 'matching_review', 'history', 'browser_qa', 'public_isolation'}
     blockers = sorted(k for k in required if checks.get(k) is not True)
-    valid = {p['participant_id'] for p in participants if p.get('participant_id') and p.get('passed') is True and p.get('evidence_reference')}
-    if len(valid) < 5 or any(p.get('passed') is not True for p in participants):
+    def valid_session(p: dict) -> bool:
+        try:
+            datetime.fromisoformat(p.get('date', ''))
+        except (TypeError, ValueError):
+            return False
+        return (p.get('human_participant') is True and p.get('passed') is True
+                and all(isinstance(p.get(k), str) and p[k].strip()
+                        for k in ('participant_id', 'tested_build', 'evidence_reference'))
+                and isinstance(p.get('task_results'), list) and len(p['task_results']) == 5
+                and all(isinstance(t, dict) and t.get('passed') is True
+                        and isinstance(t.get('response'), str) and t['response'].strip()
+                        for t in p['task_results']))
+    valid = {p['participant_id'] for p in participants if valid_session(p)}
+    builds = {p.get('tested_build') for p in participants if valid_session(p)}
+    if len(valid) < 5 or len(builds) != 1 or any(not valid_session(p) for p in participants):
         blockers.append('five_person_comprehension')
     return {'ready': not blockers, 'blockers': blockers}
 

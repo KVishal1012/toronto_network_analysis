@@ -1,0 +1,61 @@
+{
+  "build_id": "22927b69d268c210741c8c6e33a60d284ca30f1d8bc22839f18340763cf166ba",
+  "analysis": "6ed092c988ad9326e279",
+  "release_ready": false,
+  "gates": {
+    "accounting": {
+      "status": "passed",
+      "evidence": {
+        "accounted_records": 2391,
+        "group_count": 2391,
+        "input_records": 2391,
+        "outcomes": {
+          "included": 368,
+          "no_reported_housing_units": 499,
+          "outside_study_areas": 913,
+          "shared_location_distinct_identifiers": 76,
+          "unresolved_location": 535
+        },
+        "regional": {
+          "downtown": {
+            "included": 228,
+            "no_reported_housing_units": 57,
+            "shared_location_distinct_identifiers": 13
+          },
+          "midtown": {
+            "included": 140,
+            "no_reported_housing_units": 23,
+            "shared_location_distinct_identifiers": 3
+          }
+        },
+        "unassigned_groups": 1927
+      }
+    },
+    "source_sample": {
+      "status": "passed",
+      "evidence": "source-audit.json"
+    },
+    "public_isolation": {
+      "status": "passed",
+      "evidence": "check_public_boundary against dist-public"
+    },
+    "browser": {
+      "status": "blocked",
+      "evidence": "data/growth-qualification/22927b69d268c210741c8c6e33a60d284ca30f1d8bc22839f18340763cf166ba/browser.json"
+    },
+    "rights": {
+      "status": "passed",
+      "evidence": "submission-rights-register.json",
+      "reason": "Reviewed screening versions and bounded illustrative massing; legacy explorer datasets excluded."
+    },
+    "participants": {
+      "status": "blocked",
+      "reason": "No genuine participant sessions supplied; user impact not yet validated."
+    },
+    "publication": {
+      "status": "blocked",
+      "reason": "Owner review and separate publication approval required."
+    }
+  },
+  "package_file_count": 371
+}

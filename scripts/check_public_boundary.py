@@ -9,7 +9,7 @@ def check(root: Path) -> None:
     allowed = {'index.html', 'src/main-public.tsx'}
     for key, entry in manifest.items():
         source = entry.get('src', key)
-        if not (source in allowed or source.startswith('src/planning/') or source.startswith('_')):
+        if not (source in allowed or source.startswith(('src/planning/','src/sandbox/')) or source.startswith('_')):
             raise ValueError(f'Non-public module in public build: {source}')
     for file in root.rglob('*'):
         if not file.is_file():

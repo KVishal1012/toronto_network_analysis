@@ -21,7 +21,15 @@
     "start:private": "ASTER_AUTO_REFRESH=0 sh scripts/start.sh dev:private",
     "preview:public": "python3 -m http.server 5175 --bind 127.0.0.1 --directory dist-public",
     "check:public-boundary": ".venv/bin/python scripts/check_public_boundary.py",
-    "test:lab": "node --experimental-strip-types --test tests/lab-workspace.test.mjs"
+    "test:transport": "node --experimental-strip-types --test tests/transport.test.mjs",
+    "test:lab": "node --experimental-strip-types --test tests/lab-workspace.test.mjs",
+    "build:twin-review": "tsc -b && vite build --config vite.twin-review.config.ts && .venv/bin/python scripts/package_twin_review.py",
+    "preview:twin-review": "python3 -m http.server 5177 --bind 127.0.0.1 --directory dist-twin-review",
+    "qualify:twin-review": ".venv/bin/python scripts/qualify_twin_candidate.py",
+    "build:screening": ".venv/bin/python scripts/build_screening.py",
+    "test:screening": ".venv/bin/python -m unittest tests.test_screening",
+    "dev:sandbox": "vite --config vite.sandbox.config.ts --open /sandbox.html",
+    "build:sandbox": "tsc -b && vite build --config vite.sandbox.config.ts"
   },
   "dependencies": {
     "cesium": "1.145.0",

@@ -81,7 +81,16 @@ def package(source:Path, destination:Path)->dict:
     if total>850_000_000:raise ValueError('Public data exceeds 850 MB publication budget; retain history and migrate hosting before publishing')
     shutil.copy2(source/'latest.json',output/'latest.json')
     (destination/'.nojekyll').touch()
-    report={'snapshots':snapshots,'objects':len(objects),'compressed_bytes':total,'raw_private_files_included':False}
+    # Transport is a separate, lazily fetched public snapshot family.
+    import sys
+    sys.path.insert(0,str(ROOT))
+    from scripts.build_transport import package_transport
+    transport=package_transport(source.parent/'transport',output/'transport')
+    if total+transport.get('bytes',0)>850_000_000:raise ValueError('Combined public package exceeds 850 MB budget')
+    from scripts.package_screening import package_screening
+    screening=package_screening(source.parent/'screening',output/'screening')
+    if total+transport.get('bytes',0)+screening.get('bytes',0)>850_000_000:raise ValueError('Combined package exceeds publication budget')
+    report={'screening':screening,'transport':transport,'snapshots':snapshots,'objects':len(objects),'compressed_bytes':total,'raw_private_files_included':False}
     (destination/'release-validation.json').write_text(json.dumps(report,indent=2))
     return report
 
@@ -89,4 +98,8 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source',type=Path,default=ROOT/'public/planning')
     parser.add_argument('--destination',type=Path,default=ROOT/'dist-public')
-    args=parser.parse_args();print(json.dumps(package(args.source,args.destination)))
+    args=parser.parse_args()
+    import sys
+    sys.path.insert(0,str(ROOT))
+    from scripts.package_submission import package as package_submission
+    print(json.dumps(package_submission(args.source,args.destination)))

@@ -1,0 +1,860 @@
+{
+  "build_id": "22927b69d268c210741c8c6e33a60d284ca30f1d8bc22839f18340763cf166ba",
+  "screening_source_evidence": {
+    "planning": {
+      "addresses": {
+        "api_licence": "open-government-licence-toronto",
+        "expected_records": 525168,
+        "geometry_rejected": 0,
+        "key": "addresses",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "licence_evidence_sha256": "caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2",
+        "metadata_sha256": "a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01",
+        "name": "Address Points - 4326.geojson",
+        "notes": "The One Address Repository data set provides a point representation for over 500,000 addresses within the City of Toronto. Each address point is described with a series of attributes including street number, street name, address type, feature class and real world coordinates.\r\n\r\nAll address points have a position on the correct side of the street, and are correctly positioned relative to neighbouring addresses. They are positioned within the parcel or the building footprint.\r\n\r\n\r\n\r\n",
+        "page": "https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/",
+        "publisher": "City of Toronto",
+        "records_in": 525168,
+        "records_out": 525168,
+        "refresh_rate": "Daily",
+        "resource_id": "b1c2ab72-dfe7-4b29-8550-6d1cfaa61733",
+        "retrieved_at": "2026-11-13T22:59:41.681935+00:00",
+        "schema": [
+          "_id",
+          "ADDRESS_POINT_ID",
+          "ADDRESS_ID",
+          "ADDRESS_STRING_ID",
+          "LINEAR_NAME_ID",
+          "CENTRELINE_ID",
+          "MAINT_STAGE",
+          "ADDRESS_NUMBER",
+          "LINEAR_NAME_FULL",
+          "LO_NUM",
+          "LO_NUM_SUF",
+          "HI_NUM",
+          "HI_NUM_SUF",
+          "LINEAR_NAME",
+          "LINEAR_NAME_TYPE",
+          "LINEAR_NAME_DIR",
+          "LINEAR_NAME_DESC",
+          "CENTRELINE_SIDE",
+          "CENTRELINE_MEASURE",
+          "CENTRELINE_OFFSET",
+          "GENERAL_USE_CODE",
+          "GENERAL_USE",
+          "CLASS_FAMILY",
+          "CLASS_FAMILY_DESC",
+          "ADDRESS_CLASS",
+          "ADDRESS_CLASS_DESC",
+          "ADDRESS_POINT_ID_LINK",
+          "ADDRESS_ID_LINK",
+          "PLACE_NAME",
+          "PLACE_NAME_ALL",
+          "ADDRESS_STATUS",
+          "OBJECTID",
+          "MUNICIPALITY",
+          "MUNICIPALITY_NAME",
+          "WARD",
+          "WARD_NAME",
+          "ADDRESS_FULL"
+        ],
+        "sha256": "8f6f4f2abcbb890e5e13c6e5daf790f7d8add814510a0f809d65a1363909f2db",
+        "slug": "address-points-municipal-toronto-one-address-repository",
+        "source_modified_at": "2026-11-13T11:41:51.975876",
+        "url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/abedd8bc-e3dd-4d45-8e69-79165a76e4fa/resource/b1c2ab72-dfe7-4b29-8550-6d1cfaa61733/download/address-points-4326.geojson"
+      },
+      "applications": {
+        "api_licence": "open-government-licence-toronto",
+        "expected_records": 26713,
+        "geometry_rejected": 0,
+        "key": "applications",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "licence_evidence_sha256": "9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85",
+        "metadata_sha256": "89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c",
+        "name": "Development Applications",
+        "notes": "This dataset lists all currently active (open) and inactive (closed) Community Planning applications and Committee of Adjustment applications received by the City between January 1st 2008 till present.\r\n\r\nFor more info, see:\r\n[Application Information Centre](https://www.toronto.ca/aic/)\r\n\r\n\r\n[Development Applications - Development Projects](http://app.toronto.ca/AIC/index.do)\r\n",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "publisher": "City of Toronto",
+        "records_in": 26713,
+        "records_out": 26713,
+        "refresh_rate": "Daily",
+        "resource_id": "8907d8ed-c515-4ce9-b674-9f8c6eefcf0d",
+        "retrieved_at": "2026-11-13T22:59:29.216814+00:00",
+        "schema": [
+          "_id",
+          "APPLICATION_TYPE",
+          "APPLICATION#",
+          "STREET_NUM",
+          "STREET_NAME",
+          "STREET_TYPE",
+          "STREET_DIRECTION",
+          "POSTAL",
+          "DATE_SUBMITTED",
+          "STATUS",
+          "X",
+          "Y",
+          "DESCRIPTION",
+          "REFERENCE_FILE#",
+          "FOLDERRSN",
+          "WARD_NUMBER",
+          "WARD_NAME",
+          "COMMUNITY_MEETING_DATE",
+          "COMMUNITY_MEETING_TIME",
+          "COMMUNITY_MEETING_LOCATION",
+          "APPLICATION_URL",
+          "CONTACT_NAME",
+          "CONTACT_PHONE",
+          "CONTACT_EMAIL",
+          "PARENT_FOLDER_NUMBER"
+        ],
+        "sha256": "ca1c5c556e3b9b3a19bf90ca20f2345c29fcb875f5edc871b38dba48bf72749a",
+        "slug": "development-applications",
+        "source_modified_at": "2026-11-13T07:25:36.645658",
+        "url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/datastore/dump/8907d8ed-c515-4ce9-b674-9f8c6eefcf0d"
+      },
+      "projects": {
+        "api_licence": "open-government-licence-toronto",
+        "expected_records": 2391,
+        "geometry_rejected": 0,
+        "key": "projects",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "licence_evidence_sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+        "metadata_sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d",
+        "name": "Development Pipeline",
+        "notes": "The Development Pipeline examines how and where the city has grown over the past five years and provides insight on how it will continue to develop in the near future. The Development Pipeline enables City Planning to track urban growth, monitor development trends, and measure progress towards municipal and provincial housing targets. The Development Pipeline bulletin is published annually and the dashboard is updated quarterly on a best-effort basis. A subset of the Development Pipeline information is used to create this dashboard.",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "publisher": "City of Toronto",
+        "records_in": 2391,
+        "records_out": 2391,
+        "refresh_rate": "Quarterly",
+        "resource_id": "7aad5dbd-a769-4bd5-b5d2-f9bb605b6bf9",
+        "retrieved_at": "2026-11-13T22:59:27.790764+00:00",
+        "schema": [
+          "_id",
+          "Pipeline Status",
+          "Application Number",
+          "Date Received",
+          "Description",
+          "Address",
+          "Ward",
+          "Proposed Residential Gross Floor Area",
+          "Proposed Non-Residential Gross Floor Area",
+          "Proposed Gross Floor Area",
+          "Proposed Residential Units",
+          "Application Information Centre Link"
+        ],
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "slug": "development-pipeline",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/datastore/dump/7aad5dbd-a769-4bd5-b5d2-f9bb605b6bf9"
+      }
+    },
+    "boundaries": [
+      {
+        "catalogue_modified": "2026-10-29T14:32:32.879269",
+        "catalogue_sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+        "geometry_sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "licence": "open-government-licence-toronto",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "retrieved_at": "2026-10-31T17:08:56.797806+00:00"
+      },
+      {
+        "catalogue_modified": "2026-10-29T14:23:34.392718",
+        "catalogue_sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2",
+        "geometry_sha256": "53bcd48fa18b05980630e408eb5d8795e014c4d6b0b5f60a982ef8f8f036ad2b",
+        "licence": "open-government-licence-toronto",
+        "page": "https://open.toronto.ca/dataset/community-council-boundaries/",
+        "retrieved_at": "2026-10-31T17:08:56.797806+00:00"
+      }
+    ],
+    "ttc": {
+      "api_licence": "open-government-licence-toronto",
+      "evidence": {
+        "catalogue-final.json": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c",
+        "catalogue.json": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c",
+        "dataset-page.html": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf",
+        "licence.html": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+      },
+      "licence_basis": "Official dataset page explicitly links Open Government Licence \u2013 Toronto. Catalogue licence: open-government-licence-toronto",
+      "licence_url": "https://open.toronto.ca/open-data-licence/",
+      "page": "https://open.toronto.ca/dataset/merged-gtfs-ttc-routes-and-schedules/",
+      "retrieved_at": "2026-11-13T22:59:46.468253+00:00",
+      "sha256": "a2c8d495bf7b06fe0687183d6d7e606e19555e43bf41a007d97d482e527b23a1",
+      "source_modified_at": "2026-11-04T19:51:45",
+      "source_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/b811ead4-6eaf-4adb-8408-d389fb5a069c/resource/c920e221-7a1c-488b-8c5b-6d8cd4e85eaf/download/completegtfs.zip",
+      "stable_reread": true
+    },
+    "derived": "ASTER grid, point proximity and scheduled frequency screening. No document images or PDFs."
+  },
+  "datasets": [
+    {
+      "dataset": "addresses",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/addresses.html",
+          "sha256": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/addresses-catalogue.json",
+          "sha256": "db93e4e93ff505e149552a591b007c118691ecfd1e113a8b504318d7de5dc0c1"
+        }
+      ],
+      "fields": "address labels and representative coordinates only"
+    },
+    {
+      "dataset": "applications",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/applications.html",
+          "sha256": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/applications-catalogue.json",
+          "sha256": "ae441a3fbd117facd31666036f58a56eae7e526deabffc1ae1393b04c9c36c85"
+        }
+      ],
+      "fields": "same-identifier reference, label and status only; no contact or owner fields"
+    },
+    {
+      "dataset": "projects",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/projects.html",
+          "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/projects-catalogue.json",
+          "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+        }
+      ],
+      "fields": "publisher identifier, address, structured units, stage, planning description, source URL and row references"
+    },
+    {
+      "dataset": "neighbourhoods",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/neighbourhoods.html",
+          "sha256": "4e9fa147ce9203f90051d85e19b5d38cdd90ad4da16a4ab79de5346275e275a6"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json",
+          "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+        }
+      ],
+      "fields": "derived study-region membership; no raw geometry download"
+    },
+    {
+      "dataset": "community-council-boundaries",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include only reviewed screening derivatives",
+      "evidence": [
+        {
+          "path": "data/source-rights-review/2026-11-04/community-council-boundaries.html",
+          "sha256": "1e6f820823f2750e895f8c40464b7b938610a36b47296e342827dd3022ec3d76"
+        },
+        {
+          "path": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json",
+          "sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2"
+        }
+      ],
+      "fields": "derived North York membership; no raw geometry download"
+    },
+    {
+      "dataset": "TTC merged GTFS",
+      "licence": "Open Government Licence \u2013 Toronto 1.0",
+      "decision": "include reviewed stop names, identifiers, route-direction departure counts and derived distances only",
+      "evidence": [
+        {
+          "path": "data/transport-source/20261105T133936926310Z/catalogue-final.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/catalogue.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/dataset-page.html",
+          "sha256": "1fd7f6e02c8d9509b67bfbb46642ab19eac9763b6d4e371578bf899bfcc7cb0e"
+        },
+        {
+          "path": "data/transport-source/20261105T133936926310Z/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ]
+    },
+    {
+      "dataset": "projects",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+      "retrieved_at": "2026-11-13T22:59:27.790764+00:00",
+      "page": "https://open.toronto.ca/dataset/development-pipeline/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+          "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d",
+          "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+        }
+      ]
+    },
+    {
+      "dataset": "applications",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "ca1c5c556e3b9b3a19bf90ca20f2345c29fcb875f5edc871b38dba48bf72749a",
+      "retrieved_at": "2026-11-13T22:59:29.216814+00:00",
+      "page": "https://open.toronto.ca/dataset/development-applications/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85",
+          "sha256": "9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c",
+          "sha256": "89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c"
+        }
+      ]
+    },
+    {
+      "dataset": "addresses",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "8f6f4f2abcbb890e5e13c6e5daf790f7d8add814510a0f809d65a1363909f2db",
+      "retrieved_at": "2026-11-13T22:59:41.681935+00:00",
+      "page": "https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2",
+          "sha256": "caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01",
+          "sha256": "a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01"
+        }
+      ]
+    },
+    {
+      "dataset": "neighbourhoods",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+      "retrieved_at": "2026-11-13T22:59:42.405764+00:00",
+      "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16",
+          "sha256": "8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+          "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+        }
+      ]
+    },
+    {
+      "dataset": "streets",
+      "decision": "Reviewed field-limited derivatives only",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "source_sha256": "bea69def1245863f3dbe140d3aeb3525634cf33b8337a4cc598f9ec23a5d27ec",
+      "retrieved_at": "2026-11-13T22:59:45.067381+00:00",
+      "page": "https://open.toronto.ca/dataset/toronto-centreline-tcl/",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614",
+          "sha256": "9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614"
+        },
+        {
+          "path": "data/submission-refresh/planning-2026-11-13/c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9",
+          "sha256": "c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9"
+        }
+      ]
+    },
+    {
+      "dataset": "TTC refreshed GTFS",
+      "decision": "Route-direction/hourly departures and stop-distance evidence",
+      "page": "https://open.toronto.ca/dataset/merged-gtfs-ttc-routes-and-schedules/",
+      "source_sha256": "a2c8d495bf7b06fe0687183d6d7e606e19555e43bf41a007d97d482e527b23a1",
+      "evidence": [
+        {
+          "path": "data/transport-source/20261113T225930149203Z/catalogue-final.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/catalogue.json",
+          "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/dataset-page.html",
+          "sha256": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf"
+        },
+        {
+          "path": "data/transport-source/20261113T225930149203Z/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ]
+    },
+    {
+      "dataset": "Toronto 2025 context massing",
+      "decision": "Bounded 58-feature derivative for informational/illustrative exploration and hypothetical design only",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "source_sha256": "9617089710518f1a24f70ca11b4a7c20ae45ab8e52a6fbed1bc088192efe6285",
+      "notice": "City Planning disclaims precision/fitness; user verification is required for legal or official use. No parcel ownership or MPAC data is included.",
+      "evidence": [
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/massing-catalogue.json",
+          "sha256": "691eab98c68c0b32f09bed2d7b4f55dca2d4ab507811f411df80b7904898e279"
+        },
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/massing-page.html",
+          "sha256": "74318c5dc14d51ced7dabb547cbb0e484ec4d3bff77738c2862fc169aea181e8"
+        },
+        {
+          "path": "data/submission-refresh/rights-2026-11-13/licence.html",
+          "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+        }
+      ],
+      "baseline": "23cfc1346cddc0233be6bb421385a71c68554df11143e0c3714c34553a244f23",
+      "derived_sha256": "1bfee96de78a05cc62a933b6d0ff112addec2c48d43558f1ede5d82b02794ea4"
+    }
+  ],
+  "licence_url": "https://open.toronto.ca/open-data-licence/",
+  "permitted_use": "Copy, adapt and redistribute licensed information, subject to attribution and exemptions.",
+  "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+  "exemptions": [
+    "Personal information",
+    "Unlicensed third-party rights",
+    "Official logos and marks",
+    "Restricted information"
+  ],
+  "studio": {
+    "source_path": "src/sandbox/downtown.json",
+    "sha256": "1bfee96de78a05cc62a933b6d0ff112addec2c48d43558f1ede5d82b02794ea4",
+    "baseline": "23cfc1346cddc0233be6bb421385a71c68554df11143e0c3714c34553a244f23",
+    "feature_count": 58,
+    "street_count": 12,
+    "status": "qualified_for_illustrative_use",
+    "architectural": {
+      "source_path": "src/sandbox/architectural.json",
+      "sha256": "b3250107aecc1854b8cd348cdc230654bcbfec5c400aacc1530c35cd5d471326",
+      "views": [
+        {
+          "id": "b30bb7e99f8f90a89970c0ea7f37f49c667256513325d1d205f6a0c4632272cf",
+          "region": "downtown",
+          "features": 307,
+          "extent_m": 600
+        },
+        {
+          "id": "8f65aaed8759169ce3da96ae435556b528041a8f5f0eda3986bfda8cf2d3bf47",
+          "region": "midtown",
+          "features": 516,
+          "extent_m": 600
+        }
+      ],
+      "status": "qualified_for_illustrative_use",
+      "basis": "Same reviewed massing archive and Centreline source; bounded derivatives contain source IDs, footprints, heights and methods only."
+    }
+  },
+  "controls": [
+    "No raw contact or owner fields shipped",
+    "No PDFs, images or publisher documents copied; source links only",
+    "No endorsement claim",
+    "Exact byte allowlist; additions require a new review",
+    "Only reviewed planning screening versions and bounded source-height massing ship; existing source buildings are read-only.",
+    "Retain illustrative-use and legal/official verification notice in 3D UI and exports."
+  ],
+  "evidence_files": [
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses.html",
+      "sha256": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses-catalogue.json",
+      "sha256": "db93e4e93ff505e149552a591b007c118691ecfd1e113a8b504318d7de5dc0c1"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications.html",
+      "sha256": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications-catalogue.json",
+      "sha256": "ae441a3fbd117facd31666036f58a56eae7e526deabffc1ae1393b04c9c36c85"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects.html",
+      "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects-catalogue.json",
+      "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods.html",
+      "sha256": "4e9fa147ce9203f90051d85e19b5d38cdd90ad4da16a4ab79de5346275e275a6"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json",
+      "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries.html",
+      "sha256": "1e6f820823f2750e895f8c40464b7b938610a36b47296e342827dd3022ec3d76"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json",
+      "sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/catalogue-final.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/catalogue.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/dataset-page.html",
+      "sha256": "1fd7f6e02c8d9509b67bfbb46642ab19eac9763b6d4e371578bf899bfcc7cb0e"
+    },
+    {
+      "path": "data/transport-source/20261105T133936926310Z/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/licence.html",
+      "sha256": "5932ada60bce2c51bfe74ee7aa97e5f0e7b1d7f7e81354665e1463b6d33c80c6"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+      "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d",
+      "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85",
+      "sha256": "9510401544b04921eff1fc936e6a86e74dc72f3eb5d37b79a260734dcf2d7b85"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c",
+      "sha256": "89d7131a928cde7285db2d73f81f0afd968baf37c389311b079929c2c643c63c"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2",
+      "sha256": "caa276b14775a0cc1d35cea91492e54969a73177db12e08d34aa74bb901f07b2"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01",
+      "sha256": "a74c91d754be5e3427ff57160f2c7b835c85fc0d2373c621027c367efebd0d01"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16",
+      "sha256": "8883646651d56bd0dfce7432e676f476dca75e26f297510db7e11b11be5a1e16"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+      "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614",
+      "sha256": "9c85bdf1dbe6a6e447840e7c57d21bfeec1bfa7a5a7d4787d57e7aeb1fb47614"
+    },
+    {
+      "path": "data/submission-refresh/planning-2026-11-13/c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9",
+      "sha256": "c1b1a3902336e0fdc89e4434d36fb47dbf997a96a4f3a3faff1a1c994b5406a9"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/catalogue-final.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/catalogue.json",
+      "sha256": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/dataset-page.html",
+      "sha256": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf"
+    },
+    {
+      "path": "data/transport-source/20261113T225930149203Z/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/massing-catalogue.json",
+      "sha256": "691eab98c68c0b32f09bed2d7b4f55dca2d4ab507811f411df80b7904898e279"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/massing-page.html",
+      "sha256": "74318c5dc14d51ced7dabb547cbb0e484ec4d3bff77738c2862fc169aea181e8"
+    },
+    {
+      "path": "data/submission-refresh/rights-2026-11-13/licence.html",
+      "sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
+    }
+  ],
+  "excluded_legacy_snapshots": [
+    {
+      "snapshot": "3109928bc7881940611a",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "5cefacecbb23b60d5dbe",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "6a6da29c2c5d5eec218f",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "817447cb12a48dba75bb",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "8269765c8521a43294ae",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "neighbourhoods",
+        "streets",
+        "zoning",
+        "heights"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "8be473c10eda27b1f37b",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "9bad5725714051b020b0",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "9c1ddedb5903af67d1d6",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "a48d82f6ea4c2842017b",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "b918a275a0244881b806",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "bd450a9f1924d34c01b2",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "c311d9763043d70c2bf9",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "d8bef0798c4a91b70110",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "dc1ca133f95ae0655035",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "f3a5f9ee996a0f10f91c",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    }
+  ],
+  "disabled_features": [
+    "legacy address explorer",
+    "legacy map and full application details",
+    "standalone transport explorer",
+    "energy guidance via legacy explorer"
+  ],
+  "note": "Package-specific review. Source archives remain intact; no blanket qualification of legacy records."
+}

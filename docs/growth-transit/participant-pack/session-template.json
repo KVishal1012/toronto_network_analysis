@@ -1,0 +1,241 @@
+{
+  "build_id": "3aea90b01edf2c1a1e253768ce67f8a2724e8356e07f09793b1792765bc79826",
+  "analysis": "6ed092c988ad9326e279",
+  "participants": [
+    {
+      "id": "P01",
+      "consent": null,
+      "date": null,
+      "actual_human": null,
+      "device": null,
+      "tasks": [
+        {
+          "task": 1,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 2,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 3,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 4,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 5,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        }
+      ],
+      "construction_distinction": null,
+      "proximity_distinction": null,
+      "usefulness_response": null
+    },
+    {
+      "id": "P02",
+      "consent": null,
+      "date": null,
+      "actual_human": null,
+      "device": null,
+      "tasks": [
+        {
+          "task": 1,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 2,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 3,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 4,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 5,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        }
+      ],
+      "construction_distinction": null,
+      "proximity_distinction": null,
+      "usefulness_response": null
+    },
+    {
+      "id": "P03",
+      "consent": null,
+      "date": null,
+      "actual_human": null,
+      "device": null,
+      "tasks": [
+        {
+          "task": 1,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 2,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 3,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 4,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 5,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        }
+      ],
+      "construction_distinction": null,
+      "proximity_distinction": null,
+      "usefulness_response": null
+    },
+    {
+      "id": "P04",
+      "consent": null,
+      "date": null,
+      "actual_human": null,
+      "device": null,
+      "tasks": [
+        {
+          "task": 1,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 2,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 3,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 4,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 5,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        }
+      ],
+      "construction_distinction": null,
+      "proximity_distinction": null,
+      "usefulness_response": null
+    },
+    {
+      "id": "P05",
+      "consent": null,
+      "date": null,
+      "actual_human": null,
+      "device": null,
+      "tasks": [
+        {
+          "task": 1,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 2,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 3,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 4,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        },
+        {
+          "task": 5,
+          "verbatim_response": null,
+          "elapsed_seconds": null,
+          "assistance": null,
+          "success": null
+        }
+      ],
+      "construction_distinction": null,
+      "proximity_distinction": null,
+      "usefulness_response": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+import {date,download,fmt,type Ranking} from './types';
+export function RankingPanel({ranking,onSelect,onMap,mapped}:{ranking:Ranking|null;onSelect:(id:string)=>void;onMap:()=>void;mapped:boolean}){
+ return <div className="ranking-panel"><small>DETERMINISTIC GEOAI / INVENTORY</small><h2>Where is Bike Share availability lowest?</h2><p>Rank neighbourhoods by rentable bikes per mapped station. A zero report and missing evidence are different.</p>
+ {!ranking?<p role="status">Ranking unavailable or loading. No result is implied.</p>:<><p className="notice">{ranking.formula}. All stations remain in the denominator, including offline stations.</p><small>Evaluated {date(ranking.evaluated_at)} · Toronto<br/>Snapshot {ranking.state_id.slice(0,8)} · {ranking.rows.length} eligible / {ranking.rows.length+ranking.excluded.length} neighbourhoods</small>
+ <button className="outline-button full" onClick={onMap}>{mapped?'Hide availability map':'Map availability'}</button>
+ {ranking.rows.length===0?<p className="notice">Current comparison unavailable. Refresh the required feeds; stale or incomplete evidence is never ranked as zero.</p>:<div className="ranking-list">{ranking.rows.map(r=><button key={r.id} onClick={()=>onSelect(r.id)}><b>#{r.rank}</b><span>{r.name}<small>{r.available_bikes} bikes ÷ {r.station_count} stations</small></span><strong>{fmt(r.bikes_per_station,2)}<small>bikes/station</small></strong></button>)}</div>}
+ <details><summary>Excluded neighbourhoods ({ranking.excluded.length})</summary>{ranking.excluded.map(r=><p key={r.id}><b>{r.name}</b><br/>{r.reason}</p>)}</details><p>{ranking.limitation}</p><p>{ranking.method}</p><button className="outline-button full" onClick={()=>download(`aster-${ranking.state_id}-ranking.json`,ranking)}>Export ranking & source receipts</button></>}
+ </div>;
+}

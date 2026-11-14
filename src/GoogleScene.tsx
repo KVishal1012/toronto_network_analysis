@@ -1,0 +1,43 @@
+import {useEffect,useRef,useState} from 'react';
+import type {Viewer,GeoJsonDataSource} from 'cesium';
+import type {Feature,FeatureCollection} from 'geojson';
+import {EvidenceWorkspace} from './lab/EvidenceWorkspace';
+import {PRESETS,validView,type Viewpoint} from './lab/workspace';
+import 'cesium/Build/Cesium/Widgets/widgets.css';
+const key=import.meta.env.VITE_GOOGLE_MAPS_API_KEY?.trim();
+const EMPTY:FeatureCollection={type:'FeatureCollection',features:[]};
+export function GoogleScene(){
+ const container=useRef<HTMLDivElement>(null),viewer=useRef<Viewer|null>(null),overlay=useRef<GeoJsonDataSource|null>(null);
+ const [active,setActive]=useState(false),[ready,setReady]=useState(false),[status,setStatus]=useState('Not connected'),[failed,setFailed]=useState(false),[viewName,setViewName]=useState(''),[views,setViews]=useState<Viewpoint[]>([]),[storageError,setStorageError]=useState('');
+ const [presetIndex,setPresetIndex]=useState(0);
+ const [anchor,setAnchor]=useState({lon:-79.3871,lat:43.6426}),[features,setFeatures]=useState<FeatureCollection>(EMPTY),[selected,setSelected]=useState<Feature|null>(null);
+ const featuresRef=useRef(features);featuresRef.current=features;
+ useEffect(()=>{try{const items=JSON.parse(localStorage.getItem('aster-lab-views-v1')||'[]');if(!Array.isArray(items)||!items.every(validView))throw Error();setViews(items);}catch{setStorageError('Saved viewpoints could not be read. Existing storage has not been overwritten.');}},[]);
+ function capture():Viewpoint|null{const c=viewer.current?.camera;if(!c)return null;const p=c.positionCartographic;return {name:viewName.trim()||'Saved viewpoint',lon:p.longitude*180/Math.PI,lat:p.latitude*180/Math.PI,height:p.height,heading:c.heading*180/Math.PI,pitch:c.pitch*180/Math.PI,roll:c.roll*180/Math.PI};}
+ async function fly(v:Viewpoint){if(!validView(v)||!viewer.current)return;const C=await import('cesium');if(!viewer.current)return;viewer.current.camera.flyTo({destination:C.Cartesian3.fromDegrees(v.lon,v.lat,v.height),orientation:{heading:C.Math.toRadians(v.heading),pitch:C.Math.toRadians(v.pitch),roll:C.Math.toRadians(v.roll)},duration:1.5});}
+ function preset(i:number){setPresetIndex(i);const targets=[{lon:-79.3871,lat:43.6426},{lon:-79.3832,lat:43.6532},{lon:-79.359,lat:43.6503}];setAnchor(targets[i]);setSelected(null);setFeatures(EMPTY);void fly(PRESETS[i]);}
+ function select(f:Feature){setSelected(f);const g=f.geometry;const p=g.type==='Polygon'?g.coordinates[0][0]:g.type==='MultiPolygon'?g.coordinates[0][0][0]:null;if(p)setAnchor({lon:p[0],lat:p[1]});}
+ function persist(next:Viewpoint[]){try{localStorage.setItem('aster-lab-views-v1',JSON.stringify(next));setViews(next);setStorageError('');}catch{setStorageError('Viewpoint save failed. Browser storage may be full or disabled.');}}
+ useEffect(()=>{
+  if(!active||!key||!container.current)return;let disposed=false,timeout:ReturnType<typeof setTimeout>|undefined;setStatus('Loading Google 3D tiles…');setFailed(false);
+  const fail=()=>{if(!disposed){setStatus('Some 3D content is unavailable. Check provider access, quota and network.');setFailed(true);}};
+  void(async()=>{try{const C=await import('cesium');if(disposed)return;
+   const v=new C.Viewer(container.current!,{globe:false,baseLayer:false,geocoder:false,baseLayerPicker:false,timeline:false,animation:false,homeButton:false,sceneModePicker:false,navigationHelpButton:false,fullscreenButton:false,selectionIndicator:false,infoBox:false,requestRenderMode:true});viewer.current=v;
+   if(v.scene.skyAtmosphere)v.scene.skyAtmosphere.show=false;
+   // Coarse parent tiles can push the camera far away before detailed geometry arrives.
+   v.scene.screenSpaceCameraController.enableCollisionDetection=false;
+   const home=PRESETS[presetIndex];v.camera.setView({destination:C.Cartesian3.fromDegrees(home.lon,home.lat,home.height),orientation:{heading:0,pitch:C.Math.toRadians(home.pitch),roll:0}});
+   v.scene.renderError.addEventListener(fail);timeout=setTimeout(fail,45000);
+   v.screenSpaceEventHandler.setInputAction((event:{position:import('cesium').Cartesian2})=>{const picked=v.scene.pick(event.position);const id=picked?.id?.properties?.StructureID?.getValue(C.JulianDate.now());if(id){const f=featuresRef.current.features.find(f=>f.properties?.StructureID===id);if(f)select(f);}},C.ScreenSpaceEventType.LEFT_CLICK);
+   const tiles=await C.createGooglePhotorealistic3DTileset({key,onlyUsingWithGoogleGeocoder:true},{showCreditsOnScreen:true,maximumScreenSpaceError:8,cacheBytes:268435456,maximumCacheOverflowBytes:134217728,enableCollision:false});
+   if(disposed){tiles.destroy();return;}tiles.tileFailed.addEventListener(fail);tiles.tileVisible.addEventListener(()=>{if(!disposed){clearTimeout(timeout);setStatus('Google 3D tiles visible · capture dates vary');}});v.scene.primitives.add(tiles);setReady(true);
+  }catch{fail();}})();return()=>{disposed=true;clearTimeout(timeout);setReady(false);overlay.current=null;if(viewer.current&&!viewer.current.isDestroyed())viewer.current.destroy();viewer.current=null;};
+ },[active]);
+ useEffect(()=>{if(!ready||!viewer.current)return;let disposed=false;const v=viewer.current;void(async()=>{const C=await import('cesium');const data=await C.GeoJsonDataSource.load({...features,features:features.features.map(f=>({...f,id:String(f.properties?.StructureID)}))},{clampToGround:true,stroke:C.Color.CYAN,fill:C.Color.DEEPSKYBLUE.withAlpha(.3),strokeWidth:3});if(disposed||v.isDestroyed()){return;}if(overlay.current)v.dataSources.remove(overlay.current,true);overlay.current=data;await v.dataSources.add(data);v.scene.requestRender();})().catch(()=>{if(!disposed)setStorageError('Source building overlay unavailable; use the component list for evidence.');});return()=>{disposed=true;};},[features,ready]);
+ return <section className="google-scene" aria-label="Photorealistic Toronto 3D"><div className="google-toolbar"><div><h2>Toronto / Photorealistic 3D</h2><p role="status">{failed?'Some content failed. ':''}{status}</p></div>{active&&<button className="outline-button" onClick={()=>{setActive(false);setStatus('Disconnected');}}>Disconnect</button>}</div>
+ <div className="lab-navigation"><label>Neighbourhood preset<select aria-label="Neighbourhood preset" value={presetIndex} onChange={e=>preset(Number(e.target.value))}>{PRESETS.map((p,i)=><option value={i} key={p.name}>{p.name}</option>)}</select></label><div className="lab-actions"><button disabled={!ready} onClick={()=>preset(0)}>Reset view</button><button disabled={!ready} onClick={()=>{viewer.current?.camera.zoomIn(100);viewer.current?.scene.requestRender();}}>Zoom in</button><button disabled={!ready} onClick={()=>{viewer.current?.camera.zoomOut(100);viewer.current?.scene.requestRender();}}>Zoom out</button><button disabled={!ready} onClick={()=>{const v=capture();if(v)void fly({...v,heading:v.heading+30});}}>Rotate right</button><button disabled={!ready} onClick={()=>{const v=capture();if(v)void fly({...v,pitch:Math.max(-85,v.pitch-10)});}}>Look down</button></div><label>Viewpoint name<input value={viewName} maxLength={100} onChange={e=>setViewName(e.target.value)}/></label><button disabled={!ready||storageError.startsWith('Saved viewpoints')} onClick={()=>{const v=capture();if(v&&validView(v))persist([...views,v]);else setStorageError('Camera is outside the supported viewpoint bounds.');}}>Save viewpoint</button>{views.map((v,i)=><span key={i}><button disabled={!ready} onClick={()=>fly(v)}>{v.name}</button><button aria-label={'Delete viewpoint '+v.name} onClick={()=>persist(views.filter((_,j)=>i!==j))}>×</button></span>)}{storageError&&<p role="alert">{storageError}</p>}</div>
+ {!active?<div className="connection-card"><span className="advisory">{key?'Key configured · load to verify':'Credential required'}</span><h2>Buildings with real textures</h2><p>Google Photorealistic 3D Tiles rendered with Cesium. Loading uses your Google account quota. Configure the restricted browser key in .env.private.local.</p><button className="primary-button" disabled={!key} onClick={()=>setActive(true)}>Load Google 3D</button></div>:<div className="google-canvas" ref={container}/>}
+ <p className="google-boundary">Google imagery is visual context only. No image analysis or mesh extraction. Left drag to pan; Ctrl + drag to tilt; scroll to zoom. Collision avoidance is disabled to prevent coarse tiles displacing the camera; Reset view recovers from entering geometry. Saved cameras do not change the investigation anchor.</p>
+ <EvidenceWorkspace location={anchor} features={features} onFeatures={setFeatures} onSelect={select} selected={selected} capture={capture} restore={fly} canRestore={ready}/>
+ </section>;
+}

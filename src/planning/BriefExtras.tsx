@@ -1,0 +1,8 @@
+
+import type {AreaEvidence} from './screening';
+export function readScenarioAttachment(){try{const x=JSON.parse(sessionStorage.getItem('aster-brief-scenario')||'null');if(x&&x.scenario?.schema===3&&typeof x.image==='string'&&x.image.startsWith('data:image/png;base64,')&&x.image.length<8000000)return x;}catch{}return null;}
+export default function BriefExtras({areas}:{areas:AreaEvidence[]}){
+ const points=areas.map(a=>{const p=a.projects[0];return p?{id:a.id,x:p.lon,y:p.lat}:null;}).filter((x):x is {id:string;x:number;y:number}=>!!x);
+ const minX=Math.min(...points.map(p=>p.x)),maxX=Math.max(...points.map(p=>p.x)),minY=Math.min(...points.map(p=>p.y)),maxY=Math.max(...points.map(p=>p.y));
+ return <section className="brief-extras"><h3>Brief illustrations</h3><p>The schematic below marks selected analysis areas. The architectural 3D viewer covers local views around City Hall and Yonge–Eglinton.</p><button className="g-no-print" onClick={()=>{const q=new URLSearchParams(location.hash.slice(1));q.set('view','3d');location.hash=q.toString();}}>Open Toronto 3D model</button>{points.length>0&&<><svg viewBox="0 0 600 180" role="img" aria-label="Schematic locations of selected analysis areas" style={{width:'100%',maxWidth:600,background:'#e5eee8'}}>{points.map((p,i)=><g key={p.id}><circle cx={40+(p.x-minX)/(maxX-minX||1)*480} cy={140-(p.y-minY)/(maxY-minY||1)*90} r="9" fill="#216354"/><text x={55+(p.x-minX)/(maxX-minX||1)*480} y={140-(p.y-minY)/(maxY-minY||1)*90} fontSize="12">{i+1}: {p.id}</text></g>)}</svg><p>Schematic proposal-point locations, north up. This is not a street or walking-route map.</p></>}<p>Use the source list and building inspection panel in the 3D viewer to inspect geometry and height provenance.</p></section>;
+}
