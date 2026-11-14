@@ -1,0 +1,47 @@
+name: Validate public distribution
+on:
+  workflow_call:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: ['codex/**']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: builder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m venv .venv
+      - run: .venv/bin/pip install -r requirements.txt
+      - run: npm ci
+      - run: mkdir -p public && cp -a ../site/planning public/planning
+      - run: .venv/bin/python -m unittest discover -s tests -v
+      - run: npm run test:planning
+      - run: npm run build:public
+      - run: npm run test:worker
+      - run: npm run test:gta
+      - name: Retain published bundles for already-open tabs
+        run: |
+          .venv/bin/python - <<'PY'
+          from pathlib import Path
+          import shutil
+          target = Path('dist-public/assets')
+          for source in Path('../site/assets').iterdir():
+              destination = target / source.name
+              if source.is_file() and not destination.exists():
+                  shutil.copy2(source, destination)
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: builder/dist-public

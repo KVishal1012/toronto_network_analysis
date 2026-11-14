@@ -1,0 +1,715 @@
+[
+  {
+    "snapshot": "3109928bc7881940611a",
+    "packaged_at": "2026-10-22T11:41:36.898110+00:00",
+    "validation": {
+      "checksums": true,
+      "source_counts": true,
+      "schema": true,
+      "crs": true
+    },
+    "sources": {
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-22T11:31:22.787367+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      },
+      "applications": {
+        "sha256": "7e0399395f004722b27998117c0627c943ec9a953da43b53f733b93834873e6e",
+        "retrieved_at": "2026-10-22T11:31:23.221096+00:00",
+        "source_modified_at": "2026-10-22T07:26:14.273854",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-22T11:31:35.102507+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "5cefacecbb23b60d5dbe",
+    "packaged_at": "2026-10-24T12:20:26.782009+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "6a6da29c2c5d5eec218f",
+    "packaged_at": "2026-10-25T11:49:04.916278+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "817447cb12a48dba75bb",
+    "packaged_at": "2026-10-23T14:32:48.579011+00:00",
+    "validation": {
+      "checksums": true,
+      "source_counts": true,
+      "schema": true,
+      "crs": true
+    },
+    "sources": {
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      },
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "8be473c10eda27b1f37b",
+    "packaged_at": "2026-10-28T22:21:00.576626+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "9bad5725714051b020b0",
+    "packaged_at": "2026-10-24T12:17:03.590384+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "9c1ddedb5903af67d1d6",
+    "packaged_at": "2026-10-26T22:30:13.155791+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "a48d82f6ea4c2842017b",
+    "packaged_at": "2026-10-25T11:40:29.619477+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "b918a275a0244881b806",
+    "packaged_at": "2026-10-24T12:09:33.993943+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "bd450a9f1924d34c01b2",
+    "packaged_at": "2026-10-22T22:57:31.013992+00:00",
+    "validation": {
+      "checksums": true,
+      "source_counts": true,
+      "schema": true,
+      "crs": true
+    },
+    "sources": {
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-22T22:55:12.338719+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      },
+      "applications": {
+        "sha256": "7e0399395f004722b27998117c0627c943ec9a953da43b53f733b93834873e6e",
+        "retrieved_at": "2026-10-22T22:55:14.978496+00:00",
+        "source_modified_at": "2026-10-22T07:26:14.273854",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-22T22:55:29.961455+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "c311d9763043d70c2bf9",
+    "packaged_at": "2026-10-25T12:38:55.545399+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "d8bef0798c4a91b70110",
+    "packaged_at": "2026-10-22T17:40:04.146561+00:00",
+    "validation": {
+      "checksums": true,
+      "source_counts": true,
+      "schema": true,
+      "crs": true
+    },
+    "sources": {
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-22T11:31:22.787367+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      },
+      "applications": {
+        "sha256": "7e0399395f004722b27998117c0627c943ec9a953da43b53f733b93834873e6e",
+        "retrieved_at": "2026-10-22T11:31:23.221096+00:00",
+        "source_modified_at": "2026-10-22T07:26:14.273854",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-22T11:31:35.102507+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "dc1ca133f95ae0655035",
+    "packaged_at": "2026-10-28T22:17:01.765720+00:00",
+    "validation": {
+      "checksums": true,
+      "crs": true,
+      "municipalities": true,
+      "schema": true,
+      "source_counts": true,
+      "source_ids": true,
+      "source_receipts": true
+    },
+    "sources": {
+      "applications": {
+        "sha256": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+        "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+        "source_modified_at": "2026-10-23T07:25:36.899562",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-23T14:30:49.052482+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      },
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "vintage": "2025 release; observation dates vary"
+    }
+  },
+  {
+    "snapshot": "f3a5f9ee996a0f10f91c",
+    "packaged_at": "2026-10-22T17:41:42.493374+00:00",
+    "validation": {
+      "checksums": true,
+      "source_counts": true,
+      "schema": true,
+      "crs": true
+    },
+    "sources": {
+      "projects": {
+        "sha256": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+        "retrieved_at": "2026-10-22T11:31:22.787367+00:00",
+        "source_modified_at": "2026-10-08T07:24:50.532050",
+        "page": "https://open.toronto.ca/dataset/development-pipeline/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 2391,
+        "records_out": 2391
+      },
+      "applications": {
+        "sha256": "7e0399395f004722b27998117c0627c943ec9a953da43b53f733b93834873e6e",
+        "retrieved_at": "2026-10-22T11:31:23.221096+00:00",
+        "source_modified_at": "2026-10-22T07:26:14.273854",
+        "page": "https://open.toronto.ca/dataset/development-applications/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 26648,
+        "records_out": 26648
+      },
+      "neighbourhoods": {
+        "sha256": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+        "retrieved_at": "2026-10-22T11:31:35.102507+00:00",
+        "source_modified_at": "2026-02-20T19:15:13.551341",
+        "page": "https://open.toronto.ca/dataset/neighbourhoods/",
+        "licence": "Open Government Licence \u2013 Toronto",
+        "licence_basis": "Publisher dataset page explicitly links Open Government Licence \u2013 Toronto; API metadata may be unspecified.",
+        "records_in": 158,
+        "records_out": 158
+      }
+    },
+    "buildings": {
+      "count": 427029,
+      "sha256": "400a6227e33d74fe5c4fc4bd82ecf39784072bf95cec09fdeb3fd34bcbb25151",
+      "page": "https://open.toronto.ca/dataset/3d-massing/",
+      "height": "AVG_HEIGHT metres; illustrative only, flat reference ground",
+      "vintage": "2025 release; observation dates vary"
+    }
+  }
+]

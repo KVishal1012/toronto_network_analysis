@@ -1,0 +1,12 @@
+{
+  "review_date": "2026-11-04",
+  "completed_focused_document_reviews": [
+    {
+      "case_id": "publisher-number:applications:08 152941 STE 22 OZ",
+      "path": "data/site-adjudications/529ab961e213f81252b43abda73cae0aab4e72afede2bbc5c82cbe92092767c7.document-review.json",
+      "sha256": "6e9ec3275cb7351c8c9999d17c13560a7d9dadc32728157f164b88bb63441477"
+    }
+  ],
+  "remaining_scope": "All other conflict cases still require authoritative document review; this is not completion of all 1368 cases.",
+  "new_confirmed_associations": 0
+}

@@ -1,0 +1,179 @@
+{
+  "reviewed_at": "2026-11-04",
+  "reviewer_type": "AI-assisted source and package review",
+  "build_id": "2fdead66e3fd6ef03e3c7caa2237ac25213b52fe4847382d1ece259af36f3045",
+  "scope": "Current local twin candidate only; excludes the separate public explorer, transit, energy and private Lab.",
+  "licence_version": "Open Government Licence \u2013 Toronto 1.0",
+  "licence_url": "https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-licence/",
+  "permitted_use": "Copy, adapt and redistribute licensed data, including commercial use, subject to attribution and exemptions.",
+  "evidence_files": [
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses-catalogue.json",
+      "sha256": "db93e4e93ff505e149552a591b007c118691ecfd1e113a8b504318d7de5dc0c1"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/addresses.html",
+      "sha256": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications-catalogue.json",
+      "sha256": "ae441a3fbd117facd31666036f58a56eae7e526deabffc1ae1393b04c9c36c85"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/applications.html",
+      "sha256": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json",
+      "sha256": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/community-council-boundaries.html",
+      "sha256": "1e6f820823f2750e895f8c40464b7b938610a36b47296e342827dd3022ec3d76"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/content-flags.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/licence.html",
+      "sha256": "5932ada60bce2c51bfe74ee7aa97e5f0e7b1d7f7e81354665e1463b6d33c80c6"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/midtown-report.pdf",
+      "sha256": "e054ed1ccbd687aeb095e02bc8d5492292e9bceff1dd3bf2a0759dd13665b01b"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json",
+      "sha256": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/neighbourhoods.html",
+      "sha256": "4e9fa147ce9203f90051d85e19b5d38cdd90ad4da16a4ab79de5346275e275a6"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/parcels-catalogue.json",
+      "sha256": "c2ca82a3f8ef11163c145486cfaba365c01f90e8b403e5883033ac1d82439e8a"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/parcels.html",
+      "sha256": "3572f9be5af03839a533793789fd0f1bd7ddb855170f7718e2731403e2f2411d"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects-catalogue.json",
+      "sha256": "318757fb7260a376de66f2b0b825e5a32c542edc72e96e8de950581c8e31891d"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/projects.html",
+      "sha256": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/streets-catalogue.json",
+      "sha256": "0f684771663f56a655d06028acb338014a943a4d90fe3a91ecfd11948a9b3da7"
+    },
+    {
+      "path": "data/source-rights-review/2026-11-04/streets.html",
+      "sha256": "24cbccadef53f6b8926daaf0ff45999da93e054d2a9fa324fb6e49ec3da90b4a"
+    }
+  ],
+  "sources": [
+    {
+      "source": "applications",
+      "source_hash": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "Visualization restriction: the visualization tool is not compatible with X,Y coordinates.",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/applications-catalogue.json"
+    },
+    {
+      "source": "projects",
+      "source_hash": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "The process to associate these records with geospatial coordinates is underway. The dataset can be geocoded using its addresses. We are working to add geospatial coordinates to this dataset in the future.",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/projects-catalogue.json"
+    },
+    {
+      "source": "addresses",
+      "source_hash": "972cd7a3d3b28405c574af99d8e527501387e58b2a23958e0742c55ce4658b05",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "As part of our State of Good Repair project and data quality improvements, the Geospatial Competency Centre has removed a few deprecated attributes from our ADDRESS and ADDRESS_POINT dataset, and their associated web map services.\r\n\r\nThese attributes are *GENERALUSE* and *GENERALUSE_CODE* (also known as Feature Code and Feature Code Description). These two attributes are based on a historic dataset, have not been regularly maintained, and have no reliable, affordable sources for continued update.\r\n\r\nDue to these factors, these attributes were nullified (made blank) on Thursday, July 29, 2021. It is important to note that the attribute columns will remain in the database to ensure this change does not affect existing applications, however there will be no values in them.\r\n",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/addresses-catalogue.json"
+    },
+    {
+      "source": "streets",
+      "source_hash": "7a0c18848d4e7da14fabcde08b06f198a696f46bb8b204f0c5a5368abd1e21c7",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/streets-catalogue.json"
+    },
+    {
+      "source": "parcels",
+      "source_hash": "3b8ecc52dac176fb2d8d2f0654dd407c5131bb2852091e77085a0a367908c64a",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/parcels-catalogue.json"
+    },
+    {
+      "source": "neighbourhoods",
+      "source_hash": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/neighbourhoods-catalogue.json"
+    },
+    {
+      "source": "community-council-boundaries",
+      "source_hash": "53bcd48fa18b05980630e408eb5d8795e014c4d6b0b5f60a982ef8f8f036ad2b",
+      "status": "qualified_for_reviewed_use",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ],
+      "catalogue_limitations": "",
+      "catalogue_evidence": "data/source-rights-review/2026-11-04/community-council-boundaries-catalogue.json"
+    }
+  ],
+  "package_checks": {
+    "records_screened": 11177,
+    "contact_pattern_flags": 0,
+    "screening_limit": "Pattern screening does not establish absence of all possible personal information. Dedicated owner/contact fields are excluded by the exporter.",
+    "documents": "Source links only; no PDF or image assets included.",
+    "attribution": "Map attribution plus registry receipt exposed by Coverage, sources & method and included in JSON export; receipt contains licence URL."
+  }
+}

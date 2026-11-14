@@ -27,3 +27,33 @@ test('all regional demonstrations reproduce the shipped shortlist and sensitivit
   }
  }
 });
+
+test('citizen search matches grid ID, street label, and project number tokens',()=>{
+ const sample={
+  id:'1257_9683',
+  label:'2779 YONGE ST',
+  regions:['midtown'],
+  projects:[
+   {number:'25 120999 NNY 08 OZ',label:'2704 YONGE ST',units:202,stage:'Active',regions:['midtown'],distances:{morning:873.666,evening:873.666,saturday:873.666}},
+  ],
+ };
+ assert.equal(mod.matchesAreaSearch(sample,''),true);
+ assert.equal(mod.matchesAreaSearch(sample,'2704 yonge'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'120999'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'1257_9683'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'yonge 120999'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'spadina'),false);
+ assert.equal(mod.matchesAreaSearch(sample,'Yonge-Eglinton','Yonge-Eglinton'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'yonge eglinton','Yonge-Eglinton'),true);
+ assert.equal(mod.matchesAreaSearch({...sample,neighbourhood:'Moss Park'},'moss park'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'st clair','Yonge-St.Clair'),true);
+ assert.equal(mod.matchesAreaSearch(sample,'annex','Moss Park'),false);
+});
+
+test('plain-language helpers format feed dates, departures, and exclusion reasons honestly',()=>{
+ assert.equal(mod.formatFeedDate('20261105'),'2026-11-05');
+ assert.equal(mod.formatFeedDate('2026-11-05'),'2026-11-05');
+ assert.equal(mod.describeHourlyDepartures([4,4]),'4 scheduled departures/hr (~every 15 min on average)');
+ assert.equal(mod.describeHourlyDepartures([9,10]),'9–10 scheduled departures/hr (~every 6–7 min on average)');
+ assert.equal(mod.outcomeReasonLabels.outside_study_areas.title,'Outside Downtown & Midtown study areas');
+});

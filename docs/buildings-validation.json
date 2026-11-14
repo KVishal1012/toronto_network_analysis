@@ -1,0 +1,57 @@
+{
+  "id": "toronto-massing-2025",
+  "name": "Toronto 3D massing \u00b7 2025",
+  "publisher": "City of Toronto / City Planning",
+  "page": "https://open.toronto.ca/dataset/3d-massing/",
+  "url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/387b2e3b-2a76-4199-8b3b-0b7d22e2ec10/resource/667237d6-4d3c-4cf3-8cb7-e91c48d59375/download/3dmassingshapefile_2025_wgs84.zip",
+  "sha256": "9617089710518f1a24f70ca11b4a7c20ae45ab8e52a6fbed1bc088192efe6285",
+  "retrieved_at": "2026-09-08T20:28:39.589956+00:00",
+  "vintage": "2025",
+  "status": "reference",
+  "source_crs": "EPSG:3857 (from .prj; archive filename is misleading)",
+  "storage_crs": "EPSG:4326",
+  "height_field": "AVG_HEIGHT",
+  "height_unit": "metres",
+  "height_method": "Uniform extrusion using source AVG_HEIGHT. No fallback heights, no vertical exaggeration.",
+  "ground_method": "Flat reference ground; SURF_ELEV and HEIGHT_MSL are not used as terrain.",
+  "records_in": 428184,
+  "records_out": 428167,
+  "rejected_count": 17,
+  "rejection_reasons": {
+    "Invalid or empty footprint; no silent repair": 17
+  },
+  "height_sources": {
+    "Site Plan": 8218,
+    "Lidar-Derived": 413021,
+    "3D Model": 5871,
+    "Oblique Aerials": 66,
+    "Photogrammetrics": 990,
+    "Site plan": 1
+  },
+  "duration_seconds": 31.81,
+  "limitation": "2025 illustrative context model, not current surveyed buildings. Heights include LiDAR-derived, site-plan and other source methods. Roof shapes and terrain are not reconstructed. City requires user verification for legal or official use.",
+  "licence": "Open Government Licence \u2013 Toronto; additional City Planning illustrative-use notice applies.",
+  "sample_checks": [
+    {
+      "source_row": 0,
+      "source_height": 3.1,
+      "rendered_height": 3.1,
+      "height_source": "Site Plan",
+      "coordinate_transform_verified": true
+    },
+    {
+      "source_row": 136423,
+      "source_height": 35.82,
+      "rendered_height": 35.82,
+      "height_source": "Site Plan",
+      "coordinate_transform_verified": true
+    },
+    {
+      "source_row": 354570,
+      "source_height": 239.97,
+      "rendered_height": 239.97,
+      "height_source": "3D Model",
+      "coordinate_transform_verified": true
+    }
+  ]
+}

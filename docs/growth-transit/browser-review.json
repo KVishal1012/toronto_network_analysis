@@ -1,19 +1,21 @@
 {
-  "build_id": "3aea90b01edf2c1a1e253768ce67f8a2724e8356e07f09793b1792765bc79826",
+  "build_id": "20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059",
   "analysis": "6ed092c988ad9326e279",
-  "passed": false,
-  "reviewer": "AI-assisted browser review; no participant sessions",
+  "passed": true,
+  "reviewer": "Automated Playwright + Chromium headless verification against dist-public; no human participant sessions",
   "checks": {
-    "region_scope": "passed: Downtown and Midtown selectors and demonstrations only",
-    "cross_region_comparison": "passed: one Downtown and one Midtown selection persist across navigation and reload",
-    "map": "passed: on-demand area marker map opened",
-    "modelling": "passed: metric position, arbitrary rotation, height, width/depth, local save and session capture attachment",
-    "combined_brief": "passed: actual downloaded JSON contains two areas, scenario dimensions, image and baseline pin",
-    "cleanup": "test attachment and test conclusion removed from preview",
-    "print": "blocked: native print dispatch timed out; preview/PDF output unverified",
-    "full_screen_reader": "outstanding",
-    "mobile": "responsive layout inspected previously; full final physical-device test outstanding"
+    "above_fold": "passed: first area card (Near 53 ONTARIO ST) starts at y=535 px on 1440x900 side-by-side with the interactive Toronto map above the fold",
+    "neighbourhood_context": "passed: card eyebrows display neighbourhood names and searching Moss Park filters cleanly to 7 matching areas",
+    "region_scope": "passed: Downtown and Midtown selectors verified",
+    "cross_region_comparison": "passed: pinned-hash reload (#analysis=6ed092c988ad9326e279&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=0&areas=1259_9681%2C1263_9669) restored selected comparison areas cleanly",
+    "map": "passed: offline MapLibre interactive Toronto street map opens by default on /, renders streets, parks, Lake Ontario, TTC lines/stations, 2025 buildings, 368 proposal pins, and 89 DOM labels/stations with Toronto Street Map | OSM Tiles | Satellite selector, Hide/Show area map toggle, and 0 external failedUrls",
+    "modelling": "passed: #view=3d renders 3D Street Map by default with City Hall (3 interactive proposal pins) and Yonge-Eglinton (19 interactive proposal pins), 2180 YONGE ST and 483 BAY ST inspection, Test 3D replacement at this site workflow, collision-checked amber replacement extrusion + JSON export, Compare transit for this area on Page 1 deep-link (#region=downtown&areas=1260_9669), and toggle to 3D Massing Studio with named street ground plane",
+    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 67f302f02b9d2427903517621756562ba80764147b93e31fb1add6af94fcecb3)",
+    "print": "passed: headless Chromium @media print layout (.g-no-print hidden, .g-print-header and .g-print-proposals visible, overflowX false) and PDF generation verified (/tmp/aster-brief-verify.pdf 492597 bytes; /tmp/aster-3d-verify.pdf 538122 bytes)",
+    "wcag_automated": "passed: landmarks, sequential headings (27 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); human assistive-technology session remains optional",
+    "mobile": "passed: 390x844 viewport verified with zero horizontal overflow (scrollWidth 390 === innerWidth 390) on both / and /#view=3d",
+    "console_and_page_errors": "passed: 0 pageErrors, 0 failedUrls (only expected local static server /favicon.ico 404)"
   },
-  "export_sha256": "9aa0bd888f819950976edc46983c4cf611a848be59b46df2846b0f07729704e8",
+  "export_sha256": "67f302f02b9d2427903517621756562ba80764147b93e31fb1add6af94fcecb3",
   "screenshot": "/tmp/aster-integrated-brief.png"
 }

@@ -1,0 +1,129 @@
+{
+  "brampton-address": {
+    "snapshot": {
+      "asset": "source-snapshots/brampton-address/08c3accc8d7c67a3b343ea956a40c376e099a990439d92c6dd1b4ea848b314ee.json",
+      "id": "08c3accc8d7c67a3b343ea956a40c376e099a990439d92c6dd1b4ea848b314ee",
+      "raw_sha256": "0c41b5411c87af9709e6501b21503779fe3b1074f63bc6e57790e357b0dd5afa"
+    },
+    "receipt": {
+      "contract_sha256": "0025c9d9c95bb41dbdb3fa7e310297bbc81a37f84a4ab2b122ea0d66ac6c2d14",
+      "expected_records": 253798,
+      "final_layer_sha256": "8e5e79a6990593b5db4e53daffd267dbbb147e40b6c72f1333c046c4bd81454f",
+      "item_sha256": "9be0cf6634b7929afbb8a7e3836a1dd4003ba8e36f53fc577c7ea760a0da4bf0",
+      "key": "brampton-address",
+      "layer_sha256": "8e5e79a6990593b5db4e53daffd267dbbb147e40b6c72f1333c046c4bd81454f",
+      "licence_documents": [],
+      "output_crs": 4326,
+      "retrieved_at": "2026-10-24T17:34:35.495072+00:00",
+      "sha256": "0c41b5411c87af9709e6501b21503779fe3b1074f63bc6e57790e357b0dd5afa",
+      "source_crs": 3857,
+      "source_modified_at": null,
+      "validation": {
+        "counts": true,
+        "identity": true,
+        "ids": true,
+        "schema": true,
+        "stable_read": true
+      }
+    }
+  },
+  "york-address": {
+    "snapshot": {
+      "asset": "source-snapshots/york-address/563cd9a8a94241a71ecce3082e9fa319e891849774e3c49110050ec2a26e5eaf.json",
+      "id": "563cd9a8a94241a71ecce3082e9fa319e891849774e3c49110050ec2a26e5eaf",
+      "raw_sha256": "ee892e2f6eaf6f7c682bb4df610c23a1482a5200d799449e9cb9579bd05c5bab"
+    },
+    "receipt": {
+      "contract_sha256": "7e6ee0126fe5808d62c056a9822c6b06727a98c6eb4fa2eea35b0614b6ec3bba",
+      "expected_records": 431863,
+      "final_layer_sha256": "d5860c75a3a176c27efeed744dd4a9f185a636b5eef0f31606f658c7951a09e2",
+      "item_sha256": "bc0a66d304910a19e64034ba1df90310b0a7c30a06d081ff49fd73143c4e0aeb",
+      "key": "york-address",
+      "layer_sha256": "d5860c75a3a176c27efeed744dd4a9f185a636b5eef0f31606f658c7951a09e2",
+      "licence_documents": [
+        {
+          "sha256": "9f3572c2c1ad39fe133a21a6eeb73654d0eb3c2d50872a1c777bb42b845b5a13",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/78cc02388af248c0b7a30eda6adfade0/data"
+        }
+      ],
+      "output_crs": 4326,
+      "retrieved_at": "2026-10-24T17:36:59.611062+00:00",
+      "sha256": "ee892e2f6eaf6f7c682bb4df610c23a1482a5200d799449e9cb9579bd05c5bab",
+      "source_crs": 26917,
+      "source_modified_at": null,
+      "validation": {
+        "counts": true,
+        "identity": true,
+        "ids": true,
+        "schema": true,
+        "stable_read": true
+      }
+    }
+  },
+  "milton-address": {
+    "snapshot": {
+      "asset": "source-snapshots/milton-address/6ed88626366f8e0efd60f913bdad4e469f37c232fd5dd23cbfddcbe6b5f268bb.json",
+      "id": "6ed88626366f8e0efd60f913bdad4e469f37c232fd5dd23cbfddcbe6b5f268bb",
+      "raw_sha256": "6b79458c500be31f2d2ea5f367cf6c6f42b2e4b21c090811ae5009e5774ec265"
+    },
+    "receipt": {
+      "contract_sha256": "5dfd11e0eb0a4a44aedaefe2f5b6f30e49e3d266f6d1a31ddb225c9ae859fde9",
+      "expected_records": 46438,
+      "final_layer_sha256": "2099ea122f94f7c69dd884e19ed7c8cee36e14ced23b18c849d50360c4c88157",
+      "item_sha256": "1aa6dbed6313789ace0ee90884fa6cfddb6de8f13371de0794c30268246a0cac",
+      "key": "milton-address",
+      "layer_sha256": "2099ea122f94f7c69dd884e19ed7c8cee36e14ced23b18c849d50360c4c88157",
+      "licence_documents": [
+        {
+          "sha256": "ae5dce69f1717768b776736bbdac0f3903a6af086924a38e0874d5a18bd694d2",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/66bc793c2cfa4b03874beed76f12080d/data?f=json"
+        }
+      ],
+      "output_crs": 4326,
+      "retrieved_at": "2026-10-25T11:46:54.577099+00:00",
+      "sha256": "6b79458c500be31f2d2ea5f367cf6c6f42b2e4b21c090811ae5009e5774ec265",
+      "source_crs": 26917,
+      "source_modified_at": null,
+      "validation": {
+        "counts": true,
+        "identity": true,
+        "ids": true,
+        "schema": true,
+        "stable_read": true
+      }
+    }
+  },
+  "milton-applications": {
+    "snapshot": {
+      "asset": "source-snapshots/milton-applications/fd2702b2de386549df404b6fb7874fca68f24403f0399509bacfefd4ee6aec61.json",
+      "id": "fd2702b2de386549df404b6fb7874fca68f24403f0399509bacfefd4ee6aec61",
+      "raw_sha256": "cb05d748c3b76a3bc5ace5cda0db950258a826e712ff32df6bcf8c221b436115"
+    },
+    "receipt": {
+      "contract_sha256": "5241968a278779ae131f1dc70f16ebe7491ac36de6c0eaa995ce6f7e5e7d458c",
+      "expected_records": 374,
+      "final_layer_sha256": "d28eaa8572fab9e8b2c55deccb3d63577566e70d19cdcc23647acabfe2b9ff10",
+      "item_sha256": "70d25933348fd9e8def25613c895de2ce39ebca2fc95d077a422cf4b88f9b4e6",
+      "key": "milton-applications",
+      "layer_sha256": "d28eaa8572fab9e8b2c55deccb3d63577566e70d19cdcc23647acabfe2b9ff10",
+      "licence_documents": [
+        {
+          "sha256": "ae5dce69f1717768b776736bbdac0f3903a6af086924a38e0874d5a18bd694d2",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/66bc793c2cfa4b03874beed76f12080d/data?f=json"
+        }
+      ],
+      "output_crs": 4326,
+      "retrieved_at": "2026-10-25T11:48:23.404992+00:00",
+      "sha256": "cb05d748c3b76a3bc5ace5cda0db950258a826e712ff32df6bcf8c221b436115",
+      "source_crs": 26917,
+      "source_modified_at": null,
+      "validation": {
+        "counts": true,
+        "identity": true,
+        "ids": true,
+        "schema": true,
+        "stable_read": true
+      }
+    }
+  }
+}

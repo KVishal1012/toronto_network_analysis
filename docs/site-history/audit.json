@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "accounting_artifacts": {
+    "planning": "data/site-history-audit/planning-accounting.ndjson",
+    "massing": "data/site-history-audit/massing-accounting.ndjson"
+  },
+  "planning_snapshot": "8be473c10eda27b1f37b",
+  "boundary_version": "16308bcf43eec2d42da30110c6a6b83f6fdffc46d6efb82d3ec2ee7758a855c0",
+  "counts": {
+    "downtown": {
+      "planning": {
+        "applications": {
+          "eligible": 3454,
+          "unresolved": 3454,
+          "confirmed": 0,
+          "candidate": 0
+        },
+        "projects": {
+          "eligible": 298,
+          "unresolved": 298,
+          "confirmed": 0,
+          "candidate": 0
+        }
+      },
+      "massing": {
+        "eligible": 16643,
+        "duplicate_geometries": 283,
+        "unresolved_site_identity": 16643
+      }
+    },
+    "midtown": {
+      "planning": {
+        "applications": {
+          "eligible": 1806,
+          "unresolved": 1806,
+          "confirmed": 0,
+          "candidate": 0
+        },
+        "projects": {
+          "eligible": 166,
+          "unresolved": 166,
+          "confirmed": 0,
+          "candidate": 0
+        }
+      },
+      "massing": {
+        "eligible": 26596,
+        "duplicate_geometries": 76,
+        "unresolved_site_identity": 26596
+      }
+    },
+    "north-york": {
+      "planning": {
+        "applications": {
+          "eligible": 5709,
+          "unresolved": 5709,
+          "confirmed": 0,
+          "candidate": 0
+        },
+        "projects": {
+          "eligible": 459,
+          "unresolved": 459,
+          "confirmed": 0,
+          "candidate": 0
+        }
+      },
+      "massing": {
+        "eligible": 98372,
+        "duplicate_geometries": 266,
+        "unresolved_site_identity": 98372
+      }
+    },
+    "source_totals": {
+      "applications": {
+        "unlocated_region_unknown": 7128,
+        "unresolved_site_identity": 10357,
+        "outside_study_areas": 9163,
+        "input": 26648
+      },
+      "projects": {
+        "outside_study_areas": 986,
+        "unresolved_site_identity": 863,
+        "unlocated_region_unknown": 542,
+        "input": 2391
+      },
+      "massing": {
+        "input": 428184,
+        "imported": 428167,
+        "prior_rejections_region_unknown": 17,
+        "invalid_imported_geometry": 0,
+        "outside_study_areas": 300982,
+        "eligible_rows_in_any_region": 127185
+      }
+    }
+  },
+  "distinct_raw_observations": {
+    "projects": 1,
+    "applications": 2
+  },
+  "building_source": {
+    "id": "toronto-massing-2025",
+    "name": "Toronto 3D massing \u00b7 2025",
+    "publisher": "City of Toronto / City Planning",
+    "page": "https://open.toronto.ca/dataset/3d-massing/",
+    "url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/387b2e3b-2a76-4199-8b3b-0b7d22e2ec10/resource/667237d6-4d3c-4cf3-8cb7-e91c48d59375/download/3dmassingshapefile_2025_wgs84.zip",
+    "sha256": "9617089710518f1a24f70ca11b4a7c20ae45ab8e52a6fbed1bc088192efe6285",
+    "retrieved_at": "2026-09-08T20:28:39.589956+00:00",
+    "vintage": "2025",
+    "status": "reference",
+    "source_crs": "EPSG:3857 (from .prj; archive filename is misleading)",
+    "storage_crs": "EPSG:4326",
+    "height_field": "AVG_HEIGHT",
+    "height_unit": "metres",
+    "height_method": "Uniform extrusion using source AVG_HEIGHT. No fallback heights, no vertical exaggeration.",
+    "ground_method": "Flat reference ground; SURF_ELEV and HEIGHT_MSL are not used as terrain.",
+    "records_in": 428184,
+    "records_out": 428167,
+    "rejected_count": 17,
+    "rejection_reasons": {
+      "Invalid or empty footprint; no silent repair": 17
+    },
+    "height_sources": {
+      "Site Plan": 8218,
+      "Lidar-Derived": 413021,
+      "3D Model": 5871,
+      "Oblique Aerials": 66,
+      "Photogrammetrics": 990,
+      "Site plan": 1
+    },
+    "duration_seconds": 31.81,
+    "limitation": "2025 illustrative context model, not current surveyed buildings. Heights include LiDAR-derived, site-plan and other source methods. Roof shapes and terrain are not reconstructed. City requires user verification for legal or official use.",
+    "licence": "Open Government Licence \u2013 Toronto; additional City Planning illustrative-use notice applies."
+  },
+  "gate": {
+    "ready": false,
+    "blockers": [
+      "browser_qa",
+      "history",
+      "matching_review",
+      "public_isolation",
+      "rights",
+      "site_identity",
+      "five_person_comprehension"
+    ]
+  },
+  "limitations": [
+    "Region membership for planning uses its existing source/address-derived point, not a site boundary.",
+    "Unlocated records cannot be excluded from study areas and remain unresolved.",
+    "Massing components are not established sites or whole buildings.",
+    "No reviewed persistent site identities are available. No confirmation is inferred from proximity.",
+    "North York uses the published Community Council area, not the former municipality."
+  ]
+}

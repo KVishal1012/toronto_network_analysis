@@ -1,0 +1,76 @@
+{
+  "snapshot_id": "2a57a813a0ad714e",
+  "created_at": "2026-09-08T20:25:39.154646+00:00",
+  "accounting": {
+    "boundaries_in": 158,
+    "boundaries_out": 158,
+    "stations_in": 1066,
+    "stations_out": 1066,
+    "stations_rejected": [],
+    "outside_boundary_ids": [],
+    "ambiguous_boundary_ids": [],
+    "status_without_location_ids": [],
+    "locations_without_status_ids": []
+  },
+  "sha256_verified": true,
+  "spatial_rerun_equal": true,
+  "samples": [
+    {
+      "id": "098",
+      "name": "Rosedale-Moore Park",
+      "area_km2": 4.661570726259777,
+      "bbox": [
+        -79.39534218066,
+        43.6702263905041,
+        -79.3633907880318,
+        43.6950291767593
+      ],
+      "source": "neighbourhoods",
+      "station_count": 17,
+      "current_status_count": 17,
+      "unknown_status_count": 0,
+      "reported_bikes": 20,
+      "available_bikes": 20,
+      "empty_stations": 7,
+      "status_complete": true
+    },
+    {
+      "id": "095",
+      "name": "Annex",
+      "area_km2": 2.7902992169083096,
+      "bbox": [
+        -79.4218530859693,
+        43.6635847542299,
+        -79.3867880679966,
+        43.681081122778
+      ],
+      "source": "neighbourhoods",
+      "station_count": 25,
+      "current_status_count": 25,
+      "unknown_status_count": 0,
+      "reported_bikes": 34,
+      "available_bikes": 34,
+      "empty_stations": 11,
+      "status_complete": true
+    },
+    {
+      "id": "088",
+      "name": "High Park North",
+      "area_km2": 1.8822608397024407,
+      "bbox": [
+        -79.4800151753524,
+        43.6511352153196,
+        -79.4498705732511,
+        43.6631304954496
+      ],
+      "source": "neighbourhoods",
+      "station_count": 10,
+      "current_status_count": 10,
+      "unknown_status_count": 0,
+      "reported_bikes": 25,
+      "available_bikes": 25,
+      "empty_stations": 5,
+      "status_complete": true
+    }
+  ]
+}

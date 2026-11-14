@@ -1,0 +1,148 @@
+{
+  "sources": [
+    {
+      "source": "applications",
+      "url": "https://open.toronto.ca/dataset/development-applications/",
+      "source_hash": "6a47531d0cf535e982c3431952a14071686313f2f8c3bc85d2f94e0a2f2248dc",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "licence_evidence_hash": "32e5c6b9b48c30b19997021904cada9bd30b85b11e4162753441496b43d7c63c",
+      "retrieved_at": "2026-10-23T14:30:41.709845+00:00",
+      "use": "display selected attributes/geometry",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "No contact fields, ownership assertions, City endorsement or survey claims.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "projects",
+      "url": "https://open.toronto.ca/dataset/development-pipeline/",
+      "source_hash": "4e442bfdfc2c5286c66e1aa7ad778fcc5b7f68edacb78cebda5908686924adec",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "licence_evidence_hash": "0d2644a04fc3ddd04c90105fde5a7115d6b3cc8dd276f9b224302df1d8898e9c",
+      "retrieved_at": "2026-10-23T14:30:40.369936+00:00",
+      "use": "display selected attributes/geometry",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "No contact fields, ownership assertions, City endorsement or survey claims.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "addresses",
+      "url": "https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/",
+      "source_hash": "972cd7a3d3b28405c574af99d8e527501387e58b2a23958e0742c55ce4658b05",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "licence_evidence_hash": "97d8bde2efeba7fbfd489c73d8c12237485a7d6b1ea86e6a7586591eed9e9abc",
+      "retrieved_at": "2026-10-23T14:30:47.464223+00:00",
+      "use": "derived locations",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "No contact fields, ownership assertions, City endorsement or survey claims.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "streets",
+      "url": "https://open.toronto.ca/dataset/toronto-centreline-tcl/",
+      "source_hash": "7a0c18848d4e7da14fabcde08b06f198a696f46bb8b204f0c5a5368abd1e21c7",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "licence_evidence_hash": "24cbccadef53f6b8926daaf0ff45999da93e054d2a9fa324fb6e49ec3da90b4a",
+      "retrieved_at": "2026-10-23T14:30:50.059751+00:00",
+      "use": "display selected attributes/geometry",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "No contact fields, ownership assertions, City endorsement or survey claims.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "parcels",
+      "url": "https://open.toronto.ca/dataset/property-boundaries/",
+      "source_hash": "3b8ecc52dac176fb2d8d2f0654dd407c5131bb2852091e77085a0a367908c64a",
+      "licence": "Open Government Licence \u2013 Toronto",
+      "licence_evidence_hash": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e",
+      "use": "provisional reference geometry",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "General planning reference only; not a survey, ownership record, or verified development site.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "neighbourhoods",
+      "url": "https://open.toronto.ca/dataset/neighbourhoods/",
+      "source_hash": "b0cb58077f5b3a47e0e56a68913c6980cfaf39d37d7d020fd91b60650c480233",
+      "licence": "open-government-licence-toronto",
+      "licence_evidence_hash": "37f8f86189290a0001373ee9308e3f11ff903ccad3648c29a71d690084ff2f97",
+      "use": "study-area definition",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "ASTER study areas are not official district definitions.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "community-council-boundaries",
+      "url": "https://open.toronto.ca/dataset/community-council-boundaries/",
+      "source_hash": "53bcd48fa18b05980630e408eb5d8795e014c4d6b0b5f60a982ef8f8f036ad2b",
+      "licence": "open-government-licence-toronto",
+      "licence_evidence_hash": "a1573419b7c99e94057b15f196db4e91ac309172c2537b2835a9e2e87081e0c2",
+      "use": "study-area definition",
+      "redistribution_status": "qualified_for_reviewed_use",
+      "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+      "exclusions": "ASTER study areas are not official district definitions.",
+      "review_reference": "rights-adjudication.json",
+      "conditions": [
+        "Retain City of Toronto source attribution and licence URL in interface and exports.",
+        "Limit redistribution to reviewed open-data attributes, reference geometry and derived study areas.",
+        "No report PDFs, applicant drawings, logos, owner/contact fields or claims of City endorsement.",
+        "Retain source dates and limitations; geometry is not a survey or proof of development-site identity."
+      ]
+    },
+    {
+      "source": "application_documents",
+      "use": "publisher links only",
+      "redistribution_status": "not_applicable",
+      "exclusions": "Do not package report PDFs, site-plan images or third-party illustrations without separate rights evidence."
+    }
+  ],
+  "public_redistribution_qualified": true,
+  "local_review_only": true,
+  "review": {
+    "qualified": true,
+    "reference": "rights-adjudication.json",
+    "reviewed_at": "2026-11-04"
+  },
+  "note": "Qualification covers only the exact reviewed package and uses. It does not authorize publication or establish site identity."
+}

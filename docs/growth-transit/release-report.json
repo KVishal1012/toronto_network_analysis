@@ -1,5 +1,5 @@
 {
-  "build_id": "22927b69d268c210741c8c6e33a60d284ca30f1d8bc22839f18340763cf166ba",
+  "build_id": "20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059",
   "analysis": "6ed092c988ad9326e279",
   "release_ready": false,
   "gates": {
@@ -40,8 +40,8 @@
       "evidence": "check_public_boundary against dist-public"
     },
     "browser": {
-      "status": "blocked",
-      "evidence": "data/growth-qualification/22927b69d268c210741c8c6e33a60d284ca30f1d8bc22839f18340763cf166ba/browser.json"
+      "status": "passed",
+      "evidence": "data/growth-qualification/20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059/browser.json"
     },
     "rights": {
       "status": "passed",
@@ -57,5 +57,5 @@
       "reason": "Owner review and separate publication approval required."
     }
   },
-  "package_file_count": 371
+  "package_file_count": 372
 }

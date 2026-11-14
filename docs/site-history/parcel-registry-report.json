@@ -1,0 +1,94 @@
+{
+  "receipt": {
+    "version": "596988ecb5a60aae4562d708f8e20d42b88c736d2364b04482dce3a08252ba90",
+    "parcel_sha256": "3b8ecc52dac176fb2d8d2f0654dd407c5131bb2852091e77085a0a367908c64a",
+    "catalogue_sha256": "81a10b86280a2da063657ff10a93af66dc5404b6f0a08c87b37a28adaa00caa9",
+    "count_receipt_sha256": "b2ae7e4619e81b5ccc4894b55982b47db557f7f3a807bd7844ed5b33328aaf79",
+    "licence_sha256": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e",
+    "acquisition": {
+      "retrieved_at": "2026-10-31T18:26:56.762044+00:00",
+      "catalogue_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show?id=property-boundaries",
+      "export_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/1acaa8b0-f235-4df6-8305-02025ccdeb07/resource/4d4943a6-98ec-4442-9ced-f600f5bc8d27/download/property-boundaries-4326.geojson",
+      "count_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/datastore_search?resource_id=4270614e-0b5e-4b54-a2bb-18ef92237646&limit=0",
+      "licence_url": "https://open.toronto.ca/open-data-licence/"
+    },
+    "source": "https://open.toronto.ca/dataset/property-boundaries/",
+    "boundary_version": "16308bcf43eec2d42da30110c6a6b83f6fdffc46d6efb82d3ec2ee7758a855c0",
+    "planning_snapshot": "8be473c10eda27b1f37b",
+    "complete_export_count": 498477,
+    "stable_reread": true,
+    "crs": "EPSG:4326",
+    "licence": "Open Government Licence \u2013 Toronto",
+    "attribution": "Contains information licensed under the Open Government Licence \u2013 Toronto.",
+    "use_limit": "General planning reference only; not a survey, ownership record, or verified development site."
+  },
+  "parcel_accounting": {
+    "outside_study_areas": 358766,
+    "eligible": 136710,
+    "excluded_reserve": 2983,
+    "invalid_geometry": 18
+  },
+  "feature_types": {
+    "COMMON": 491725,
+    "RESERVE": 2983,
+    "CONDO": 3769
+  },
+  "duplicate_PARCELID_values": 0,
+  "provisional_sites": 136710,
+  "confirmed_sites": 0,
+  "lineage_candidates": 0,
+  "absent_from_current_export": [],
+  "matching": {
+    "projects": {
+      "input": 2391,
+      "excluded": 986,
+      "outside_study_areas": 986,
+      "candidate": 860,
+      "single_parcel_spatial_candidate": 860,
+      "unresolved": 545,
+      "unlocated": 542,
+      "no_eligible_parcel": 3
+    },
+    "applications": {
+      "input": 26648,
+      "unresolved": 7168,
+      "unlocated": 7128,
+      "candidate": 10317,
+      "single_parcel_spatial_candidate": 10317,
+      "excluded": 9163,
+      "outside_study_areas": 9163,
+      "no_eligible_parcel": 40
+    }
+  },
+  "regions": {
+    "downtown": {
+      "provisional_sites": 18236,
+      "projects_candidate": 296,
+      "projects_unresolved": 2,
+      "applications_candidate": 3441,
+      "applications_unresolved": 13
+    },
+    "midtown": {
+      "provisional_sites": 29685,
+      "projects_candidate": 166,
+      "applications_candidate": 1805,
+      "applications_unresolved": 1
+    },
+    "north-york": {
+      "provisional_sites": 105802,
+      "projects_candidate": 458,
+      "projects_unresolved": 1,
+      "applications_candidate": 5682,
+      "applications_unresolved": 27
+    }
+  },
+  "review_queue": 7713,
+  "confirmed_matches": 0,
+  "release_ready": false,
+  "limitations": [
+    "Provisional parcel references are not established development sites.",
+    "All spatial associations remain candidates, including single-parcel hits.",
+    "Unlocated records remain globally unresolved; no region membership was fabricated.",
+    "Geometry changes allocate new provisional IDs and candidate lineage; no automatic split/merge adjudication."
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "reviewed_at": "2026-11-02T23:26:45.352665+00:00",
+  "reviewer": "Codex evidence audit",
+  "human_review": false,
+  "version": "596988ecb5a60aae4562d708f8e20d42b88c736d2364b04482dce3a08252ba90",
+  "sqlite_integrity": "ok",
+  "sites": 136710,
+  "planning_rows": 29039,
+  "outcomes": {
+    "applications": {
+      "unresolved": 7168,
+      "candidate": 10317,
+      "excluded": 9163
+    },
+    "projects": {
+      "excluded": 986,
+      "candidate": 860,
+      "unresolved": 545
+    }
+  },
+  "errors": [],
+  "multi_site_publisher_groups": 1325,
+  "groups_without_diagnostic_review": [],
+  "distinct_parcel_observations": 1,
+  "risk_sample": [
+    {
+      "region": "downtown",
+      "site_id": "site-3ab0d88c-beff-4fef-918b-d6343300168d",
+      "records": 113,
+      "labels": [
+        "1 DRAPER ST",
+        "10 SPADINA AVE",
+        "12 SPADINA AVE",
+        "14 SPADINA AVE",
+        "16 SPADINA AVE",
+        "18 SPADINA AVE",
+        "19 DRAPER ST",
+        "439 WELLINGTON ST W",
+        "440 FRONT ST W",
+        "462 FRONT ST W",
+        "6 SPADINA AVE"
+      ],
+      "publisher_numbers": [
+        "14 116571 STE 20 OZ",
+        "16 269540 STE 20 SA",
+        "17 245498 STE 20 SA",
+        "17 245526 STE 20 SA",
+        "17 245539 STE 20 SA",
+        "17 245560 STE 20 SA",
+        "18 135637 STE 20 SB",
+        "18 135656 STE 20 PL",
+        "21 242715 STE 10 CD",
+        "23 233331 STE 10 PL"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "downtown",
+      "site_id": "site-9e86acc1-a50a-415d-b671-737846f5fce5",
+      "records": 74,
+      "labels": [
+        "77 AVENUE RD"
+      ],
+      "publisher_numbers": [
+        "12 253938 STE 27 SA"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "downtown",
+      "site_id": "site-9050a195-909a-49dc-a327-8e326db26354",
+      "records": 42,
+      "labels": [
+        "55 AVENUE RD"
+      ],
+      "publisher_numbers": [
+        "12 253938 STE 27 SA"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "midtown",
+      "site_id": "site-6b019b61-5b7e-42eb-bff0-d3c55d3eabd9",
+      "records": 33,
+      "labels": [
+        "191 DUPLEX AVE",
+        "193 DUPLEX AVE",
+        "195 DUPLEX AVE",
+        "197 DUPLEX AVE",
+        "199 DUPLEX AVE",
+        "201 DUPLEX AVE",
+        "203 DUPLEX AVE",
+        "205 DUPLEX AVE",
+        "207 DUPLEX AVE",
+        "209 DUPLEX AVE",
+        "211 DUPLEX AVE",
+        "60 BERWICK AVE",
+        "66 BERWICK AVE",
+        "68 BERWICK AVE",
+        "70 BERWICK AVE",
+        "72 BERWICK AVE",
+        "74 BERWICK AVE"
+      ],
+      "publisher_numbers": [
+        "08 152941 STE 22 OZ",
+        "14 140928 STE 22 CD"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "midtown",
+      "site_id": "site-4eb9bd75-3383-4118-9292-3dfa102feb31",
+      "records": 32,
+      "labels": [
+        "2026 YONGE ST",
+        "2028 YONGE ST",
+        "2030 YONGE ST",
+        "2032 YONGE ST",
+        "2034 YONGE ST",
+        "2036 YONGE ST",
+        "2038 YONGE ST",
+        "2040 YONGE ST"
+      ],
+      "publisher_numbers": [
+        "21 235352 STE 12 OZ",
+        "21 235357 STE 12 SA",
+        "21 235361 STE 12 SB",
+        "26 101902 STE 12 OZ"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "midtown",
+      "site_id": "site-199b2477-6fc0-4c0f-99ef-1b97118ff3a6",
+      "records": 29,
+      "labels": [
+        "202 KEEWATIN AVE",
+        "204 KEEWATIN AVE",
+        "206 KEEWATIN AVE",
+        "208 KEEWATIN AVE",
+        "210 KEEWATIN AVE",
+        "212 KEEWATIN AVE",
+        "214 KEEWATIN AVE"
+      ],
+      "publisher_numbers": [
+        "15 113064 NNY 25 OZ",
+        "15 180825 NNY 25 OZ",
+        "19 189374 NNY 15 SA",
+        "23 144655 NNY 15 SA"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "north-york",
+      "site_id": "site-b791cbce-3dca-48b0-87d6-963c02c60722",
+      "records": 88,
+      "labels": [
+        "1 DORNEY CRT",
+        "101 BAGOT CRT",
+        "103 BAGOT CRT",
+        "105 BAGOT CRT",
+        "107 BAGOT CRT",
+        "109 BAGOT CRT",
+        "11 DORNEY CRT",
+        "15 DORNEY CRT",
+        "17 DORNEY CRT",
+        "19 DORNEY CRT",
+        "21 DORNEY CRT",
+        "23 DORNEY CRT",
+        "25 DORNEY CRT",
+        "27 DORNEY CRT",
+        "29 DORNEY CRT",
+        "3 DORNEY CRT",
+        "31 BAGOT CRT",
+        "31 DORNEY CRT",
+        "33 BAGOT CRT",
+        "33 DORNEY CRT",
+        "35 BAGOT CRT",
+        "35 DORNEY CRT",
+        "37 BAGOT CRT",
+        "37 DORNEY CRT",
+        "39 BAGOT CRT",
+        "39 DORNEY CRT",
+        "41 BAGOT CRT",
+        "41 DORNEY CRT",
+        "43 BAGOT CRT",
+        "43 DORNEY CRT",
+        "45 BAGOT CRT",
+        "45 DORNEY CRT",
+        "47 BAGOT CRT",
+        "47 DORNEY CRT",
+        "49 BAGOT CRT",
+        "49 DORNEY CRT",
+        "5 DORNEY CRT",
+        "51 BAGOT CRT",
+        "51 DORNEY CRT",
+        "53 BAGOT CRT",
+        "53 DORNEY CRT",
+        "55 BAGOT CRT",
+        "55 DORNEY CRT",
+        "57 BAGOT CRT",
+        "57 DORNEY CRT",
+        "59 BAGOT CRT",
+        "59 DORNEY CRT",
+        "61 BAGOT CRT",
+        "61 DORNEY CRT",
+        "63 BAGOT CRT",
+        "63 DORNEY CRT",
+        "65 BAGOT CRT",
+        "65 DORNEY CRT",
+        "67 BAGOT CRT",
+        "67 DORNEY CRT",
+        "69 BAGOT CRT",
+        "69 DORNEY CRT",
+        "7 DORNEY CRT",
+        "71 BAGOT CRT",
+        "71 DORNEY CRT",
+        "73 BAGOT CRT",
+        "73 DORNEY CRT",
+        "75 BAGOT CRT",
+        "75 DORNEY CRT",
+        "77 BAGOT CRT",
+        "77 DORNEY CRT",
+        "79 BAGOT CRT",
+        "79 DORNEY CRT",
+        "81 BAGOT CRT",
+        "81 DORNEY CRT",
+        "83 BAGOT CRT",
+        "83 DORNEY CRT",
+        "85 BAGOT CRT",
+        "85 DORNEY CRT",
+        "87 BAGOT CRT",
+        "87 DORNEY CRT",
+        "89 BAGOT CRT",
+        "89 DORNEY CRT",
+        "9 DORNEY CRT",
+        "91 BAGOT CRT",
+        "91 DORNEY CRT",
+        "93 BAGOT CRT",
+        "93 DORNEY CRT",
+        "95 BAGOT CRT",
+        "95 DORNEY CRT",
+        "97 BAGOT CRT",
+        "97 DORNEY CRT",
+        "99 BAGOT CRT"
+      ],
+      "publisher_numbers": [
+        "25 251661 NNY 08 OZ"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "north-york",
+      "site_id": "site-acc1a56e-dd8b-4b0a-b95d-77ce46c08b39",
+      "records": 40,
+      "labels": [
+        "41 VARNA DR",
+        "43 VARNA DR",
+        "49 VARNA DR",
+        "51 VARNA DR",
+        "53 VARNA DR",
+        "64 CATHER CRES",
+        "66 CATHER CRES",
+        "72 CATHER CRES",
+        "74 CATHER CRES",
+        "76 CATHER CRES"
+      ],
+      "publisher_numbers": [
+        "10 140382 NNY 15 OZ",
+        "10 170538 NNY 15 SB",
+        "16 124589 NNY 15 SB",
+        "17 112623 NNY 15 SB"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    },
+    {
+      "region": "north-york",
+      "site_id": "site-199b2477-6fc0-4c0f-99ef-1b97118ff3a6",
+      "records": 29,
+      "labels": [
+        "202 KEEWATIN AVE",
+        "204 KEEWATIN AVE",
+        "206 KEEWATIN AVE",
+        "208 KEEWATIN AVE",
+        "210 KEEWATIN AVE",
+        "212 KEEWATIN AVE",
+        "214 KEEWATIN AVE"
+      ],
+      "publisher_numbers": [
+        "15 113064 NNY 25 OZ",
+        "15 180825 NNY 25 OZ",
+        "19 189374 NNY 15 SA",
+        "23 144655 NNY 15 SA"
+      ],
+      "decision": "retain_candidate",
+      "reason": "Source points and address labels do not establish current parcel/site identity."
+    }
+  ],
+  "checks": {
+    "boundaries": true,
+    "rights": false,
+    "accounting": true,
+    "site_identity": false,
+    "matching_review": false,
+    "history": false,
+    "browser_qa": false,
+    "public_isolation": true
+  },
+  "release": {
+    "ready": false,
+    "blockers": [
+      "browser_qa",
+      "history",
+      "matching_review",
+      "rights",
+      "site_identity",
+      "five_person_comprehension"
+    ]
+  },
+  "scope_note": "Accounting is freshly checked. Other booleans remain false unless independently qualified; prior UI tests and source licences do not establish release readiness of the twin."
+}
