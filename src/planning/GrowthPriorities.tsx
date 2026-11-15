@@ -26,8 +26,11 @@ import demos from './regional-demos.json';
 import BriefExtras from './BriefExtras';
 import {regionNames,regionShortNames,submissionRegions} from './regions';
 import {cellNeighbourhoods,cellsWith3dView} from './toronto-context';
+import {parseEnergyPins,withEnergyPins} from './energy-links';
+import type {EnergyBrief} from './energy';
 
 const AreaMap=lazy(()=>import('./AreaMap'));
+const EnergyPanel=lazy(()=>import('./EnergyPanel'));
 const display=(n:number)=>n.toLocaleString();
 const outsideKeywords=[
   'north york',
@@ -48,9 +51,14 @@ const outsideKeywords=[
 ];
 
 export default function GrowthPriorities(){
+ const [compact,setCompact]=useState(()=>window.matchMedia('(max-width:640px)').matches);
+ useEffect(()=>{const media=window.matchMedia('(max-width:640px)');const update=()=>setCompact(media.matches);media.addEventListener('change',update);return()=>media.removeEventListener('change',update);},[]);
   useEffect(()=>{document.title='ASTER — Toronto Housing & Transit Priorities';},[]);
   const [initial]=useState(()=>parseScreeningLink(location.hash));
   const [originalPins]=useState(()=>new URLSearchParams(location.hash.slice(1)));
+  const [energyPins,setEnergyPins]=useState(()=>parseEnergyPins(location.hash));
+  const [showEnergy,setShowEnergy]=useState(()=>new URLSearchParams(location.hash.slice(1)).has('energy'));
+  const [energyBrief,setEnergyBrief]=useState<EnergyBrief|null>(null);
   const [provider]=useState(createScreeningProvider);
   const [manifest,setManifest]=useState<ScreeningManifest|null>(null);
   const [filters,setFilters]=useState<Filters>(initial.filters);
@@ -66,7 +74,8 @@ export default function GrowthPriorities(){
   const [limit,setLimit]=useState(12);
   const [retry,setRetry]=useState(0);
   const [search,setSearch]=useState('');
-  const [showMap,setShowMap]=useState(true);
+  const [showMap,setShowMap]=useState(()=>!window.matchMedia('(max-width:640px)').matches);
+  useEffect(()=>{if(showEnergy){const el=document.getElementById('energy-panel-container');el?.scrollIntoView({behavior:'smooth'});el?.focus({preventScroll:true});}},[showEnergy]);
 
   const otherRegion=filters.region==='downtown'?'midtown':'downtown';
 
@@ -78,6 +87,8 @@ export default function GrowthPriorities(){
       const next=parseScreeningLink(location.hash);
       setFilters(next.filters);
       setSelected(next.areas);
+      setEnergyPins(parseEnergyPins(location.hash));
+      if(q.has('energy'))setShowEnergy(true);
     };
     window.addEventListener('hashchange',onHashChange);
     return()=>window.removeEventListener('hashchange',onHashChange);
@@ -144,8 +155,8 @@ export default function GrowthPriorities(){
   },[provider,manifest,selected]);
 
   useEffect(()=>{
-    if(manifest)history.replaceState(null,'',shareHash(manifest,filters,selected));
-  },[manifest,filters,selected]);
+    if(manifest)history.replaceState(null,'',withEnergyPins(shareHash(manifest,filters,selected),energyPins));
+  },[manifest,filters,selected,energyPins]);
 
   const enrichedAreas=useMemo(
     ()=>areas.map(a=>({...a,neighbourhood:cellNeighbourhoods[a.id]})),
@@ -287,6 +298,7 @@ export default function GrowthPriorities(){
       filters,
       areas:selected.map(id=>evidence[id]).filter(Boolean),
       user_conclusion:conclusion,
+      energy_evidence:energyBrief,
       link:location.href,
       limitations:manifest.limitations,
     };
@@ -300,7 +312,7 @@ export default function GrowthPriorities(){
   }
 
   function build3dHash(opts?:{modelRegion?:string;cell?:string;proposal?:string}){
-    const baseHash=manifest?shareHash(manifest,filters,selected):location.hash;
+    const baseHash=manifest?withEnergyPins(shareHash(manifest,filters,selected),energyPins):location.hash;
     const q=new URLSearchParams(baseHash.replace(/^#/,''));
     q.set('view','3d');
     q.set('model_region',opts?.modelRegion||(filters.region==='midtown'?'midtown':'downtown'));
@@ -313,14 +325,15 @@ export default function GrowthPriorities(){
     .map(id=>evidence[id])
     .filter(Boolean)
     .map(a=>({...a,neighbourhood:a.neighbourhood||cellNeighbourhoods[a.id]}));
-  const complete=selected.length>0&&selectedRows.length===selected.length;
+  const energyReady=energyPins.include.length===0||!!(energyBrief&&energyBrief.snapshot===energyPins.snapshot&&(!energyPins.include.includes('cohort')||(energyBrief.cohort?.summary.id===energyPins.cohort&&energyBrief.cohort?.metric===energyPins.metric))&&(!energyPins.include.includes('facility')||energyBrief.facility?.id===energyPins.facility));
+  const complete=selected.length>0&&selectedRows.length===selected.length&&energyReady;
   const expired=manifest
     ?new Date().toLocaleDateString('en-CA',{timeZone:'America/Toronto'}).replaceAll('-','')>manifest.feed.feed_end_date
     :false;
 
   const view3dHash=useMemo(
     ()=>build3dHash(),
-    [manifest,filters,selected]
+    [manifest,filters,selected,energyPins]
   );
 
   const stageSummary=stagePlainLabels[filters.stage]||filters.stage;
@@ -390,6 +403,7 @@ export default function GrowthPriorities(){
             Prepare a brief ↓
           </a>
           <a href={view3dHash}>Toronto 3D ↗</a>
+          <a href="#energy-evidence" onClick={e=>{e.preventDefault();setShowEnergy(true);document.getElementById('energy-panel-container')?.scrollIntoView({behavior:'smooth'});}}>Energy</a>
         </nav>
       </header>
 
@@ -524,7 +538,7 @@ export default function GrowthPriorities(){
                 </button>
               </div>
 
-              <div className="g-filter-row">
+              <details className="g-advanced-filters" open={!compact}><summary>Transit and proposal filters</summary><div className="g-filter-row">
                 <label htmlFor="filter-stage">
                   Proposal stage
                   <select
@@ -583,7 +597,7 @@ export default function GrowthPriorities(){
                 </label>
               </div>
 
-              <div className="g-controls-bottom">
+              </details><div className="g-controls-bottom">
                 <label className="g-check" htmlFor="filter-only-gaps">
                   <input
                     id="filter-only-gaps"
@@ -838,7 +852,7 @@ export default function GrowthPriorities(){
                 <div className="g-methodology-body">
                   <p>
                     <strong>How screening works:</strong> {manifest.method} “Frequent TTC service” means at least 4
-                    scheduled departures in each hour of the selected 2-hour window (roughly every 15 minutes or better)
+                    scheduled departures in each hour of the selected 2-hour window (departure spacing is not assessed)
                     at one stop on one route-direction. Cards are ordered by proposed homes—there is no overall ranking
                     score.
                   </p>
@@ -957,7 +971,7 @@ export default function GrowthPriorities(){
               </p>
               <p>
                 <strong>Frequent service rule:</strong> ≥ 4 scheduled departures in each hour at one stop on one
-                route-direction (roughly every 15 minutes or better). Proximity is straight-line distance, not walking
+                route-direction (departure spacing is not assessed). Proximity is straight-line distance, not walking
                 route or vehicle capacity.
               </p>
               <p>
@@ -1042,7 +1056,7 @@ export default function GrowthPriorities(){
                                 <strong>{display(currentMetrics.units)}</strong> proposed homes ({currentMetrics.lacking} of{' '}
                                 {currentMetrics.projects} {currentMetrics.projects===1?'proposal':'proposals'}) are{' '}
                                 <strong>beyond {filters.radius} m</strong> of a TTC stop with 4+ scheduled
-                                departures/hour (roughly every 15 min or better).
+                                departures/hour (departure spacing is not assessed).
                               </>
                             ):(
                               <>
@@ -1200,6 +1214,18 @@ export default function GrowthPriorities(){
               )}
             </section>
 
+            <div className="g-no-print" style={{marginTop:'2rem'}}>
+              <button type="button" aria-expanded={showEnergy} aria-controls="energy-panel-container" onClick={()=>setShowEnergy(x=>!x)}>
+                {showEnergy?'Hide energy controls':'Explore reported energy evidence'}
+              </button>
+              <p className="g-hint">Optional context: Toronto-wide reporting-property comparisons and municipal facility utility records. No prediction of energy use for a replacement building.</p>
+            </div>
+            <div id="energy-panel-container" tabIndex={-1} hidden={!showEnergy&&energyPins.include.length===0}>
+              {(showEnergy||energyPins.include.length>0)&&<Suspense fallback={<p role="status">Opening energy evidence…</p>}>
+                <EnergyPanel region={filters.region} pins={energyPins} controlsVisible={showEnergy} onPins={setEnergyPins} onBrief={setEnergyBrief}/>
+              </Suspense>}
+            </div>
+
             <section className="g-brief" id="community-brief" tabIndex={-1} aria-labelledby="g-brief-title">
               <p className="g-eyebrow g-no-print">03 · PREPARE A COMMUNITY BRIEF</p>
               <h2 id="g-brief-title" className="g-no-print">
@@ -1210,7 +1236,7 @@ export default function GrowthPriorities(){
                 in your browser.
               </p>
 
-              <BriefExtras areas={selectedRows} view3dHash={view3dHash}/>
+              <BriefExtras areas={selectedRows} filters={filters} view3dHash={view3dHash}/>
 
               <div className="g-print-context">
                 <h3>Your community interpretation &amp; questions</h3>
@@ -1282,7 +1308,7 @@ export default function GrowthPriorities(){
                   </button>
                 </div>
                 {!complete&&(
-                  <p className="g-hint">Select at least one area above to enable Print/PDF and JSON export.</p>
+                  <p className="g-hint">{!energyReady?'Wait for the selected energy evidence to load, or deselect it, before printing or exporting.':'Select at least one area above to enable Print/PDF and JSON export.'}</p>
                 )}
               </div>
 

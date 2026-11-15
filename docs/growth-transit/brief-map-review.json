@@ -1,0 +1,72 @@
+{
+  "build_id": "483276211354f36796130e384bbc0255ff1a742df5084cd5a5e0385474daebf5",
+  "change": "Replaced the single-dot schematic with geographic City street geometry, selected analysis polygons, filtered proposal points and TTC subway station locations.",
+  "checks": {
+    "projection_and_map_tests": {
+      "status": "passed",
+      "cases": 7
+    },
+    "existing_spatial_tests": {
+      "status": "passed",
+      "cases": 4
+    },
+    "public_build_and_isolation": {
+      "status": "passed"
+    },
+    "desktop_single_area": {
+      "status": "passed",
+      "area": "1260_9669",
+      "included_proposal_records": 5,
+      "nearby_stations": [
+        "Osgoode",
+        "Queen",
+        "St Patrick",
+        "TMU"
+      ]
+    },
+    "two_area_cross_region": {
+      "status": "passed",
+      "areas": [
+        "1260_9669",
+        "1257_9683"
+      ],
+      "focus_area_2_verified": true
+    },
+    "mobile": {
+      "status": "passed",
+      "viewport": [
+        390,
+        844
+      ],
+      "map_viewbox": [
+        305,
+        420
+      ],
+      "document_client_width": 375,
+      "document_scroll_width": 375
+    },
+    "console": {
+      "status": "passed",
+      "captured_errors_or_warnings": []
+    },
+    "native_pdf": {
+      "status": "blocked",
+      "reason": "Native PDF inspection remains unverified; existing browser host limitation. SVG and print styling implemented."
+    }
+  },
+  "sources": {
+    "streets": {
+      "page": "https://open.toronto.ca/dataset/toronto-centreline-tcl/",
+      "sha256": "786db8e402cfa1102474c01f2d1b3b3287f091d8e0574e9ce3405dc62bb1af47",
+      "retrieved_at": "2026-10-22T11:31:37.052872+00:00"
+    },
+    "ttc": "Existing bundled station locations from 2026-11-13 GTFS; no bus/streetcar boarding-stop or frequent-service claim on locator map."
+  },
+  "implementation_files": {
+    "src/planning/BriefMap.tsx": "924a8e44c032e6b0fa383a6bce4f6f7c91f33e50b0c1344041b368a6a7705a98",
+    "src/planning/brief-map.ts": "aec33f331412181175612c9f1e8d877b8c0d0ec38d5bfe00c9102cc9ac35d08a",
+    "src/planning/BriefExtras.tsx": "2fec4c6673970587aa4a2586fe316433aab45d5d6d4c116d9c69ac35727a3604"
+  },
+  "screenshot": "/tmp/aster-brief-real-map.jpg",
+  "publication": "not performed"
+}

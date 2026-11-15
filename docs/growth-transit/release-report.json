@@ -1,6 +1,7 @@
 {
-  "build_id": "20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059",
+  "build_id": "483276211354f36796130e384bbc0255ff1a742df5084cd5a5e0385474daebf5",
   "analysis": "6ed092c988ad9326e279",
+  "energy": "693ebe90439ea1049eac",
   "release_ready": false,
   "gates": {
     "accounting": {
@@ -40,13 +41,13 @@
       "evidence": "check_public_boundary against dist-public"
     },
     "browser": {
-      "status": "passed",
-      "evidence": "data/growth-qualification/20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059/browser.json"
+      "status": "blocked",
+      "evidence": "data/growth-qualification/483276211354f36796130e384bbc0255ff1a742df5084cd5a5e0385474daebf5/browser.json"
     },
     "rights": {
       "status": "passed",
       "evidence": "submission-rights-register.json",
-      "reason": "Reviewed screening versions and bounded illustrative massing; legacy explorer datasets excluded."
+      "reason": "Reviewed screening, energy derivatives and bounded illustrative massing; legacy explorer datasets excluded."
     },
     "participants": {
       "status": "blocked",
@@ -55,7 +56,15 @@
     "publication": {
       "status": "blocked",
       "reason": "Owner review and separate publication approval required."
+    },
+    "energy_analysis": {
+      "status": "passed",
+      "evidence": "docs/energy/analytical-review.json"
+    },
+    "energy_rights": {
+      "status": "passed",
+      "evidence": "docs/energy/rights-contract.json"
     }
   },
-  "package_file_count": 372
+  "package_file_count": 668
 }

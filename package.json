@@ -28,6 +28,9 @@
     "qualify:twin-review": ".venv/bin/python scripts/qualify_twin_candidate.py",
     "build:screening": ".venv/bin/python scripts/build_screening.py",
     "test:screening": ".venv/bin/python -m unittest tests.test_screening",
+    "acquire:energy": ".venv/bin/python scripts/acquire_energy.py",
+    "build:energy": ".venv/bin/python scripts/build_energy.py",
+    "test:energy": ".venv/bin/python -m unittest tests.test_energy && node --experimental-strip-types --test tests/energy-links.test.mjs tests/energy-provider.test.mjs",
     "dev:sandbox": "vite --config vite.sandbox.config.ts --open /sandbox.html",
     "build:sandbox": "tsc -b && vite build --config vite.sandbox.config.ts"
   },

@@ -1,4 +1,4 @@
-import {corners,overlap,type Plot} from './model';
+import {corners,overlap,inside,type Plot} from './model';
 export type Building={id:string;height:number;height_source:string;geometry:{type:string;coordinates:unknown}};
 export type Reference={id:string;extent_m:number;buildings:Building[]};
 export type Replacement={schema:1;baseline:string;removed:string;volume:Plot};
@@ -15,3 +15,11 @@ export function validateReplacement(ref:Reference,value:unknown):Replacement{
  return {schema:1,baseline:ref.id,removed:r.removed,volume:{id:'replacement-volume',kind:'volume',x:p.x,z:p.z,width:p.width,depth:p.depth,height:p.height,rotation:p.rotation}};
 }
 export function consequences(ref:Reference,r:Replacement){const original=ref.buildings.find(b=>b.id===r.removed)!;const area=footprintArea(original),next=r.volume.width*r.volume.depth;return {oldHeight:original.height,newHeight:r.volume.height,heightChange:r.volume.height-original.height,oldArea:area,newArea:next,areaChange:next-area,oldVolume:area*original.height,newVolume:next*r.volume.height,volumeChange:next*r.volume.height-area*original.height};}
+
+/** Find a collision-free initial envelope near the selected footprint; never move to a different site silently. */
+export function validStartingVolume(ref:Reference,b:Building):Plot|null{
+ const initial=initialVolume(b),polys=polygons(b);const vertices=polys.flatMap(p=>p[0]);const xs=vertices.map(p=>p[0]),zs=vertices.map(p=>p[1]);
+ const candidates=[{x:initial.x,z:initial.z}];for(const fx of [.25,.5,.75])for(const fz of [.25,.5,.75])candidates.push({x:Math.min(...xs)+(Math.max(...xs)-Math.min(...xs))*fx,z:Math.min(...zs)+(Math.max(...zs)-Math.min(...zs))*fz});
+ for(const factor of [.9,.7,.5,.25,.1])for(const pos of candidates){const p={...initial,x:Math.round(pos.x*100)/100,z:Math.round(pos.z*100)/100,width:Math.max(2,Math.floor(initial.width*factor*100)/100),depth:Math.max(2,Math.floor(initial.depth*factor*100)/100)};if(!polys.some(poly=>corners(p).every(c=>inside(c,poly[0])&&!poly.slice(1).some(h=>inside(c,h)))))continue;try{return validateReplacement(ref,{schema:1,baseline:ref.id,removed:b.id,volume:p}).volume;}catch{}}
+ return null;
+}

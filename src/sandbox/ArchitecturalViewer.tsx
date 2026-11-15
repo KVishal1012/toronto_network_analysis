@@ -2,7 +2,7 @@ import {useEffect,useMemo,useRef,useState} from 'react';
 import Scene,{type CameraCommand} from './Scene';
 import Map3DScene,{type Basemap3DMode} from './Map3DScene';
 import type {StudyRegion} from '../planning/toronto-context';
-import {initialVolume,validateReplacement,consequences,type Replacement} from './replacement';
+import {initialVolume,validStartingVolume,validateReplacement,consequences,type Replacement} from './replacement';
 import type {Plot} from './model';
 import {proposals3d,type Proposal3D} from './proposals-3d';
 import views from './architectural.json';
@@ -141,6 +141,7 @@ export default function ArchitecturalViewer(){
  const [original,setOriginal]=useState(false);
  const [message,setMessage]=useState('');
  const [isError,setIsError]=useState(false);
+ const [conflict,setConflict]=useState('');
  const [announcement,setAnnouncement]=useState(()=>
   initialTarget.matchedProposal
    ?`Highlighted proposal ${initialTarget.matchedProposal.label}: ${initialTarget.matchedProposal.units.toLocaleString()} units, ${initialTarget.matchedProposal.stage}.`
@@ -185,6 +186,8 @@ export default function ArchitecturalViewer(){
  },[region]);
 
  const view=views.find(v=>v.region===region)!;
+ const selectedCells=(new URLSearchParams(location.hash.slice(1)).get('areas')||'').split(',').filter(Boolean);
+ const outsideCells=selectedCells.filter(id=>!proposals3d.some(p=>p.cellId===id));
  const regionProposals=useMemo(()=>proposals3d.filter(p=>p.region===region),[region]);
  const visibleProposals=useMemo(()=>regionProposals.filter(p=>{
   if(onlyCellProposals&&cellFilter&&p.cellId!==cellFilter)return false;
@@ -290,12 +293,18 @@ export default function ArchitecturalViewer(){
   const target=view.buildings.find(b=>b.id===targetBuildingId);
   if(!target)return;
   setSelected(target.id);
-  const nextDraft=initialVolume(target);
+  const fitted=validStartingVolume(view,target);
+  if(!fitted){
+   setDraft(null);setDraftText(null);setScenario(null);setOriginal(false);
+   let conflictId='';try{validateReplacement(view,{schema:1,baseline:view.id,removed:target.id,volume:initialVolume(target)});}catch(e){const text=e instanceof Error?e.message:String(e);conflictId=view.buildings.find(b=>text.includes(`source feature ${b.id}.`))?.id||'';}
+   setConflict(conflictId);announceStatus('No safe starting box fits this source feature. It may overlap other recorded massing components, so replacing this feature alone would leave overlapping geometry. '+(conflictId?`Conflicting feature ${conflictId} is highlighted red. `:'')+'Select another recorded feature; no invalid replacement has been applied.',true);return;
+  }
+  const nextDraft=fitted;setConflict('');
   setDraft(nextDraft);
   setDraftText(plotToText(nextDraft));
   setScenario(null);
   setOriginal(false);
-  announceStatus(`Editing a hypothetical box for building ${target.id}${contextLabel?` at ${contextLabel}`:''}. Adjust dimensions below, then select Apply replacement to 3D view.`);
+  announceStatus(`${fitted?'Started with a collision-free box; it may be smaller than the existing footprint.':'No safe starting box found. Adjust dimensions and check conflicts before applying.'} Editing a hypothetical box for building ${target.id}${contextLabel?` at ${contextLabel}`:''}. Adjust dimensions below, then select Apply replacement to 3D view.`);
   requestAnimationFrame(()=>{
    editorHeadingRef.current?.scrollIntoView({behavior:'smooth',block:'nearest'});
    editorHeadingRef.current?.focus();
@@ -354,10 +363,10 @@ export default function ArchitecturalViewer(){
    setDraft(next.volume);
    setDraftText(plotToText(next.volume));
    setScenario(next);
-   setOriginal(false);
+   setOriginal(false);setConflict('');
    announceStatus('Replacement applied to the 3D view. Footprint check passed against nearby 2025 buildings.');
   }catch(e){
-   announceStatus(e instanceof Error?e.message:String(e),true);
+   const text=e instanceof Error?e.message:String(e);setConflict(view.buildings.find(b=>text.includes(`source feature ${b.id}.`))?.id||'');announceStatus(text+(text.includes('intersects')?' The conflicting building is highlighted red. Reduce width/depth, adjust rotation, or use Fit a valid starting box.':''),true);
   }
  }
 
@@ -581,12 +590,13 @@ export default function ArchitecturalViewer(){
         <button type="button" className="a-mode-btn" onClick={()=>runCamera('reset')}>Reset camera</button>
        </div>
       </div>
-      {viewMode==='cad'?(
+      {outsideCells.length>0&&<div className="a-coverage-notice" role="note"><strong>Selected analysis area outside available 3D coverage</strong><p>{outsideCells.join(', ')} cannot be displayed in this 3D model. You are viewing {view.name}, a separate 600 × 600 m example. Your original area selection is preserved.</p><button type="button" onClick={back}>Return to selected areas</button><p>Available example views: <button type="button" onClick={()=>changeRegion('downtown')}>City Hall example</button> <button type="button" onClick={()=>changeRegion('midtown')}>Yonge–Eglinton example</button></p></div>}{viewMode==='cad'?(
        <Scene
         key={view.id}
         reference={view}
         viewerOnly
         highlight={selected}
+        conflict={conflict}
         plots={scenario&&!original?[scenario.volume]:[]}
         selected={scenario&&!original?scenario.volume.id:null}
         hiddenSourceIds={scenario&&!original?[scenario.removed]:[]}
@@ -609,6 +619,7 @@ export default function ArchitecturalViewer(){
         view={view}
         basemapMode={(viewMode==='map-osm'?'osm':viewMode==='map-satellite'?'satellite':'vector') as Basemap3DMode}
         highlight={selected}
+        conflict={conflict}
         plots={scenario&&!original?[scenario.volume]:[]}
         hiddenSourceIds={scenario&&!original?[scenario.removed]:[]}
         proposals={visibleProposals}
@@ -693,6 +704,7 @@ export default function ArchitecturalViewer(){
         <h2 id="a-inspect-heading">Selected building: {building.id}</h2>
         <p className="a-metric-lead"><strong>Recorded height: {building.height.toFixed(2)} m</strong> (~{approxStoreys(building.height)} storeys est.)</p>
         <p>Measurement source: <strong>{building.height_source}</strong> ({explainHeightSource(building.height_source)}) · 2025 City massing snapshot.</p>
+        <p><strong>Energy evidence unavailable for this footprint.</strong> Municipal facility records and Toronto-wide reporting-property comparisons do not establish this building’s use or predict a replacement’s performance.</p>
         <button type="button" className="a-primary-btn" onClick={begin}>What if this building were taller or wider?</button>
        </>
       ):(
@@ -732,7 +744,7 @@ export default function ArchitecturalViewer(){
         <button type="button" className="a-primary-btn" onClick={apply}>Apply replacement to 3D view</button>
        </div>
       )}
-      <div className="a-scenario-actions">
+      {draft&&<button type="button" onClick={()=>{if(!building)return;const fitted=validStartingVolume(view,building);if(fitted){setDraft(fitted);setDraftText(plotToText(fitted));setConflict('');announceStatus('A collision-free starting box is ready. Review dimensions, then apply.');}else announceStatus('No collision-free starting box found in this footprint. Select another source feature or adjust manually.',true);}}>Fit a valid starting box</button>}<div className="a-scenario-actions">
        <button type="button" disabled={!scenario} aria-pressed={original} onClick={()=>{const next=!original;setOriginal(next);setAnnouncement(next?'Showing original 2025 building for comparison.':'Showing your hypothetical replacement box.');}}>
         {original?'Show my replacement':'Compare with original 2025 building'}
        </button>
@@ -788,6 +800,7 @@ export default function ArchitecturalViewer(){
        <li><strong>Proposal pipeline data:</strong> Development Pipeline entries reflect City-reported residential unit counts at the screening snapshot date; proposals are not completed homes and may change or never be built.</li>
        <li><strong>Transit proximity:</strong> Stop distances are straight-line metres to TTC stops; frequent service flags stops with at least 4 scheduled departures per hour in the screening window, without modelling walking routes, crowding, or reliability.</li>
        <li><strong>Unmodelled factors:</strong> Sunlight/shadow duration, wind and pedestrian comfort, energy/emissions, traffic and transit demand, construction cost, property lines, zoning, and planning permission are not calculated. The shaded 3D view uses illustrative lighting, not a solar study.</li>
+       <li><strong>Reported energy evidence:</strong> No qualified energy-to-building relationship is established for these source footprints. The housing explorer offers separate Toronto-wide reporting-property comparisons and municipal facility records; neither predicts energy use for a replacement building.</li>
       </ul>
       <h3>Sources and coordinates</h3>
       <p>{view.limitation}</p>

@@ -1,0 +1,107 @@
+{
+  "build_id": "b81d7e867ced56aa431130221642a52ed5a0be2710884ea2ec42bfc4ab22e24b",
+  "energy_snapshot": "693ebe90439ea1049eac",
+  "reviewer_type": "AI-assisted developer browser verification; not participant evaluation",
+  "environment": {
+    "url": "http://127.0.0.1:5180/",
+    "desktop_viewport": "998 x 1343 ambient browser viewport",
+    "mobile_viewport": "390 x 844 override; document client width 375 with scrollbar",
+    "browser": "Codex in-app browser, CUA DOM and accessibility controls"
+  },
+  "checks": {
+    "page_identity": {
+      "status": "passed",
+      "evidence": "ASTER \u2014 Toronto Housing & Transit Priorities; local public package"
+    },
+    "meaningful_content_no_framework_overlay": {
+      "status": "passed",
+      "evidence": "Rendered housing, energy cohorts and City Hall facility evidence"
+    },
+    "console": {
+      "status": "passed",
+      "evidence": "No captured error or warning entries during energy flows"
+    },
+    "desktop_metric_and_sources": {
+      "status": "passed",
+      "evidence": "Multifamily Housing water intensity: 1614 records, 1601 valid, median 1.690965328698944; City Hall 48 source readings and four separately labelled meters"
+    },
+    "facility_map_and_list": {
+      "status": "passed",
+      "evidence": "On-demand point/boundary map and accessible facility list; no captured rendering errors"
+    },
+    "keyboard_and_labels": {
+      "status": "passed",
+      "evidence": "Desktop Enter activation of Energy and facility selection; labelled selects, inputs, table captions and accessible source controls"
+    },
+    "mobile": {
+      "status": "passed",
+      "evidence": "Facility search and source switching verified via accessibility actions; no document horizontal overflow (375/375). Browser annotation mode intercepted some simulated pointer actions; direct AX activation verified the same controls."
+    },
+    "small_cohort": {
+      "status": "passed",
+      "evidence": "Courthouse water comparison reports fewer than ten valid values; distribution suppressed"
+    },
+    "json_export": {
+      "status": "passed",
+      "evidence": "Downloaded and parsed actual brief: one selected housing area, 1614 Ontario reporting records, City Hall 48 readings; both source receipts; all annual totals null"
+    },
+    "pinned_reload": {
+      "status": "passed",
+      "evidence": "Water cohort and City Hall attachments restored after reload, with export enabled"
+    },
+    "initial_energy_loading": {
+      "status": "passed",
+      "evidence": {
+        "initial_requests": [
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET / HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/index-Bqaf_teI.js HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/index-BIutvwqK.css HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/GrowthPriorities-Csrj8ByV.js HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /favicon.ico HTTP/1.1\" 404 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /planning/screening/latest.json HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /planning/screening/withdrawn.json HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /planning/screening/6ed092c988ad9326e279/manifest.json HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/AreaMap-PMnn49oa.js HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/maplibre-gl-JR8eJ17e.css HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/architectural-CA8zHdKy.js HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /assets/maplibre-gl-DzgmNEc9.js HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:58] \"GET /planning/screening/6ed092c988ad9326e279/regions/downtown.json.gz HTTP/1.1\" 200 -",
+          "127.0.0.1 - - [15/Nov/2026 08:49:59] \"GET /assets/maplibre-gl-worker-Dq6ej_qN.js HTTP/1.1\" 200 -"
+        ],
+        "energy_requests_before_open": []
+      }
+    },
+    "native_print_pdf": {
+      "status": "blocked",
+      "reason": "Print activation opened a native operation and timed out the browser input command. Native Codex app inspection was disallowed by the computer-use tool. Escape restored the page. PDF pagination and saved output were not verified."
+    },
+    "screen_reader_session": {
+      "status": "blocked",
+      "reason": "Accessibility structure and labels inspected, but no actual assistive-technology session completed."
+    },
+    "participants": {
+      "status": "blocked",
+      "reason": "No genuine participant sessions supplied. User impact remains unvalidated."
+    }
+  },
+  "screenshots": [
+    {
+      "path": "/tmp/aster-energy-desktop.jpg",
+      "sha256": "4c4acb0123ea2251318d024f7325f3c835252396e30a218dff6d1b9bc916d216"
+    },
+    {
+      "path": "/tmp/aster-energy-mobile.jpg",
+      "sha256": "71235098e5daf74d6b178e81807e38257b8b371c558693e0bda6f2928b01d18a"
+    }
+  ],
+  "tests": {
+    "energy_python": 11,
+    "energy_node": 7,
+    "screening_and_rights_python": 12,
+    "replacement_service_and_screening_node": 14,
+    "total_passed": 44,
+    "independent_source_cases": 12
+  },
+  "overall_status": "blocked_on_final_print_accessibility_and_participant_checks",
+  "publication": "not performed"
+}

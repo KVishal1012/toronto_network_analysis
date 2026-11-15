@@ -71,6 +71,7 @@ export default function Map3DScene({
   view,
   basemapMode,
   highlight,
+  conflict='',
   plots,
   hiddenSourceIds,
   proposals,
@@ -86,6 +87,7 @@ export default function Map3DScene({
   view:ArchitecturalSceneView;
   basemapMode:Basemap3DMode;
   highlight:string;
+  conflict?:string;
   plots:Plot[];
   hiddenSourceIds:string[];
   proposals:Proposal3D[];
@@ -538,11 +540,13 @@ export default function Map3DScene({
     );
     m.setPaintProperty('buildings-3d','fill-extrusion-color',[
       'case',
+      ['==',['get','id'],conflict||''],
+      '#c13c32',
       ['==',['get','id'],highlight||''],
       '#1b6d75',
       '#c6cdd0',
     ]);
-  },[ready,highlight,hiddenSourceIds]);
+  },[ready,highlight,conflict,hiddenSourceIds]);
 
   // Replacement volume extrusion
   useEffect(()=>{

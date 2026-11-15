@@ -1,0 +1,58 @@
+{
+  "version": "693ebe90439ea1049eac",
+  "accounting": {
+    "ontario": {
+      "input": 6740,
+      "accounted": 6740,
+      "outcomes": {
+        "included": 2451,
+        "missing_identifier": 43,
+        "outside_toronto_or_unresolved_city": 4246
+      }
+    },
+    "properties": {
+      "input": 1731,
+      "accounted": 1731,
+      "outcomes": {
+        "ambiguous_address": 24,
+        "included": 247,
+        "outside_study_areas": 1129,
+        "unresolved_address": 331
+      }
+    },
+    "property_ids": {
+      "input": 1731,
+      "accounted": 1731,
+      "outcomes": {
+        "linked_property": 1731
+      }
+    },
+    "meters": {
+      "input": 36663,
+      "accounted": 36663,
+      "outcomes": {
+        "facility_ambiguous_address": 345,
+        "facility_outside_study_areas": 13211,
+        "facility_unresolved_address": 3622,
+        "included": 3055,
+        "invalid_usage": 5,
+        "nonenergy_or_unqualified_units": 43,
+        "overlap_or_meter_identity_conflict": 16382
+      }
+    }
+  },
+  "facility_counts": {
+    "downtown": 158,
+    "midtown": 89
+  },
+  "cohorts": 37,
+  "limitations": [
+    "2024 reported evidence; not current metered use or independently audited performance.",
+    "Ontario comparisons cover reporting properties across Toronto, not the selected Downtown/Midtown area or building.",
+    "EWRB IDs can cover multiple structures. Coarse postal areas do not establish a building relationship.",
+    "Reporting coverage is incomplete and not a representative sample. Differences can reflect use and operating conditions.",
+    "Municipal facility addresses do not establish identity with a selected 3D footprint.",
+    "The Toronto readme describes an older annual schema, not the 2024 meter interval convention. Annual totals are withheld.",
+    "No energy forecast, savings estimate, energy rating, utility-bill prediction or replacement-building simulation."
+  ]
+}

@@ -8,6 +8,7 @@ export type PeriodServiceStatus = {
   minHourlyDepartures: number;
   maxHourlyDepartures: number;
   status: string;
+  hourlyEvidence?: {route:string;route_name:string;direction:string;hourly_departures:number[]}[];
 };
 
 export type Proposal3D = {
@@ -56,7 +57,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 6,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 6\u201312/hr (~every 5\u201310 min) at Dundas St West at Chestnut St (44 m)"
+        "status": "Route 505, direction 0: 07:00–08:00: 6 scheduled departures, 08:00–09:00: 12 scheduled departures at Dundas St West at Chestnut St (44 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              6,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       },
       "evening": {
         "stopName": "Dundas St West at Chestnut St",
@@ -66,7 +78,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 12,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 12/hr (~every 5 min) at Dundas St West at Chestnut St (44 m)"
+        "status": "Route 505, direction 0: 16:00–17:00: 12 scheduled departures, 17:00–18:00: 12 scheduled departures at Dundas St West at Chestnut St (44 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              12,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Dundas St West at Chestnut St",
@@ -76,7 +99,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 10\u201312/hr (~every 5\u20136 min) at Dundas St West at Chestnut St (44 m)"
+        "status": "Route 505, direction 0: 12:00–13:00: 10 scheduled departures, 13:00–14:00: 12 scheduled departures at Dundas St West at Chestnut St (44 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              10,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=5CN%2FsNeGg8zFKjMCnywAog%3D%3D",
@@ -105,7 +139,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Queen Station - Northbound Platform (203 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Queen Station - Northbound Platform (203 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Queen Station - Northbound Platform",
@@ -115,7 +160,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 19,
         "maxHourlyDepartures": 23,
-        "status": "Route 1 \u00b7 19\u201323/hr (~every 3 min) at Queen Station - Northbound Platform (203 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 19 scheduled departures, 17:00–18:00: 23 scheduled departures at Queen Station - Northbound Platform (203 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              19,
+              23
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Queen Station - Northbound Platform",
@@ -125,7 +181,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Queen Station - Northbound Platform (203 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Queen Station - Northbound Platform (203 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=mc3RN9CEVoQu%2FxoMWib7Yw%3D%3D",
@@ -154,7 +221,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 6,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 6\u201312/hr (~every 5\u201310 min) at Dundas St West at Chestnut St (61 m)"
+        "status": "Route 505, direction 0: 07:00–08:00: 6 scheduled departures, 08:00–09:00: 12 scheduled departures at Dundas St West at Chestnut St (61 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              6,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       },
       "evening": {
         "stopName": "Dundas St West at Chestnut St",
@@ -164,7 +242,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 12,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 12/hr (~every 5 min) at Dundas St West at Chestnut St (61 m)"
+        "status": "Route 505, direction 0: 16:00–17:00: 12 scheduled departures, 17:00–18:00: 12 scheduled departures at Dundas St West at Chestnut St (61 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              12,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Dundas St West at Chestnut St",
@@ -174,7 +263,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 12,
-        "status": "Route 505 \u00b7 10\u201312/hr (~every 5\u20136 min) at Dundas St West at Chestnut St (61 m)"
+        "status": "Route 505, direction 0: 12:00–13:00: 10 scheduled departures, 13:00–14:00: 12 scheduled departures at Dundas St West at Chestnut St (61 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              10,
+              12
+            ],
+            "route": "505",
+            "route_name": "505"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=mCS12vKAw9E6iIyFMWYVlg%3D%3D",
@@ -203,7 +303,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 5,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 5/hr (~every 12 min) at Yonge St at Berwick Ave (32 m)"
+        "status": "Route 97, direction 0: 07:00–08:00: 5 scheduled departures, 08:00–09:00: 5 scheduled departures at Yonge St at Berwick Ave (32 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              5
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "evening": {
         "stopName": "Yonge St at Berwick Ave",
@@ -213,7 +324,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 4,
-        "status": "Route 97 \u00b7 4/hr (~every 15 min) at Yonge St at Berwick Ave (32 m)"
+        "status": "Route 97, direction 0: 16:00–17:00: 4 scheduled departures, 17:00–18:00: 4 scheduled departures at Yonge St at Berwick Ave (32 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              4,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Yonge St at Berwick Ave",
@@ -223,7 +345,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 4\u20135/hr (~every 12\u201315 min) at Yonge St at Berwick Ave (32 m)"
+        "status": "Route 97, direction 0: 12:00–13:00: 5 scheduled departures, 13:00–14:00: 4 scheduled departures at Yonge St at Berwick Ave (32 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=N59s8Qf2JU22pCem2v3syQ%3D%3D",
@@ -252,7 +385,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 17,
-        "status": "Route 5 \u00b7 10\u201317/hr (~every 4\u20136 min) at Eglinton Station - Westbound Platform (104 m)"
+        "status": "Route 5, direction 1: 07:00–08:00: 10 scheduled departures, 08:00–09:00: 17 scheduled departures at Eglinton Station - Westbound Platform (104 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              10,
+              17
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -262,7 +406,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 16,
         "maxHourlyDepartures": 16,
-        "status": "Route 5 \u00b7 16/hr (~every 4 min) at Eglinton Station - Westbound Platform (104 m)"
+        "status": "Route 5, direction 1: 16:00–17:00: 16 scheduled departures, 17:00–18:00: 16 scheduled departures at Eglinton Station - Westbound Platform (104 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              16
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -272,7 +427,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 9,
         "maxHourlyDepartures": 9,
-        "status": "Route 5 \u00b7 9/hr (~every 7 min) at Eglinton Station - Westbound Platform (104 m)"
+        "status": "Route 5, direction 1: 12:00–13:00: 9 scheduled departures, 13:00–14:00: 9 scheduled departures at Eglinton Station - Westbound Platform (104 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              9,
+              9
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=2vCFK%2Bw2tAsTHYuXenqFrQ%3D%3D",
@@ -301,7 +467,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (256 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (256 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -311,7 +488,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (256 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (256 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -321,7 +509,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (256 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (256 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=NmXho3vDTsKOh%2BA3NkVYzQ%3D%3D",
@@ -350,7 +549,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (233 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (233 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -360,7 +570,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (233 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (233 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -370,7 +591,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (233 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (233 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=g2YHzlFFnXMQJNyXXOkUig%3D%3D",
@@ -399,7 +631,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (195 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -409,7 +652,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (195 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -419,7 +673,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (195 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=XMqnMmlIb%2FOMbxovRXcsxA%3D%3D",
@@ -448,7 +713,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (190 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (191 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -458,7 +734,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (190 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (191 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -468,7 +755,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (190 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (191 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=CFMmMJ%2FMhj%2BqP0GA56waNQ%3D%3D",
@@ -497,7 +795,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (252 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (252 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -507,7 +816,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (252 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (252 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -517,7 +837,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (252 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (252 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=XyjZkSCKJztXIH%2BUZuQJtw%3D%3D",
@@ -546,7 +877,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 17,
-        "status": "Route 5 \u00b7 10\u201317/hr (~every 4\u20136 min) at Eglinton Station - Westbound Platform (64 m)"
+        "status": "Route 5, direction 1: 07:00–08:00: 10 scheduled departures, 08:00–09:00: 17 scheduled departures at Eglinton Station - Westbound Platform (64 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              10,
+              17
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -556,7 +898,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 16,
         "maxHourlyDepartures": 16,
-        "status": "Route 5 \u00b7 16/hr (~every 4 min) at Eglinton Station - Westbound Platform (64 m)"
+        "status": "Route 5, direction 1: 16:00–17:00: 16 scheduled departures, 17:00–18:00: 16 scheduled departures at Eglinton Station - Westbound Platform (64 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              16
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -566,7 +919,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 9,
         "maxHourlyDepartures": 9,
-        "status": "Route 5 \u00b7 9/hr (~every 7 min) at Eglinton Station - Westbound Platform (64 m)"
+        "status": "Route 5, direction 1: 12:00–13:00: 9 scheduled departures, 13:00–14:00: 9 scheduled departures at Eglinton Station - Westbound Platform (64 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              9,
+              9
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=u7RJXMff%2Foavp5A9O6OjOg%3D%3D",
@@ -595,7 +959,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (50 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (50 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -605,7 +980,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (50 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (50 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -615,7 +1001,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (50 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (50 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=46yvaEcr9boRV19lCe5jBw%3D%3D",
@@ -644,7 +1041,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (305 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (305 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -654,7 +1062,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (305 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (305 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -664,7 +1083,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (305 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (305 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=B063XRkddEsQB533QusSPQ%3D%3D",
@@ -693,7 +1123,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Southbound Platform (101 m)"
+        "status": "Route 1, direction 0: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Southbound Platform (101 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Southbound Platform",
@@ -703,7 +1144,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 21,
-        "status": "Route 1 \u00b7 15\u201321/hr (~every 3\u20134 min) at Eglinton Station - Southbound Platform (101 m)"
+        "status": "Route 1, direction 0: 16:00–17:00: 15 scheduled departures, 17:00–18:00: 21 scheduled departures at Eglinton Station - Southbound Platform (101 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              15,
+              21
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Southbound Platform",
@@ -713,7 +1165,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Southbound Platform (101 m)"
+        "status": "Route 1, direction 0: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Southbound Platform (101 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=XfdoWtSZaHdOIxpD1Ex8Cg%3D%3D",
@@ -742,7 +1205,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 17,
-        "status": "Route 5 \u00b7 10\u201317/hr (~every 4\u20136 min) at Eglinton Station - Westbound Platform (205 m)"
+        "status": "Route 5, direction 1: 07:00–08:00: 10 scheduled departures, 08:00–09:00: 17 scheduled departures at Eglinton Station - Westbound Platform (205 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              10,
+              17
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -752,7 +1226,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 16,
         "maxHourlyDepartures": 16,
-        "status": "Route 5 \u00b7 16/hr (~every 4 min) at Eglinton Station - Westbound Platform (205 m)"
+        "status": "Route 5, direction 1: 16:00–17:00: 16 scheduled departures, 17:00–18:00: 16 scheduled departures at Eglinton Station - Westbound Platform (205 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              16
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -762,7 +1247,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 9,
         "maxHourlyDepartures": 9,
-        "status": "Route 5 \u00b7 9/hr (~every 7 min) at Eglinton Station - Westbound Platform (205 m)"
+        "status": "Route 5, direction 1: 12:00–13:00: 9 scheduled departures, 13:00–14:00: 9 scheduled departures at Eglinton Station - Westbound Platform (205 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              9,
+              9
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=WkLBPzXnQBoelGEqSk5R4g%3D%3D",
@@ -791,7 +1287,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (218 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (218 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -801,7 +1308,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (218 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (218 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -811,7 +1329,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (218 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (218 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=BuBb%2BiSh9FbMNoZqFpWPjQ%3D%3D",
@@ -840,7 +1369,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 5,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 5/hr (~every 12 min) at Yonge St at Berwick Ave (92 m)"
+        "status": "Route 97, direction 0: 07:00–08:00: 5 scheduled departures, 08:00–09:00: 5 scheduled departures at Yonge St at Berwick Ave (92 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              5
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "evening": {
         "stopName": "Yonge St at Berwick Ave",
@@ -850,7 +1390,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 4,
-        "status": "Route 97 \u00b7 4/hr (~every 15 min) at Yonge St at Berwick Ave (92 m)"
+        "status": "Route 97, direction 0: 16:00–17:00: 4 scheduled departures, 17:00–18:00: 4 scheduled departures at Yonge St at Berwick Ave (92 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              4,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Yonge St at Berwick Ave",
@@ -860,7 +1411,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 4\u20135/hr (~every 12\u201315 min) at Yonge St at Berwick Ave (92 m)"
+        "status": "Route 97, direction 0: 12:00–13:00: 5 scheduled departures, 13:00–14:00: 4 scheduled departures at Yonge St at Berwick Ave (92 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       }
     },
     "sourceUrl": "",
@@ -889,7 +1451,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (75 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (75 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -899,7 +1472,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (75 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (75 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -909,7 +1493,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (75 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (75 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "",
@@ -938,7 +1533,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 5,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 5/hr (~every 12 min) at 2190 Yonge St (195 m)"
+        "status": "Route 97, direction 0: 07:00–08:00: 5 scheduled departures, 08:00–09:00: 5 scheduled departures at 2190 Yonge St (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              5
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "evening": {
         "stopName": "2190 Yonge St",
@@ -948,7 +1554,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 4,
-        "status": "Route 97 \u00b7 4/hr (~every 15 min) at 2190 Yonge St (195 m)"
+        "status": "Route 97, direction 0: 16:00–17:00: 4 scheduled departures, 17:00–18:00: 4 scheduled departures at 2190 Yonge St (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              4,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "saturday": {
         "stopName": "2190 Yonge St",
@@ -958,7 +1575,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 4\u20135/hr (~every 12\u201315 min) at 2190 Yonge St (195 m)"
+        "status": "Route 97, direction 0: 12:00–13:00: 5 scheduled departures, 13:00–14:00: 4 scheduled departures at 2190 Yonge St (195 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=OhVy0ObGHW0mD0DHsb559g%3D%3D",
@@ -987,7 +1615,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 24,
         "maxHourlyDepartures": 24,
-        "status": "Route 1 \u00b7 24/hr (~every 2 min) at Eglinton Station - Northbound Platform (200 m)"
+        "status": "Route 1, direction 1: 07:00–08:00: 24 scheduled departures, 08:00–09:00: 24 scheduled departures at Eglinton Station - Northbound Platform (200 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              24,
+              24
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -997,7 +1636,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 17,
         "maxHourlyDepartures": 22,
-        "status": "Route 1 \u00b7 17\u201322/hr (~every 3\u20134 min) at Eglinton Station - Northbound Platform (200 m)"
+        "status": "Route 1, direction 1: 16:00–17:00: 17 scheduled departures, 17:00–18:00: 22 scheduled departures at Eglinton Station - Northbound Platform (200 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              17,
+              22
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Northbound Platform",
@@ -1007,7 +1657,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 15,
         "maxHourlyDepartures": 16,
-        "status": "Route 1 \u00b7 15\u201316/hr (~every 4 min) at Eglinton Station - Northbound Platform (200 m)"
+        "status": "Route 1, direction 1: 12:00–13:00: 16 scheduled departures, 13:00–14:00: 15 scheduled departures at Eglinton Station - Northbound Platform (200 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              15
+            ],
+            "route": "1",
+            "route_name": "1"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=tgMudgx%2BYEHHyyvwuHFlhg%3D%3D",
@@ -1036,7 +1697,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 10,
         "maxHourlyDepartures": 17,
-        "status": "Route 5 \u00b7 10\u201317/hr (~every 4\u20136 min) at Eglinton Station - Westbound Platform (251 m)"
+        "status": "Route 5, direction 1: 07:00–08:00: 10 scheduled departures, 08:00–09:00: 17 scheduled departures at Eglinton Station - Westbound Platform (251 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              10,
+              17
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "evening": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -1046,7 +1718,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 16,
         "maxHourlyDepartures": 16,
-        "status": "Route 5 \u00b7 16/hr (~every 4 min) at Eglinton Station - Westbound Platform (251 m)"
+        "status": "Route 5, direction 1: 16:00–17:00: 16 scheduled departures, 17:00–18:00: 16 scheduled departures at Eglinton Station - Westbound Platform (251 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              16,
+              16
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Eglinton Station - Westbound Platform",
@@ -1056,7 +1739,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 9,
         "maxHourlyDepartures": 9,
-        "status": "Route 5 \u00b7 9/hr (~every 7 min) at Eglinton Station - Westbound Platform (251 m)"
+        "status": "Route 5, direction 1: 12:00–13:00: 9 scheduled departures, 13:00–14:00: 9 scheduled departures at Eglinton Station - Westbound Platform (251 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "1",
+            "hourly_departures": [
+              9,
+              9
+            ],
+            "route": "5",
+            "route_name": "5"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/DevelopmentApplications/associatedApplicationsList.do?action=init&folderRsn=3127406&isCofASearch=false",
@@ -1085,7 +1779,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 5,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 5/hr (~every 12 min) at Yonge St at Berwick Ave (39 m)"
+        "status": "Route 97, direction 0: 07:00–08:00: 5 scheduled departures, 08:00–09:00: 5 scheduled departures at Yonge St at Berwick Ave (39 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              5
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "evening": {
         "stopName": "Yonge St at Berwick Ave",
@@ -1095,7 +1800,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 4,
-        "status": "Route 97 \u00b7 4/hr (~every 15 min) at Yonge St at Berwick Ave (39 m)"
+        "status": "Route 97, direction 0: 16:00–17:00: 4 scheduled departures, 17:00–18:00: 4 scheduled departures at Yonge St at Berwick Ave (39 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              4,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       },
       "saturday": {
         "stopName": "Yonge St at Berwick Ave",
@@ -1105,7 +1821,18 @@ export const proposals3d: Proposal3D[] = [
         ],
         "minHourlyDepartures": 4,
         "maxHourlyDepartures": 5,
-        "status": "Route 97 \u00b7 4\u20135/hr (~every 12\u201315 min) at Yonge St at Berwick Ave (39 m)"
+        "status": "Route 97, direction 0: 12:00–13:00: 5 scheduled departures, 13:00–14:00: 4 scheduled departures at Yonge St at Berwick Ave (39 m). Counts do not establish even spacing.",
+        "hourlyEvidence": [
+          {
+            "direction": "0",
+            "hourly_departures": [
+              5,
+              4
+            ],
+            "route": "97",
+            "route_name": "97"
+          }
+        ]
       }
     },
     "sourceUrl": "http://app.toronto.ca/AIC/index.do?folderRsn=posVYQ4tBndTjlsV%2FmOikQ%3D%3D",

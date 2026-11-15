@@ -41,12 +41,14 @@ def package(source: Path, destination: Path) -> dict:
     output.mkdir(parents=True)
     # package_screening validates raw checksums as well as these compressed hashes.
     report = package_screening(screening, output/'screening', allowed_versions=set(contract['versions']))
+    from scripts.package_energy import package_energy
+    energy = package_energy(source.parent/'energy', output/'energy', ROOT)
     excluded = []
     for path in sorted(source.glob('*/manifest.json')):
         m = json.loads(path.read_text())
         excluded.append({'snapshot': m['id'], 'sources': list(m.get('sources', {})),
                          'reason': 'Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval.'})
-    result = {'edition': 'housing-transit-3d', 'screening': report, 'legacy_snapshots_excluded': excluded,
+    result = {'edition': 'housing-transit-3d', 'screening': report, 'energy': energy, 'legacy_snapshots_excluded': excluded,
               'disabled_features': ['legacy address explorer', 'legacy map and full application details', 'standalone transport explorer', 'energy guidance via legacy explorer'],
               'rights_contract_sha256': hashlib.sha256((ROOT/'docs/growth-transit/package-rights-contract.json').read_bytes()).hexdigest(),
               'raw_private_files_included': False}

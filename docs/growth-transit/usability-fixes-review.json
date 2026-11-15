@@ -1,0 +1,12 @@
+{
+  "build_id": "32936ce22d5cfc161047ba8396010b62c6e2c9ae9ee3c544bb2aec7540c96372",
+  "scope": "Fixes 2, 3, 4 and 5 from product review",
+  "checks": {
+    "transit": "Scheduled hourly counts shown per route and direction; no derived service intervals",
+    "replacement": "Isolated feature 2025-141014 started and applied successfully; overlapping 2025-142244 blocked with explanation and red conflict 2025-142236",
+    "coverage": "Carried cell 1263_9669 shows explicit out-of-coverage notice and preserves original selection",
+    "mobile": "390x844: compact navigation, side-by-side regions, advanced filters collapsed, initial map closed, first area visible; expanded distance filter exercised at 400 metres"
+  },
+  "screenshot": "/tmp/aster-fixed-mobile.png",
+  "limitations": "Focused browser verification; not a new full accessibility review or participant session."
+}
