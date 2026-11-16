@@ -37,9 +37,7 @@ export function describeHourlyDepartures(hourly:number[]){
   if(!hourly.length)return 'No hourly departure data';
   const min=Math.min(...hourly),max=Math.max(...hourly);
   const countText=min===max?`${min} scheduled departures/hr`:`${min}–${max} scheduled departures/hr`;
-  const minGap=Math.round(60/Math.max(1,max)),maxGap=Math.round(60/Math.max(1,min));
-  const avgText=minGap===maxGap?`~every ${minGap} min on average`:`~every ${minGap}–${maxGap} min on average`;
-  return `${countText} (${avgText})`;
+  return `${countText}; counts do not establish even spacing`;
 }
 export function parseScreeningLink(hash:string){const q=new URLSearchParams(hash.replace(/^#/,''));return {version:q.get('analysis')||undefined,areas:(q.get('areas')||'').split(',').filter(x=>/^\d+_\d+$/.test(x)).slice(0,2),filters:{region:['downtown','midtown'].includes(q.get('region')||'')?q.get('region')!:'downtown',stage:['Under Review','Active','Built','all'].includes(q.get('stage')||'')?q.get('stage')!:'all',radius:[400,800,1600].includes(Number(q.get('radius')))?Number(q.get('radius')):800,period:periods.includes(q.get('period') as Period)?q.get('period') as Period:'morning',minimum:Math.max(0,Math.min(1000000,Number(q.get('minimum'))||0)),onlyGaps:q.get('gaps')==='1'} as Filters};}
 export function selectedProjects(area:AreaSummary,f:Filters){return area.projects.filter(p=>p.regions.includes(f.region)&&(f.stage==='all'?p.stage!=='Built':p.stage===f.stage));}

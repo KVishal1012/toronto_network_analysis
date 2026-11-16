@@ -1,5 +1,5 @@
 {
-  "build_id": "483276211354f36796130e384bbc0255ff1a742df5084cd5a5e0385474daebf5",
+  "build_id": "f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910",
   "analysis": "6ed092c988ad9326e279",
   "energy": "693ebe90439ea1049eac",
   "release_ready": false,
@@ -41,8 +41,8 @@
       "evidence": "check_public_boundary against dist-public"
     },
     "browser": {
-      "status": "blocked",
-      "evidence": "data/growth-qualification/483276211354f36796130e384bbc0255ff1a742df5084cd5a5e0385474daebf5/browser.json"
+      "status": "passed",
+      "evidence": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/browser.json"
     },
     "rights": {
       "status": "passed",
@@ -56,6 +56,16 @@
     "publication": {
       "status": "blocked",
       "reason": "Owner review and separate publication approval required."
+    },
+    "pdf": {
+      "status": "passed",
+      "evidence": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/browser.json",
+      "reason": "Saved PDF inspected and artifact hash verified."
+    },
+    "screen_reader": {
+      "status": "blocked",
+      "evidence": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/screen-reader.json",
+      "reason": "Actual screen-reader session is required; functional browser and PDF checks do not satisfy it."
     },
     "energy_analysis": {
       "status": "passed",

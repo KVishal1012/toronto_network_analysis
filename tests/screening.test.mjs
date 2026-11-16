@@ -53,7 +53,7 @@ test('citizen search matches grid ID, street label, and project number tokens',(
 test('plain-language helpers format feed dates, departures, and exclusion reasons honestly',()=>{
  assert.equal(mod.formatFeedDate('20261105'),'2026-11-05');
  assert.equal(mod.formatFeedDate('2026-11-05'),'2026-11-05');
- assert.equal(mod.describeHourlyDepartures([4,4]),'4 scheduled departures/hr (~every 15 min on average)');
- assert.equal(mod.describeHourlyDepartures([9,10]),'9–10 scheduled departures/hr (~every 6–7 min on average)');
+ assert.equal(mod.describeHourlyDepartures([4,4]),'4 scheduled departures/hr; counts do not establish even spacing');
+ assert.equal(mod.describeHourlyDepartures([9,10]),'9–10 scheduled departures/hr; counts do not establish even spacing');
  assert.equal(mod.outcomeReasonLabels.outside_study_areas.title,'Outside Downtown & Midtown study areas');
 });

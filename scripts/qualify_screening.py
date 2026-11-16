@@ -8,6 +8,15 @@ from scripts.site_history import digest
 ROOT=Path(__file__).resolve().parents[1]
 
 
+def verified_saved_pdf(root: Path, build: str, receipt: dict) -> bool:
+    """Bind a reviewed PDF to this candidate and reject changed or escaped artifacts."""
+    pdf=receipt.get('pdf',{})
+    path=(root/pdf.get('path','')).resolve()
+    return (receipt.get('build_id')==build and pdf.get('passed') is True
+            and path.is_relative_to((root/'data/growth-qualification'/build).resolve())
+            and path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==pdf.get('sha256'))
+
+
 def qualify() -> dict:
     package=ROOT/'dist-public';files={p.relative_to(package).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(package.rglob('*')) if p.is_file()};build=digest(files)
     base=package/'planning/screening';version=json.loads((base/'latest.json').read_text())['id'];m=json.loads((base/version/'manifest.json').read_text())
@@ -40,6 +49,15 @@ def qualify() -> dict:
     evidence={'planning':m['planning_sources'],'boundaries':m['boundary_sources'],'ttc':m['transit_source'],'derived':'ASTER grid, point proximity and scheduled frequency screening. No document images or PDFs.'}
     browser_path=ROOT/'data/growth-qualification'/build/'browser.json';browser=json.loads(browser_path.read_text()) if browser_path.exists() else {}
     gates={'accounting':{'status':'passed' if m['accounting']['input_records']==m['accounting']['accounted_records'] else 'blocked','evidence':m['accounting']},'source_sample':{'status':'passed' if audit.get('analysis')==version and audit.get('passed') else 'blocked','evidence':'source-audit.json'},'public_isolation':{'status':'passed','evidence':'check_public_boundary against dist-public'},'browser':{'status':'passed' if browser.get('build_id')==build and browser.get('passed') is True else 'blocked','evidence':str(browser_path.relative_to(ROOT))},'rights':{'status':'passed' if rights_passed else 'blocked','evidence':'submission-rights-register.json','reason':'Reviewed screening, energy derivatives and bounded illustrative massing; legacy explorer datasets excluded.' if rights_passed else 'Package differs from reviewed allowlist.'},'participants':{'status':'blocked','reason':'No genuine participant sessions supplied; user impact not yet validated.'},'publication':{'status':'blocked','reason':'Owner review and separate publication approval required.'}}
+    # Functional browser review and actual assistive-technology testing are separate gates.
+    pdf_passed=verified_saved_pdf(ROOT,build,browser)
+    gates['pdf']={'status':'passed' if pdf_passed else 'blocked','evidence':str(browser_path.relative_to(ROOT)),
+                  'reason':'Saved PDF inspected and artifact hash verified.' if pdf_passed else 'No verified saved PDF for this build.'}
+    reader_path=browser_path.parent/'screen-reader.json'
+    reader=json.loads(reader_path.read_text()) if reader_path.exists() else {}
+    gates['screen_reader']={'status':'passed' if reader.get('build_id')==build and reader.get('passed') is True and reader.get('actual_session') is True else 'blocked',
+                           'evidence':str(reader_path.relative_to(ROOT)),
+                           'reason':'Actual screen-reader session is required; functional browser and PDF checks do not satisfy it.'}
     dest=ROOT/'docs/growth-transit';dest.mkdir(exist_ok=True)
     (dest/'submission-rights-register.json').write_text(json.dumps({'build_id':build,'screening_source_evidence':evidence,'datasets':contract['datasets'],'licence_url':contract['licence_url'],'permitted_use':contract['permitted_use'],'attribution':contract['attribution'],'exemptions':contract['exemptions'],'studio':contract.get('studio'),'energy':energy_contract,'controls':contract['controls'],'evidence_files':contract['evidence_files'],'excluded_legacy_snapshots':release.get('legacy_snapshots_excluded',[]),'disabled_features':release.get('disabled_features',[]),'note':'Package-specific review. Source archives remain intact; no blanket qualification of legacy records.'},indent=2))
     energy_review_path=ROOT/'docs/energy/analytical-review.json'

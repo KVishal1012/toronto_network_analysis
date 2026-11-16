@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "build_id": "f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910",
+  "reviewed_on": "2026-11-16",
+  "reviewer_type": "AI-assisted direct browser review; not participant testing",
+  "passed": true,
+  "scope": "Functional browser workflow and native PDF. Actual screen-reader and participant gates remain separate.",
+  "environment": {
+    "url": "http://127.0.0.1:5180/",
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "document_width": 390,
+    "document_scroll_width": 390,
+    "browser": "In-app browser for mobile; native Google Chrome for PDF"
+  },
+  "mobile_steps": [
+    {
+      "step": "Choose areas",
+      "result": "passed",
+      "evidence": "Mobile address searches selected Downtown cell 1260_9669 and Midtown cell 1257_9683."
+    },
+    {
+      "step": "Compare",
+      "result": "passed",
+      "evidence": "Two regional comparison panels and distance/period tables rendered; Downtown 3056 reported units and Midtown 202 reported units shown."
+    },
+    {
+      "step": "Energy",
+      "result": "passed",
+      "evidence": "Multifamily Housing site intensity selected; median 0.813 GJ/m\u00b2/year, 1596 valid values, 1614 underlying records; explicit non-building-specific limitation."
+    },
+    {
+      "step": "3D",
+      "result": "passed",
+      "evidence": "City Hall model rendered on mobile; selected building 2025-141014 source height inspected; keyboard camera movement worked; out-of-coverage cell 1257_9683 explicitly retained as a limitation."
+    },
+    {
+      "step": "Brief",
+      "result": "passed",
+      "evidence": "Two-area geographic map and numbered list; per-area focus control worked; user-written review fixture entered after 3D return."
+    },
+    {
+      "step": "Export",
+      "result": "passed",
+      "evidence": {
+        "path": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/mobile-brief.json",
+        "sha256": "ccc9d6f532e337ef4197cd8d9b5199104ed31efda97d76e8156765c82fea9451"
+      },
+      "areas": [
+        "1260_9669",
+        "1257_9683"
+      ],
+      "underlying_energy_records": 1614
+    },
+    {
+      "step": "Reopen shared link",
+      "result": "passed",
+      "evidence": "Copied link and reload restored both area IDs, region, filters, energy snapshot and cohort attachment; export enabled. User-written notes are intentionally absent from shared links."
+    }
+  ],
+  "desktop_checks": [
+    "Current candidate opens pinned two-area comparison and both energy evidence sources in Chrome",
+    "Native print/save generated eight-page PDF",
+    "PDF text and visual checks verified against actual saved output"
+  ],
+  "console": {
+    "captured_errors_or_warnings": []
+  },
+  "pdf": {
+    "path": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/community-brief.pdf",
+    "sha256": "54aa0049fdb149cb7670b178dc92a5ada9a908fc8f451f6b58611b74afbd2ef0",
+    "passed": true,
+    "pages": 8,
+    "generator": "Google Chrome native Save as PDF, default background printing off",
+    "visual_review": "All eight rendered pages inspected; map heading/figure/legend on page 7; City Hall heading/table on page 5; no clipped rows or missing legend symbol.",
+    "text_checks": [
+      "No inferred every-X-minute wording",
+      "Route directions present",
+      "Uneven-spacing limitation present",
+      "User-written review fixture and reproducible link present"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/mobile-3d.jpg",
+      "sha256": "1932740bdc9d11d3eb82782d5a10c71d1d25a9832a1eba33eaaeaf597c8e4efc"
+    },
+    {
+      "path": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/mobile-brief.jpg",
+      "sha256": "834e9518c9ba9e85768499b205b4f32e27116fbc247e0dff59b447002cd069ec"
+    },
+    {
+      "path": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/pdf-contact.png",
+      "sha256": "d5777b401e4c7c70a7052ca83b7e44176c3b1045997770ed1956707dadfb25b3"
+    }
+  ],
+  "tests": {
+    "node": 32,
+    "python": 25,
+    "total_passed": 57
+  },
+  "publication": "not performed",
+  "package_manifest_sha256": "fd3514cab4f545775e64d29a380fdd91db9a46d33fa004f73c85c2f030080d1c",
+  "full_receipt": "data/growth-qualification/f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910/browser.json"
+}

@@ -1194,7 +1194,7 @@ export default function GrowthPriorities(){
                                       ?`${s.name} (${Math.round(s.distance_m)} m) — ${s.services
                                           ?.map(
                                             r=>
-                                              `Route ${r.route_name}: ${describeHourlyDepartures(
+                                              `Route ${r.route_name}, direction ${r.direction}: ${describeHourlyDepartures(
                                                 r.hourly_departures
                                               )}`
                                           )
