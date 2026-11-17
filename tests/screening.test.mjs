@@ -8,10 +8,25 @@ const area={id:'1_2',label:'Example',regions:['downtown','midtown'],projects:[{n
 test('boundary equality is within threshold; Built excluded by default',()=>{assert.equal(mod.shortlist([area],f).length,0);assert.equal(mod.metrics(area,f).units,100);});
 test('period sensitivity is explicit',()=>{assert.equal(mod.shortlist([area],{...f,period:'evening'})[0].lackingUnits,100);});
 test('overlap is filtered without duplicate units',()=>{assert.equal(mod.metrics(area,{...f,region:'midtown'}).units,100);});
+test('distance display separates within, beyond and unavailable instead of showing bare zeros',()=>{
+ assert.deepEqual([mod.distanceBreakdown(area,f).withinUnits,mod.distanceBreakdown(area,f).beyondUnits],[100,0]);
+ const beyond=mod.distanceBreakdown(area,{...f,period:'evening'});assert.deepEqual([beyond.withinUnits,beyond.beyondUnits,beyond.noStopUnits],[0,100,0]);
+ const unavailable=mod.distanceBreakdown(area,{...f,period:'saturday'});assert.deepEqual([unavailable.withinUnits,unavailable.beyondUnits,unavailable.noStopUnits],[0,0,100]);
+ const empty=mod.distanceBreakdown(area,{...f,region:'midtown',stage:'Built'});assert.equal(empty.projects,0);
+});
 test('pins restore complete filter state',()=>{const m={id:'a'.repeat(20),planning_snapshot:'b',transit_snapshot:'c'};const hash=mod.shareHash(m,f,['1_2']);const p=mod.parseScreeningLink(hash);assert.deepEqual(p.filters,f);assert.deepEqual(p.areas,['1_2']);});
 
 // Check generated demonstration receipts against the application's calculations.
 import {gunzipSync} from 'node:zlib';
+test('the two reviewed Downtown areas retain their full reported quantities in every within count',()=>{
+ for(const [id,units] of [['1260_9669',3056],['1263_9669',8462]]){
+  const source=JSON.parse(gunzipSync(fs.readFileSync(new URL(`../public/screening/6ed092c988ad9326e279/areas/${id}.json.gz`,import.meta.url))));
+  const summary={...source,projects:source.projects.map(p=>({...p,distances:Object.fromEntries(mod.periods.map(period=>[period,p.service[period]?.distance_m??null]))}))};
+  for(const period of mod.periods)for(const radius of [400,800,1600]){
+   const counts=mod.distanceBreakdown(summary,{...f,period,radius});assert.deepEqual([counts.withinUnits,counts.beyondUnits,counts.noStopUnits],[units,0,0]);
+  }
+ }
+});
 test('all regional demonstrations reproduce the shipped shortlist and sensitivity',()=>{
  const demos=JSON.parse(fs.readFileSync(new URL('../docs/growth-transit/regional-demonstrations.json',import.meta.url),'utf8'));
  for(const d of demos){

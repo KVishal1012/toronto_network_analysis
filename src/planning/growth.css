@@ -714,6 +714,11 @@ details:not([open])>summary .g-chevron{
 .growth caption{text-align:left;font-weight:650;margin-bottom:6px}
 .growth td,.growth th{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
 .growth th small{display:block;font-weight:400;color:var(--muted)}
+.g-distance-counts span{display:block;line-height:1.5}
+.g-distance-within{color:#173a35}
+.g-distance-beyond{color:#414d49}
+.g-distance-unavailable{font-size:11px;margin-top:4px}
+.g-distance-explanation{font-size:13px;line-height:1.55;margin:0 0 16px;padding:10px 12px;background:#f2f5f0;border-left:3px solid #58756c}
 .g-comparisons details{border-bottom:1px solid var(--line)}
 .g-comparisons summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:650}
 .g-comparisons details p{font-size:14px;overflow-wrap:anywhere}
@@ -793,6 +798,10 @@ details:not([open])>summary .g-chevron{
   .g-print-header p{margin:4px 0;font-size:12px}
   .g-compare,.g-brief{margin-top:14px;padding-top:12px;border-top:1px solid #999}
   .g-comparisons{display:block}
+  .g-comparison-summary{break-inside:avoid}
+  .g-distance-explanation{font-size:10pt;background:transparent;border-color:#555}
+  .g-distance-counts span{color:#000}
+  .g-distance-counts{vertical-align:top}
   .g-comparisons article{
     margin:12px 0 18px;
     padding:12px;

@@ -42,6 +42,12 @@ export function describeHourlyDepartures(hourly:number[]){
 export function parseScreeningLink(hash:string){const q=new URLSearchParams(hash.replace(/^#/,''));return {version:q.get('analysis')||undefined,areas:(q.get('areas')||'').split(',').filter(x=>/^\d+_\d+$/.test(x)).slice(0,2),filters:{region:['downtown','midtown'].includes(q.get('region')||'')?q.get('region')!:'downtown',stage:['Under Review','Active','Built','all'].includes(q.get('stage')||'')?q.get('stage')!:'all',radius:[400,800,1600].includes(Number(q.get('radius')))?Number(q.get('radius')):800,period:periods.includes(q.get('period') as Period)?q.get('period') as Period:'morning',minimum:Math.max(0,Math.min(1000000,Number(q.get('minimum'))||0)),onlyGaps:q.get('gaps')==='1'} as Filters};}
 export function selectedProjects(area:AreaSummary,f:Filters){return area.projects.filter(p=>p.regions.includes(f.region)&&(f.stage==='all'?p.stage!=='Built':p.stage===f.stage));}
 export function metrics(area:AreaSummary,f:Filters){const projects=selectedProjects(area,f);const lacking=projects.filter(p=>p.distances[f.period]===null||p.distances[f.period]!>f.radius);return {projects:projects.length,units:projects.reduce((s,p)=>s+p.units,0),lacking:lacking.length,lackingUnits:lacking.reduce((s,p)=>s+p.units,0)};}
+/** Display both sides of the threshold; unavailable distances never become a measured "beyond" distance. */
+export function distanceBreakdown(area:AreaSummary,f:Filters){
+ const result=metrics(area,f);
+ const noStopUnits=selectedProjects(area,f).filter(p=>p.distances[f.period]===null).reduce((sum,p)=>sum+p.units,0);
+ return {...result,withinUnits:result.units-result.lackingUnits,beyondUnits:result.lackingUnits-noStopUnits,noStopUnits};
+}
 export function shortlist(areas:AreaSummary[],f:Filters){return areas.map(a=>({area:a,...metrics(a,f)})).filter(a=>a.projects>0&&a.units>=f.minimum&&(!f.onlyGaps||a.lacking>0)).sort((a,b)=>(f.onlyGaps?b.lackingUnits-a.lackingUnits:b.units-a.units)||a.area.id.localeCompare(b.area.id));}
 export function shareHash(m:ScreeningManifest,f:Filters,areas:string[]){return '#'+new URLSearchParams({analysis:m.id,snapshot:m.planning_snapshot,transit:m.transit_snapshot,region:f.region,stage:f.stage,radius:String(f.radius),period:f.period,minimum:String(f.minimum),gaps:f.onlyGaps?'1':'0',areas:areas.join(',')});}
 export function safeSource(url:string|undefined){try{const u=new URL(url||'');return ['https:','http:'].includes(u.protocol)?u.href:undefined;}catch{return undefined;}}

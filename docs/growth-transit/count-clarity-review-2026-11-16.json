@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "build_id": "19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a",
+  "reviewed_on": "2026-11-16",
+  "reviewer_type": "AI-assisted targeted regression; not participant testing",
+  "passed": false,
+  "targeted_checks_passed": true,
+  "scope": "Count-clarity fix and saved PDF checked on this build. Full workflow gate remains unasserted for this new package; prior full review is retained separately.",
+  "prior_full_workflow_build": "f813f39a1eb338754df2a641e64a65b6b043e9593bc4fa63cd2b827bc076d910",
+  "checks": [
+    "Downtown 3056 within / zero beyond for 400, 800 and 1600 metres across three periods",
+    "Midtown 202 beyond 400 and 800 metres; 202 within 1600 metres",
+    "Desktop comparison rendered with no captured console errors",
+    "390x844 mobile layout verified during count-clarity edit; document and scroll widths both 390; final subsequent changes retain block layout and add print-only pagination",
+    "Final PDF contains complete Downtown tables and plain-language explanation"
+  ],
+  "pdf": {
+    "path": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/community-brief.pdf",
+    "sha256": "9c2560e8841491765bfdb9fc0d1c4e7ce56103ce2eb5251e49769913df814c75",
+    "passed": true,
+    "pages": 8,
+    "generator": "Google Chrome native Save as PDF",
+    "visual_review": "All eight rendered pages inspected. Complete comparison summaries, tables and explanations remain together on pages 1 and 3. Source records, energy evidence, map and user fixture retained.",
+    "text_checks": [
+      "3056 within and zero beyond in all nine first-area cells",
+      "8462 within and zero beyond in all nine second-area cells",
+      "Both table pages contain all three dated periods",
+      "Zero beyond explanation and straight-line distance limitations present"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/desktop-counts.jpg",
+      "sha256": "a296c665b08d86c539de8d6a49ccfaacea389503827f17af228d50b59143b4ba"
+    },
+    {
+      "path": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/pdf-contact.png",
+      "sha256": "bc3c1de17ddf135015160ff5a7f3f809bd6a89a86a539431ae776a95ced410ef"
+    }
+  ],
+  "tests": {
+    "node": 10,
+    "python": 2,
+    "total_passed": 12
+  },
+  "publication": "not performed"
+}

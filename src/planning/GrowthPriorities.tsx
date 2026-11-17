@@ -1,6 +1,7 @@
 import {lazy,Suspense,useEffect,useMemo,useState} from 'react';
 import {
   createScreeningProvider,
+  distanceBreakdown,
   describeHourlyDepartures,
   formatFeedDate,
   matchesAreaSearch,
@@ -1003,12 +1004,15 @@ export default function GrowthPriorities(){
                           ) as Record<Period,number|null>,
                         })),
                       };
-                      const currentMetrics=metrics(summaryLike,{...filters,region:effectiveRegion});
+                      const currentMetrics=distanceBreakdown(summaryLike,{...filters,region:effectiveRegion});
                       const matchingProjects=area.projects.filter(
                         p=>
                           p.regions.includes(effectiveRegion)&&
                           (filters.stage==='all'?p.stage!=='Built':p.stage===filters.stage)
                       );
+                      const distances=matchingProjects.flatMap(p=>periods.map(period=>p.service[period]?.distance_m??null));
+                      const allWithin400=distances.length>0&&distances.every(d=>d!==null&&d<=400);
+                      const farthest=distances.length&&distances.every(d=>d!==null)?Math.max(...distances as number[]):null;
                       const neighbourhood=area.neighbourhood||cellNeighbourhoods[area.id];
                       const view3d=cellsWith3dView[area.id];
                       const regionLabelList=area.regions
@@ -1018,6 +1022,7 @@ export default function GrowthPriorities(){
 
                       return (
                         <article key={area.id}>
+                          <div className="g-comparison-summary">
                           <div className="g-compare-head">
                             <div>
                               <p className="g-card-eyebrow">
@@ -1050,7 +1055,13 @@ export default function GrowthPriorities(){
                             <strong>
                               Summary ({periodPlainLabels[filters.period]}, {filters.radius} m):
                             </strong>{' '}
-                            {currentMetrics.lackingUnits>0?(
+                            {currentMetrics.projects===0?(
+                              <>No included proposal records match the selected stage in this area.</>
+                            ):currentMetrics.noStopUnits>0?(
+                              <>{display(currentMetrics.withinUnits)} reported proposed units within {filters.radius} m;{' '}
+                                {display(currentMetrics.beyondUnits)} beyond {filters.radius} m;{' '}
+                                {display(currentMetrics.noStopUnits)} with no qualifying stop in the feed. No-stop records do not have a measured distance.</>
+                            ):currentMetrics.lackingUnits>0?(
                               <>
                                 <strong>{display(currentMetrics.lackingUnits)}</strong> of{' '}
                                 <strong>{display(currentMetrics.units)}</strong> proposed homes ({currentMetrics.lacking} of{' '}
@@ -1076,7 +1087,7 @@ export default function GrowthPriorities(){
                           >
                             <table>
                               <caption>
-                                Proposed homes beyond each frequent-TTC distance ring ({stageSummary})
+                                Reported proposed units within / beyond each TTC distance threshold ({stageSummary})
                               </caption>
                               <thead>
                                 <tr>
@@ -1095,18 +1106,29 @@ export default function GrowthPriorities(){
                                       {periodLabels[period]}
                                       <small>{manifest.dates[period]}</small>
                                     </th>
-                                    {[400,800,1600].map(radius=>(
-                                      <td key={radius}>
-                                        {display(
-                                          metrics(summaryLike,{...filters,region:effectiveRegion,period,radius})
-                                            .lackingUnits
-                                        )}
-                                      </td>
-                                    ))}
+                                    {[400,800,1600].map(radius=>{
+                                      const counts=distanceBreakdown(summaryLike,{...filters,region:effectiveRegion,period,radius});
+                                      return <td key={radius} className="g-distance-counts">
+                                        {counts.projects===0?<span>No included records</span>:<>
+                                          <span className="g-distance-within"><strong>{display(counts.withinUnits)}</strong> within</span>
+                                          <span className="g-distance-beyond"><strong>{display(counts.beyondUnits)}</strong> beyond</span>
+                                          {counts.noStopUnits>0&&<span className="g-distance-unavailable">{display(counts.noStopUnits)} with no qualifying stop in the feed</span>}
+                                        </>}
+                                      </td>;
+                                    })}
                                   </tr>
                                 ))}
                               </tbody>
                             </table>
+                          </div>
+                          <p className="g-distance-explanation">
+                            {matchingProjects.length===0?'No included proposal records match the selected stage in this area.':allWithin400?<>
+                              <strong>All {display(currentMetrics.units)} reported proposed units are within 400 m in all three dated periods.</strong>{' '}
+                              Zero beyond means no included units fall outside the threshold; it does not mean there are no housing proposals.
+                            </>:<>Each cell shows both sides of the distance threshold. Counts refer to reported proposed units in the included records.</>}
+                            {farthest!==null&&<> The farthest included proposal point is about {Math.round(farthest)} m from a qualifying stop, taking the largest distance across these periods.</>}{' '}
+                            Distances are straight-line. This does not establish safe walking access or sufficient service capacity.
+                          </p>
                           </div>
 
                           <div className="g-no-print">
