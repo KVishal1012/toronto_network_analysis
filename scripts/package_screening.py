@@ -14,7 +14,7 @@ def package_screening(source: Path,destination: Path, allowed_versions: set[str]
         if m['accounting']['input_records']!=m['accounting']['accounted_records']:raise ValueError('Unreconciled screening records')
         dest=destination/version;dest.mkdir(parents=True,exist_ok=True)
         for key,expected in m['assets'].items():
-            if not re.fullmatch(r'(outcomes|regions/(downtown|midtown|north-york)|areas/\d+_\d+)',key):raise ValueError('Invalid screening asset')
+            if not re.fullmatch(r'(outcomes|regions/(all-toronto|toronto-east-york|north-york|etobicoke-york|scarborough|downtown|midtown)|areas/\d+_\d+)',key):raise ValueError('Invalid screening asset')
             src=path.parent/(key+'.json.gz');raw=gzip.decompress(src.read_bytes())
             if hashlib.sha256(raw).hexdigest()!=expected:raise ValueError('Screening checksum mismatch')
             target=dest/(key+'.json.gz');target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,target);total+=src.stat().st_size

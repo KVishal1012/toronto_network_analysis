@@ -70,5 +70,5 @@ test('plain-language helpers format feed dates, departures, and exclusion reason
  assert.equal(mod.formatFeedDate('2026-11-05'),'2026-11-05');
  assert.equal(mod.describeHourlyDepartures([4,4]),'4 scheduled departures/hr; counts do not establish even spacing');
  assert.equal(mod.describeHourlyDepartures([9,10]),'9–10 scheduled departures/hr; counts do not establish even spacing');
- assert.equal(mod.outcomeReasonLabels.outside_study_areas.title,'Outside Downtown & Midtown study areas');
+ assert.equal(mod.outcomeReasonLabels.outside_study_areas.title,'Outside screened Toronto boundaries');
 });

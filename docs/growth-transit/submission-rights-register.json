@@ -1,5 +1,5 @@
 {
-  "build_id": "19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a",
+  "build_id": "dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc",
   "screening_source_evidence": {
     "planning": {
       "addresses": {
@@ -171,19 +171,19 @@
       }
     ],
     "ttc": {
-      "api_licence": "open-government-licence-toronto",
+      "api_licence": "notspecified",
       "evidence": {
-        "catalogue-final.json": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c",
-        "catalogue.json": "77390d40238332c240b7ce09f7b8538ba8e3ef86e5930adbbd2243286531b40c",
-        "dataset-page.html": "635ae3fbfe5569e31aaebcc8be735bfc10ce2ec17706cbfc4032f8b7d16c1edf",
+        "catalogue-final.json": "3b5c4912d103edcdc3c8443c76763127f99aadedfea6a9c646cfe603b74216f8",
+        "catalogue.json": "3b5c4912d103edcdc3c8443c76763127f99aadedfea6a9c646cfe603b74216f8",
+        "dataset-page.html": "1fd7f6e02c8d9509b67bfbb46642ab19eac9763b6d4e371578bf899bfcc7cb0e",
         "licence.html": "f07aeb91897c0c397d8450c8609f98900bd3c37a0fb08f5c26ef718fc7a3e87e"
       },
-      "licence_basis": "Official dataset page explicitly links Open Government Licence \u2013 Toronto. Catalogue licence: open-government-licence-toronto",
+      "licence_basis": "Official dataset page explicitly links Open Government Licence \u2013 Toronto. API licence field is not specified.",
       "licence_url": "https://open.toronto.ca/open-data-licence/",
       "page": "https://open.toronto.ca/dataset/merged-gtfs-ttc-routes-and-schedules/",
-      "retrieved_at": "2026-11-13T22:59:46.468253+00:00",
-      "sha256": "a2c8d495bf7b06fe0687183d6d7e606e19555e43bf41a007d97d482e527b23a1",
-      "source_modified_at": "2026-11-04T19:51:45",
+      "retrieved_at": "2026-10-29T13:06:17.512228+00:00",
+      "sha256": "5e0191d59cb991b6c88ba9c1a5f2ca93a5a064a4d258dbc7ba93801d15f3dfca",
+      "source_modified_at": "2026-09-30T14:17:52",
       "source_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/b811ead4-6eaf-4adb-8408-d389fb5a069c/resource/c920e221-7a1c-488b-8c5b-6d8cd4e85eaf/download/completegtfs.zip",
       "stable_reread": true
     },

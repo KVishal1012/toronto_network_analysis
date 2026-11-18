@@ -4,6 +4,7 @@ import worker from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import architecturalViews from '../sandbox/architectural.json';
 import {metrics,type AreaSummary,type Filters} from './screening';
+import {allScreeningRegions,regionShortNames} from './regions';
 import {
   cellFootprints,
   cellNeighbourhoods,
@@ -59,16 +60,70 @@ const KEY_STATIONS=new Set([
   'Davisville',
   'Eglinton',
   'Lawrence',
+  'York Mills',
+  'Sheppard-Yonge',
+  'North York Centre',
+  'Finch',
+  'Downsview Park',
+  'Sheppard West',
+  'Vaughan Metropolitan Centre',
+  'Bayview',
+  'Don Mills',
   'Avenue',
   'Chaplin',
   'Mount Pleasant',
+  'Cedarvale',
+  'Mount Dennis',
   'Bay',
   'Sherbourne',
   'Broadview',
+  'Pape',
+  'Donlands',
+  'Main Street',
+  'Victoria Park',
+  'Warden',
+  'Kennedy',
+  'Kipling',
+  'Islington',
+  'Royal York',
+  'Jane',
+  'Runnymede',
+  'High Park',
+  'Keele',
+  'Dundas West',
 ]);
 
+const CITYWIDE_STATIONS=new Set([
+  'Union',
+  'Bloor-Yonge',
+  'St George',
+  'Eglinton',
+  'Sheppard-Yonge',
+  'Finch',
+  'Downsview Park',
+  'Don Mills',
+  'Kennedy',
+  'Victoria Park',
+  'Kipling',
+  'Islington',
+  'Jane',
+  'Mount Dennis',
+  'Cedarvale',
+  'Broadview',
+]);
+
+const REGION_CORRIDOR:Record<StudyRegion,[number,number,number,number]>={
+  'all-toronto':[-79.645,43.58,-79.11,43.86],
+  'etobicoke-york':[-79.645,43.58,-79.42,43.78],
+  'north-york':[-79.56,43.68,-79.31,43.82],
+  'scarborough':[-79.32,43.67,-79.11,43.86],
+  'toronto-east-york':[-79.49,43.62,-79.27,43.72],
+  downtown:[-79.44,43.628,-79.34,43.680],
+  midtown:[-79.45,43.672,-79.34,43.735],
+};
+
 function getActiveRegion(region:string):StudyRegion{
-  return region==='midtown'?'midtown':'downtown';
+  return (allScreeningRegions as readonly string[]).includes(region)?(region as StudyRegion):'all-toronto';
 }
 
 function markerRadius(units:number){
@@ -223,8 +278,14 @@ export default function AreaMap({
       m.fitBounds(bounds,{padding:34,maxZoom:14.2,duration:0});
       return;
     }
-    const boundary=studyAreaBoundaries[activeRegion].geometry.coordinates[0] as [number,number][];
-    extendBoundsFromCoords(bounds,boundary);
+    const geom=studyAreaBoundaries[activeRegion].geometry;
+    if(geom.type==='Polygon'){
+      extendBoundsFromCoords(bounds,geom.coordinates[0] as [number,number][]);
+    }else if(geom.type==='MultiPolygon'){
+      for(const poly of geom.coordinates){
+        if(poly[0])extendBoundsFromCoords(bounds,poly[0] as [number,number][]);
+      }
+    }
     m.fitBounds(bounds,{padding:28,maxZoom:13.8,duration:0});
   },[plotted,activeRegion]);
 
@@ -240,6 +301,9 @@ export default function AreaMap({
       m=new ml.Map({
         container:host.current,
         attributionControl:false,
+        maxBounds:[[-79.68,43.55],[-79.09,43.88]],
+        minZoom:9.7,
+        maxZoom:17.5,
         style:{
           version:8,
           sources:{
@@ -274,8 +338,8 @@ export default function AreaMap({
             },
           ],
         },
-        center:[-79.386,43.656],
-        zoom:12.6,
+        center:[-79.3832,43.705],
+        zoom:10.6,
         pitch:0,
       });
     }catch{
@@ -299,7 +363,9 @@ export default function AreaMap({
       m.addSource('study-boundary',{type:'geojson',data:emptyCollection});
       m.addSource('water',{type:'geojson',data:torontoWaterGeoJSON});
       m.addSource('parks',{type:'geojson',data:torontoParksGeoJSON});
+      m.addSource('detail-parks',{type:'geojson',data:emptyCollection});
       m.addSource('streets',{type:'geojson',data:torontoStreetsGeoJSON});
+      m.addSource('detail-streets',{type:'geojson',data:emptyCollection});
       m.addSource('subway-lines',{type:'geojson',data:ttcSubwayLinesGeoJSON});
       m.addSource('subway-stations',{
         type:'geojson',
@@ -339,6 +405,12 @@ export default function AreaMap({
         type:'fill',
         source:'parks',
         paint:{'fill-color':'#cde3cd','fill-opacity':0.85},
+      });
+      m.addLayer({
+        id:'detail-parks-fill',
+        type:'fill',
+        source:'detail-parks',
+        paint:{'fill-color':'#cde3cd','fill-opacity':0.8},
       });
       m.addLayer({
         id:'parks-line',
@@ -384,6 +456,36 @@ export default function AreaMap({
         source:'streets',
         filter:['==',['get','cls'],'rail'],
         paint:{'line-color':'#9aa3a8','line-width':1.1,'line-dasharray':[4,3]},
+      });
+      m.addLayer({
+        id:'detail-streets-local',
+        type:'line',
+        source:'detail-streets',
+        filter:['==',['get','cls'],'local'],
+        paint:{
+          'line-color':'#d5dad6',
+          'line-width':['interpolate',['linear'],['zoom'],11.5,0.4,13,0.9,15.5,2.2],
+        },
+      });
+      m.addLayer({
+        id:'detail-streets-collector',
+        type:'line',
+        source:'detail-streets',
+        filter:['==',['get','cls'],'collector'],
+        paint:{
+          'line-color':'#ffffff',
+          'line-width':['interpolate',['linear'],['zoom'],11.5,0.8,13.5,1.6,16,3.6],
+        },
+      });
+      m.addLayer({
+        id:'detail-streets-minor',
+        type:'line',
+        source:'detail-streets',
+        filter:['==',['get','cls'],'minor'],
+        paint:{
+          'line-color':'#ffffff',
+          'line-width':['interpolate',['linear'],['zoom'],11,0.9,13.5,1.9,16,4.6],
+        },
       });
       m.addLayer({
         id:'streets-local',
@@ -687,10 +789,14 @@ export default function AreaMap({
     m.setPaintProperty('nb-active-fill','fill-opacity',isVector?0.95:0.06);
     m.setPaintProperty('nb-adjacent-fill','fill-opacity',isVector?0.65:0.04);
     m.setPaintProperty('parks-fill','fill-opacity',isVector?0.85:0.25);
+    m.setPaintProperty('detail-parks-fill','fill-opacity',isVector?0.8:0.2);
     m.setPaintProperty('water-fill','fill-opacity',isVector?0.95:0.15);
     m.setPaintProperty('streets-local','line-opacity',isVector?1:0.2);
     m.setPaintProperty('streets-collector','line-opacity',isVector?1:0.25);
     m.setPaintProperty('streets-minor','line-opacity',isVector?1:0.3);
+    m.setPaintProperty('detail-streets-local','line-opacity',isVector?1:0.15);
+    m.setPaintProperty('detail-streets-collector','line-opacity',isVector?1:0.2);
+    m.setPaintProperty('detail-streets-minor','line-opacity',isVector?1:0.25);
     m.setPaintProperty('streets-major','line-opacity',isVector?1:0.35);
     m.setPaintProperty('streets-major-casing','line-opacity',isVector?1:0.25);
     m.setPaintProperty('streets-minor-casing','line-opacity',isVector?1:0.2);
@@ -706,10 +812,17 @@ export default function AreaMap({
     });
   },[ready,tilt3d]);
 
-  // Sync 24 Toronto neighbourhoods, study boundaries, and DOM street / station / neighbourhood labels
+  // Sync 158 Toronto neighbourhoods, study boundaries, lazy council street/park detail, and DOM labels
   useEffect(()=>{
     const m=map.current;
     if(!ready||!m)return;
+    let live=true;
+
+    const isNeighbourhoodActive=(f:typeof torontoNeighbourhoods[number])=>{
+      if(activeRegion==='all-toronto')return true;
+      if(activeRegion==='downtown'||activeRegion==='midtown')return f.properties.region===activeRegion;
+      return f.properties.council===activeRegion;
+    };
 
     const nbSource=m.getSource('neighbourhoods') as ml.GeoJSONSource|undefined;
     if(nbSource){
@@ -717,7 +830,7 @@ export default function AreaMap({
         type:'FeatureCollection',
         features:torontoNeighbourhoods.map(f=>({
           ...f,
-          properties:{...f.properties,active:f.properties.region===activeRegion},
+          properties:{...f.properties,active:isNeighbourhoodActive(f)},
         })),
       });
     }
@@ -730,25 +843,73 @@ export default function AreaMap({
       });
     }
 
+    const detailStreetsSrc=m.getSource('detail-streets') as ml.GeoJSONSource|undefined;
+    const detailParksSrc=m.getSource('detail-parks') as ml.GeoJSONSource|undefined;
+    if(activeRegion==='all-toronto'){
+      detailStreetsSrc?.setData({type:'FeatureCollection',features:[]});
+      detailParksSrc?.setData({type:'FeatureCollection',features:[]});
+    }else{
+      const loadDetail=()=>{
+        switch(activeRegion){
+          case 'downtown':return import('./map-detail/downtown');
+          case 'midtown':return import('./map-detail/midtown');
+          case 'toronto-east-york':return import('./map-detail/toronto-east-york');
+          case 'north-york':return import('./map-detail/north-york');
+          case 'etobicoke-york':return import('./map-detail/etobicoke-york');
+          case 'scarborough':return import('./map-detail/scarborough');
+        }
+      };
+      loadDetail().then(mod=>{
+        if(!live)return;
+        detailStreetsSrc?.setData(mod.detailStreetsGeoJSON);
+        detailParksSrc?.setData(mod.detailParksGeoJSON);
+      }).catch(()=>{});
+    }
+
     markers.current.forEach(marker=>marker.remove());
     const nextMarkers:ml.Marker[]=[];
 
-    // Neighbourhood labels for active study region
-    for(const f of torontoNeighbourhoods){
-      if(f.properties.region!==activeRegion)continue;
-      nextMarkers.push(
-        new ml.Marker({element:createNeighbourhoodLabel(f.properties.name),anchor:'center'})
-          .setLngLat(f.properties.centroid)
-          .addTo(m)
-      );
+    if(activeRegion!=='all-toronto'){
+      const placedNb=new Set<string>();
+      const placedNbPts:Array<[number,number]>=[];
+      const isCouncilView=activeRegion!=='downtown'&&activeRegion!=='midtown';
+      for(const f of torontoNeighbourhoods){
+        if(!isNeighbourhoodActive(f)||placedNb.has(f.properties.name))continue;
+        const [cx,cy]=f.properties.centroid;
+        if(isCouncilView&&placedNbPts.some(([px,py])=>Math.hypot(cx-px,cy-py)<0.024))continue;
+        placedNb.add(f.properties.name);
+        placedNbPts.push([cx,cy]);
+        nextMarkers.push(
+          new ml.Marker({element:createNeighbourhoodLabel(f.properties.name),anchor:'center'})
+            .setLngLat(f.properties.centroid)
+            .addTo(m)
+        );
+      }
+    }else{
+      const councilAnchors:Array<[string,number,number]>=[
+        ['ETOBICOKE YORK',-79.545,43.685],
+        ['NORTH YORK',-79.415,43.768],
+        ['SCARBOROUGH',-79.235,43.773],
+        ['TORONTO & EAST YORK',-79.383,43.662],
+      ];
+      for(const [name,lon,lat] of councilAnchors){
+        nextMarkers.push(
+          new ml.Marker({element:createNeighbourhoodLabel(name),anchor:'center'})
+            .setLngLat([lon,lat])
+            .addTo(m)
+        );
+      }
     }
 
-    // Major Toronto street name labels in active latitude corridor
-    const latMin=activeRegion==='midtown'?43.672:43.628;
-    const latMax=activeRegion==='midtown'?43.735:43.680;
+    const [lonMin,latMin,lonMax,latMax]=REGION_CORRIDOR[activeRegion];
+    const placedStreetPts:Array<[number,number]>=[];
+    const minStreetGap=activeRegion==='all-toronto'?0.035:0.008;
     for(const s of torontoStreetLabels){
       if(s.cls==='local')continue;
-      if(s.lat<latMin||s.lat>latMax)continue;
+      if(activeRegion==='all-toronto'&&s.cls!=='expressway'&&s.cls!=='major')continue;
+      if(s.lon<lonMin||s.lon>lonMax||s.lat<latMin||s.lat>latMax)continue;
+      if(placedStreetPts.some(([px,py])=>Math.hypot(s.lon-px,s.lat-py)<minStreetGap))continue;
+      placedStreetPts.push([s.lon,s.lat]);
       nextMarkers.push(
         new ml.Marker({element:createStreetLabel(s.name,s.angle,s.cls),anchor:'center'})
           .setLngLat([s.lon,s.lat])
@@ -756,10 +917,10 @@ export default function AreaMap({
       );
     }
 
-    // Key TTC subway/LRT station badges
+    const stationSet=activeRegion==='all-toronto'?CITYWIDE_STATIONS:KEY_STATIONS;
     for(const st of ttcSubwayStations){
-      if(st.lat<latMin||st.lat>latMax)continue;
-      if(!KEY_STATIONS.has(st.name))continue;
+      if(st.lon<lonMin||st.lon>lonMax||st.lat<latMin||st.lat>latMax)continue;
+      if(!stationSet.has(st.name))continue;
       nextMarkers.push(
         new ml.Marker({element:createStationLabel(st.name,st.lines),anchor:'left'})
           .setLngLat([st.lon,st.lat])
@@ -768,6 +929,7 @@ export default function AreaMap({
     }
 
     markers.current=nextMarkers;
+    return()=>{live=false;};
   },[ready,activeRegion]);
 
   // Sync 500 m cell polygons, centroids, and exact proposal street points
@@ -846,7 +1008,7 @@ export default function AreaMap({
     fitAllRef.current();
   },[ready,activeRegion,areasKey]);
 
-  const regionName=activeRegion==='midtown'?'Midtown Toronto':'Downtown Toronto';
+  const regionName=regionShortNames[activeRegion]||'Toronto';
 
   return (
     <section className="g-map-section g-no-print" aria-label="Interactive Toronto housing and transit map">
@@ -911,7 +1073,7 @@ export default function AreaMap({
             style={{background:'#fff',border:'2px solid #1c3135',boxShadow:'none'}}
             aria-hidden="true"
           />{' '}
-          TTC station · Line 1/2/5
+          TTC station · Line 1/2/4/5
         </span>
       </div>
 

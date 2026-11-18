@@ -1,21 +1,25 @@
 {
-  "build_id": "20fd6f66bad39bddfc06e2d9bb0e0c524521fa485e62039be16bab1a931fd059",
-  "analysis": "6ed092c988ad9326e279",
+  "build_id": "dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc",
+  "analysis": "db9180012cb408a03d97",
   "passed": true,
   "reviewer": "Automated Playwright + Chromium headless verification against dist-public; no human participant sessions",
   "checks": {
-    "above_fold": "passed: first area card (Near 53 ONTARIO ST) starts at y=535 px on 1440x900 side-by-side with the interactive Toronto map above the fold",
-    "neighbourhood_context": "passed: card eyebrows display neighbourhood names and searching Moss Park filters cleanly to 7 matching areas",
-    "region_scope": "passed: Downtown and Midtown selectors verified",
-    "cross_region_comparison": "passed: pinned-hash reload (#analysis=6ed092c988ad9326e279&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=0&areas=1259_9681%2C1263_9669) restored selected comparison areas cleanly",
-    "map": "passed: offline MapLibre interactive Toronto street map opens by default on /, renders streets, parks, Lake Ontario, TTC lines/stations, 2025 buildings, 368 proposal pins, and 89 DOM labels/stations with Toronto Street Map | OSM Tiles | Satellite selector, Hide/Show area map toggle, and 0 external failedUrls",
-    "modelling": "passed: #view=3d renders 3D Street Map by default with City Hall (3 interactive proposal pins) and Yonge-Eglinton (19 interactive proposal pins), 2180 YONGE ST and 483 BAY ST inspection, Test 3D replacement at this site workflow, collision-checked amber replacement extrusion + JSON export, Compare transit for this area on Page 1 deep-link (#region=downtown&areas=1260_9669), and toggle to 3D Massing Studio with named street ground plane",
-    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 67f302f02b9d2427903517621756562ba80764147b93e31fb1add6af94fcecb3)",
-    "print": "passed: headless Chromium @media print layout (.g-no-print hidden, .g-print-header and .g-print-proposals visible, overflowX false) and PDF generation verified (/tmp/aster-brief-verify.pdf 492597 bytes; /tmp/aster-3d-verify.pdf 538122 bytes)",
-    "wcag_automated": "passed: landmarks, sequential headings (27 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); human assistive-technology session remains optional",
+    "above_fold": "passed: first area card (Near 300 BOROUGH DR) starts at y=576 px on 1440x900 side-by-side with the interactive city-wide Toronto map above the fold",
+    "citywide_scope": "passed: expanded to All Toronto (1,281 included proposals across 601 cells) and 4 Community Councils (Toronto & East York 575, North York 330, Scarborough 191, Etobicoke York 185) plus Downtown (228) and Midtown (140); Kingston Rd (12 matches), Etobicoke (12 matches), Moss Park (6 matches), and Scarborough council switching verified",
+    "cross_region_comparison": "passed: pinned-hash reload (#analysis=db9180012cb408a03d97&snapshot=8269765c8521a43294ae&transit=0be13640dc976e5d4977&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=0&areas=1259_9681%2C1263_9669) restored selected comparison areas cleanly",
+    "map": "passed: offline MapLibre city-wide Toronto street map opens by default on /, renders expressways/arterials/parks/Lake Ontario, TTC Lines 1/2/4/5 & stations, spaced council neighbourhood labels, 1,281 proposal pins, 53 DOM labels/stations, lazy per-council street/park detail chunks, and 0 external failedUrls",
+    "modelling": "passed: #view=3d preserves Downtown City Hall (3 pins) and Yonge-Eglinton (19 pins) 3D Street Map windows, 2180 YONGE ST & 483 BAY ST inspection, replacement workflow, Compare transit for this area on Page 1 deep-link (#region=downtown&areas=1260_9669), and 3D Massing Studio toggle",
+    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 670017f5e16d07270b27730cfe86975df5f41940cdf5b1fbfcd2b0f3bd16a0e9)",
+    "print": "passed: headless Chromium @media print layout (.g-no-print hidden, .g-print-header and .g-print-proposals visible, overflowX false) and PDF generation verified (/tmp/aster-brief-verify.pdf 801071 bytes; /tmp/aster-3d-verify.pdf 521454 bytes)",
+    "wcag_automated": "passed: landmarks, sequential headings (27 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); human assistive-technology session remains separate",
     "mobile": "passed: 390x844 viewport verified with zero horizontal overflow (scrollWidth 390 === innerWidth 390) on both / and /#view=3d",
     "console_and_page_errors": "passed: 0 pageErrors, 0 failedUrls (only expected local static server /favicon.ico 404)"
   },
-  "export_sha256": "67f302f02b9d2427903517621756562ba80764147b93e31fb1add6af94fcecb3",
+  "export_sha256": "670017f5e16d07270b27730cfe86975df5f41940cdf5b1fbfcd2b0f3bd16a0e9",
+  "pdf": {
+    "passed": true,
+    "path": "data/growth-qualification/dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc/aster-brief-verify.pdf",
+    "sha256": "ce5a91036dd29240ba2961806b1fe7633c80ea750a378b4c68d078e6cd6d7a19"
+  },
   "screenshot": "/tmp/aster-integrated-brief.png"
 }

@@ -1,7 +1,7 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
 import Scene,{type CameraCommand} from './Scene';
 import Map3DScene,{type Basemap3DMode} from './Map3DScene';
-import type {StudyRegion} from '../planning/toronto-context';
+import type {View3dRegion} from '../planning/toronto-context';
 import {initialVolume,validStartingVolume,validateReplacement,consequences,type Replacement} from './replacement';
 import type {Plot} from './model';
 import {proposals3d,type Proposal3D} from './proposals-3d';
@@ -615,7 +615,7 @@ export default function ArchitecturalViewer(){
       ):(
        <Map3DScene
         key={view.id}
-        region={region as StudyRegion}
+        region={region as View3dRegion}
         view={view}
         basemapMode={(viewMode==='map-osm'?'osm':viewMode==='map-satellite'?'satellite':'vector') as Basemap3DMode}
         highlight={selected}

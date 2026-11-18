@@ -18,8 +18,9 @@ export default function EnergyFacilityMap({facilities,selected,onSelect,provider
    map.on('error',()=>setError('Map could not render. Use the facility list below.'));
    const bounds=new ml.LngLatBounds();
    for(const f of facilities){
-    const button=document.createElement('button');button.type='button';button.className='energy-map-marker';button.textContent=f.id===selected?'●':'○';button.setAttribute('aria-label',f.name+', '+f.address);button.setAttribute('aria-pressed',String(f.id===selected));button.onclick=()=>onSelect(f.id);
-    new ml.Marker({element:button}).setLngLat(f.location).addTo(map);bounds.extend(f.location);
+    const isSel=f.id===selected;
+    const button=document.createElement('button');button.type='button';button.className='energy-map-marker';button.setAttribute('aria-label',f.name+', '+f.address);button.setAttribute('aria-pressed',String(isSel));button.style.zIndex=isSel?'10':'1';button.onclick=()=>onSelect(f.id);
+    new ml.Marker({element:button,anchor:'center'}).setLngLat(f.location).addTo(map);bounds.extend(f.location);
    }
    if(facilities.length)map.fitBounds(bounds,{padding:38,maxZoom:15,duration:0});
   }).catch(e=>{if(live)setError(String(e));});

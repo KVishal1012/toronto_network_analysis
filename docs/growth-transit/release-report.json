@@ -1,6 +1,6 @@
 {
-  "build_id": "19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a",
-  "analysis": "6ed092c988ad9326e279",
+  "build_id": "dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc",
+  "analysis": "db9180012cb408a03d97",
   "energy": "693ebe90439ea1049eac",
   "release_ready": false,
   "gates": {
@@ -11,25 +11,49 @@
         "group_count": 2391,
         "input_records": 2391,
         "outcomes": {
-          "included": 368,
+          "included": 1281,
           "no_reported_housing_units": 499,
-          "outside_study_areas": 913,
           "shared_location_distinct_identifiers": 76,
           "unresolved_location": 535
         },
         "regional": {
+          "all-toronto": {
+            "included": 1281,
+            "no_reported_housing_units": 499,
+            "shared_location_distinct_identifiers": 76
+          },
           "downtown": {
             "included": 228,
             "no_reported_housing_units": 57,
             "shared_location_distinct_identifiers": 13
           },
+          "etobicoke-york": {
+            "included": 185,
+            "no_reported_housing_units": 121,
+            "shared_location_distinct_identifiers": 19
+          },
           "midtown": {
             "included": 140,
             "no_reported_housing_units": 23,
             "shared_location_distinct_identifiers": 3
+          },
+          "north-york": {
+            "included": 330,
+            "no_reported_housing_units": 113,
+            "shared_location_distinct_identifiers": 16
+          },
+          "scarborough": {
+            "included": 191,
+            "no_reported_housing_units": 118,
+            "shared_location_distinct_identifiers": 10
+          },
+          "toronto-east-york": {
+            "included": 575,
+            "no_reported_housing_units": 147,
+            "shared_location_distinct_identifiers": 31
           }
         },
-        "unassigned_groups": 1927
+        "unassigned_groups": 535
       }
     },
     "source_sample": {
@@ -41,8 +65,8 @@
       "evidence": "check_public_boundary against dist-public"
     },
     "browser": {
-      "status": "blocked",
-      "evidence": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/browser.json"
+      "status": "passed",
+      "evidence": "data/growth-qualification/dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc/browser.json"
     },
     "rights": {
       "status": "passed",
@@ -59,12 +83,12 @@
     },
     "pdf": {
       "status": "passed",
-      "evidence": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/browser.json",
+      "evidence": "data/growth-qualification/dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc/browser.json",
       "reason": "Saved PDF inspected and artifact hash verified."
     },
     "screen_reader": {
       "status": "blocked",
-      "evidence": "data/growth-qualification/19dc9c47167138b7ab35cdc36b2e3ab0455b60c577bf7b54443f26c89b90780a/screen-reader.json",
+      "evidence": "data/growth-qualification/dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc/screen-reader.json",
       "reason": "Actual screen-reader session is required; functional browser and PDF checks do not satisfy it."
     },
     "energy_analysis": {
@@ -76,5 +100,5 @@
       "evidence": "docs/energy/rights-contract.json"
     }
   },
-  "package_file_count": 668
+  "package_file_count": 1284
 }

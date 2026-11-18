@@ -56,7 +56,7 @@ export default function EnergyPanel({region,pins,controlsVisible,onPins,onBrief}
    {error&&<div role="alert" className="g-warning"><p>{error}</p><button type="button" onClick={()=>{setError('');setRetry(r=>r+1);}}>Retry energy evidence</button></div>}
    {manifest&&!error&&!loading&&<>
     <p className="energy-baseline"><strong>{manifest.year} baseline only.</strong> No current meter readings, building rating or replacement-building energy prediction.</p>
-    <div className="g-actions" aria-label="Energy evidence source">
+    <div className="energy-tabs" role="group" aria-label="Energy evidence source">
      <button type="button" aria-pressed={pins.tab==='cohorts'} onClick={()=>change({tab:'cohorts'})}>Similar reporting properties</button>
      <button type="button" aria-pressed={pins.tab==='facilities'} onClick={()=>change({tab:'facilities'})}>Municipal facilities</button>
     </div>

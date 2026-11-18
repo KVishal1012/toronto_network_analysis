@@ -7,8 +7,11 @@ import path from 'node:path';
 const require = createRequire(import.meta.url);
 const { chromium } = require('/Users/koushikannamalai/.npm/_npx/31e32ef8478fbf80/node_modules/playwright');
 
-const EXECUTABLE_PATH =
-  '/Users/koushikannamalai/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
+const EXECUTABLE_PATH = [
+  typeof chromium.executablePath === 'function' ? chromium.executablePath() : '',
+  '/Users/koushikannamalai/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing',
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+].find((p) => p && fs.existsSync(p));
 const DIST_DIR = path.resolve(process.cwd(), 'dist-public');
 
 const MIME = {
@@ -237,10 +240,27 @@ async function main() {
     const mossParkCardText = await page.locator('.g-results .g-cards article').first().textContent();
     assert(mossParkCardText && /Moss Park/i.test(mossParkCardText), 'Expected "Moss Park" neighbourhood label on matching card');
     report.mossParkCount = mossParkCount;
+
+    // City-wide search checks (Scarborough & Etobicoke on All Toronto default)
+    await searchInput.fill('Kingston');
+    await page.waitForTimeout(150);
+    const kingstonCount = await page.locator('.g-results .g-cards article').count();
+    assert(kingstonCount > 0, 'Expected city-wide matches when searching Kingston Rd (Scarborough)');
+    report.citywideKingstonCount = kingstonCount;
+
+    await searchInput.fill('Etobicoke');
+    await page.waitForTimeout(150);
+    const etobicokeCount = await page.locator('.g-results .g-cards article').count();
+    assert(etobicokeCount > 0, 'Expected city-wide matches when searching Etobicoke');
+    report.citywideEtobicokeCount = etobicokeCount;
     await searchInput.fill('');
     await page.waitForTimeout(150);
 
-    // 2. Region switch to Midtown & search
+    // 2. Community Council switch (Scarborough) & Midtown search
+    await page.getByRole('button', { name: /Scarborough/i }).first().click();
+    await page.waitForFunction(() => location.hash.includes('region=scarborough'));
+    await page.waitForSelector('.g-results .g-cards article h3');
+
     await page.getByRole('button', { name: /Midtown/i }).first().click();
     await page.waitForFunction(() => location.hash.includes('region=midtown'));
     await page.waitForSelector('.g-results .g-cards article h3');
@@ -250,15 +270,6 @@ async function main() {
     await page.waitForTimeout(150);
     const yongeCount = await page.locator('.g-results .g-cards article').count();
     assert(yongeCount > 0, 'Expected matches when searching Yonge in Midtown');
-
-    // Search outside study area (e.g. North York) and verify honest guidance
-    await searchInput.fill('North York');
-    await page.waitForTimeout(300);
-    const bodyTextOutside = await page.locator('#growth-results').textContent();
-    assert(
-      bodyTextOutside && /Downtown|Midtown|outside/i.test(bodyTextOutside),
-      'Expected honest coverage/outside-area guidance when searching North York'
-    );
     await searchInput.fill('');
     await page.waitForTimeout(150);
 
@@ -382,19 +393,36 @@ async function main() {
     const downtownProposalList = await page.locator('.a-proposal-list').textContent();
     assert(downtownProposalList && downtownProposalList.includes('483 BAY ST'), 'Expected 483 BAY ST proposal in City Hall 3D view');
 
-    // Select 483 BAY ST proposal and click "Test 3D replacement at this site"
+    // Select 483 BAY ST proposal, verify Page 1 deep-link, and test 3D replacement workflow
     await page.locator('.a-proposal-list button', { hasText: '483 BAY ST' }).first().click();
     await page.waitForTimeout(150);
     const inspectHeading = await page.locator('#a-inspect-heading').textContent();
     assert(inspectHeading && inspectHeading.includes('483 BAY ST'), `Expected inspected proposal 483 BAY ST, got ${inspectHeading}`);
+
+    const compareHref = await page.getByRole('link', { name: /Compare transit for this area on Page 1/i }).getAttribute('href');
+    assert(compareHref && compareHref.includes('areas=1260_9669'), `Expected Page 1 link for 1260_9669, got ${compareHref}`);
+    report.proposal3dToPage1Href = compareHref;
+
     await page.getByRole('button', { name: /Test 3D replacement at this site/i }).click();
+    await page.waitForTimeout(150);
+    // If nearest building overlaps another recorded component, select first collision-free recorded building
+    if ((await page.locator('#a-dim-height').count()) === 0) {
+      const buildingButtons = page.locator('.a-list button');
+      const count = Math.min(15, await buildingButtons.count());
+      for (let i = 0; i < count; i++) {
+        await buildingButtons.nth(i).click();
+        await page.waitForTimeout(100);
+        const replaceBtn = page.getByRole('button', { name: /What if this building were taller or wider/i }).first();
+        if (await replaceBtn.count()) {
+          await replaceBtn.click();
+          await page.waitForTimeout(120);
+          if ((await page.locator('#a-dim-height').count()) > 0) break;
+        }
+      }
+    }
     await page.waitForSelector('#a-dim-height');
     const curHeight = await page.locator('#a-dim-height').inputValue();
-    await page.locator('#a-dim-x').fill('122');
-    await page.locator('#a-dim-z').fill('14');
-    await page.locator('#a-dim-width').fill('10');
-    await page.locator('#a-dim-depth').fill('10');
-    await page.locator('#a-dim-height').fill(String(Number(curHeight) + 12));
+    await page.locator('#a-dim-height').fill(String(Math.min(200, Number(curHeight) + 12)));
     await page.getByRole('button', { name: /Apply replacement to 3D view/i }).click();
     await page.waitForTimeout(200);
 
@@ -403,11 +431,6 @@ async function main() {
     assert(replaceMsgClass && !replaceMsgClass.includes('is-error'), `Expected replacement apply to succeed, got "${replaceMsgText}"`);
     const statusText = await page.locator('[aria-live="polite"]').first().textContent();
     assert(statusText && statusText.length > 0, 'Expected aria-live announcement in 3D view');
-
-    // Verify "Compare transit for this area on Page 1" link navigates cleanly back with areas=1260_9669
-    const compareHref = await page.getByRole('link', { name: /Compare transit for this area on Page 1/i }).getAttribute('href');
-    assert(compareHref && compareHref.includes('areas=1260_9669'), `Expected Page 1 link for 1260_9669, got ${compareHref}`);
-    report.proposal3dToPage1Href = compareHref;
 
     // Keyboard camera buttons + toggle to 3D Massing Studio & back to 3D Street Map
     await page.getByRole('button', { name: /Zoom in on 3D view/i }).click();

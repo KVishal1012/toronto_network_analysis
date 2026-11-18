@@ -4,7 +4,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import downtown from './downtown.json';
 import {SIZE,type Plot} from './model';
 import type {Proposal3D} from './proposals-3d';
-import type {StudyRegion} from '../planning/toronto-context';
+import type {View3dRegion} from '../planning/toronto-context';
 import {localNamedRoads} from '../planning/toronto-map-data';
 
 const CELL=20;
@@ -74,7 +74,7 @@ function createGroundMapTexture(
   ctx.restore();
 
   // Named Toronto street labels along localNamedRoads
-  const inferredRegion:StudyRegion=
+  const inferredRegion:View3dRegion=
     refId.toLowerCase().includes('midtown')||refName.toLowerCase().includes('midtown')||refName.toLowerCase().includes('eglinton')
       ?'midtown'
       :'downtown';

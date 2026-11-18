@@ -78,7 +78,7 @@ export default function GrowthPriorities(){
   const [showMap,setShowMap]=useState(()=>!window.matchMedia('(max-width:640px)').matches);
   useEffect(()=>{if(showEnergy){const el=document.getElementById('energy-panel-container');el?.scrollIntoView({behavior:'smooth'});el?.focus({preventScroll:true});}},[showEnergy]);
 
-  const otherRegion=filters.region==='downtown'?'midtown':'downtown';
+  const otherRegion=filters.region==='all-toronto'?'downtown':'all-toronto';
 
   useEffect(()=>{
     const onHashChange=()=>{
@@ -101,7 +101,7 @@ export default function GrowthPriorities(){
     provider
       .init(initial.version)
       .then(m=>{
-        if(originalPins.get('region')==='north-york'){
+        if(originalPins.get('region')==='north-york'&&!m.regions.some(r=>r.id==='north-york')){
           throw new Error('North York is outside this submission. Your original link has not been reinterpreted. Open the home page to choose Downtown or Midtown.');
         }
         if(
@@ -410,7 +410,7 @@ export default function GrowthPriorities(){
 
       <main id="main-content" tabIndex={-1}>
         <section className="g-hero g-no-print">
-          <p className="g-eyebrow">TORONTO OPEN DATA · DOWNTOWN &amp; MIDTOWN</p>
+          <p className="g-eyebrow">TORONTO OPEN DATA · CITY-WIDE TORONTO</p>
           <h1>See how proposed housing lines up with frequent TTC service.</h1>
           <p className="g-hero-lead">
             Compare City of Toronto development proposals against scheduled TTC bus, streetcar, and subway timetables,
@@ -425,8 +425,8 @@ export default function GrowthPriorities(){
               </summary>
               <ol className="g-steps-compact">
                 <li>
-                  <strong>1. Set transit rules:</strong> Choose Downtown or Midtown, a walking ring (400 m, 800 m, or
-                  1.6 km), and rush hour or Saturday midday.
+                  <strong>1. Set transit rules:</strong> Choose All Toronto, a Community Council, or Downtown/Midtown,
+                  a walking ring (400 m, 800 m, or 1.6 km), and rush hour or Saturday midday.
                 </li>
                 <li>
                   <strong>2. Search &amp; select:</strong> Search by street, neighbourhood, or project number (or open
@@ -442,7 +442,7 @@ export default function GrowthPriorities(){
             <div className="g-examples-inline" aria-label="Quick examples">
               <span className="g-examples-label">Try example:</span>
               {demos
-                .filter(d=>submissionRegions.includes(d.region as 'downtown'|'midtown'))
+                .filter(d=>(submissionRegions as readonly string[]).includes(d.region))
                 .map(d=>{
                   const label=d.region==='downtown'?'Downtown 800 m':'Midtown 800 m';
                   return (
@@ -489,7 +489,7 @@ export default function GrowthPriorities(){
                   </span>
                   <div className="g-regions" role="group" aria-labelledby="g-region-label">
                     {manifest.regions
-                      .filter(r=>submissionRegions.includes(r.id as 'downtown'|'midtown'))
+                      .filter(r=>(submissionRegions as readonly string[]).includes(r.id))
                       .map(r=>(
                         <button
                           type="button"

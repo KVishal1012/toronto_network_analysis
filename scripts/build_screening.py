@@ -121,7 +121,10 @@ def nearest(point: Point,rows: list[dict],tree: STRtree|None) -> dict|None:
 def build(source: Path,as_of: str,root: Path=ROOT, planning_snapshot: str|None=None) -> dict:
     transit=build_transport(source,root/'public/transport')
     base=root/'public/planning';snapshot=planning_snapshot or json.loads((base/'latest.json').read_text())['id'];pm=json.loads((base/snapshot/'manifest.json').read_text())
-    boundaries=json.loads((root/'docs/site-history/boundaries.json').read_text());regions={r['id']:shape(r['geometry']) for r in boundaries['regions'] if r['id'] in ('downtown','midtown')}
+    boundaries_path=root/'docs/growth-transit/citywide-boundaries.json'
+    if not boundaries_path.exists():
+        boundaries_path=root/'docs/site-history/boundaries.json'
+    boundaries=json.loads(boundaries_path.read_text());regions={r['id']:shape(r['geometry']) for r in boundaries['regions']}
     cache={};projects=[]
     for r in read_object(base,pm,'projects.json'):
         path=r['detail']

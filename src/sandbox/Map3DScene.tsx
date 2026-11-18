@@ -5,7 +5,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import {corners,type Plot} from './model';
 import type {CameraCommand} from './Scene';
 import type {Proposal3D} from './proposals-3d';
-import type {StudyRegion} from '../planning/toronto-context';
+import type {View3dRegion} from '../planning/toronto-context';
 import {
   architecturalBuildingsToWgs84,
   localMetersToLngLat,
@@ -83,7 +83,7 @@ export default function Map3DScene({
   onCameraAction,
   reset,
 }:{
-  region:StudyRegion;
+  region:View3dRegion;
   view:ArchitecturalSceneView;
   basemapMode:Basemap3DMode;
   highlight:string;
@@ -463,9 +463,10 @@ export default function Map3DScene({
         );
       }
       for(const station of ttcSubwayStations){
-        if(Math.abs(station.lon-cLon)>0.012||Math.abs(station.lat-cLat)>0.009)continue;
+        if(Math.abs(station.lon-cLon)>0.0056||Math.abs(station.lat-cLat)>0.0046)continue;
+        const stationOffset:[number,number]=station.name==='St Patrick'?[-14,18]:[0,0];
         nextStatic.push(
-          new ml.Marker({element:createStationMarker(station.name,station.lines),anchor:'left'})
+          new ml.Marker({element:createStationMarker(station.name,station.lines),anchor:'left',offset:stationOffset})
             .setLngLat([station.lon,station.lat])
             .addTo(m)
         );
@@ -573,6 +574,7 @@ export default function Map3DScene({
     if(!showProposals)return;
 
     const nextPins:ml.Marker[]=[];
+    const placedCoords:Array<{x:number;z:number}>=[];
     for(const p of proposals){
       const isSelected=p.number===selectedProposal;
       const btn=document.createElement('button');
@@ -586,8 +588,11 @@ export default function Map3DScene({
         ev.stopPropagation();
         live.current.onSelectProposal(p.number);
       });
+      const nearCount=placedCoords.filter(prev=>Math.hypot(p.x-prev.x,p.z-prev.z)<65).length;
+      placedCoords.push({x:p.x,z:p.z});
+      const pinOffset:[number,number]=[0,-28*nearCount];
       const [lon,lat]=localMetersToLngLat(region,p.x,p.z);
-      nextPins.push(new ml.Marker({element:btn,anchor:'bottom'}).setLngLat([lon,lat]).addTo(m));
+      nextPins.push(new ml.Marker({element:btn,anchor:'bottom',offset:pinOffset}).setLngLat([lon,lat]).addTo(m));
     }
     proposalMarkers.current=nextPins;
   },[ready,region,proposalsGeoJSON,proposals,showProposals,selectedProposal]);

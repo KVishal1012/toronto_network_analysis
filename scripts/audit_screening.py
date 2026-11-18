@@ -61,7 +61,7 @@ def audit(source: Path) -> dict:
                 checks[period]=((expected is None and actual is None) or (expected is not None and actual is not None and abs(expected[0]-actual['distance_m'])<=.001 and expected[1]==actual['id']))
         else:checks['excluded_zero_units']=float(raw['Proposed Residential Units'].replace(',',''))==0
         results.append({'region':case['region'],'case':case['case'],'publisher_number':(p or o)['number'],'record_ids':(p or o)['record_ids'],'checks':checks,'passed':all(checks.values())})
-    report={'analysis':version,'planning_snapshot':m['planning_snapshot'],'transit_snapshot':m['transit_snapshot'],'reviewer_type':'independent computational source reread; not participant testing','cases':results,'passed':len(results)==12 and all(r['passed'] for r in results),'limitations':'Purposeful sample, not a statistical accuracy estimate. No observed service, walking or capacity validation.'}
+    report={'analysis':version,'planning_snapshot':m['planning_snapshot'],'transit_snapshot':m['transit_snapshot'],'reviewer_type':'independent computational source reread; not participant testing','cases':results,'passed':len(results)==6*len(m['regions']) and all(r['passed'] for r in results),'limitations':'Purposeful sample, not a statistical accuracy estimate. No observed service, walking or capacity validation.'}
     dest=ROOT/'docs/growth-transit';dest.mkdir(parents=True,exist_ok=True);(dest/'source-audit.json').write_text(json.dumps(report,indent=2));return report
 
 if __name__=='__main__':

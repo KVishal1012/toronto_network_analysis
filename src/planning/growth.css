@@ -244,11 +244,11 @@ details:not([open])>summary .g-chevron{
   font-weight:650;
   margin-bottom:6px;
 }
-.g-regions{display:flex;gap:8px;flex-wrap:wrap}
+.g-regions{display:flex;gap:6px;flex-wrap:wrap}
 .g-regions button{
-  min-height:42px;
-  padding:6px 13px;
-  font-size:14px;
+  min-height:36px;
+  padding:5px 11px;
+  font-size:13px;
   font-weight:600;
 }
 .g-search-field{min-width:0}
@@ -279,7 +279,21 @@ details:not([open])>summary .g-chevron{
   margin-top:6px;
   font-size:14px;
 }
-.g-controls select{max-width:100%}
+.g-controls select{
+  max-width:100%;
+  height:42px;
+  line-height:1.25;
+  appearance:none;
+  -webkit-appearance:none;
+  padding-right:30px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2317312c' d='M1.4 1.4 6 6l4.6-4.6L12 2.8 6 8.8 0 2.8z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:11px 7px;
+}
 
 .g-controls-bottom{
   display:flex;

@@ -1,11 +1,185 @@
 {
-  "analysis": "6ed092c988ad9326e279",
+  "analysis": "db9180012cb408a03d97",
   "planning_snapshot": "8269765c8521a43294ae",
-  "transit_snapshot": "051a87c14d446d5ca49c",
+  "transit_snapshot": "0be13640dc976e5d4977",
   "reviewer_type": "independent computational source reread; not participant testing",
   "cases": [
     {
-      "region": "downtown",
+      "region": "all-toronto",
+      "case": "near-threshold",
+      "publisher_number": "16 269523 NNY 25 OZ",
+      "record_ids": [
+        "projects:401"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "all-toronto",
+      "case": "nearest",
+      "publisher_number": "23 231968 ESC 20 SA",
+      "record_ids": [
+        "projects:1909"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "all-toronto",
+      "case": "furthest",
+      "publisher_number": "24 245561 NNY 15 OZ",
+      "record_ids": [
+        "projects:1572"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "all-toronto",
+      "case": "near-400",
+      "publisher_number": "25 224684 NNY 17 OZ",
+      "record_ids": [
+        "projects:2007"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "all-toronto",
+      "case": "near-1600",
+      "publisher_number": "18 266038 NNY 15 OZ",
+      "record_ids": [
+        "projects:1721"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "all-toronto",
+      "case": "excluded-zero-units",
+      "publisher_number": "06 199143 ESC 36 SA",
+      "record_ids": [
+        "projects:70"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "near-threshold",
+      "publisher_number": "16 270250 ESC 35 OZ",
+      "record_ids": [
+        "projects:2291"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "nearest",
+      "publisher_number": "25 269745 ESC 23 OZ",
+      "record_ids": [
+        "projects:1699"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "furthest",
+      "publisher_number": "06 128393 ESC 36 OZ",
+      "record_ids": [
+        "projects:499"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "near-400",
+      "publisher_number": "16 264686 ESC 35 SA",
+      "record_ids": [
+        "projects:1309"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "near-1600",
+      "publisher_number": "22 115570 ESC 20 OZ",
+      "record_ids": [
+        "projects:635"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "scarborough",
+      "case": "excluded-zero-units",
+      "publisher_number": "06 199143 ESC 36 SA",
+      "record_ids": [
+        "projects:70"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "toronto-east-york",
       "case": "near-threshold",
       "publisher_number": "21 178720 STE 11 OZ",
       "record_ids": [
@@ -20,11 +194,272 @@
       "passed": true
     },
     {
+      "region": "toronto-east-york",
+      "case": "nearest",
+      "publisher_number": "19 264479 STE 10 OZ",
+      "record_ids": [
+        "projects:222"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "toronto-east-york",
+      "case": "furthest",
+      "publisher_number": "16 259549 STE 27 OZ",
+      "record_ids": [
+        "projects:410"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "toronto-east-york",
+      "case": "near-400",
+      "publisher_number": "25 266399 STE 12 OZ",
+      "record_ids": [
+        "projects:2288"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "toronto-east-york",
+      "case": "near-1600",
+      "publisher_number": "25 120011 STE 12 OZ",
+      "record_ids": [
+        "projects:1664"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "toronto-east-york",
+      "case": "excluded-zero-units",
+      "publisher_number": "09 143528 STE 27 SA",
+      "record_ids": [
+        "projects:302"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "near-threshold",
+      "publisher_number": "25 236994 NNY 15 SA",
+      "record_ids": [
+        "projects:1746"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "nearest",
+      "publisher_number": "16 150473 NNY 24 OZ",
+      "record_ids": [
+        "projects:404"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "furthest",
+      "publisher_number": "22 243305 NNY 15 OZ",
+      "record_ids": [
+        "projects:348"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "near-400",
+      "publisher_number": "25 269673 NNY 08 OZ",
+      "record_ids": [
+        "projects:1694"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "near-1600",
+      "publisher_number": "18 140522 NNY 25 OZ",
+      "record_ids": [
+        "projects:545"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "north-york",
+      "case": "excluded-zero-units",
+      "publisher_number": "11 250127 NNY 34 SA",
+      "record_ids": [
+        "projects:1999"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "near-threshold",
+      "publisher_number": "22 160113 WET 02 SA",
+      "record_ids": [
+        "projects:197"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "nearest",
+      "publisher_number": "22 180538 WET 05 OZ",
+      "record_ids": [
+        "projects:1480"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "furthest",
+      "publisher_number": "20 119591 WET 03 OZ",
+      "record_ids": [
+        "projects:1415"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "near-400",
+      "publisher_number": "26 124085 WET 05 OZ",
+      "record_ids": [
+        "projects:1907"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "near-1600",
+      "publisher_number": "21 196623 WET 02 OZ",
+      "record_ids": [
+        "projects:1320"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
+      "region": "etobicoke-york",
+      "case": "excluded-zero-units",
+      "publisher_number": "08 186599 WET 07 SA",
+      "record_ids": [
+        "projects:1241"
+      ],
+      "checks": {
+        "excluded_zero_units": true
+      },
+      "passed": true
+    },
+    {
+      "region": "downtown",
+      "case": "near-threshold",
+      "publisher_number": "24 113561 STE 11 OZ",
+      "record_ids": [
+        "projects:743"
+      ],
+      "checks": {
+        "structured_units": true,
+        "evening": true,
+        "morning": true,
+        "saturday": true
+      },
+      "passed": true
+    },
+    {
       "region": "downtown",
       "case": "nearest",
-      "publisher_number": "16 232828 STE 27 OZ",
+      "publisher_number": "18 199835 STE 28 OZ",
       "record_ids": [
-        "projects:1474"
+        "projects:1648"
       ],
       "checks": {
         "structured_units": true,
@@ -37,9 +472,9 @@
     {
       "region": "downtown",
       "case": "furthest",
-      "publisher_number": "16 259549 STE 27 OZ",
+      "publisher_number": "23 119287 STE 11 OZ",
       "record_ids": [
-        "projects:410"
+        "projects:1335"
       ],
       "checks": {
         "structured_units": true,
@@ -67,9 +502,9 @@
     {
       "region": "downtown",
       "case": "near-1600",
-      "publisher_number": "24 113561 STE 11 OZ",
+      "publisher_number": "21 148097 STE 11 OZ",
       "record_ids": [
-        "projects:743"
+        "projects:2056"
       ],
       "checks": {
         "structured_units": true,
@@ -124,9 +559,9 @@
     {
       "region": "midtown",
       "case": "furthest",
-      "publisher_number": "25 120011 STE 12 OZ",
+      "publisher_number": "19 122537 NNY 08 OZ",
       "record_ids": [
-        "projects:1664"
+        "projects:500"
       ],
       "checks": {
         "structured_units": true,
@@ -139,9 +574,9 @@
     {
       "region": "midtown",
       "case": "near-400",
-      "publisher_number": "25 269673 NNY 08 OZ",
+      "publisher_number": "21 180732 NNY 08 OZ",
       "record_ids": [
-        "projects:1694"
+        "projects:653"
       ],
       "checks": {
         "structured_units": true,
@@ -154,9 +589,9 @@
     {
       "region": "midtown",
       "case": "near-1600",
-      "publisher_number": "19 122537 NNY 08 OZ",
+      "publisher_number": "18 186858 NNY 16 OZ",
       "record_ids": [
-        "projects:500"
+        "projects:1471"
       ],
       "checks": {
         "structured_units": true,
