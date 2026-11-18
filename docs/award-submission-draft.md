@@ -1,47 +1,62 @@
-# Toronto Open Data Awards — draft, not submitted
+# Toronto Open Data Awards 2026 — Submission Draft (Not Submitted)
 
-**Project:** ASTER — Neighbourhood Planning Explorer
-**Target scope:** Greater Toronto Area, all 25 municipalities — owner decision October 23, 2026.
-**Implemented public coverage:** Toronto. GTA source qualification has started; do not describe the published app as having complete GTA planning coverage.
-**Category:** Open Data Applications
-**Public URL:** https://kvishal1012.github.io/aster-neighbourhood-explorer/
-**Source code:** https://github.com/KVishal1012/aster-neighbourhood-explorer
-**Review branch:** codex/planning-explorer
-**Demonstration and screenshots:** https://github.com/KVishal1012/aster-neighbourhood-explorer/blob/main/DEMO.md
-**Funding:** Grassroots / self-funded — confirmed by the owner on October 22, 2026.
-**Student eligibility:** not claimed.
+**Project:** ASTER — Toronto Housing, Transit & 3D Explorer  
+**Category:** Open Data Applications  
+**Public URL (once GitHub Pages is enabled on `gh-pages`):** https://kvishal1012.github.io/toronto_network_analysis/  
+**Source code:** https://github.com/KVishal1012/toronto_network_analysis  
+**Active branch:** `codex/aster-toronto-explorer` (static site pushed to `gh-pages`)  
+**Funding:** Grassroots / self-funded  
+**Student eligibility:** Not claimed  
+
+---
 
 ## Civic problem
 
-Residents encounter separate planning datasets with different record meanings, dates and coverage. Applications can be mistaken for projects, and an approval can be mistaken for completed construction.
+Toronto residents, tenant associations, and neighbourhood groups regularly hear claims about housing growth and transit readiness, yet the City's open datasets live in separate portals with incompatible formats, revision dates, and definitions. Proposed units in the Development Pipeline can be confused with completed construction, nearby bus stops can look "served" on a map even when weekend or rush-hour headways are infrequent, and missing or unlocated records are often silently dropped from totals.
 
-## Application
+## What ASTER does
 
-ASTER combines guided location search, deterministic proximity queries, a map and an accessible results list. Project/application records stay separate; every selected record exposes original attributes, source dates and location limitations. Optional illustrative buildings provide context without inventing proposed development geometry.
+ASTER brings together City of Toronto housing proposals, scheduled TTC timetables, neighbourhood context, 3D building massing, and reported 2024 energy baselines in a transparent, offline-safe civic screening tool:
 
-## Open data
+1. **City-wide Housing & Transit Priorities (`/`):**
+   - Screens **all 2,391** City Development Pipeline records across **All Toronto**, the **4 Community Councils** (`Toronto & East York`, `North York`, `Etobicoke York`, `Scarborough`), and focus views (`Downtown`, `Midtown`) — covering **1,281** geolocatable proposals with reported housing units across **601** 500 m grid areas.
+   - Checks every included proposal against **scheduled TTC departures** (`>= 4 scheduled departures/hour` at a stop on one route-direction, ~15 min or better) across **weekday morning (7–9 AM)**, **weekday evening (4–6 PM)**, and **Saturday midday (12–2 PM)** at **400 m**, **800 m**, and **1,600 m** straight-line rings.
+   - Displays every excluded record explicitly (`499` missing/zero structured residential units, `76` shared-address distinct IDs, `535` unresolved locations) so nothing is hidden or coerced to zero.
+   - Renders an **offline-first interactive Toronto street map** (City Centreline roads, 158 neighbourhoods, Green Spaces, Lake Ontario shoreline, TTC Lines 1/2/4/5 and 92 stations, plus optional OSM/Satellite basemaps), accessible area comparison cards, a geographic SVG brief map, and **Print / Save as PDF** + pinned **JSON export** for community meetings and council deputations.
 
-Toronto Development Pipeline, Development Applications, Zoning By-law, Municipal Address Points, neighbourhoods, Toronto Centreline and 2025 building massing. Data receipts and exclusions are inspectable; no vendor imagery credentials are necessary.
+2. **Toronto 3D Building & Proposal Explorer (`/#view=3d`):**
+   - Overlays real Downtown (`City Hall`, 307 2025 buildings, 3 proposals) and Midtown (`Yonge–Eglinton`, 565 2025 buildings, 19 proposals) Development Pipeline sites directly onto an extruded **3D Street Map** (`MapLibre`), with an optional **3D Massing Studio** (`Three.js`).
+   - Lets citizens inspect recorded 2025 heights (`~3 m/storey` illustrative estimate), jump directly between 3D sites and Page 1 transit tables, and test a collision-checked single-building hypothetical box without claiming wind, shadow, traffic, or construction approval.
 
-## Evidence of usefulness
+3. **Supporting 2024 Energy Context:**
+   - Surfaces **1,614** Ontario reporting-property multifamily energy records and **158** Downtown municipal facility meter logs as explicitly scoped 2024 baseline context (never fabricated as future building predictions).
 
-Developer verification is documented in VALIDATION.md. The owner chose an alternative to recruiting five residents: documented task walkthroughs and an optional self-guided feedback route. No resident test sessions have occurred. No claim of resident adoption, measured civic impact or accuracy beyond source limitations is made. This evidence is weaker than independent resident testing and should be stated candidly in the submission.
+## Open datasets used
 
-## Technical release evidence — October 23, 2026
+All datasets are licensed under the **Open Government Licence – Toronto** (or Ontario Open Data for Energy benchmarking) and tracked with SHA-256 receipts:
+- City of Toronto Development Pipeline & Development Applications
+- TTC Merged GTFS Routes and Schedules
+- Toronto Centreline (streets & rail), Green Spaces, Neighbourhoods (158), Community Council Boundaries (4)
+- City of Toronto 3D Massing (2025 snapshot)
+- City of Toronto Municipal Building Energy Consumption & Ontario Energy and Water Reporting and Benchmarking (2024)
 
-- Published commit: `207351b11634d09fe32c9cb265fd95da0aeb4248`, retained on `codex/planning-explorer` and deployed from `main`.
-- [Final branch validation passed](https://github.com/KVishal1012/aster-neighbourhood-explorer/actions/runs/40052150730).
-- [Public Pages deployment passed](https://github.com/KVishal1012/aster-neighbourhood-explorer/actions/runs/40052260266).
-- [Actual scheduled source refresh passed](https://github.com/KVishal1012/aster-neighbourhood-explorer/actions/runs/39970160855); five published snapshots remain available.
-- Hosted mobile viewport verification: list-first results, source evidence and snapshot-pinned query restored without creating a map canvas until requested. Formal screen-reader testing and physical-device CPU evaluation remain unverified.
+## Verification & honest limitations
 
-## Demonstration script (about 90 seconds)
+- **Automated verification (Build `dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc`, screening `db9180012cb408a03d97`):**
+  - `148` Python unit tests and `38` Node unit tests passing.
+  - `42` independent computational source rereads (`audit_screening.py`) verifying exact unit counts and TTC GTFS distances across all 7 regions.
+  - Automated Playwright + Chromium checks (`verify_aster.mjs`) confirming WCAG 2.1 AA contrast (`0` violations), keyboard navigation, `390×844` mobile zero overflow, clean `@media print` PDFs, and strict public boundary isolation (`check_public_boundary.py`).
+- **What remains candidly unverified:**
+  - Dedicated human screen-reader testing (VoiceOver/NVDA) and independent citizen participant sessions have not yet been logged; no claim of measured civic adoption or policy impact is made.
+  - Straight-line proximity does not measure sidewalk safety, crossings, crowding, or bus/train capacity; reported unit counts reflect City structured fields rather than confirmed built homes.
 
-1. Search 100 Queen St W and choose its municipal address point.
-2. Choose 800 m and Under Review; explain straight-line distance and publisher status.
-3. Open a project and show its original attributes, source date and official link.
-4. Switch to zoning and explain why mapped attributes are not legal entitlement.
-5. Switch back to Projects, enable Browse unlocated records and show the explicit missing-location reason.
-6. Copy a snapshot-pinned link and export evidence.
+## 90-second demonstration script
 
-Before submission: verify the public URL, document developer checks and any optional public feedback actually received, confirm applicant details and review the final form. Deadline verified from the City announcement: December 4, 2026. Do not automatically submit.
+1. Open `/` on **All Toronto** and show the city-wide street map with `1,281` screened proposals across `601` areas (from `Near 300 BOROUGH DR` in Scarborough to `Near 6464 YONGE ST` in North York).
+2. Filter to **Scarborough** and search `Kingston` to show how any resident can inspect their corridor's `400 m` / `800 m` / `1,600 m` TTC frequency and excluded records.
+3. Select two areas, add a local community question, and show the **Print / Save as PDF** brief and reproducible hash-pinned JSON export.
+4. Click **View in 3D ↗** into `#view=3d` (`City Hall` or `Yonge–Eglinton`), inspect a proposal pin (`483 BAY ST` or `2180 YONGE ST`), and show its 3D context and Page 1 transit link.
+
+---
+
+*Before submitting: confirm GitHub Pages is live at `https://kvishal1012.github.io/toronto_network_analysis/`, complete optional VoiceOver/participant walkthrough notes if desired, and review all form fields. Competition deadline: December 4, 2026.*
