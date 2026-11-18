@@ -1,5 +1,5 @@
 {
-  "build_id": "88f3b0f6b24216e037cc205f1a7815fc5fe02f124818af38837138fa66a0f21b",
+  "build_id": "caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68",
   "analysis": "741b4221e6cb9ab5a524",
   "passed": true,
   "reviewer": "Automated Playwright + Chromium headless verification against dist-public; no human participant sessions",
@@ -18,8 +18,9 @@
   "export_sha256": "f2fe17aa4967ce96957cfe2ac1c53c52d5cf07661070b84ddfffb446629479f9",
   "pdf": {
     "passed": true,
-    "path": "data/growth-qualification/88f3b0f6b24216e037cc205f1a7815fc5fe02f124818af38837138fa66a0f21b/aster-brief-verify.pdf",
-    "sha256": "cd571a9d5ae566f3b3702ef73263c66de8e7793b10327a75a5035868de24c61e"
+    "path": "data/growth-qualification/caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68/aster-brief-verify.pdf",
+    "sha256": "0805c40c7036d0fa3497fee66ecf89c7803ef42a896952c888e9edcafe51b2ab",
+    "bytes": 794365
   },
   "screenshot": "/tmp/aster-integrated-brief.png"
 }

@@ -16,7 +16,7 @@ Toronto residents, tenant associations, and neighbourhood groups regularly hear 
 
 ## What ASTER does
 
-ASTER brings together City of Toronto housing proposals, scheduled TTC timetables, neighbourhood context, 3D building massing, and reported 2024 energy baselines in a transparent, offline-safe civic screening tool:
+ASTER brings together City of Toronto housing proposals, scheduled TTC timetables, neighbourhood context, 3D building massing, and reported 2024 energy and water baselines in a transparent, offline-safe civic screening tool:
 
 1. **City-wide Housing & Transit Priorities (`/`):**
    - Screens **all 2,391** City Development Pipeline records across **All Toronto**, the **4 Community Councils** (`Toronto & East York`, `North York`, `Etobicoke York`, `Scarborough`), and focus views (`Downtown`, `Midtown`) — covering **1,281** geolocatable proposals with reported housing units across **601** 500 m grid areas.
@@ -28,8 +28,8 @@ ASTER brings together City of Toronto housing proposals, scheduled TTC timetable
    - Overlays real Downtown (`City Hall`, 307 2025 buildings, 3 proposals) and Midtown (`Yonge–Eglinton`, 565 2025 buildings, 19 proposals) Development Pipeline sites directly onto an extruded **3D Street Map** (`MapLibre`), with an optional **3D Massing Studio** (`Three.js`).
    - Lets citizens inspect recorded 2025 heights (`~3 m/storey` illustrative estimate), jump directly between 3D sites and Page 1 transit tables, and test a collision-checked single-building hypothetical box without claiming wind, shadow, traffic, or construction approval.
 
-3. **Supporting 2024 Energy Context:**
-   - Surfaces **1,614** Ontario reporting-property multifamily energy records and **158** Downtown municipal facility meter logs as explicitly scoped 2024 baseline context (never fabricated as future building predictions).
+3. **Inline 2024 Energy & Water Evidence (`/`):**
+   - Integrates **2,451** Toronto-wide Ontario Energy and Water Reporting and Benchmarking (`EWRB`) property records across 35 building cohorts (including **1,614** Multifamily Housing records) with one-click quartile distributions for **Reported water intensity (`m³/m²/year`)**, **Site & source energy (`GJ/m²/year`)**, **Electricity**, **Natural gas**, and **GHG emissions (`kgCO₂e/m²/year`)**, alongside **247** City of Toronto municipal facilities (`158` Downtown, `89` Midtown; `3,055` utility and district chilled-water meter entries) as explicitly scoped 2024 baseline context that can be attached directly to the community brief (never fabricated as future building predictions).
 
 ## Open datasets used
 
@@ -42,7 +42,7 @@ All datasets are licensed under the **Open Government Licence – Toronto** (or 
 
 ## Verification & honest limitations
 
-- **Automated verification (Build `88f3b0f6b24216e037cc205f1a7815fc5fe02f124818af38837138fa66a0f21b`, screening `741b4221e6cb9ab5a524`):**
+- **Automated verification (Build `caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68`, screening `741b4221e6cb9ab5a524`):**
   - `148` Python unit tests and `39` Node unit tests passing.
   - `42` independent computational source rereads (`audit_screening.py`) verifying exact unit counts and TTC GTFS distances across all 7 regions.
   - Automated Playwright + Chromium checks (`verify_aster.mjs`) confirming WCAG 2.1 AA contrast (`0` violations), keyboard navigation, `390×844` mobile zero overflow, clean `@media print` PDFs, and strict public boundary isolation (`check_public_boundary.py`).

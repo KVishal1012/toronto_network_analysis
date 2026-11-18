@@ -58,7 +58,7 @@ export default function GrowthPriorities(){
   const [initial]=useState(()=>parseScreeningLink(location.hash));
   const [originalPins]=useState(()=>new URLSearchParams(location.hash.slice(1)));
   const [energyPins,setEnergyPins]=useState(()=>parseEnergyPins(location.hash));
-  const [showEnergy,setShowEnergy]=useState(()=>new URLSearchParams(location.hash.slice(1)).has('energy'));
+  const [showEnergy,setShowEnergy]=useState(true);
   const [energyBrief,setEnergyBrief]=useState<EnergyBrief|null>(null);
   const [provider]=useState(createScreeningProvider);
   const [manifest,setManifest]=useState<ScreeningManifest|null>(null);
@@ -76,7 +76,6 @@ export default function GrowthPriorities(){
   const [retry,setRetry]=useState(0);
   const [search,setSearch]=useState('');
   const [showMap,setShowMap]=useState(()=>!window.matchMedia('(max-width:640px)').matches);
-  useEffect(()=>{if(showEnergy){const el=document.getElementById('energy-panel-container');el?.scrollIntoView({behavior:'smooth'});el?.focus({preventScroll:true});}},[showEnergy]);
 
   const otherRegion=filters.region==='all-toronto'?'downtown':'all-toronto';
 
@@ -393,6 +392,18 @@ export default function GrowthPriorities(){
             Explore areas
           </a>
           <a
+            href="#energy-evidence"
+            onClick={e=>{
+              e.preventDefault();
+              setShowEnergy(true);
+              const el=document.getElementById('energy-panel-container');
+              el?.scrollIntoView({behavior:'smooth'});
+              el?.focus({preventScroll:true});
+            }}
+          >
+            Energy &amp; Water
+          </a>
+          <a
             href="#community-brief"
             onClick={e=>{
               e.preventDefault();
@@ -404,7 +415,6 @@ export default function GrowthPriorities(){
             Prepare a brief ↓
           </a>
           <a href={view3dHash}>Toronto 3D ↗</a>
-          <a href="#energy-evidence" onClick={e=>{e.preventDefault();setShowEnergy(true);document.getElementById('energy-panel-container')?.scrollIntoView({behavior:'smooth'});}}>Energy</a>
         </nav>
       </header>
 
@@ -1236,20 +1246,21 @@ export default function GrowthPriorities(){
               )}
             </section>
 
-            <div className="g-no-print" style={{marginTop:'2rem'}}>
-              <button type="button" aria-expanded={showEnergy} aria-controls="energy-panel-container" onClick={()=>setShowEnergy(x=>!x)}>
-                {showEnergy?'Hide energy controls':'Explore reported energy evidence'}
-              </button>
-              <p className="g-hint">Optional context: Toronto-wide reporting-property comparisons and municipal facility utility records. No prediction of energy use for a replacement building.</p>
-            </div>
-            <div id="energy-panel-container" tabIndex={-1} hidden={!showEnergy&&energyPins.include.length===0}>
-              {(showEnergy||energyPins.include.length>0)&&<Suspense fallback={<p role="status">Opening energy evidence…</p>}>
-                <EnergyPanel region={filters.region} pins={energyPins} controlsVisible={showEnergy} onPins={setEnergyPins} onBrief={setEnergyBrief}/>
-              </Suspense>}
+            <div id="energy-panel-container" tabIndex={-1}>
+              <Suspense fallback={<p role="status">Opening energy &amp; water evidence…</p>}>
+                <EnergyPanel
+                  region={filters.region}
+                  pins={energyPins}
+                  controlsVisible={showEnergy}
+                  onToggleControls={()=>setShowEnergy(x=>!x)}
+                  onPins={setEnergyPins}
+                  onBrief={setEnergyBrief}
+                />
+              </Suspense>
             </div>
 
             <section className="g-brief" id="community-brief" tabIndex={-1} aria-labelledby="g-brief-title">
-              <p className="g-eyebrow g-no-print">03 · PREPARE A COMMUNITY BRIEF</p>
+              <p className="g-eyebrow g-no-print">04 · PREPARE A COMMUNITY BRIEF</p>
               <h2 id="g-brief-title" className="g-no-print">
                 Prepare a community brief
               </h2>

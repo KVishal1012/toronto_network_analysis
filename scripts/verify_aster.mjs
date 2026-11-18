@@ -323,6 +323,16 @@ async function main() {
     await mapBtn.click();
     await page.waitForSelector('.g-map-section .maplibregl-canvas');
 
+    // 6b. Inline Energy & Water evidence section check (including Water intensity metric pill)
+    await page.waitForSelector('#energy-evidence');
+    const waterPill = page.locator('#energy-evidence').getByRole('button', { name: /Water intensity/i });
+    assert(await waterPill.isVisible(), 'Expected inline Water intensity quick metric pill to be visible on main page');
+    await waterPill.click();
+    await page.waitForTimeout(150);
+    const energySectionText = await page.locator('#energy-evidence').textContent();
+    assert(energySectionText && /Reported water intensity/i.test(energySectionText) && /m³\/m²\/year/.test(energySectionText), 'Expected Reported water intensity (m³/m²/year) distribution in inline Energy & Water section');
+    report.inlineEnergyWaterVerified = true;
+
     // 7. WCAG / Accessibility audit on `/`
     report.a11yHome = await runA11yAudit(page, 'home');
 
