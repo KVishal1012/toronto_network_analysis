@@ -12,7 +12,7 @@
 
 ## Civic problem
 
-Toronto residents, tenant associations, and neighbourhood groups regularly hear claims about housing growth and transit readiness, yet the City's open datasets live in separate portals with incompatible formats, revision dates, and definitions. Proposed units in the Development Pipeline can be confused with completed construction, nearby bus stops can look "served" on a map even when weekend or rush-hour headways are infrequent, and missing or unlocated records are often silently dropped from totals.
+Toronto residents, tenant associations, and neighbourhood groups regularly hear claims about housing growth and transit readiness, yet the City's open datasets live in separate portals with incompatible formats, revision dates, and definitions. Proposed units in the Development Pipeline can be confused with completed construction, nearby bus stops can look "served" on a map even when weekend or rush-hour departure counts are low, and missing or unlocated records are often silently dropped from totals.
 
 ## What ASTER does
 
@@ -20,7 +20,7 @@ ASTER brings together City of Toronto housing proposals, scheduled TTC timetable
 
 1. **City-wide Housing & Transit Priorities (`/`):**
    - Screens **all 2,391** City Development Pipeline records across **All Toronto**, the **4 Community Councils** (`Toronto & East York`, `North York`, `Etobicoke York`, `Scarborough`), and focus views (`Downtown`, `Midtown`) — covering **1,281** geolocatable proposals with reported housing units across **601** 500 m grid areas.
-   - Checks every included proposal against **scheduled TTC departures** (`>= 4 scheduled departures/hour` at a stop on one route-direction, ~15 min or better) across **weekday morning (7–9 AM)**, **weekday evening (4–6 PM)**, and **Saturday midday (12–2 PM)** at **400 m**, **800 m**, and **1,600 m** straight-line rings.
+   - Checks every included proposal against **scheduled TTC departures** (`>= 4 scheduled departures/hour` in each hour of the 2-hour window at one stop on one route-direction; departure spacing is not assessed and may vary) across **weekday morning (7–9 AM)**, **weekday evening (4–6 PM)**, and **Saturday midday (12–2 PM)** at **400 m**, **800 m**, and **1,600 m** straight-line rings.
    - Displays every excluded record explicitly (`499` missing/zero structured residential units, `76` shared-address distinct IDs, `535` unresolved locations) so nothing is hidden or coerced to zero.
    - Renders an **offline-first interactive Toronto street map** (City Centreline roads, 158 neighbourhoods, Green Spaces, Lake Ontario shoreline, TTC Lines 1/2/4/5 and 92 stations, plus optional OSM/Satellite basemaps), accessible area comparison cards, a geographic SVG brief map, and **Print / Save as PDF** + pinned **JSON export** for community meetings and council deputations.
 
@@ -42,8 +42,8 @@ All datasets are licensed under the **Open Government Licence – Toronto** (or 
 
 ## Verification & honest limitations
 
-- **Automated verification (Build `dc259eb321d25ebe54d5fc53cc310397f5f554b362199cef89a76c36e4d05dbc`, screening `db9180012cb408a03d97`):**
-  - `148` Python unit tests and `38` Node unit tests passing.
+- **Automated verification (Build `88f3b0f6b24216e037cc205f1a7815fc5fe02f124818af38837138fa66a0f21b`, screening `741b4221e6cb9ab5a524`):**
+  - `148` Python unit tests and `39` Node unit tests passing.
   - `42` independent computational source rereads (`audit_screening.py`) verifying exact unit counts and TTC GTFS distances across all 7 regions.
   - Automated Playwright + Chromium checks (`verify_aster.mjs`) confirming WCAG 2.1 AA contrast (`0` violations), keyboard navigation, `390×844` mobile zero overflow, clean `@media print` PDFs, and strict public boundary isolation (`check_public_boundary.py`).
 - **What remains candidly unverified:**

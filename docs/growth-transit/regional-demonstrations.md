@@ -1,6 +1,6 @@
 # Three reproducible regional investigations
 
-Pinned analysis: `db9180012cb408a03d97`. These are developer demonstrations, not evidence of community impact.
+Pinned analysis: `741b4221e6cb9ab5a524`. These are developer demonstrations, not evidence of community impact.
 
 Open the local public preview and append each hash below. Keep stage = Under Review + Active, minimum = 0, morning = 07–09, threshold = 800 metres. Dates are explicit in the interface.
 
@@ -8,7 +8,7 @@ Open the local public preview and append each hash below. Keep stage = Under Rev
 
 Expected default result: **0 candidate areas**. No candidates under these settings does not demonstrate adequate service.
 
-[Reproduce locally](http://127.0.0.1:5178/#analysis=db9180012cb408a03d97&snapshot=8269765c8521a43294ae&transit=0be13640dc976e5d4977&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=)
+[Reproduce locally](http://127.0.0.1:5178/#analysis=741b4221e6cb9ab5a524&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=)
 
 1. Confirm the empty shortlist message.
 2. Uncheck the candidates-only filter to inspect included proposals.
@@ -18,15 +18,15 @@ Expected default result: **0 candidate areas**. No candidates under these settin
 
 Expected default result: **1 candidate areas**. These are investigation candidates, not proven service deficits.
 
-[Reproduce locally](http://127.0.0.1:5178/#analysis=db9180012cb408a03d97&snapshot=8269765c8521a43294ae&transit=0be13640dc976e5d4977&region=midtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=1257_9683)
+[Reproduce locally](http://127.0.0.1:5178/#analysis=741b4221e6cb9ab5a524&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=midtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=1257_9683)
 
 Selected area `1257_9683`, near 2779 YONGE ST.
 
 | Period | 400 m | 800 m | 1,600 m |
 |---|---:|---:|---:|
-| morning (2026-10-30) | 202 | 202 | 0 |
-| evening (2026-10-30) | 202 | 202 | 0 |
-| saturday (2026-10-31) | 202 | 202 | 0 |
+| morning (2026-11-13) | 202 | 202 | 0 |
+| evening (2026-11-13) | 202 | 202 | 0 |
+| saturday (2026-11-14) | 202 | 202 | 0 |
 
 Values are reported proposed units in included records outside the selected service threshold.
 

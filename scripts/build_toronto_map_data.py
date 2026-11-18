@@ -27,7 +27,7 @@ BBOX = (-79.645, 43.575, -79.110, 43.860)
 WATER_BBOX = (-79.645, 43.550, -79.100, 43.800)
 CLIP_BOX = box(*BBOX)
 
-SCREENING_VERSION = 'db9180012cb408a03d97'
+SCREENING_VERSION = json.loads((ROOT / 'public/screening/latest.json').read_text())['id']
 
 DOWNTOWN_NAMES = {
     'Annex', 'Bay-Cloverhill', 'Cabbagetown-South St.James Town', 'Church-Wellesley',

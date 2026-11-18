@@ -1,7 +1,7 @@
 {
-  "analysis": "db9180012cb408a03d97",
+  "analysis": "741b4221e6cb9ab5a524",
   "planning_snapshot": "8269765c8521a43294ae",
-  "transit_snapshot": "0be13640dc976e5d4977",
+  "transit_snapshot": "051a87c14d446d5ca49c",
   "reviewer_type": "independent computational source reread; not participant testing",
   "cases": [
     {
@@ -457,9 +457,9 @@
     {
       "region": "downtown",
       "case": "nearest",
-      "publisher_number": "18 199835 STE 28 OZ",
+      "publisher_number": "16 232828 STE 27 OZ",
       "record_ids": [
-        "projects:1648"
+        "projects:1474"
       ],
       "checks": {
         "structured_units": true,

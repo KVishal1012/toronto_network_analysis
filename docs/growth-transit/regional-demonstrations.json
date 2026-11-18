@@ -1,14 +1,14 @@
 [
   {
     "region": "downtown",
-    "analysis": "db9180012cb408a03d97",
+    "analysis": "741b4221e6cb9ab5a524",
     "title": "When the shortlist is empty",
-    "link": "#analysis=db9180012cb408a03d97&snapshot=8269765c8521a43294ae&transit=0be13640dc976e5d4977&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=",
+    "link": "#analysis=741b4221e6cb9ab5a524&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=",
     "candidate_areas": 0,
     "dates": {
-      "evening": "2026-10-30",
-      "morning": "2026-10-30",
-      "saturday": "2026-10-31"
+      "evening": "2026-11-13",
+      "morning": "2026-11-13",
+      "saturday": "2026-11-14"
     },
     "selected": [],
     "accounting": {
@@ -21,14 +21,14 @@
   },
   {
     "region": "midtown",
-    "analysis": "db9180012cb408a03d97",
+    "analysis": "741b4221e6cb9ab5a524",
     "title": "Check whether a finding survives a different threshold",
-    "link": "#analysis=db9180012cb408a03d97&snapshot=8269765c8521a43294ae&transit=0be13640dc976e5d4977&region=midtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=1257_9683",
+    "link": "#analysis=741b4221e6cb9ab5a524&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=midtown&stage=all&radius=800&period=morning&minimum=0&gaps=1&areas=1257_9683",
     "candidate_areas": 1,
     "dates": {
-      "evening": "2026-10-30",
-      "morning": "2026-10-30",
-      "saturday": "2026-10-31"
+      "evening": "2026-11-13",
+      "morning": "2026-11-13",
+      "saturday": "2026-11-14"
     },
     "selected": [
       {
@@ -86,7 +86,7 @@
                     "direction": "0",
                     "hourly_departures": [
                       9,
-                      9
+                      10
                     ],
                     "route": "52",
                     "route_name": "52"
@@ -101,7 +101,7 @@
                   {
                     "direction": "0",
                     "hourly_departures": [
-                      8,
+                      7,
                       9
                     ],
                     "route": "52",
