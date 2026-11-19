@@ -23,3 +23,21 @@ export function validStartingVolume(ref:Reference,b:Building):Plot|null{
  for(const factor of [.9,.7,.5,.25,.1])for(const pos of candidates){const p={...initial,x:Math.round(pos.x*100)/100,z:Math.round(pos.z*100)/100,width:Math.max(2,Math.floor(initial.width*factor*100)/100),depth:Math.max(2,Math.floor(initial.depth*factor*100)/100)};if(!polys.some(poly=>corners(p).every(c=>inside(c,poly[0])&&!poly.slice(1).some(h=>inside(c,h)))))continue;try{return validateReplacement(ref,{schema:1,baseline:ref.id,removed:b.id,volume:p}).volume;}catch{}}
  return null;
 }
+
+/** Find a verified collision-free editable building for recovery or demonstration, never switching silently. */
+export function nearestEditableBuilding(ref:Reference,near?:Building):{building:Building;volume:Plot;distance_m:number}|null{
+ const origin=near?initialVolume(near):null;
+ const ranked=ref.buildings
+  .filter(b=>!near||b.id!==near.id)
+  .map(b=>{
+   const c=initialVolume(b);
+   const dist=origin?Math.hypot(c.x-origin.x,c.z-origin.z):0;
+   return {b,dist,area:footprintArea(b)};
+  })
+  .sort((a,b)=>origin?a.dist-b.dist:b.area-a.area);
+ for(const item of ranked){
+  const volume=validStartingVolume(ref,item.b);
+  if(volume)return {building:item.b,volume,distance_m:Math.round(item.dist)};
+ }
+ return null;
+}

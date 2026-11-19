@@ -420,22 +420,23 @@ async function main() {
 
     await page.getByRole('button', { name: /Test 3D replacement at this site/i }).click();
     await page.waitForTimeout(150);
-    // If nearest building overlaps another recorded component, select first collision-free recorded building
-    if ((await page.locator('#a-dim-height').count()) === 0) {
-      const buildingButtons = page.locator('.a-list button');
-      const count = Math.min(15, await buildingButtons.count());
-      for (let i = 0; i < count; i++) {
-        await buildingButtons.nth(i).click();
-        await page.waitForTimeout(100);
-        const replaceBtn = page.getByRole('button', { name: /What if this building were taller or wider/i }).first();
-        if (await replaceBtn.count()) {
-          await replaceBtn.click();
-          await page.waitForTimeout(120);
-          if ((await page.locator('#a-dim-height').count()) > 0) break;
-        }
-      }
-    }
+    // 483 BAY ST's nearest 2025 component overlaps an adjacent massing part: verify strict collision refusal + clear recovery
+    await page.waitForSelector('.a-recovery-box');
+    const recoverBtn = page.locator('.a-recovery-box').getByRole('button', { name: /Switch to nearest editable building/i });
+    assert(await recoverBtn.isVisible(), 'Expected clear recovery button when 3D replacement cannot start');
+    await recoverBtn.click();
     await page.waitForSelector('#a-dim-height');
+    report.recovery3dVerified = true;
+
+    // Reset and verify dependable one-click editable example works in Downtown
+    await page.getByRole('button', { name: /Reset to original/i }).click();
+    await page.waitForTimeout(100);
+    const demoEditBtn = page.getByRole('button', { name: /Try editable example:/i });
+    assert(await demoEditBtn.isVisible(), 'Expected dependable Try editable example button');
+    await demoEditBtn.click();
+    await page.waitForSelector('#a-dim-height');
+    report.editableExample3dVerified = true;
+
     const curHeight = await page.locator('#a-dim-height').inputValue();
     await page.locator('#a-dim-height').fill(String(Math.min(200, Number(curHeight) + 12)));
     await page.getByRole('button', { name: /Apply replacement to 3D view/i }).click();

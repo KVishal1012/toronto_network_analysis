@@ -2,7 +2,7 @@ import {useEffect,useMemo,useRef,useState} from 'react';
 import Scene,{type CameraCommand} from './Scene';
 import Map3DScene,{type Basemap3DMode} from './Map3DScene';
 import type {View3dRegion} from '../planning/toronto-context';
-import {initialVolume,validStartingVolume,validateReplacement,consequences,type Replacement} from './replacement';
+import {initialVolume,nearestEditableBuilding,validStartingVolume,validateReplacement,consequences,type Replacement} from './replacement';
 import type {Plot} from './model';
 import {proposals3d,type Proposal3D} from './proposals-3d';
 import views from './architectural.json';
@@ -142,6 +142,7 @@ export default function ArchitecturalViewer(){
  const [message,setMessage]=useState('');
  const [isError,setIsError]=useState(false);
  const [conflict,setConflict]=useState('');
+ const [blockedRecovery,setBlockedRecovery]=useState<{blockedId:string;conflictId:string;nearest:{buildingId:string;distance_m:number}|null}|null>(null);
  const [announcement,setAnnouncement]=useState(()=>
   initialTarget.matchedProposal
    ?`Highlighted proposal ${initialTarget.matchedProposal.label}: ${initialTarget.matchedProposal.units.toLocaleString()} units, ${initialTarget.matchedProposal.stage}.`
@@ -199,6 +200,17 @@ export default function ArchitecturalViewer(){
  const builtCount=regionProposals.length-unbuiltCount;
 
  const activeProposal=useMemo(()=>regionProposals.find(p=>p.number===selectedProposal)||null,[regionProposals,selectedProposal]);
+ const demoEditableExample=useMemo(()=>{
+  const editableProposal=regionProposals.find(p=>{
+   const b=view.buildings.find(item=>item.id===p.nearestBuildingId);
+   return b&&validStartingVolume(view,b)!==null;
+  });
+  if(editableProposal){
+   return {proposal:editableProposal,buildingId:editableProposal.nearestBuildingId,label:editableProposal.label};
+  }
+  const fallback=nearestEditableBuilding(view);
+  return fallback?{proposal:null,buildingId:fallback.building.id,label:`building ${fallback.building.id}`}:null;
+ },[view,regionProposals]);
  const building=view.buildings.find(b=>b.id===selected);
  const filtered=view.buildings.filter(b=>!search||b.id.toLowerCase().includes(search.toLowerCase())||b.height_source.toLowerCase().includes(search.toLowerCase())||explainHeightSource(b.height_source).toLowerCase().includes(search.toLowerCase()));
  const effects=scenario?consequences(view,scenario):null;
@@ -270,8 +282,10 @@ export default function ArchitecturalViewer(){
   setOriginal(false);
   setMessage('');
   setIsError(false);
+  setConflict('');
+  setBlockedRecovery(null);
   setSearch('');
-  setLimit(30);
+  setLimit(10);
   updateHashParams({model_region:next,proposal:null,cell:null});
   const nextView=views.find(v=>v.region===next);
   const count=proposals3d.filter(p=>p.region===next).length;
@@ -297,18 +311,31 @@ export default function ArchitecturalViewer(){
   if(!fitted){
    setDraft(null);setDraftText(null);setScenario(null);setOriginal(false);
    let conflictId='';try{validateReplacement(view,{schema:1,baseline:view.id,removed:target.id,volume:initialVolume(target)});}catch(e){const text=e instanceof Error?e.message:String(e);conflictId=view.buildings.find(b=>text.includes(`source feature ${b.id}.`))?.id||'';}
-   setConflict(conflictId);announceStatus('No safe starting box fits this source feature. It may overlap other recorded massing components, so replacing this feature alone would leave overlapping geometry. '+(conflictId?`Conflicting feature ${conflictId} is highlighted red. `:'')+'Select another recorded feature; no invalid replacement has been applied.',true);return;
+   const nearest=nearestEditableBuilding(view,target);
+   setConflict(conflictId);
+   setBlockedRecovery({blockedId:target.id,conflictId,nearest:nearest?{buildingId:nearest.building.id,distance_m:nearest.distance_m}:null});
+   announceStatus('No collision-free starting box fits this source feature because it overlaps adjacent recorded massing components. '+(conflictId?`Conflicting feature ${conflictId} is highlighted red. `:'')+'No invalid replacement has been applied. Use a recovery option below to switch to a verified editable site.',true);return;
   }
-  const nextDraft=fitted;setConflict('');
+  const nextDraft=fitted;setConflict('');setBlockedRecovery(null);
   setDraft(nextDraft);
   setDraftText(plotToText(nextDraft));
   setScenario(null);
   setOriginal(false);
-  announceStatus(`${fitted?'Started with a collision-free box; it may be smaller than the existing footprint.':'No safe starting box found. Adjust dimensions and check conflicts before applying.'} Editing a hypothetical box for building ${target.id}${contextLabel?` at ${contextLabel}`:''}. Adjust dimensions below, then select Apply replacement to 3D view.`);
+  announceStatus(`Started with a collision-free box (it may be smaller than the existing footprint). Editing a hypothetical box for building ${target.id}${contextLabel?` at ${contextLabel}`:''}. Adjust dimensions below, then select Apply replacement to 3D view.`);
   requestAnimationFrame(()=>{
    editorHeadingRef.current?.scrollIntoView({behavior:'smooth',block:'nearest'});
    editorHeadingRef.current?.focus();
   });
+ }
+
+ function openEditableExample(){
+  if(!demoEditableExample)return;
+  if(demoEditableExample.proposal){
+   selectProposal(demoEditableExample.proposal);
+   openReplacementForBuilding(demoEditableExample.buildingId,demoEditableExample.label);
+  }else{
+   openReplacementForBuilding(demoEditableExample.buildingId);
+  }
  }
 
  function begin(){
@@ -413,6 +440,8 @@ export default function ArchitecturalViewer(){
   setDraft(null);
   setDraftText(null);
   setOriginal(false);
+  setConflict('');
+  setBlockedRecovery(null);
   announceStatus('Original 2025 building restored in the 3D view.');
  }
 
@@ -718,6 +747,14 @@ export default function ArchitecturalViewer(){
      <section className="a-replacement" aria-labelledby="a-replace-heading">
       <h2 id="a-replace-heading">Test a &ldquo;what-if&rdquo; building replacement</h2>
       <p>Replace the selected 2025 building with a simple rectangular box to compare height, footprint area, and 3D volume while nearby 2025 buildings remain as recorded.</p>
+      {!draft&&demoEditableExample&&(
+       <div className="a-demo-row">
+        <button type="button" className="a-primary-btn" onClick={openEditableExample}>
+         Try editable example: {demoEditableExample.label}
+        </button>
+        <span className="a-demo-hint">Starts with a verified collision-free footprint in {view.name}.</span>
+       </div>
+      )}
       {draft&&draftText&&(
        <div className="a-editor">
         <h3 ref={editorHeadingRef} tabIndex={-1}>Adjust your hypothetical building box{building?` (replacing ${building.id})`:''}</h3>
@@ -754,6 +791,38 @@ export default function ArchitecturalViewer(){
        <button type="button" disabled={!draft&&!scenario} onClick={restoreOriginal}>Reset to original</button>
       </div>
       {message&&<p className={`a-message${isError?' is-error':''}`}>{message}</p>}
+      {blockedRecovery&&(
+       <div className="a-recovery-box" role="region" aria-label="Replacement recovery options">
+        <p>
+         <strong>Why replacement could not start for {blockedRecovery.blockedId}:</strong> City 3D massing records
+         complex podium/tower buildings as overlapping parts, so removing one component leaves overlapping geometry
+         {blockedRecovery.conflictId?` (${blockedRecovery.conflictId} highlighted red)`:''}. Collision checks stay active—choose a verified editable site to continue:
+        </p>
+        <div className="a-recovery-actions">
+         {blockedRecovery.nearest&&(
+          <button
+           type="button"
+           className="a-primary-btn"
+           onClick={()=>{
+            setSelectedProposal('');
+            updateHashParams({proposal:null});
+            openReplacementForBuilding(blockedRecovery.nearest!.buildingId);
+           }}
+          >
+           Switch to nearest editable building ({blockedRecovery.nearest.buildingId}, ~{blockedRecovery.nearest.distance_m} m away)
+          </button>
+         )}
+         {demoEditableExample&&demoEditableExample.buildingId!==blockedRecovery.nearest?.buildingId&&(
+          <button type="button" onClick={openEditableExample}>
+           Open editable example ({demoEditableExample.label})
+          </button>
+         )}
+         <button type="button" onClick={()=>{setBlockedRecovery(null);setConflict('');setMessage('');setIsError(false);}}>
+          Dismiss
+         </button>
+        </div>
+       </div>
+      )}
       {effects&&(
        <>
         <div className="a-table-wrap">

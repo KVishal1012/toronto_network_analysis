@@ -1,26 +1,27 @@
 {
-  "build_id": "caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68",
+  "build_id": "57c21b7d60082952986093d9f828bc93b92ec359328bee5b3d0b65a8758bd74c",
   "analysis": "741b4221e6cb9ab5a524",
   "passed": true,
-  "reviewer": "Automated Playwright + Chromium headless verification against dist-public; no human participant sessions",
+  "reviewer": "Automated Playwright + Chromium headless verification + visual PDF inspection against final dist-public; human screen-reader and participant sessions remain separate",
   "checks": {
-    "above_fold": "passed: first area card (Near 300 BOROUGH DR) starts at y=571 px on 1440x900 side-by-side with the interactive city-wide Toronto map above the fold",
-    "citywide_scope": "passed: expanded to All Toronto (1,281 included proposals across 601 cells) and 4 Community Councils (Toronto & East York 575, North York 330, Scarborough 191, Etobicoke York 185) plus Downtown (228) and Midtown (140) on current Nov 13-14 TTC GTFS feed (transit_snapshot 051a87c14d446d5ca49c); Kingston Rd (12 matches), Etobicoke (12 matches), Moss Park (6 matches), and Scarborough council switching verified",
+    "above_fold": "passed: first area card (Near 300 BOROUGH DR) starts at y=574 px on 1440x900 side-by-side with the interactive city-wide Toronto map above the fold",
+    "citywide_scope": "passed: All Toronto (1,281 included proposals across 601 cells) and 4 Community Councils (Toronto & East York 575, North York 330, Scarborough 191, Etobicoke York 185) plus Downtown (228) and Midtown (140) on Nov 13-14 TTC GTFS feed (transit_snapshot 051a87c14d446d5ca49c); Kingston Rd (12 matches), Etobicoke (12 matches), Moss Park (6 matches), Scarborough 400 m & North York 800 m quick examples verified",
     "cross_region_comparison": "passed: pinned-hash reload (#analysis=741b4221e6cb9ab5a524&snapshot=8269765c8521a43294ae&transit=051a87c14d446d5ca49c&region=downtown&stage=all&radius=800&period=morning&minimum=0&gaps=0&areas=1259_9681%2C1263_9669) restored selected comparison areas cleanly",
-    "map": "passed: offline MapLibre city-wide Toronto street map opens by default on /, renders expressways/arterials/parks/Lake Ontario, TTC Lines 1/2/4/5 & stations, spaced council neighbourhood labels, 1,281 proposal pins, 53 DOM labels/stations, lazy per-council street/park detail chunks, and 0 external failedUrls",
-    "modelling": "passed: #view=3d preserves Downtown City Hall (3 pins) and Yonge-Eglinton (19 pins) 3D Street Map windows, 2180 YONGE ST & 483 BAY ST inspection, replacement workflow, Compare transit for this area on Page 1 deep-link (#region=downtown&areas=1260_9669), and 3D Massing Studio toggle",
-    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 f2fe17aa4967ce96957cfe2ac1c53c52d5cf07661070b84ddfffb446629479f9)",
-    "print": "passed: headless Chromium @media print layout (.g-no-print hidden, .g-print-header and .g-print-proposals visible, overflowX false) and PDF generation verified (/tmp/aster-brief-verify.pdf 801580 bytes; /tmp/aster-3d-verify.pdf 521530 bytes)",
-    "wcag_automated": "passed: landmarks, sequential headings (27 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); human assistive-technology session remains separate",
+    "map": "passed: offline MapLibre city-wide Toronto street map opens by default on /, renders southern Lake Ontario shoreline distinct from neutral GTA land, deduplicated collision-culled street/neighbourhood/station labels (31 neighbourhood labels), orange-on-top proposal pins, lazy per-council street/park detail chunks, and 0 external failedUrls",
+    "inline_energy_water": "passed: Energy & Water section starts collapsed by default on /, expands via Show energy & water controls, and switches to Reported water intensity (m³/m²/year) cleanly",
+    "modelling": "passed: #view=3d preserves Downtown City Hall (3 pins) and Yonge-Eglinton (19 pins) 3D Street Map windows, 483 BAY ST & 2180 YONGE ST inspection, strict collision refusal with one-click nearest-editable-building recovery (.a-recovery-box), dependable one-click editable example (Try editable example), replacement apply & JSON export, Compare transit for this area on Page 1 deep-link (#region=downtown&areas=1260_9669), and 3D Massing Studio toggle",
+    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 49bcf362e67a26e0c672d5c0a0a0457975c7e9c3786b894096a8b4d5828a813a)",
+    "print": "passed: headless Chromium @media print layout (.g-no-print hidden, .g-print-header and .g-print-proposals visible, overflowX false) and 7-page PDF visually inspected and hash-archived (794,363 bytes; 3D PDF 548,605 bytes)",
+    "wcag_automated": "passed: landmarks, sequential headings (34 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); actual human screen-reader session remains outstanding",
     "mobile": "passed: 390x844 viewport verified with zero horizontal overflow (scrollWidth 390 === innerWidth 390) on both / and /#view=3d",
     "console_and_page_errors": "passed: 0 pageErrors, 0 failedUrls (only expected local static server /favicon.ico 404)"
   },
-  "export_sha256": "f2fe17aa4967ce96957cfe2ac1c53c52d5cf07661070b84ddfffb446629479f9",
+  "export_sha256": "49bcf362e67a26e0c672d5c0a0a0457975c7e9c3786b894096a8b4d5828a813a",
   "pdf": {
     "passed": true,
-    "path": "data/growth-qualification/caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68/aster-brief-verify.pdf",
-    "sha256": "0805c40c7036d0fa3497fee66ecf89c7803ef42a896952c888e9edcafe51b2ab",
-    "bytes": 794365
+    "path": "data/growth-qualification/57c21b7d60082952986093d9f828bc93b92ec359328bee5b3d0b65a8758bd74c/aster-brief-verify.pdf",
+    "sha256": "de4961b36931badf42f34fbf460d41bce5ee193279a0ede6ca34b5b48238abf2",
+    "bytes": 794363
   },
   "screenshot": "/tmp/aster-integrated-brief.png"
 }

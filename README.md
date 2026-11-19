@@ -174,3 +174,9 @@ In **World state**, click **Choose terrain location**, then click a point on the
 Main component boundaries are projected from EPSG:4326 to local EPSG:2952, clipped to the study window, split at displayed terrain triangle boundaries and assigned barycentrically interpolated CGVD2013 elevations. Segments outside terrain coverage are omitted. Changing LOD resamples these traces onto that display mesh. Dark outlines denote components; amber denotes source geometry repairs. Outlines are drawn as an inspection overlay, not a physical building model; no building height field is used. Conflicts remain separately inspectable in World state.
 
 Click an outline or use the component selector below the scene for source identity, original records, repair audit, missing information and verification/height definitions. Component count limits and omissions are disclosed. The scene API is `/api/terrain/scene?lon=...&lat=...&spacing=0` (also 10/20/40); six recent scenes are cached locally.
+
+## Licence
+
+- **Code:** Original ASTER application, pipeline, and builder code is licensed under the [MIT License](LICENSE).
+- **Open data:** City of Toronto datasets remain under the [Open Government Licence – Toronto](https://open.toronto.ca/open-data-license/); Ontario EWRB datasets remain under the [Open Government Licence – Ontario](https://www.ontario.ca/page/open-government-licence-ontario).
+- **Third-party packages:** Retain their respective licences (see `docs/planning-third-party-notices.md`).

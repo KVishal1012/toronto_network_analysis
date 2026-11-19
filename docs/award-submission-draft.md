@@ -3,7 +3,7 @@
 **Project:** ASTER — Toronto Housing, Transit & 3D Explorer  
 **Category:** Open Data Applications  
 **Public URL (once GitHub Pages is enabled on `gh-pages`):** https://kvishal1012.github.io/toronto_network_analysis/  
-**Source code:** https://github.com/KVishal1012/toronto_network_analysis  
+**Source code:** https://github.com/KVishal1012/toronto_network_analysis (MIT License; see repository `LICENSE`)  
 **Active branch:** `codex/aster-toronto-explorer` (static site pushed to `gh-pages`)  
 **Funding:** Grassroots / self-funded  
 **Student eligibility:** Not claimed  
