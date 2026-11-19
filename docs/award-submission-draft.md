@@ -56,7 +56,7 @@ All datasets are licensed under the **Open Government Licence – Toronto** (or 
 
 ## Quality, transparency & honest limits
 
-- **Verified on the shipped package (`57c21b7d...`):** Every included count and TTC distance is independently audited against raw source files, and automated Playwright checks + visual 7-page PDF review verify WCAG 2.1 AA contrast, landmarks, keyboard navigation, zero horizontal overflow on mobile (`390×844`), and clean `@media print` output.
+- **Verified on the shipped package (`4c8c2a56...`):** Every included count and TTC distance is independently audited against raw source files, and automated Playwright checks + visual 7-page PDF review verify WCAG 2.1 AA contrast, landmarks, keyboard navigation, zero horizontal overflow on mobile (`390×844`), and clean `@media print` output.
 - **Explicit product & analytical limits:**
   - **Information-heavy interface:** Because ASTER keeps methodology, source dates, and excluded records inspectable alongside maps and comparisons, the main page is denser than a simplified consumer map (Energy & Water starts collapsed by default to keep the primary flow focused).
   - **Bounded 3D coverage:** While 2D housing and TTC screening covers all 158 Toronto neighbourhoods, `#view=3d` covers only two bounded 600 × 600 m examples (`Downtown · City Hall` and `Midtown · Yonge–Eglinton`).

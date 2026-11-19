@@ -461,23 +461,27 @@ export default function ArchitecturalViewer(){
     <strong>Toronto · 3D Building &amp; Proposal Explorer</strong>
     <button type="button" className="a-back-btn" onClick={back}>← Back to planning &amp; transit</button>
    </header>
-   <div className="a-workspace">
-    <aside aria-label="Neighbourhood area, housing proposals, and recorded buildings">
+   <div className="a-topbar">
+    <div className="a-topbar-copy">
      <p className="a-eyebrow">TORONTO 2025 3D MASSING · HOUSING PIPELINE</p>
      <h1>Explore Toronto buildings &amp; proposals in 3D.</h1>
+    </div>
+    <div className="a-regions" role="group" aria-label="3D neighbourhood study area">
+     <button type="button" aria-pressed={region==='downtown'} onClick={()=>changeRegion('downtown')}>Downtown · City Hall</button>
+     <button type="button" aria-pressed={region==='midtown'} onClick={()=>changeRegion('midtown')}>Midtown · Yonge–Eglinton</button>
+    </div>
+   </div>
+   <div className="a-workspace">
+    <aside aria-label="Neighbourhood area, housing proposals, and recorded buildings">
      <p>Inspect real City housing proposals alongside recorded 2025 building footprints around City Hall or Yonge–Eglinton, then test what a replacement massing might look like.</p>
      <section className="a-guide" aria-labelledby="a-guide-heading">
       <h2 id="a-guide-heading">What you can do here</h2>
       <ol>
-       <li>Pick <strong>City Hall</strong> or <strong>Yonge–Eglinton</strong> below.</li>
+       <li>Pick <strong>City Hall</strong> or <strong>Yonge–Eglinton</strong> above.</li>
        <li>Select any <strong>red proposal pin</strong> or <strong>2025 building</strong> to check height and TTC service.</li>
        <li>Click <strong>Test 3D replacement at this site</strong> or compare transit on Page 1.</li>
       </ol>
      </section>
-     <div className="a-regions" role="group" aria-label="3D neighbourhood study area">
-      <button type="button" aria-pressed={region==='downtown'} onClick={()=>changeRegion('downtown')}>Downtown · City Hall</button>
-      <button type="button" aria-pressed={region==='midtown'} onClick={()=>changeRegion('midtown')}>Midtown · Yonge–Eglinton</button>
-     </div>
      <dl className="a-facts">
       <dt>Area shown</dt>
       <dd>600 × 600 m local neighbourhood</dd>

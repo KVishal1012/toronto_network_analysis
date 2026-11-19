@@ -123,6 +123,29 @@
   cursor: not-allowed;
 }
 
+.architecture .a-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 20px;
+  padding: 14px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #c5d1d3;
+}
+
+.architecture .a-topbar-copy h1 {
+  margin: 4px 0 0;
+  font-size: clamp(20px, 2.1vw, 26px);
+}
+
+.architecture .a-topbar .a-regions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
 .architecture .a-workspace {
   display: grid;
   grid-template-columns: 340px minmax(0, 1fr);
@@ -755,6 +778,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  align-items: end;
   margin: 14px 0 16px;
 }
 

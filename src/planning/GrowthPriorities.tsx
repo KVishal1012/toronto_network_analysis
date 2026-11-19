@@ -732,7 +732,7 @@ export default function GrowthPriorities(){
                           </button>
                         </div>
                       )}
-                      {searchMatches.length===0&&neighbourhoodHint&&(
+                      {searchMatches.length===0&&otherRegionMatches.length===0&&neighbourhoodHint&&(
                         <div className="g-search-recovery">
                           <p>
                             <strong>{neighbourhoodHint.name}</strong> is inside the{' '}
