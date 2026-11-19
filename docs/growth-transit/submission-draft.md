@@ -17,9 +17,15 @@ Across all **2,391** City Development Pipeline records (**1,281** geolocatable p
 
 Residents can search any street, neighbourhood, or project number, test `400 m` / `800 m` / `1,600 m` rings across morning, evening, and Saturday timetables, add local context (sidewalks, crossings, bus crowding), and export a clean **Print / Save as PDF** community brief, a reproducible **JSON** package, or a hash-pinned shareable URL. Optional views let users inspect Downtown (`City Hall`) and Midtown (`Yonge–Eglinton`) proposals in **3D** against 2025 City building massing, or attach **2024 Energy & Water** baselines (`2,451` Toronto-wide Ontario EWRB properties and `247` City municipal facilities) as clearly scoped baseline context.
 
-## Quality & honest scope
+## Quality & honest limits
 
-All calculations are independently cross-checked against raw City and TTC open datasets, and automated browser checks verify WCAG 2.1 AA contrast, keyboard navigation, mobile layout (`390×844`), and clean print/PDF output. ASTER is explicit about what open data cannot establish: straight-line distance does not measure walking safety, crowding, or vehicle capacity; departure spacing within each hour is not assessed; and pipeline proposals do not guarantee future construction.
+All calculations are independently cross-checked against raw City and TTC open datasets, and automated browser + visual PDF checks against the shipped build (`57c21b7d...`) verify WCAG 2.1 AA contrast, keyboard navigation, mobile layout (`390×844`), and clean print/PDF output.
+
+**Honest limitations disclosed upfront:**
+- **Information density:** ASTER prioritizes source traceability and explicit exclusions over a stripped-down UI, so the interface remains information-heavy (optional Energy & Water baselines start collapsed by default).
+- **Bounded 3D scope & geometry-only scenarios:** `#view=3d` covers two bounded 600 × 600 m examples (`Downtown · City Hall` and `Midtown · Yonge–Eglinton`), not all of Toronto, and replacement boxes describe geometric changes (height, footprint area, 3D volume with collision checks) rather than validated traffic, shadow, zoning, or energy consequences.
+- **Transit & pipeline limits:** Straight-line distance does not measure walking safety, crowding, or vehicle capacity; departure spacing within each hour is not assessed; and pipeline proposals do not guarantee future construction.
+- **Unverified human gates:** Actual human screen-reader testing (VoiceOver/NVDA) and independent community impact/participant sessions have not yet been completed and remain explicitly disclosed as unverified (`blocked` in `release-report.json`); no claim of measured adoption or policy outcome is made.
 
 ## 90-second demonstration
 

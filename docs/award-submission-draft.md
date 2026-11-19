@@ -2,7 +2,7 @@
 
 **Project:** ASTER — Toronto Housing, Transit & 3D Explorer  
 **Category:** Open Data Applications  
-**Public URL (once GitHub Pages is enabled on `gh-pages`):** https://kvishal1012.github.io/toronto_network_analysis/  
+**Public URL (live):** https://kvishal1012.github.io/toronto_network_analysis/  
 **Source code:** https://github.com/KVishal1012/toronto_network_analysis (MIT License; see repository `LICENSE`)  
 **Active branch:** `codex/aster-toronto-explorer` (static site pushed to `gh-pages`)  
 **Funding:** Grassroots / self-funded  
@@ -38,7 +38,7 @@ Across all **2,391** City Development Pipeline records (**1,281** geolocatable p
 2. **Bring evidence to a community meeting or council deputation:**
    - Add local notes (such as sidewalk barriers, crossings, or bus crowding that timetables don't capture), then click **Print / Save as PDF** for a clean formatted brief, **Export JSON** for a reproducible data package, or **Copy reproducible link** to share the exact filters and snapshot.
 3. **Inspect 3D building context (`/#view=3d`) & optional 2024 energy/water baselines:**
-   - Jump directly from Downtown (`City Hall`, 307 2025 buildings, 3 proposals) and Midtown (`Yonge–Eglinton`, 565 2025 buildings, 19 proposals) records into an interactive **3D Street Map** (`MapLibre`) or **3D Massing Studio** (`Three.js`) to inspect recorded 2025 heights and jump back to transit tables.
+   - Jump directly from Downtown (`City Hall`, 307 2025 buildings, 3 proposals) and Midtown (`Yonge–Eglinton`, 516 2025 buildings, 19 proposals) records into an interactive **3D Street Map** (`MapLibre`) or **3D Massing Studio** (`Three.js`) to inspect recorded 2025 heights, test a collision-checked geometric replacement box (with one-click recovery on overlapping massing parts), and jump back to transit tables.
    - Optionally expand **Reported energy & water evidence** on the main page to attach 2024 Toronto-wide Ontario EWRB building-cohort benchmarks (**2,451** properties across 35 types, including **1,614** Multifamily Housing records with water intensity, energy, and GHG quartiles) or **247** City of Toronto municipal facility meter baselines directly to a community brief—clearly scoped as 2024 baseline context, never fabricated as future building predictions.
 
 ---
@@ -56,9 +56,13 @@ All datasets are licensed under the **Open Government Licence – Toronto** (or 
 
 ## Quality, transparency & honest limits
 
-- **Built for reliability and accessibility:** Every included count and TTC distance is independently audited against raw source files, and automated browser checks verify WCAG 2.1 AA contrast, keyboard navigation, zero horizontal overflow on mobile (`390×844`), and clean `@media print` PDF output.
-- **Clear about what open data cannot tell you:** Straight-line proximity does not measure sidewalk safety, crossings, crowding, or bus/train capacity; reported unit counts reflect City structured fields rather than confirmed built homes; and departure spacing within each hour is not assessed.
-- **Next human validation steps before final submission:** Confirm live GitHub Pages deployment, run a quick VoiceOver check, and log 3–5 resident walkthroughs so real community feedback is reflected in the final entry.
+- **Verified on the shipped package (`57c21b7d...`):** Every included count and TTC distance is independently audited against raw source files, and automated Playwright checks + visual 7-page PDF review verify WCAG 2.1 AA contrast, landmarks, keyboard navigation, zero horizontal overflow on mobile (`390×844`), and clean `@media print` output.
+- **Explicit product & analytical limits:**
+  - **Information-heavy interface:** Because ASTER keeps methodology, source dates, and excluded records inspectable alongside maps and comparisons, the main page is denser than a simplified consumer map (Energy & Water starts collapsed by default to keep the primary flow focused).
+  - **Bounded 3D coverage:** While 2D housing and TTC screening covers all 158 Toronto neighbourhoods, `#view=3d` covers only two bounded 600 × 600 m examples (`Downtown · City Hall` and `Midtown · Yonge–Eglinton`).
+  - **Geometry-only 3D replacements:** The 3D "what-if" box checks footprint collisions and compares height, ground area, and 3D volume only—it does not model validated traffic, transit crowding, shadows, wind, zoning, or energy/water consequences.
+  - **Straight-line screening & pipeline uncertainty:** Straight-line proximity does not measure sidewalk safety, crossings, crowding, or vehicle capacity; departure spacing within each hour is not assessed; and Development Pipeline records reflect structured City fields rather than confirmed built homes.
+- **Unverified human gates (disclosed candidly):** Dedicated human screen-reader testing (VoiceOver/NVDA) and independent resident participant sessions have not yet been completed (`screen_reader` and `participants` remain explicitly `blocked` in `docs/growth-transit/release-report.json`). No claim of measured community adoption or policy impact is made.
 
 ---
 
