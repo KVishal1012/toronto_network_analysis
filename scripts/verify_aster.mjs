@@ -323,10 +323,15 @@ async function main() {
     await mapBtn.click();
     await page.waitForSelector('.g-map-section .maplibregl-canvas');
 
-    // 6b. Inline Energy & Water evidence section check (including Water intensity metric pill)
+    // 6b. Inline Energy & Water evidence section check (collapsed by default, expandable on demand)
     await page.waitForSelector('#energy-evidence');
+    const energyToggle = page.locator('#energy-evidence .energy-collapse-btn');
+    if (await energyToggle.isVisible() && (await energyToggle.getAttribute('aria-expanded')) === 'false') {
+      await energyToggle.click();
+      await page.waitForTimeout(150);
+    }
     const waterPill = page.locator('#energy-evidence').getByRole('button', { name: /Water intensity/i });
-    assert(await waterPill.isVisible(), 'Expected inline Water intensity quick metric pill to be visible on main page');
+    assert(await waterPill.isVisible(), 'Expected inline Water intensity quick metric pill to be visible after expanding Energy & Water section');
     await waterPill.click();
     await page.waitForTimeout(150);
     const energySectionText = await page.locator('#energy-evidence').textContent();

@@ -134,7 +134,7 @@ export default function ArchitecturalViewer(){
  const [stageFilter,setStageFilter]=useState<StageFilter>('all');
  const [search,setSearch]=useState('');
  const [reset,setReset]=useState(0);
- const [limit,setLimit]=useState(30);
+ const [limit,setLimit]=useState(10);
  const [draft,setDraft]=useState<Plot|null>(null);
  const [draftText,setDraftText]=useState<DraftText|null>(null);
  const [scenario,setScenario]=useState<Replacement|null>(null);
@@ -441,7 +441,7 @@ export default function ArchitecturalViewer(){
       <h2 id="a-guide-heading">What you can do here</h2>
       <ol>
        <li>Pick <strong>City Hall</strong> or <strong>Yonge–Eglinton</strong> below.</li>
-       <li>Select any <strong>coral proposal pin</strong> or <strong>2025 building</strong> to check height and TTC service.</li>
+       <li>Select any <strong>red proposal pin</strong> or <strong>2025 building</strong> to check height and TTC service.</li>
        <li>Click <strong>Test 3D replacement at this site</strong> or compare transit on Page 1.</li>
       </ol>
      </section>
@@ -640,7 +640,7 @@ export default function ArchitecturalViewer(){
        <button type="button" onClick={()=>runCamera('zoom-in')} aria-label="Zoom in on 3D view">+ Zoom in</button>
        <button type="button" onClick={()=>runCamera('zoom-out')} aria-label="Zoom out on 3D view">− Zoom out</button>
       </div>
-      <p className="a-navigation"><strong>Controls:</strong> Drag to rotate · Right-drag to pan · Scroll to zoom · Click a coral pin or building to inspect. <strong>Keyboard:</strong> use the camera buttons above, or focus the 3D view and press Arrow keys, + / −, and 0 to reset. North is toward the back at reset.</p>
+      <p className="a-navigation"><strong>Controls:</strong> {viewMode==='cad'?'Drag to rotate · Right-drag to pan':'Drag to pan · Right-drag to rotate and tilt'} · Scroll to zoom · Click a red pin or building to inspect. <strong>Keyboard:</strong> use the camera buttons above, or focus the 3D view and press Arrow keys, + / −, and 0 to reset. North is toward the back at reset.</p>
       <ul className="a-legend" aria-label="3D view colour key">
        <li><span className="a-swatch a-swatch-baseline" aria-hidden="true"/>Recorded 2025 building</li>
        <li><span className="a-swatch a-swatch-selected" aria-hidden="true"/>Selected building footprint</li>
@@ -710,7 +710,7 @@ export default function ArchitecturalViewer(){
       ):(
        <>
         <h2 id="a-inspect-heading">Select a proposal or building to inspect</h2>
-        <p>Click any coral proposal pin or 2025 building in the 3D view above, or pick one from the sidebar lists to inspect nearby TTC service and test a replacement box.</p>
+        <p>Click any red proposal pin or 2025 building in the 3D view above, or pick one from the sidebar lists to inspect nearby TTC service and test a replacement box.</p>
        </>
       )}
      </section>

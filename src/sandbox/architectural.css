@@ -631,14 +631,14 @@
 }
 
 .architecture .a-swatch-proposal {
-  background: #d6336c;
-  border: 1px solid #8c143e;
+  background: #b42318;
+  border: 1px solid #7a1610;
   border-radius: 50%;
 }
 
 .architecture .a-swatch-proposal-selected {
-  background: #b8004c;
-  border: 2px solid #946b00;
+  background: #0f3d44;
+  border: 2px solid #ffd166;
   border-radius: 50%;
 }
 
@@ -883,6 +883,7 @@
   }
 
   .architecture main {
+    order: -1;
     padding: 16px;
   }
 

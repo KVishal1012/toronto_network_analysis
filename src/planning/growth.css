@@ -93,9 +93,13 @@ body:has(.growth){margin:0}
 .g-nav a{
   font-weight:600;
   font-size:15px;
-  min-height:44px;
+  min-height:40px;
   display:inline-flex;
   align-items:center;
+  text-decoration:none;
+}
+.g-nav a:hover,.g-nav a:focus-visible{
+  text-decoration:underline;
 }
 
 .growth main,.growth footer{
@@ -104,7 +108,7 @@ body:has(.growth){margin:0}
   padding:0 24px;
 }
 
-.g-hero{padding:12px 0 8px}
+.g-hero{padding:10px 0 6px}
 .g-eyebrow{
   font-size:11px;
   font-weight:750;
@@ -153,6 +157,7 @@ details:not([open])>summary .g-chevron{
 }
 .growth ::placeholder{
   color:#4f6861;
+  font-weight:400;
   opacity:1;
 }
 .g-how-bar>summary{
@@ -227,10 +232,10 @@ details:not([open])>summary .g-chevron{
 
 .g-controls{
   border:1px solid var(--line);
-  padding:14px 18px;
+  padding:12px 16px;
   background:#fff;
   border-radius:10px;
-  margin-top:6px;
+  margin-top:4px;
 }
 .g-controls-top{
   display:grid;
@@ -278,6 +283,7 @@ details:not([open])>summary .g-chevron{
   border-radius:5px;
   margin-top:6px;
   font-size:14px;
+  font-weight:400;
 }
 .g-controls select{
   max-width:100%;
@@ -285,14 +291,12 @@ details:not([open])>summary .g-chevron{
   line-height:1.25;
   appearance:none;
   -webkit-appearance:none;
+  -moz-appearance:none;
   padding-right:30px;
   text-overflow:ellipsis;
   white-space:nowrap;
   overflow:hidden;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2317312c' d='M1.4 1.4 6 6l4.6-4.6L12 2.8 6 8.8 0 2.8z'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;
-  background-position:right 10px center;
-  background-size:11px 7px;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath stroke='%2317312c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M1.5 1.5 6 6.2 10.5 1.5'/%3E%3C/svg%3E") no-repeat right 10px center / 11px 7px;
 }
 
 .g-controls-bottom{
@@ -700,6 +704,14 @@ details:not([open])>summary .g-chevron{
   margin-top:34px;
   border-top:1px solid var(--line);
   padding-top:24px;
+}
+.g-compare-empty{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:14px 16px;
+  color:var(--muted);
+  margin:10px 0 0;
 }
 .g-comparisons{
   display:grid;

@@ -34,21 +34,20 @@ const AreaMap=lazy(()=>import('./AreaMap'));
 const EnergyPanel=lazy(()=>import('./EnergyPanel'));
 const display=(n:number)=>n.toLocaleString();
 const outsideKeywords=[
-  'north york',
-  'scarborough',
-  'etobicoke',
-  'east york',
-  'york',
   'mississauga',
   'vaughan',
   'markham',
   'brampton',
-  'sheppard',
-  'finch',
-  'steeles',
-  'lawrence east',
-  'eglinton east',
-  'kingston rd',
+  'richmond hill',
+  'oakville',
+  'pickering',
+  'ajax',
+  'whitby',
+  'oshawa',
+  'burlington',
+  'milton',
+  'newmarket',
+  'aurora',
 ];
 
 export default function GrowthPriorities(){
@@ -58,7 +57,7 @@ export default function GrowthPriorities(){
   const [initial]=useState(()=>parseScreeningLink(location.hash));
   const [originalPins]=useState(()=>new URLSearchParams(location.hash.slice(1)));
   const [energyPins,setEnergyPins]=useState(()=>parseEnergyPins(location.hash));
-  const [showEnergy,setShowEnergy]=useState(true);
+  const [showEnergy,setShowEnergy]=useState(()=>new URLSearchParams(location.hash.slice(1)).has('energy'));
   const [energyBrief,setEnergyBrief]=useState<EnergyBrief|null>(null);
   const [provider]=useState(createScreeningProvider);
   const [manifest,setManifest]=useState<ScreeningManifest|null>(null);
@@ -77,7 +76,7 @@ export default function GrowthPriorities(){
   const [search,setSearch]=useState('');
   const [showMap,setShowMap]=useState(()=>!window.matchMedia('(max-width:640px)').matches);
 
-  const otherRegion=filters.region==='all-toronto'?'downtown':'all-toronto';
+  const otherRegion=filters.region==='all-toronto'?null:'all-toronto';
 
   useEffect(()=>{
     const onHashChange=()=>{
@@ -100,8 +99,9 @@ export default function GrowthPriorities(){
     provider
       .init(initial.version)
       .then(m=>{
-        if(originalPins.get('region')==='north-york'&&!m.regions.some(r=>r.id==='north-york')){
-          throw new Error('North York is outside this submission. Your original link has not been reinterpreted. Open the home page to choose Downtown or Midtown.');
+        const originalRegion=originalPins.get('region');
+        if(originalRegion&&!m.regions.some(r=>r.id===originalRegion)){
+          throw new Error(`Region "${originalRegion}" is not available in this snapshot. Your original link has not been reinterpreted. Open the home page to choose an available Toronto study region.`);
         }
         if(
           (originalPins.get('snapshot')&&originalPins.get('snapshot')!==m.planning_snapshot)||
@@ -178,7 +178,7 @@ export default function GrowthPriorities(){
     const q=search.trim();
     if(!manifest||q.length<2||searchMatches.length>0)return;
     let live=true;
-    if(!otherAreas[otherRegion]){
+    if(otherRegion&&!otherAreas[otherRegion]){
       provider
         .region(otherRegion)
         .then(rows=>{
@@ -199,7 +199,7 @@ export default function GrowthPriorities(){
 
   const otherRegionMatches=useMemo(()=>{
     const q=search.trim();
-    if(!q||searchMatches.length>0)return[];
+    if(!q||!otherRegion||searchMatches.length>0)return[];
     return (otherAreas[otherRegion]||[]).filter(a=>matchesAreaSearch(a,q,cellNeighbourhoods[a.id]));
   },[otherAreas,otherRegion,search,searchMatches.length]);
 
@@ -451,6 +451,34 @@ export default function GrowthPriorities(){
 
             <div className="g-examples-inline" aria-label="Quick examples">
               <span className="g-examples-label">Try example:</span>
+              <a
+                href={manifest?shareHash(manifest,{region:'scarborough',stage:'all',radius:400,period:'morning',minimum:0,onlyGaps:true},['1282_9685']):'#region=scarborough&radius=400&gaps=1'}
+                className="g-example-pill"
+                onClick={e=>{
+                  e.preventDefault();
+                  openDemo({
+                    region:'scarborough',
+                    link:manifest?shareHash(manifest,{region:'scarborough',stage:'all',radius:400,period:'morning',minimum:0,onlyGaps:true},['1282_9685']):'#region=scarborough&radius=400&gaps=1',
+                    analysis:manifest?.id,
+                  });
+                }}
+              >
+                Scarborough 400 m
+              </a>
+              <a
+                href={manifest?shareHash(manifest,{region:'north-york',stage:'all',radius:800,period:'morning',minimum:0,onlyGaps:true},['1257_9683','1260_9688']):'#region=north-york&radius=800&gaps=1'}
+                className="g-example-pill"
+                onClick={e=>{
+                  e.preventDefault();
+                  openDemo({
+                    region:'north-york',
+                    link:manifest?shareHash(manifest,{region:'north-york',stage:'all',radius:800,period:'morning',minimum:0,onlyGaps:true},['1257_9683','1260_9688']):'#region=north-york&radius=800&gaps=1',
+                    analysis:manifest?.id,
+                  });
+                }}
+              >
+                North York 800 m
+              </a>
               {demos
                 .filter(d=>(submissionRegions as readonly string[]).includes(d.region))
                 .map(d=>{
@@ -469,9 +497,6 @@ export default function GrowthPriorities(){
                     </a>
                   );
                 })}
-              <a href={view3dHash} className="g-example-pill">
-                Toronto 3D ↗
-              </a>
             </div>
           </div>
         </section>
@@ -647,6 +672,7 @@ export default function GrowthPriorities(){
               )}
 
             <section id="growth-results" className="g-results g-no-print" tabIndex={-1} aria-labelledby="g-results-title">
+              <p className="g-eyebrow">01 · EXPLORE AREAS</p>
               <div className="g-section-heading">
                 <h2 id="g-results-title">
                   {filters.onlyGaps
@@ -688,7 +714,7 @@ export default function GrowthPriorities(){
                           </button>
                         </div>
                       )}
-                      {searchMatches.length===0&&otherRegionMatches.length>0&&(
+                      {searchMatches.length===0&&otherRegion&&otherRegionMatches.length>0&&(
                         <div className="g-search-recovery">
                           <p>
                             Found <strong>{otherRegionMatches.length}</strong> matching{' '}
@@ -729,8 +755,8 @@ export default function GrowthPriorities(){
                       )}
                       {searchMatches.length===0&&outsideTermMatch&&(
                         <p>
-                          <strong>Outside current coverage:</strong> This public release covers Downtown (13
-                          neighbourhoods) and Midtown (11 neighbourhoods) only.
+                          <strong>Outside City of Toronto coverage:</strong> This release covers all 158 City of
+                          Toronto neighbourhoods across the 4 Community Councils, not neighbouring GTA municipalities.
                         </p>
                       )}
                       {searchMatches.length===0&&outcomeMatches.length>0&&(
@@ -793,7 +819,7 @@ export default function GrowthPriorities(){
                         </span>
                       </div>
                       <p className="g-card-eyebrow">
-                        {neighbourhood} · Cell {area.id}
+                        {neighbourhood}
                       </p>
                       <h3>Near {area.label}</h3>
                       <p className="g-big">{display(filters.onlyGaps?lackingUnits:units)}</p>
@@ -880,9 +906,9 @@ export default function GrowthPriorities(){
 
                   <p>
                     <strong>Completeness &amp; exclusions ({activeRegionLabel}):</strong> All{' '}
-                    {display(manifest.accounting.input_records)} City source rows are accounted for. Because Downtown
-                    and Midtown study areas can touch overlapping neighbourhood boundaries, do not add regional counts
-                    together.
+                    {display(manifest.accounting.input_records)} City source rows are accounted for. Because Community
+                    Council and focus views can overlap across shared neighbourhood boundaries, do not add regional
+                    counts together.
                   </p>
                   <ul>
                     {Object.entries(manifest.accounting.regional[filters.region]||{}).map(([k,v])=>(
@@ -892,7 +918,7 @@ export default function GrowthPriorities(){
                     ))}
                     <li>
                       City-wide unassigned records: {display(manifest.accounting.unassigned_groups)} (
-                      {display(manifest.accounting.outcomes.outside_study_areas||0)} outside Downtown &amp; Midtown,{' '}
+                      {display(manifest.accounting.outcomes.outside_study_areas||0)} outside study areas,{' '}
                       {display(manifest.accounting.outcomes.unresolved_location||0)} unresolved addresses)
                     </li>
                   </ul>
@@ -995,7 +1021,7 @@ export default function GrowthPriorities(){
               <p className="g-eyebrow g-no-print">02 · COMPARE &amp; UNDERSTAND</p>
               <h2 id="g-compare-title">Compare &amp; understand your selected areas</h2>
               {!selected.length?(
-                <p>
+                <p className="g-compare-empty">
                   Select up to two areas above to compare proposed homes within vs. beyond frequent TTC across all
                   three distance rings (400 m, 800 m, 1.6 km) and time periods.
                 </p>

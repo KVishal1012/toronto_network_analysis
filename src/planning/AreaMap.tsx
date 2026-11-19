@@ -361,7 +361,26 @@ export default function AreaMap({
     m.on('load',()=>{
       m.addSource('neighbourhoods',{type:'geojson',data:emptyCollection});
       m.addSource('study-boundary',{type:'geojson',data:emptyCollection});
-      m.addSource('water',{type:'geojson',data:torontoWaterGeoJSON});
+      // Slice Lake Ontario to only the southern shoreline (Etobicoke Creek -> Rouge River)
+      // so surrounding GTA municipalities (Mississauga, Vaughan, Markham, Pickering) render as neutral land.
+      const lakeOntarioGeoJSON:GeoJSON.FeatureCollection=(()=>{
+        const ring=(torontoWaterGeoJSON.features[0]?.geometry as GeoJSON.Polygon|undefined)?.coordinates?.[0];
+        if(!ring||ring.length<710)return torontoWaterGeoJSON;
+        const shoreline=ring.slice(84,702);
+        const closed=[
+          ...shoreline,
+          [-79.05,43.789],
+          [-79.05,43.5],
+          [-79.68,43.5],
+          [-79.68,43.55],
+          shoreline[0],
+        ];
+        return {
+          type:'FeatureCollection',
+          features:[{type:'Feature',geometry:{type:'Polygon',coordinates:[closed]},properties:{}}],
+        };
+      })();
+      m.addSource('water',{type:'geojson',data:lakeOntarioGeoJSON});
       m.addSource('parks',{type:'geojson',data:torontoParksGeoJSON});
       m.addSource('detail-parks',{type:'geojson',data:emptyCollection});
       m.addSource('streets',{type:'geojson',data:torontoStreetsGeoJSON});
@@ -663,19 +682,21 @@ export default function AreaMap({
         id:'proposal-points',
         type:'circle',
         source:'proposal-pins',
+        layout:{
+          'circle-sort-key':['case',['get','beyond'],2,1],
+        },
         paint:{
           'circle-radius':[
             'interpolate',
             ['linear'],
-            ['get','units'],
-            20,3.8,
-            400,6.2,
-            1500,8.5,
+            ['zoom'],
+            10,['interpolate',['linear'],['get','units'],20,2.4,400,3.8,1500,5.2],
+            13,['interpolate',['linear'],['get','units'],20,3.8,400,6.2,1500,8.5],
           ],
-          'circle-color':['case',['get','beyond'], '#c25e0b','#0e6b58'],
+          'circle-color':['case',['get','beyond'],'#c25e0b','#0e6b58'],
           'circle-stroke-color':'#ffffff',
-          'circle-stroke-width':1.5,
-          'circle-opacity':0.92,
+          'circle-stroke-width':['case',['get','beyond'],1.8,1.1],
+          'circle-opacity':['case',['get','beyond'],0.98,0.78],
         },
       });
 
@@ -869,16 +890,17 @@ export default function AreaMap({
     markers.current.forEach(marker=>marker.remove());
     const nextMarkers:ml.Marker[]=[];
 
+    const placedLabelPts:Array<[number,number]>=[];
     if(activeRegion!=='all-toronto'){
       const placedNb=new Set<string>();
-      const placedNbPts:Array<[number,number]>=[];
       const isCouncilView=activeRegion!=='downtown'&&activeRegion!=='midtown';
+      const nbMinGap=isCouncilView?0.032:0.012;
       for(const f of torontoNeighbourhoods){
         if(!isNeighbourhoodActive(f)||placedNb.has(f.properties.name))continue;
         const [cx,cy]=f.properties.centroid;
-        if(isCouncilView&&placedNbPts.some(([px,py])=>Math.hypot(cx-px,cy-py)<0.024))continue;
+        if(placedLabelPts.some(([px,py])=>Math.hypot(cx-px,cy-py)<nbMinGap))continue;
         placedNb.add(f.properties.name);
-        placedNbPts.push([cx,cy]);
+        placedLabelPts.push([cx,cy]);
         nextMarkers.push(
           new ml.Marker({element:createNeighbourhoodLabel(f.properties.name),anchor:'center'})
             .setLngLat(f.properties.centroid)
@@ -893,6 +915,7 @@ export default function AreaMap({
         ['TORONTO & EAST YORK',-79.383,43.662],
       ];
       for(const [name,lon,lat] of councilAnchors){
+        placedLabelPts.push([lon,lat]);
         nextMarkers.push(
           new ml.Marker({element:createNeighbourhoodLabel(name),anchor:'center'})
             .setLngLat([lon,lat])
@@ -902,28 +925,38 @@ export default function AreaMap({
     }
 
     const [lonMin,latMin,lonMax,latMax]=REGION_CORRIDOR[activeRegion];
-    const placedStreetPts:Array<[number,number]>=[];
-    const minStreetGap=activeRegion==='all-toronto'?0.035:0.008;
-    for(const s of torontoStreetLabels){
-      if(s.cls==='local')continue;
-      if(activeRegion==='all-toronto'&&s.cls!=='expressway'&&s.cls!=='major')continue;
-      if(s.lon<lonMin||s.lon>lonMax||s.lat<latMin||s.lat>latMax)continue;
-      if(placedStreetPts.some(([px,py])=>Math.hypot(s.lon-px,s.lat-py)<minStreetGap))continue;
-      placedStreetPts.push([s.lon,s.lat]);
+    const stationSet=activeRegion==='all-toronto'?CITYWIDE_STATIONS:KEY_STATIONS;
+    const stationPts:Array<[number,number]>=[];
+    for(const st of ttcSubwayStations){
+      if(st.lon<lonMin||st.lon>lonMax||st.lat<latMin||st.lat>latMax)continue;
+      if(!stationSet.has(st.name))continue;
+      stationPts.push([st.lon,st.lat]);
       nextMarkers.push(
-        new ml.Marker({element:createStreetLabel(s.name,s.angle,s.cls),anchor:'center'})
-          .setLngLat([s.lon,s.lat])
+        new ml.Marker({element:createStationLabel(st.name,st.lines),anchor:'left'})
+          .setLngLat([st.lon,st.lat])
           .addTo(m)
       );
     }
 
-    const stationSet=activeRegion==='all-toronto'?CITYWIDE_STATIONS:KEY_STATIONS;
-    for(const st of ttcSubwayStations){
-      if(st.lon<lonMin||st.lon>lonMax||st.lat<latMin||st.lat>latMax)continue;
-      if(!stationSet.has(st.name))continue;
+    const isCouncilView=activeRegion!=='all-toronto'&&activeRegion!=='downtown'&&activeRegion!=='midtown';
+    const placedStreetPts:Array<[number,number]>=[];
+    const placedStreetNames=new Set<string>();
+    const minStreetGap=activeRegion==='all-toronto'?0.055:isCouncilView?0.03:0.014;
+    const minAvoidGap=activeRegion==='all-toronto'?0.03:isCouncilView?0.018:0.008;
+    for(const s of torontoStreetLabels){
+      if(s.cls==='local')continue;
+      if(activeRegion==='all-toronto'&&s.cls!=='expressway'&&s.cls!=='major')continue;
+      if(s.lon<lonMin||s.lon>lonMax||s.lat<latMin||s.lat>latMax)continue;
+      const normName=s.name.replace(/\s+[NSEW]$/i,'').toLowerCase();
+      if(placedStreetNames.has(normName))continue;
+      if(placedStreetPts.some(([px,py])=>Math.hypot(s.lon-px,s.lat-py)<minStreetGap))continue;
+      if(placedLabelPts.some(([px,py])=>Math.hypot(s.lon-px,s.lat-py)<minAvoidGap))continue;
+      if(stationPts.some(([px,py])=>Math.hypot(s.lon-px,s.lat-py)<minAvoidGap))continue;
+      placedStreetNames.add(normName);
+      placedStreetPts.push([s.lon,s.lat]);
       nextMarkers.push(
-        new ml.Marker({element:createStationLabel(st.name,st.lines),anchor:'left'})
-          .setLngLat([st.lon,st.lat])
+        new ml.Marker({element:createStreetLabel(s.name,s.angle,s.cls),anchor:'center'})
+          .setLngLat([s.lon,s.lat])
           .addTo(m)
       );
     }

@@ -2,19 +2,31 @@
 
 **Project:** ASTER — Toronto Housing, Transit & 3D Explorer  
 **Category:** Open Data Applications (Grassroots / self-funded)  
-**Civic question:** Which areas across Toronto with recorded housing proposals deserve closer investigation of nearby scheduled TTC service?
+**Civic question:** When thousands of new homes are proposed in a Toronto neighbourhood, how close are they to frequent TTC service—and what is missing from the City's records?
 
-ASTER helps Toronto residents and community groups compare proposed housing quantities and scheduled TTC proximity across **All Toronto**, the **4 Community Councils** (`Toronto & East York`, `North York`, `Etobicoke York`, `Scarborough`), and focus views (`Downtown`, `Midtown`). Using a plain-language 3-step guide, street/neighbourhood/project-number search, offline City of Toronto vector maps (streets, 158 neighbourhoods, parks, Lake Ontario, TTC Lines 1/2/4/5 and 92 stations), and plain-English transit frequency takeaways (`4+ scheduled departures/hour` in each hour of the 2-hour window at one stop on one route-direction; departure spacing is not assessed and may vary), users can test distance (`400 m`, `800 m`, `1,600 m`) and time-period assumptions, inspect excluded or unresolved records (`499` no/zero units, `76` shared address IDs, `535` unresolved locations), and print/save a PDF or export a hash-pinned JSON community brief.
+## Summary
 
-The contribution is a reproducible, rights-reviewed comparison of planning evidence (`1,281` included proposals across `601` areas out of `2,391` City records) with scheduled TTC service and inline 2024 energy and water baselines (`2,451` Toronto-wide Ontario EWRB reporting records across 35 building types—including `1,614` Multifamily Housing records and `Reported water intensity` in `m³/m²/year`—plus `247` City of Toronto municipal facilities with utility and district chilled-water meter entries), with missing data and uncertainty kept explicit. It does not establish future population, construction, transit capacity, walking routes, or service deficits.
+Toronto residents and community groups regularly debate housing growth and transit readiness, but official City datasets live in separate portals with incompatible formats, dates, and definitions. Proposed homes are easy to confuse with built housing, nearby bus stops can look "served" even when rush-hour or weekend frequency is low, and incomplete or unlocated records are usually dropped without explanation.
 
-**Evidence of usefulness:** `148` Python unit tests, `39` Node unit tests, `42` independent computational source rereads (`audit_screening.py`), and automated Playwright, Print/PDF, mobile (`390×844`), and WCAG 2.1 AA contrast/landmark/keyboard checks pass on build `caed001c9a3babef92bc848c2b3ab82a51d1513dff4b9f8d4f15ffbb224b4f68` (screening `741b4221e6cb9ab5a524`). Dedicated human screen-reader evaluation (`VoiceOver`/`NVDA`), genuine resident participant sessions, and owner publication sign-off remain separate human steps; do not claim resident adoption, institutional use, or policy outcomes without actual evidence.
+**ASTER** brings together City of Toronto Development Pipeline records, scheduled TTC timetables, neighbourhood and Community Council boundaries, offline Toronto street maps, 3D building massing, and optional 2024 energy/water baselines in a free, browser-based screening tool.
+
+Across all **2,391** City Development Pipeline records (**1,281** geolocatable proposals across **601** areas in all 4 Community Councils), ASTER surfaces clear city-wide patterns:
+- **31,938** of **603,846** unbuilt proposed homes sit beyond **400 m** (straight-line) of frequent weekday morning TTC service (4+ scheduled departures/hour in each hour of the 7–9 AM window), spanning North York (`12,090`), Toronto & East York (`9,019`), Etobicoke York (`7,793`), and Scarborough (`3,036`).
+- At **800 m**, proposed homes beyond frequent TTC service more than triple from **386** on weekday mornings (North York) to **1,229** on Saturday midday (`1,012` in North York and `217` in Etobicoke York).
+- Every excluded record is accounted for explicitly (**535** unresolved locations, **499** missing/zero structured residential units, **76** shared-address distinct IDs) so residents can verify any street or project number.
+
+Residents can search any street, neighbourhood, or project number, test `400 m` / `800 m` / `1,600 m` rings across morning, evening, and Saturday timetables, add local context (sidewalks, crossings, bus crowding), and export a clean **Print / Save as PDF** community brief, a reproducible **JSON** package, or a hash-pinned shareable URL. Optional views let users inspect Downtown (`City Hall`) and Midtown (`Yonge–Eglinton`) proposals in **3D** against 2025 City building massing, or attach **2024 Energy & Water** baselines (`2,451` Toronto-wide Ontario EWRB properties and `247` City municipal facilities) as clearly scoped baseline context.
+
+## Quality & honest scope
+
+All calculations are independently cross-checked against raw City and TTC open datasets, and automated browser checks verify WCAG 2.1 AA contrast, keyboard navigation, mobile layout (`390×844`), and clean print/PDF output. ASTER is explicit about what open data cannot establish: straight-line distance does not measure walking safety, crowding, or vehicle capacity; departure spacing within each hour is not assessed; and pipeline proposals do not guarantee future construction.
 
 ## 90-second demonstration
 
-1. Open `/` on **All Toronto** at `800 m` in the weekday morning rush (`7–9 AM`) showing `1,281` screened proposals across all four Community Councils on the offline Toronto street map.
-2. Switch to **Scarborough** (or search `Kingston` / `Etobicoke`) and compare `400 m` / `800 m` / `1,600 m` and morning/evening/Saturday results, noting explicit within-vs-beyond counts.
-3. Open **Coverage & exclusions** (`535` unresolved locations, `499` missing/zero units) and explain what the analysis cannot assess (sidewalks, crowding, bus/train capacity).
-4. Enter a local community question, show **Print / Save as PDF** + reproducible hash-pinned JSON export, and open `#view=3d` (`City Hall` / `Yonge–Eglinton` **3D Street Map**) to inspect recorded 2025 buildings, coral proposal towers, and collision-checked replacement boxes.
+1. Open `/` on **All Toronto** showing `1,281` screened proposals across all four Community Councils on the offline Toronto street map.
+2. Click **Scarborough 400 m** or **North York 800 m**, then switch between weekday morning and Saturday midday to show how frequent-service coverage shifts.
+3. Open **Methodology, data completeness & limitations** to show the `535` unresolved addresses and `499` missing-unit records kept transparent.
+4. Select two areas, add a local community question, and preview **Print / Save as PDF** + the reproducible share link.
+5. Open **Toronto 3D ↗** (`#view=3d`) to inspect Downtown (`City Hall`) and Midtown (`Yonge–Eglinton`) 2025 massing and proposal pins linked back to transit tables.
 
-Before submission: verify the live GitHub Pages URL (`https://kvishal1012.github.io/toronto_network_analysis/`), complete any optional VoiceOver/resident walkthroughs, and review the competition form before submitting.
+*Before submitting: confirm GitHub Pages is live at `https://kvishal1012.github.io/toronto_network_analysis/`, complete resident walkthroughs / VoiceOver check, and review all form fields.*
