@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Scope notice:
-- This MIT Licence applies to original ASTER application, script, and builder code in this repository.
-- City of Toronto datasets and derived open-data snapshots remain licensed under the Open Government Licence – Toronto (https://open.toronto.ca/open-data-license/).
-- Ontario Energy and Water Reporting and Benchmarking (EWRB) datasets remain licensed under the Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario).
-- Third-party libraries (e.g., React, MapLibre GL JS, Three.js, Cesium, DuckDB, Shapely) retain their respective licences; see docs/planning-third-party-notices.md.
