@@ -1,0 +1,272 @@
+{
+  "edition": "housing-transit-3d",
+  "screening": {
+    "available": true,
+    "versions": [
+      "6ed092c988ad9326e279",
+      "741b4221e6cb9ab5a524",
+      "c3974580fac92a5523a8"
+    ],
+    "bytes": 1691589
+  },
+  "energy": {
+    "available": true,
+    "versions": [
+      "693ebe90439ea1049eac"
+    ],
+    "bytes": 451201,
+    "rights_contract_sha256": "9ffc9a41ac3d7447554c98bf587c2040f88cf4305e16516f685efd576b666273"
+  },
+  "legacy_snapshots_excluded": [
+    {
+      "snapshot": "3109928bc7881940611a",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "5cefacecbb23b60d5dbe",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "6a6da29c2c5d5eec218f",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "817447cb12a48dba75bb",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "8269765c8521a43294ae",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "neighbourhoods",
+        "streets",
+        "zoning",
+        "heights"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "8be473c10eda27b1f37b",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "9bad5725714051b020b0",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "9c1ddedb5903af67d1d6",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "a48d82f6ea4c2842017b",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "b918a275a0244881b806",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-opa",
+        "heights",
+        "neighbourhoods",
+        "projects",
+        "streets",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "bd450a9f1924d34c01b2",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "c311d9763043d70c2bf9",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "d8bef0798c4a91b70110",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "dc1ca133f95ae0655035",
+      "sources": [
+        "addresses",
+        "applications",
+        "boundaries",
+        "brampton-address",
+        "brampton-opa",
+        "heights",
+        "milton-address",
+        "milton-applications",
+        "neighbourhoods",
+        "oshawa-address",
+        "pickering-address",
+        "projects",
+        "streets",
+        "york-address",
+        "zoning"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    },
+    {
+      "snapshot": "f3a5f9ee996a0f10f91c",
+      "sources": [
+        "projects",
+        "applications",
+        "addresses",
+        "zoning",
+        "heights",
+        "neighbourhoods",
+        "streets"
+      ],
+      "reason": "Legacy full-record assets are outside the reviewed field-limited submission. No blanket redistribution approval."
+    }
+  ],
+  "disabled_features": [
+    "legacy address explorer",
+    "legacy map and full application details",
+    "standalone transport explorer",
+    "energy guidance via legacy explorer"
+  ],
+  "rights_contract_sha256": "4e6b17ba11eaa8e7352ae9bd7cd0e6c004654ab16c8d1489e7afa6b5eda27adb",
+  "raw_private_files_included": false
+}

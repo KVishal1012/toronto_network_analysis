@@ -1,0 +1,154 @@
+{
+  "_GrowthPriorities-CGWRqReV.js": {
+    "file": "assets/GrowthPriorities-CGWRqReV.js",
+    "name": "GrowthPriorities",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/planning/BriefMap.tsx",
+      "src/planning/AreaMap.tsx",
+      "src/planning/EnergyPanel.tsx"
+    ]
+  },
+  "_architectural-BVBjbasQ.js": {
+    "file": "assets/architectural-BVBjbasQ.js",
+    "name": "architectural"
+  },
+  "_maplibre-gl-DzgmNEc9.js": {
+    "file": "assets/maplibre-gl-DzgmNEc9.js",
+    "name": "maplibre-gl",
+    "css": [
+      "assets/maplibre-gl-JR8eJ17e.css"
+    ]
+  },
+  "_maplibre-gl-JR8eJ17e.css": {
+    "file": "assets/maplibre-gl-JR8eJ17e.css",
+    "src": "_maplibre-gl-JR8eJ17e.css"
+  },
+  "_toronto-map-data-CMgPUShg.js": {
+    "file": "assets/toronto-map-data-CMgPUShg.js",
+    "name": "toronto-map-data"
+  },
+  "index.html": {
+    "file": "assets/index-5gAtpGEE.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/sandbox/ArchitecturalViewer.tsx",
+      "_GrowthPriorities-CGWRqReV.js"
+    ],
+    "css": [
+      "assets/index-BbLbsSMH.css"
+    ]
+  },
+  "src/planning/AreaMap.tsx": {
+    "file": "assets/AreaMap-BdLvHNzo.js",
+    "name": "AreaMap",
+    "src": "src/planning/AreaMap.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_maplibre-gl-DzgmNEc9.js",
+      "_architectural-BVBjbasQ.js",
+      "_GrowthPriorities-CGWRqReV.js",
+      "_toronto-map-data-CMgPUShg.js"
+    ],
+    "dynamicImports": [
+      "src/planning/map-detail/downtown.ts",
+      "src/planning/map-detail/midtown.ts",
+      "src/planning/map-detail/toronto-east-york.ts",
+      "src/planning/map-detail/north-york.ts",
+      "src/planning/map-detail/etobicoke-york.ts",
+      "src/planning/map-detail/scarborough.ts"
+    ]
+  },
+  "src/planning/BriefMap.tsx": {
+    "file": "assets/BriefMap-CEDHq1s5.js",
+    "name": "BriefMap",
+    "src": "src/planning/BriefMap.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_toronto-map-data-CMgPUShg.js"
+    ]
+  },
+  "src/planning/EnergyFacilityMap.tsx": {
+    "file": "assets/EnergyFacilityMap-CzPSMvw_.js",
+    "name": "EnergyFacilityMap",
+    "src": "src/planning/EnergyFacilityMap.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_maplibre-gl-DzgmNEc9.js"
+    ]
+  },
+  "src/planning/EnergyPanel.tsx": {
+    "file": "assets/EnergyPanel-Cv39-uXy.js",
+    "name": "EnergyPanel",
+    "src": "src/planning/EnergyPanel.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/planning/EnergyFacilityMap.tsx"
+    ],
+    "css": [
+      "assets/EnergyPanel-CSpfo-X1.css"
+    ]
+  },
+  "src/planning/map-detail/downtown.ts": {
+    "file": "assets/downtown-BSGY9U1Z.js",
+    "name": "downtown",
+    "src": "src/planning/map-detail/downtown.ts",
+    "isDynamicEntry": true
+  },
+  "src/planning/map-detail/etobicoke-york.ts": {
+    "file": "assets/etobicoke-york-D-mgse-t.js",
+    "name": "etobicoke-york",
+    "src": "src/planning/map-detail/etobicoke-york.ts",
+    "isDynamicEntry": true
+  },
+  "src/planning/map-detail/midtown.ts": {
+    "file": "assets/midtown-s-4ghg9u.js",
+    "name": "midtown",
+    "src": "src/planning/map-detail/midtown.ts",
+    "isDynamicEntry": true
+  },
+  "src/planning/map-detail/north-york.ts": {
+    "file": "assets/north-york-Dy7tbyy8.js",
+    "name": "north-york",
+    "src": "src/planning/map-detail/north-york.ts",
+    "isDynamicEntry": true
+  },
+  "src/planning/map-detail/scarborough.ts": {
+    "file": "assets/scarborough-CAFOyY8I.js",
+    "name": "scarborough",
+    "src": "src/planning/map-detail/scarborough.ts",
+    "isDynamicEntry": true
+  },
+  "src/planning/map-detail/toronto-east-york.ts": {
+    "file": "assets/toronto-east-york-OKL_niC4.js",
+    "name": "toronto-east-york",
+    "src": "src/planning/map-detail/toronto-east-york.ts",
+    "isDynamicEntry": true
+  },
+  "src/sandbox/ArchitecturalViewer.tsx": {
+    "file": "assets/ArchitecturalViewer-dULXbT3E.js",
+    "name": "ArchitecturalViewer",
+    "src": "src/sandbox/ArchitecturalViewer.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_toronto-map-data-CMgPUShg.js",
+      "_maplibre-gl-DzgmNEc9.js",
+      "_architectural-BVBjbasQ.js"
+    ],
+    "css": [
+      "assets/ArchitecturalViewer-B-1DWFvV.css"
+    ]
+  }
+}
