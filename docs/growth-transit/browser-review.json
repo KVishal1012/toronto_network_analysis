@@ -1,28 +1,28 @@
 {
-  "build_id": "4c928fed35bc46b49484b0b5b67347c066c6ae5afcaa06ff8e524ce76f469ed9",
+  "build_id": "ea9938b84c8941dc4747fb6ac90a963d5741e5d069fd04c80b8a7c97f9d59c3e",
   "analysis": "741b4221e6cb9ab5a524",
   "passed": true,
-  "reviewer": "Automated Playwright + Chromium headless verification + visual PDF inspection against final dist-public; human screen-reader and participant sessions remain separate",
+  "reviewer": "Automated Playwright + Chromium headless verification + visual screenshot & PDF inspection against final dist-public; human screen-reader and participant sessions remain separate",
   "checks": {
     "metadata_and_social_preview": "passed: index.html ships accurate ASTER title, description, Open Graph & Twitter/X card tags, and inline SVG favicon (0 /favicon.ico 404s)",
     "above_fold": "passed: first area card (Near 300 BOROUGH DR) starts at y=574 px on 1440x900 side-by-side with the interactive city-wide Toronto map above the fold",
-    "citywide_scope": "passed: All Toronto (1,281 included proposals across 601 cells) and 4 Community Councils plus Downtown (228) and Midtown (140) on Nov 13-14 TTC GTFS feed (transit_snapshot 051a87c14d446d5ca49c); Kingston Rd (12), Etobicoke (12), Moss Park (6), single deduplicated Switch to All Toronto recovery, native select controls, and Scarborough 400 m / North York 800 m quick examples verified",
+    "citywide_scope": "passed: All Toronto (1,281 included proposals across 601 cells) and 4 Community Councils plus Downtown (228) and Midtown (140) on Nov 13-14 TTC GTFS feed (transit_snapshot 051a87c14d446d5ca49c); Kingston Rd (12), Etobicoke (12), Moss Park (6), single deduplicated Switch to All Toronto recovery, visually verified single-line native select controls, and Scarborough 400 m / North York 800 m quick examples verified",
     "cross_region_comparison": "passed: pinned-hash reload restored selected comparison areas cleanly",
     "map": "passed: offline MapLibre city-wide Toronto street map renders southern Lake Ontario shoreline distinct from neutral GTA land, deduplicated collision-culled labels (31 neighbourhood labels), orange-on-top proposal pins, and 0 external failedUrls",
     "inline_energy_water": "passed: Energy & Water section starts collapsed by default on /, expands via Show energy & water controls, and switches to Reported water intensity (m\u00b3/m\u00b2/year) cleanly",
     "modelling": "passed: #view=3d keeps topbar h1 and City Hall / Yonge-Eglinton switcher above the 3D canvas on all widths, verifies 483 BAY ST collision refusal + nearest-editable-building recovery (.a-recovery-box), dependable one-click editable example (Try editable example), replacement apply & JSON export, aligned 3-column dimension grid, Page 1 transit deep-link, and 3D Massing Studio toggle",
-    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 025ee36849daf6bb865c5435bcdf20c22456ee4073b2e48e97817cd4871def7b)",
-    "print": "passed: headless Chromium @media print layout verified (overflowX false) and PDF archived (794355 bytes; 3D PDF 548,635 bytes)",
+    "combined_brief": "passed: downloaded JSON contains 2 selected areas and pinned snapshot metadata (export_sha256 a8905d957f1b4de8ac46683a7031cca1e37e7c0f9eefef46dc334b09458d23ef)",
+    "print": "passed: headless Chromium @media print layout verified (overflowX false) and PDF archived (794364 bytes; 3D PDF 548,635 bytes)",
     "wcag_automated": "passed: landmarks, sequential headings (34 headings on /, 10 on #view=3d, 1 h1 each), labeled controls, aria-live announcements, keyboard focus/controls, and >= 4.5:1 contrast verified across / and /#view=3d (0 issues, 0 lowContrast); actual human screen-reader session remains outstanding",
     "mobile": "passed: 390x844 viewport verified with zero horizontal overflow (scrollWidth 390 === innerWidth 390) on both / and /#view=3d",
     "console_and_page_errors": "passed: 0 consoleErrors, 0 pageErrors, 0 server404s, 0 failedUrls"
   },
-  "export_sha256": "025ee36849daf6bb865c5435bcdf20c22456ee4073b2e48e97817cd4871def7b",
+  "export_sha256": "a8905d957f1b4de8ac46683a7031cca1e37e7c0f9eefef46dc334b09458d23ef",
   "pdf": {
     "passed": true,
-    "path": "data/growth-qualification/4c928fed35bc46b49484b0b5b67347c066c6ae5afcaa06ff8e524ce76f469ed9/aster-brief-verify.pdf",
-    "sha256": "94f5acb77ba35d76dec0ca2f437687fee8f09cfa76470663ac95c50b29f9ab79",
-    "bytes": 794355
+    "path": "data/growth-qualification/ea9938b84c8941dc4747fb6ac90a963d5741e5d069fd04c80b8a7c97f9d59c3e/aster-brief-verify.pdf",
+    "sha256": "17ccbdb83f5529f068bb5b5eb3984923985ab73b94e9a50a07785dd46a80e0d0",
+    "bytes": 794364
   },
   "screenshot": "/tmp/aster-integrated-brief.png"
 }

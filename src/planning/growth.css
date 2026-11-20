@@ -285,20 +285,22 @@ details:not([open])>summary .g-chevron{
   font-size:14px;
   font-weight:400;
 }
+.growth select{
+  display:inline-block;
+}
 .g-search-input-wrap input::-webkit-search-cancel-button{
   -webkit-appearance:none;
   appearance:none;
 }
 .g-controls select{
+  display:inline-block;
   max-width:100%;
+  width:100%;
   height:42px;
   line-height:1.25;
   appearance:auto;
   -webkit-appearance:menulist;
-  padding-right:10px;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  overflow:hidden;
+  padding:8px 10px;
   background:#fff;
 }
 

@@ -9,7 +9,7 @@
 - **Recommended Category:** **Open Data Applications** *(Note: if submitting without logged resident engagement before Dec 4, **Open Data Analysis** is also a direct rubric fit for ASTER's research question, multi-dataset analysis, and city-wide findings.)*  
 - **Public URL (live, free, no account):** https://kvishal1012.github.io/toronto_network_analysis/  
 - **Source code:** https://github.com/KVishal1012/toronto_network_analysis (branch `codex/aster-toronto-explorer`, OSI **MIT License**)  
-- **Verified build:** `4c928fed35bc46b49484b0b5b67347c066c6ae5afcaa06ff8e524ce76f469ed9` (screening `741b4221e6cb9ab5a524`, TTC GTFS `S1000544` valid through `2026-12-19`)  
+- **Verified build:** `ea9938b84c8941dc4747fb6ac90a963d5741e5d069fd04c80b8a7c97f9d59c3e` (screening `741b4221e6cb9ab5a524`, TTC GTFS `S1000544` valid through `2026-12-19`)  
 - **Student eligibility:** Not claimed  
 
 ---
@@ -47,7 +47,7 @@ Across all **2,391** City Development Pipeline records (**1,281** geolocatable p
 
 ## 4. Accessibility
 
-- **Verified automatically on shipped build `4c928fed...`:**
+- **Verified automatically on shipped build `ea9938b8...`:**
   - WCAG 2.1 AA colour contrast (`0` violations across `/` and `/#view=3d`), semantic landmarks (`header`, `nav`, `main`, sequential headings, skip-to-content links), ARIA live-region status announcements, and full keyboard navigation (including keyboard-accessible 3D camera controls).
   - Mobile-responsive layout verified at `390×844` with `0 px` horizontal overflow on both `/` and `/#view=3d`.
   - Clean `@media print` stylesheet producing a visually inspected 7-page community brief PDF (`0` overflow).
