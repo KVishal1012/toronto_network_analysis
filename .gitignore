@@ -10,6 +10,10 @@ data/
 *.log
 *.tsbuildinfo
 
+# Private drafts and submissions
+*draft*.md
+*submission*.md
+
 .env*
 !.env.example
 public/cesium/
