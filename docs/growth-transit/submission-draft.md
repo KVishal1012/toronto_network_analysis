@@ -19,7 +19,7 @@ Residents can search any street, neighbourhood, or project number, test `400 m` 
 
 ## Quality & honest limits
 
-All calculations are independently cross-checked against raw City and TTC open datasets, and automated browser + visual PDF checks against the shipped build (`4c8c2a56...`) verify WCAG 2.1 AA contrast, keyboard navigation, mobile layout (`390×844`), and clean print/PDF output.
+All calculations are independently cross-checked against raw City and TTC open datasets, and automated browser + visual PDF checks against the shipped build (`4c928fed...`) verify WCAG 2.1 AA contrast, keyboard navigation, mobile layout (`390×844`), and clean print/PDF output.
 
 **Honest limitations disclosed upfront:**
 - **Information density:** ASTER prioritizes source traceability and explicit exclusions over a stripped-down UI, so the interface remains information-heavy (optional Energy & Water baselines start collapsed by default).
