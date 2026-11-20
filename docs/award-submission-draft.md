@@ -8,7 +8,7 @@
 - **Track:** Grassroots (independent / self-funded)  
 - **Recommended Category:** **Open Data Applications** *(Note: if submitting without logged resident engagement before Dec 4, **Open Data Analysis** is also a direct rubric fit for ASTER's research question, multi-dataset analysis, and city-wide findings.)*  
 - **Public URL (live, free, no account):** https://kvishal1012.github.io/toronto_network_analysis/  
-- **Source code:** https://github.com/KVishal1012/toronto_network_analysis (branch `codex/aster-toronto-explorer`, OSI **MIT License**)  
+- **Source code:** https://github.com/KVishal1012/toronto_network_analysis (branch `aster-toronto-explorer`, OSI **MIT License**)  
 - **Verified build:** `ea9938b84c8941dc4747fb6ac90a963d5741e5d069fd04c80b8a7c97f9d59c3e` (screening `741b4221e6cb9ab5a524`, TTC GTFS `S1000544` valid through `2026-12-19`)  
 - **Student eligibility:** Not claimed  
 
@@ -58,7 +58,7 @@ Across all **2,391** City Development Pipeline records (**1,281** geolocatable p
 ## 5. Contributions to the Open Source Community
 
 - **Standard OSI MIT License:** All original ASTER application, spatial-screening, packaging, and verification code is openly licensed under the verbatim **MIT License** (root `LICENSE`, `package.json`), with clear separation from **Open Government Licence – Toronto** and **Open Government Licence – Ontario** data terms.
-- **Reusable civic-data engineering pattern:** The repository (`https://github.com/KVishal1012/toronto_network_analysis`, branch `codex/aster-toronto-explorer`) publishes the complete reproducible pipeline:
+- **Reusable civic-data engineering pattern:** The repository (`https://github.com/KVishal1012/toronto_network_analysis`, branch `aster-toronto-explorer`) publishes the complete reproducible pipeline:
   - Deterministic Python acquisition, validation, and EPSG:26917 spatial screening scripts (`scripts/`).
   - Automated rights/boundary isolation checks (`scripts/check_public_boundary.py`) and build-bound qualification reports (`scripts/qualify_screening.py`).
   - Full automated test suite (`148` Python unit tests, `37` active submission Node unit tests, and Playwright E2E/accessibility/print verification in `scripts/verify_aster.mjs`) that other civic-tech builders can fork and adapt for any municipality with GTFS + planning open data.
