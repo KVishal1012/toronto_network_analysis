@@ -1,7 +1,0 @@
-{
-  "synthetic_test_only": true,
-  "prohibited_from_public_package": true,
-  "A": {"site":"Invented test site A","earlier":{"status":"Under Review","retrieved":"2026-01-01"},"later":{"status":"Approved","retrieved":"2026-02-01"},"physical_observations":[]},
-  "B": {"record":"Invented test record B","earlier_complete_export":"present","later_complete_export":"absent","publisher_explanation":null},
-  "C": {"candidate":"A source point intersects this parcel; identity unverified.","confirmed":"A reviewed publisher site reference explicitly connects this record and site; source evidence is attached."}
-}
