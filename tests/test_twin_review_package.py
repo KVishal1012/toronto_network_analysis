@@ -2,6 +2,7 @@
 import gzip,json,sqlite3,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+@unittest.skipUnless((ROOT/'dist-twin-review/twin/latest.json').exists() and (ROOT/'data/site-registry/registry.sqlite').exists(),'Local twin review package not built')
 class TwinPackageTests(unittest.TestCase):
  def test_registry_identities_and_candidate_labels_survive_export(self):
   root=ROOT/'dist-twin-review/twin';version=json.loads((root/'latest.json').read_text())['version'];folder=root/version

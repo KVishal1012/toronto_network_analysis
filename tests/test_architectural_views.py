@@ -5,6 +5,7 @@ from pyproj import Transformer
 from shapely.geometry import shape
 ROOT=Path(__file__).resolve().parents[1]
 class ArchitecturalViewsTests(unittest.TestCase):
+ @unittest.skipUnless((ROOT/'data/buildings.duckdb').exists(),'Local 3D buildings archive not installed')
  def test_all_displayed_heights_and_methods_match_source(self):
   views=json.loads((ROOT/'src/sandbox/architectural.json').read_text());self.assertEqual({v['region'] for v in views},{'downtown','midtown'})
   db=duckdb.connect(str(ROOT/'data/buildings.duckdb'),read_only=True)
